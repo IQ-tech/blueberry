@@ -4,7 +4,9 @@
   "description": "iq design system/ui library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,16 @@
   },
   "homepage": "https://github.com/RedVentures/iq-design-system#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/react": "^6.0.26",
+    "babel-loader": "^8.1.0",
     "gulp": "^4.0.2",
+    "react-is": "^16.13.1",
     "rimraf": "^3.0.2",
-    "webpack": "^5.1.1"
+    "webpack": "4.44.2"
   },
   "dependencies": {
     "react": "^16.14.0",
