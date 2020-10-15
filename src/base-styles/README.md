@@ -1,0 +1,1 @@
+base styles to be consumed by projects
