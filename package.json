@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
+    "storybook:html": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/html",
     "build-storybook": "build-storybook"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-essentials": "^6.0.26",
     "@storybook/addon-links": "^6.0.26",
+    "@storybook/html": "^6.0.26",
     "@storybook/react": "^6.0.26",
     "babel-loader": "^8.1.0",
     "gulp": "^4.0.2",
