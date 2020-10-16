@@ -1,5 +1,5 @@
-const addCommonConfig = require("../common/addCommonConfig")
-
+const addCommonConfig = require("../common/addCommonConfig");
+const path = require("path");
 
 module.exports = {
   addons: ["@storybook/addon-docs/preset"],
@@ -10,11 +10,11 @@ module.exports = {
   ],
 
   webpackFinal: async (config, { configType }) => {
-    addCommonConfig(config)
-    /*   config.module.rules.push({
+    addCommonConfig(config);
+    config.module.rules.push({
       test: /\.pug$/,
-      use: [path.resolve(__dirname, './pug-loader.js')]
-    }) */
+      use: [path.resolve(__dirname, "./pug-loader.js")],
+    });
 
     return config;
   },

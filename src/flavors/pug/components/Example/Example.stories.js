@@ -1,6 +1,13 @@
-import { storiesOf } from "@storybook/html";
-import 'core/components/Example.styl'
+import Example from "./index.pug";
+import "core/components/Example.styl";
 
-storiesOf("Example", module).add("primary", () => {
-  return require("./index.html");
-});
+export default {
+  title: "Componentes/pug",
+};
+
+const data = {
+  content: "my custom example-component",
+};
+
+export const Primary = () => Example({ data });
+
