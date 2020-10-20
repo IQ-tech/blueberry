@@ -4,6 +4,7 @@
   "description": "iq design system/ui library",
   "main": "index.js",
   "scripts": {
+    "build:lib": "gulp build-lib",
     "storybook:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
     "storybook:pug": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/pug",
     "build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/react"

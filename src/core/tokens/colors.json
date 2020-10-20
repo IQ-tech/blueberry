@@ -1,0 +1,9 @@
+{
+  "test": "yellow",
+  "color": {
+    "brand": {
+      "primary": "#05efd0",
+      "secondary": "#FF39a6"
+    }
+  }
+}
