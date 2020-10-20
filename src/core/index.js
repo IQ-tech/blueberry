@@ -1,4 +1,7 @@
-/**
- * javascript entrypoint:
- * this file should export helpers and design tokens related to the design system
+/** css core entry file
+ * 
+ *  this file generates the main css file for the design system,
+ *  it should be consumed by the javascript applications
  */
+
+import "./main.styl";

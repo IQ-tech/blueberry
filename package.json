@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:lib": "gulp build-lib",
+    "lala": "webpack --config tasks/process-files/styles.js",
     "storybook:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
     "storybook:pug": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/pug",
     "build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/react"
@@ -28,7 +29,10 @@
     "@storybook/react": "^6.0.26",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
+    "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
+    "mini-css-extract-plugin": "^1.1.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "poststylus": "^1.0.1",
     "pug": "2.0.4",
     "pug-loader": "^2.4.0",
@@ -38,7 +42,9 @@
     "rupture": "^0.7.1",
     "stylus": "^0.54.8",
     "stylus-loader": "3.0.2",
-    "webpack": "4.44.2"
+    "webpack": "4.44.2",
+    "webpack-cli": "^4.1.0",
+    "webpack-merge": "^5.2.0"
   },
   "dependencies": {
     "react": "^16.14.0",
