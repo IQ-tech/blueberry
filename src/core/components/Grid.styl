@@ -1,6 +1,13 @@
-.grid
-  background-color red
+$fixed-grid-max-width = 1270px
 
+.grid
+	background-color red
+	max-width $fixed-grid-max-width
+	display flex
+
+	&--fluid
+		background-color orange
+		max-width none
 
 .col
 	background-color blue
