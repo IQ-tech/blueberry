@@ -9,6 +9,7 @@ function moveCoreFilesToDistTask() {
 	return src(["src/core/**/*", ...extensionsToAvoid]).pipe(dest("dist/"));
 }
 
+// move pug files to dist
 function movePugFilesToDistTask() {
 	return src("src/flavors/pug/**/*.pug").pipe(dest("dist/pug/"));
 }
