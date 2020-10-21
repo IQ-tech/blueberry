@@ -1,18 +1,11 @@
-// compile main stylesheet:
-// iq-design-system/main.css
-// iq-design-system/components.css
-
 const webpack = require("webpack");
 const webpackProdConfig = require("../../config/webpack.prod");
 
-
 /**
- * this task bundles all the styl files into a single
- * iq-design-system.css
+ * this task bundles all the iq lib styl files into a single
+ * styles.css
  */
-
-
-module.exports =  () => {
+function compileStylesFileTask() {
   const entryFile = "./src/core/index.js";
   const webpackConfig = webpackProdConfig({
     entry: entryFile,
@@ -25,4 +18,6 @@ module.exports =  () => {
       res();
     });
   });
-};
+}
+
+module.exports = compileStylesFileTask;

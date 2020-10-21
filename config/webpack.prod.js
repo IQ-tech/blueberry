@@ -4,7 +4,6 @@
 
 const rupture = require("rupture");
 const postStylus = require("poststylus");
-
 const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -36,7 +35,7 @@ module.exports = (anotherConfigurations = {}) =>
       },
       plugins: [
         new MiniCssExtractPlugin({
-          filename: "iq-design-system.css",
+          filename: "styles.css",
         }),
         new OptimizeCssAssetsPlugin({
           cssProcessor: require("cssnano"),

@@ -1,0 +1,5 @@
+root = true
+
+[*.{js,md,mdx,css,json,pug,styl}]
+indent_style = tab
+indent_size = 2
