@@ -1,13 +1,14 @@
-const { series } = require("gulp");
+const { series, parallel } = require("gulp");
 
 const cleanDistTask = require("./clean-dist");
-const moveCoreFilesToDistTask = require("./move-core-files")
-const  compileStylesFileTask  = require("./process-files/styles");
-
-
+const {
+	moveCoreFilesToDistTask,
+	movePugFilesToDistTask,
+} = require("./move-files");
+const compileStylesFileTask = require("./process-files/styles");
 
 module.exports = series(
-  cleanDistTask,
-  moveCoreFilesToDistTask,
-  compileStylesFileTask
+	cleanDistTask,
+	parallel(moveCoreFilesToDistTask, movePugFilesToDistTask),
+	compileStylesFileTask
 );
