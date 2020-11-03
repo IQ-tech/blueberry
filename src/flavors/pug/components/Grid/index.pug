@@ -1,4 +1,9 @@
 mixin Grid()
 	div.grid
-		each val in [1,2,3,4,5,6,7,8,9,10,11,12]
-			div.col batats
+		div.grid__container
+			each val in [1,2,3,4,5,6,7,8,9,10,11,12,13]
+				div.col 
+					div.demo-content c
+
+			div.col.col--span-4-desktop
+				div.demo-content s
