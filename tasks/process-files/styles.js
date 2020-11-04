@@ -6,18 +6,21 @@ const webpackProdConfig = require("../../config/webpack.prod");
  * styles.css
  */
 function compileStylesFileTask() {
-  const entryFile = "./src/core/index.js";
-  const webpackConfig = webpackProdConfig({
-    entry: entryFile,
-  });
+	const entryFile = "./src/core/index.js";
+	const webpackConfig = webpackProdConfig({
+		entry: entryFile,
+	});
 
-  const compiler = webpack(webpackConfig);
+	const compiler = webpack(webpackConfig);
 
-  return new Promise((res, rej) => {
-    compiler.run(() => {
-      res();
-    });
-  });
+	return new Promise((res, rej) => {
+		compiler.run((err) => {
+			if (err) {
+				rej(err);
+			}
+			res();
+		});
+	});
 }
 
 module.exports = compileStylesFileTask;

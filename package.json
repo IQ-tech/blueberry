@@ -2,8 +2,9 @@
   "name": "iq-design-system",
   "version": "1.0.0",
   "description": "iq design system/ui library",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
+		"asd": "webpack -c config/webpack.prod.js",
     "build:lib": "gulp build-lib",
     "dev:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
     "dev:pug": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/pug",
@@ -46,7 +47,11 @@
     "webpack-merge": "^5.2.0"
   },
   "dependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
-  }
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+	},
+	"peerDependencies": {
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6"
+	}
 }
