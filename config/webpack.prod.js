@@ -1,27 +1,57 @@
-/**
- * these configurations are used to compile the main design system lib files
- */
-
 const rupture = require("rupture");
 const postStylus = require("poststylus");
 const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
+const babelConfig = {
+	loader: "babel-loader",
+	options: {
+		presets: [
+			"@babel/preset-react",
+			"@babel/preset-typescript",
+			[
+				"@babel/preset-env",
+				{
+					targets: {
+						browsers: ["last 2 versions"],
+					},
+					modules: false,
+				},
+			],
+		],
+	},
+};
+
 module.exports = (anotherConfigurations = {}) =>
 	merge([
 		anotherConfigurations,
 		{
-			entry: './src/core/index.js',
+			entry: "./src/core/index.js",
 			output: {
-				filename: 'main.js'
+				filename: "main.js",
+				libraryTarget: "umd",
 			},
 			externals: {
 				react: "react",
 				reactDOM: "react-dom",
 			},
+			resolve: {
+				modules: ["node_modules"],
+				extensions: [".js", ".ts", ".tsx", ".styl", ".json"],
+			},
 			module: {
 				rules: [
+					{
+						test: /\.tsx$/,
+						use: [babelConfig],
+						exclude: "/node_modules/",
+					},
+					{
+						test: /\.js$/,
+						use: [babelConfig],
+						exclude: "/node_modules/",
+					},
 					{
 						test: /\.styl$/,
 						use: [

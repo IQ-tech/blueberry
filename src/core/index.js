@@ -10,4 +10,6 @@
 import "./main.styl";
 
 // react-lib entry-file
-export * from "../flavors/react"
+export {default as Test} from "../flavors/react/components/Example"
+
+

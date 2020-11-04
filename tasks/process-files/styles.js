@@ -6,10 +6,7 @@ const webpackProdConfig = require("../../config/webpack.prod");
  * styles.css
  */
 function compileStylesFileTask() {
-	const entryFile = "./src/core/index.js";
-	const webpackConfig = webpackProdConfig({
-		entry: entryFile,
-	});
+	const webpackConfig = webpackProdConfig({});
 
 	const compiler = webpack(webpackConfig);
 
