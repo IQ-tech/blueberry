@@ -23,17 +23,13 @@ const babelConfig = {
 	},
 };
 
-module.exports = (anotherConfigurations = {}) =>
+// the custom configurations param is passed by some specific bundle tasks such as `bundle-components` task
+module.exports = (customConfigurations = {}) =>
 	merge([
-		anotherConfigurations,
+		customConfigurations,
 		{
-			entry: "./src/core/index.js",
-			output: {
-				filename: "main.js",
-				libraryTarget: "umd",
-			},
 			externals: {
-				react: "react",
+				react: "react", //this config keeps react out of the bundle
 				reactDOM: "react-dom",
 			},
 			resolve: {

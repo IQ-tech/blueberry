@@ -6,10 +6,15 @@ const {
 	movePugFilesToDistTask,
 } = require("./move-files");
 
-const compileStylesFileTask = require("./process-files/styles");
+const compileStylesFileTask = require("./process-files/compile-styles");
+const bundleReactLibTask = require("./react/bundle-react-lib");
 
-module.exports = series(
+// do all tasks imported above in the correct order
+const buildLibTask = series(
 	cleanDistTask,
 	parallel(moveCoreFilesToDistTask, movePugFilesToDistTask),
 	compileStylesFileTask,
+	bundleReactLibTask
 );
+
+module.exports = buildLibTask;

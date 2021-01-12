@@ -1,3 +1,3 @@
-// lib entry point
+// React lib entry point
 
 export { default as Example } from "./components/Example";

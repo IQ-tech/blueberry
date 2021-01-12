@@ -1,16 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const Example = ({ content }) => {
+interface ExampleProps {
+  content: string;
+}
+
+const Example: React.FC<ExampleProps> = ({ content = "lala" }) => {
   return <div className="example">{content}</div>;
 };
-
-/* Example.propTypes = {
-  content: PropTypes.string.isRequired,
-};
-
-Example.defaultProps = {
-  content: "cenoura",
-}; */
 
 export default Example;
