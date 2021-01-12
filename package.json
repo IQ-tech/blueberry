@@ -3,12 +3,13 @@
 	"version": "1.0.0",
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
+	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"asd": "webpack -c config/webpack.prod.js",
-		"build:lib": "gulp build-lib",
+		"generate:types": "tsc --emitDeclarationOnly",
+		"build:lib": "gulp build-lib && yarn generate:types",
 		"dev:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
 		"dev:pug": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/pug",
-		"build:types": "tsc --emitDeclarationOnly",
 		"build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/react"
 	},
 	"repository": {

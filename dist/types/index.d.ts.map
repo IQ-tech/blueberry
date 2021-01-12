@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../src/flavors/react/components/Example/index.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAE1B,UAAU,YAAY;IACpB,OAAO,EAAE,MAAM,CAAC;CACjB;AAED,QAAA,MAAM,OAAO,EAAE,KAAK,CAAC,EAAE,CAAC,YAAY,CAEnC,CAAC;AAEF,eAAe,OAAO,CAAC"}

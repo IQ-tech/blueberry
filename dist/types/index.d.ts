@@ -4,3 +4,4 @@ interface ExampleProps {
 }
 declare const Example: React.FC<ExampleProps>;
 export default Example;
+//# sourceMappingURL=index.d.ts.map
