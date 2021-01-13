@@ -5,7 +5,7 @@ import TagComponent from "../../misc/TagComponent";
 // props used by all heading components (H1, H2, H3 ..)
 interface HeadingProps extends React.HTMLAttributes<HTMLElement> {
   /** Defines de base color for the heading */
-  type: "primary" | "secondary";
+  type: "primary" | "secondary" | "tertiary";
   /** Custom color to be aplied to the heading (Hex, RGB, RGBA...) */
   customColor?: string;
 }
