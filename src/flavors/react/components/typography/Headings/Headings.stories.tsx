@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { H1, H2, H3, H4, H5, H6 } from "./index";
+import "core/base-styles/main.styl";
 
 export default {
   title: "Typography/Heading",
@@ -26,9 +27,9 @@ const createHeaderExample = (Component, text) => {
   return ExampleComponent;
 };
 
-export const HeadingOne = createHeaderExample(H1, "secondary title");
-export const HeadingTwo = createHeaderExample(H2, "secondary title");
-export const HeadingThree = createHeaderExample(H3, "secondary title");
-export const HeadingFour = createHeaderExample(H4, "secondary title");
-export const HeadingFive = createHeaderExample(H5, "secondary title");
-export const HeadingSix = createHeaderExample(H6, "secondary title");
+export const HeadingOne = createHeaderExample(H1, "Heading One");
+export const HeadingTwo = createHeaderExample(H2, "Heading Two");
+export const HeadingThree = createHeaderExample(H3, "Heading Three");
+export const HeadingFour = createHeaderExample(H4, "Heading Four");
+export const HeadingFive = createHeaderExample(H5, "Heading Five");
+export const HeadingSix = createHeaderExample(H6, "Heading Six");

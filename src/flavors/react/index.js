@@ -1,8 +1,8 @@
 // React lib entry point
 
-
 // typography
-export { H1, H2, H3, H4, H5, H6 } from "./components/typography/Headings"
+export { H1, H2, H3, H4, H5, H6 } from "./components/typography/Headings";
 
 // misc
-export { default as TagComponent } from  "./components/misc/TagComponent"
+export { default as TagComponent } from "./components/misc/TagComponent";
+export { default as If } from "./components/misc/If";
