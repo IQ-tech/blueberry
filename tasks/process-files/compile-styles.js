@@ -7,7 +7,7 @@ const webpackProdConfig = require("../../config/webpack.prod");
  */
 function compileStylesFileTask() {
 	const customConfigs = {
-		entry: "./src/core/index.js",
+		entry: "./src/main.js",
 		output: {
 			filename: "main.js",
 			libraryTarget: "umd",

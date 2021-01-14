@@ -14,7 +14,7 @@ const buildLibTask = series(
 	cleanDistTask,
 	parallel(moveCoreFilesToDistTask, movePugFilesToDistTask),
 	compileStylesFileTask,
-	bundleReactLibTask
+	/* bundleReactLibTask */
 );
 
 module.exports = buildLibTask;
