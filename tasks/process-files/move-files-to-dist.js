@@ -1,4 +1,4 @@
-const { src, dest } = require("gulp");
+const { src, dest, parallel } = require("gulp");
 
 // make all styl files and json tokens available to be consumed on dist
 function moveCoreFilesToDistTask() {
@@ -14,4 +14,15 @@ function movePugFilesToDistTask() {
 	return src("src/flavors/pug/**/*.pug").pipe(dest("dist/pug/"));
 }
 
-module.exports = { moveCoreFilesToDistTask, movePugFilesToDistTask };
+// move font files
+function moveFontsToDistTask() {
+	return src("src/fonts/**/*.woff2").pipe(dest("dist/fonts/"));
+}
+
+const moveFilesToDistTask = parallel(
+	moveCoreFilesToDistTask,
+	movePugFilesToDistTask,
+	/* moveFontsToDistTask */
+);
+
+module.exports = moveFilesToDistTask;
