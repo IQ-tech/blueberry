@@ -31,6 +31,11 @@ module.exports = {
 				exclude: "/node_modules/",
 			},
 			{
+				test: /\.(woff|woff2|eot|ttf)$/,
+				loader:
+					"file-loader?mimetype=application/font-woff&name=fonts/[name].[ext]",
+			},
+			{
 				test: /\.styl$/,
 				use: [
 					MiniCssExtractPlugin.loader,
