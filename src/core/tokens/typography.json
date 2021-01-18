@@ -1,3 +1,64 @@
 {
-	"headerSize": "42px"
+	"heading": {
+		"one": {
+			"desk": {
+				"size": "40px",
+				"line": "48px"
+			},
+			"mobile": {
+				"size": "40px",
+				"line": "48px"
+			}
+		},
+		"two": {
+			"desk": {
+				"size": "40px",
+				"line": "48px"
+			},
+			"mobile": {
+				"size": "40px",
+				"line": "48px"
+			}
+		},
+		"three": {
+			"desk": {
+				"size": "40px",
+				"line": "48px"
+			},
+			"mobile": {
+				"size": "40px",
+				"line": "48px"
+			}
+		},
+		"four": {
+			"desk": {
+				"size": "40px",
+				"line": "48px"
+			},
+			"mobile": {
+				"size": "40px",
+				"line": "48px"
+			}
+		},
+		"five": {
+			"desk": {
+				"size": "40px",
+				"line": "48px"
+			},
+			"mobile": {
+				"size": "40px",
+				"line": "48px"
+			}
+		},
+		"six": {
+			"desk": {
+				"size": "40px",
+				"line": "48px"
+			},
+			"mobile": {
+				"size": "40px",
+				"line": "48px"
+			}
+		}
+	}
 }
