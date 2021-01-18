@@ -2,63 +2,69 @@
 	"heading": {
 		"one": {
 			"desk": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			},
 			"mobile": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			}
 		},
 		"two": {
 			"desk": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			},
 			"mobile": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			}
 		},
 		"three": {
 			"desk": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			},
 			"mobile": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			}
 		},
 		"four": {
 			"desk": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			},
 			"mobile": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			}
 		},
 		"five": {
 			"desk": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			},
 			"mobile": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			}
 		},
 		"six": {
 			"desk": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			},
 			"mobile": {
-				"size": "40px",
-				"line": "48px"
+				"font-size": "40px",
+				"line-height": "48px"
 			}
 		}
+	},
+	"button": {
+		"font-family": "Open Sans",
+		"font-weight": "600",
+		"font-size": "14px",
+		"line-height": "22px"
 	}
 }

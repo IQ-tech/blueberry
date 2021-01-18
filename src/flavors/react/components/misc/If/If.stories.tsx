@@ -3,7 +3,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import If from "./Index";
 
 export default {
-  title: "Misc/If",
+  title: "Components/Utils/If",
   component: If,
   parameters: {
     docs: {

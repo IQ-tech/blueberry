@@ -1,0 +1,107 @@
+@import '../variables.styl'
+
+$border-size = 2px
+$horizontal-borders = 'calc(%s * 2)' % $border-size
+
+.btn
+	font-family button-font-family
+	font-weight button-font-weight
+	font-size button-font-size
+	line-height button-line-height
+	outline none
+	cursor pointer
+	border none
+	border-radius 4px
+	text-align center
+	padding 13px 16px
+	background-color blueberry-60
+	color gray-0
+	transition background-color 0.15s ease-in, border-color 0.15s ease-in, color 0.15s ease-in // padronizar depois as animações
+
+	// Button types and color variations
+	// Primary default
+	&, &--type-primary, &--type-primary&--color-default
+		background-color blueberry-60
+		border $border-size solid blueberry-60
+		color gray-0
+
+		&:hover
+			background-color blueberry-50
+			border-color blueberry-50
+
+		&:active
+			background-color blueberry-70
+			border-color blueberry-70
+
+	// Primary inverted
+	&--type-primary&--color-inverted
+		background-color cyan-30
+		border-color cyan-30
+		color blueberry-60
+
+		&:hover
+			background-color cyan-20
+			border-color cyan-20
+
+		&:active
+			background-color cyan-40
+			border-color cyan-40
+
+	
+	// Secondary button
+	&--type-secondary
+		background-color transparent
+		border-color blueberry-60
+		color blueberry-60
+
+		&:hover
+			background-color blueberry-50
+			border-color blueberry-50
+			color gray-0
+
+		&:active
+			background-color blueberry-70
+			border-color blueberry-70
+			color gray-0
+
+	&--type-text
+		&, &:hover
+			background-color transparent
+			border-color transparent
+
+	&--type-text, &--type-text&--color-default
+		color blueberry-60
+
+		&:hover
+			color blueberry-50
+
+		&:active
+			color blueberry-70
+			border-color blueberry-70
+
+	&--type-text&--color-inverted
+		color cyan-30
+
+		&:hover
+			color cyan-30
+
+		&:active
+			color cyan-40
+			border-color cyan-40
+
+	// Button size variations
+	&--size-large
+		padding 'calc(19px - %s) 16px' % $horizontal-borders
+
+	&--size-medium
+		padding 'calc(13px - %s) 16px' % $horizontal-borders
+
+	&--size-small
+		padding 'calc(5px - %s) 16px' % $horizontal-borders
+
+	// Button expansion variations
+	&--expand-x, &--expand-xy
+		width 100%
+
+	&--expand-y, &--expand-xy
+		height 100%

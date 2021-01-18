@@ -3,7 +3,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import TagComponent from "./index";
 
 export default {
-  title: "Misc/TagComponent",
+  title: "Components/Utils/TagComponent",
   component: TagComponent,
   parameters: {
     docs: {
