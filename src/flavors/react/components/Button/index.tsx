@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import If from "../misc/If";
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** Defines the button vertical size */
@@ -35,8 +36,9 @@ const Button: React.FC<ButtonProps> = ({
     [`btn--type-${type}`]: !!type,
     [`btn--size-${size}`]: !!size,
     [`btn--expand-${expand}`]: !!expand,
-    [`btn--color-${color}`]: !!color,
+    [`btn--color-${color}`]: !!color && color !== "default",
     "btn--disabled": !!disabled,
+    "btn--loading": !!loading,
   });
 
   function handleClick(e) {
@@ -46,6 +48,14 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button className={buttonClasses} onClick={handleClick} {...props}>
       {children}
+      <If
+        condition={loading}
+        renderIf={
+          <div className="btn__loading-overlay">
+            <div className="btn__loading-spinner" />
+          </div>
+        }
+      />
     </button>
   );
 };

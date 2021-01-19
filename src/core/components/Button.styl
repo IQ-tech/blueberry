@@ -3,6 +3,10 @@
 $border-size = 2px
 $horizontal-borders = 'calc(%s * 2)' % $border-size
 
+@keyframes spin
+	100%
+		transform rotate(360deg)
+
 .btn
 	font-family button-font-family
 	font-weight button-font-weight
@@ -18,10 +22,9 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 	color gray-0
 	transition background-color 0.15s ease-in, border-color 0.15s ease-in, color 0.15s ease-in // padronizar depois as animações
 
-	// Button types and color variations
-
+	// Color definitions by type and scheme
 	// Primary default
-	&, &--type-primary, &--type-primary&--color-default
+	&
 		background-color blueberry-60
 		border $border-size solid blueberry-60
 		color gray-0
@@ -34,7 +37,8 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			background-color blueberry-70
 			border-color blueberry-70
 
-	&--type-primary&--color-inverted
+	// Primary inverted
+	&--color-inverted
 		background-color cyan-30
 		border-color cyan-30
 		color blueberry-60
@@ -48,7 +52,7 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			border-color cyan-40
 
 	// Primary danger
-	&&--color-danger, &--type-primary&--color-danger
+	&--color-danger
 		background-color red-30
 		border-color red-30
 		color red-100
@@ -61,7 +65,8 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			background-color red-40
 			border-color red-40
 
-	&&--disabled, &--type-primary&--disabled, &--type-primary&--disabled
+	// primary disabled
+	&--disabled
 		&, &:hover, &:active
 			background-color gray-30
 			border-color gray-30
@@ -69,7 +74,7 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			cursor not-allowed
 
 	// Secondary button
-	&--type-secondary, &--type-secondary&--color-default
+	&--type-secondary
 		background-color transparent
 		border-color blueberry-60
 		color blueberry-60
@@ -84,6 +89,7 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			border-color blueberry-70
 			color gray-0
 
+	// Secondary inverted
 	&--type-secondary&--color-inverted
 		border-color cyan-30
 		color cyan-30
@@ -98,6 +104,7 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			border-color cyan-40
 			color blueberry-60
 
+	// Secondary disabled
 	&--type-secondary&--disabled
 		&, &:hover, &:active
 			border-color gray-30
@@ -110,7 +117,8 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			background-color transparent
 			border-color transparent
 
-	&--type-text, &--type-text&--color-default
+	// Type text default
+	&--type-text
 		color blueberry-60
 
 		&:hover
@@ -120,6 +128,7 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			color blueberry-70
 			border-color blueberry-70
 
+	// type text inverted
 	&--type-text&--color-inverted
 		color cyan-30
 
@@ -130,11 +139,63 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			color cyan-40
 			border-color cyan-40
 
+	// type text disabled
 	&--type-text&--disabled
 		&, &:hover, &:active
 			background-color transparent
 			border-color transparent
 			color gray-50
+
+	// loading
+	&--loading, &--type-secondary&--loading, &--type-text&--loading
+		position relative
+		background-color blueberry-60
+		cursor default
+		border-color blueberry-60
+
+		.btn__loading-overlay
+			position absolute
+			width 100%
+			height 100%
+			top 0
+			left 0
+			background-color blueberry-60
+			display flex
+			align-items center
+			justify-content center
+
+		.btn__loading-spinner
+			animation spin 1s infinite linear
+			width 22px
+			height 22px
+			border-radius 50%
+			background-image linear-gradient(to bottom, blueberry-40 40%, blueberry-50)
+			position relative
+			z-index 0
+
+			&:before, &:after
+				content ''
+				display block
+
+			&:before
+				z-index 1
+				height 50%
+				width 100%
+				border-radius 30px 30px 0 0
+				position absolute
+				top 0
+				background-image linear-gradient(to right, transparent 40%, gray-0)
+
+			&:after
+				width 15px
+				height 15px
+				position absolute
+				top 50%
+				left 50%
+				border-radius 50%
+				transform translate(-50%, -50%)
+				background-color blueberry-60
+				z-index 2
 
 	// Button size variations
 	&--size-large

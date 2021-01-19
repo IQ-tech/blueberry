@@ -1,6 +1,9 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import Button from "./index";
+
+//@ts-ignore
+import colors from "core/tokens/colors";
 import "core/components/Button.styl";
 
 export default {
@@ -27,6 +30,9 @@ PrimaryInverted.args = {
   children: "Primary inverted button",
   color: "inverted",
 };
+PrimaryInverted.parameters = {
+  backgrounds: { default: "dark" },
+};
 
 export const PrimaryDanger = Template.bind({});
 PrimaryDanger.args = {
@@ -40,6 +46,12 @@ PrimaryDisabled.args = {
   disabled: true,
 };
 
+export const PrimaryLoading = Template.bind({});
+PrimaryLoading.args = {
+  children: "Primary loading button",
+  loading: true,
+};
+
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: "Secondary button",
@@ -51,6 +63,9 @@ SecondaryInverted.args = {
   children: "Secondary inverted button",
   type: "secondary",
   color: "inverted",
+};
+SecondaryInverted.parameters = {
+  backgrounds: { default: "dark" },
 };
 
 export const SecondaryDisabled = Template.bind({});
@@ -73,11 +88,8 @@ TextButtonInverted.args = {
   color: "inverted",
 };
 
-export const TextButtonDisabled = Template.bind({});
-TextButtonDisabled.args = {
-  children: "Text disabled button",
-  type: "text",
-  disabled: true,
+TextButtonInverted.parameters = {
+  backgrounds: { default: "dark" },
 };
 
 export const Small = Template.bind({});
