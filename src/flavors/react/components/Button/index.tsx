@@ -8,11 +8,14 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   type: "primary" | "secondary" | "text" | "icon";
   /** Button color scheme */
   color: "default" | "inverted" | "danger";
+  /** Disabled style and blocks onClick events */
   disabled: boolean;
+  /** Adds a loading spinner to the button */
+  loading: boolean;
+  /** Defines how the button should expand */
+  expand: "x" | "y" | "xy";
   icon: string;
   iconPosition: "left" | "right";
-  loading: boolean;
-  expand: "x" | "y" | "xy";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -33,6 +36,7 @@ const Button: React.FC<ButtonProps> = ({
     [`btn--size-${size}`]: !!size,
     [`btn--expand-${expand}`]: !!expand,
     [`btn--color-${color}`]: !!color,
+    "btn--disabled": !!disabled,
   });
 
   function handleClick(e) {

@@ -19,5 +19,81 @@ const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: "Main button",
+  children: "Primary button",
+};
+
+export const PrimaryInverted = Template.bind({});
+PrimaryInverted.args = {
+  children: "Primary inverted button",
+  color: "inverted",
+};
+
+export const PrimaryDanger = Template.bind({});
+PrimaryDanger.args = {
+  children: "Primary danger button",
+  color: "danger",
+};
+
+export const PrimaryDisabled = Template.bind({});
+PrimaryDisabled.args = {
+  children: "Primary disabled button",
+  disabled: true,
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  children: "Secondary button",
+  type: "secondary",
+};
+
+export const SecondaryInverted = Template.bind({});
+SecondaryInverted.args = {
+  children: "Secondary inverted button",
+  type: "secondary",
+  color: "inverted",
+};
+
+export const SecondaryDisabled = Template.bind({});
+SecondaryDisabled.args = {
+  children: "secondary disabled button",
+  type: "secondary",
+  disabled: true,
+};
+
+export const TextButton = Template.bind({});
+TextButton.args = {
+  children: "Text button",
+  type: "text",
+};
+
+export const TextButtonInverted = Template.bind({});
+TextButtonInverted.args = {
+  children: "Text inverted button",
+  type: "text",
+  color: "inverted",
+};
+
+export const TextButtonDisabled = Template.bind({});
+TextButtonDisabled.args = {
+  children: "Text disabled button",
+  type: "text",
+  disabled: true,
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  children: "Small button",
+  size: "small",
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  children: "Medium button",
+  size: "medium",
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  children: "Large button",
+  size: "large",
 };
