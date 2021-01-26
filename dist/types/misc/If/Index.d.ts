@@ -8,4 +8,4 @@ export interface IfProps {
 }
 declare const If: ({ condition, renderIf, renderElse }: IfProps) => any;
 export default If;
-//# sourceMappingURL=Index.d.ts.map
+//# sourceMappingURL=index.d.ts.map

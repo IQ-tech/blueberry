@@ -1,3 +1,70 @@
 {
-	"headerSize": "42px"
+	"heading": {
+		"one": {
+			"desk": {
+				"font-size": "40px",
+				"line-height": "48px"
+			},
+			"mobile": {
+				"font-size": "40px",
+				"line-height": "48px"
+			}
+		},
+		"two": {
+			"desk": {
+				"font-size": "32px",
+				"line-height": "40px"
+			},
+			"mobile": {
+				"font-size": "24px",
+				"line-height": "32px"
+			}
+		},
+		"three": {
+			"desk": {
+				"font-size": "28px",
+				"line-height": "36px"
+			},
+			"mobile": {
+				"font-size": "20px",
+				"line-height": "28px"
+			}
+		},
+		"four": {
+			"desk": {
+				"font-size": "24px",
+				"line-height": "32px"
+			},
+			"mobile": {
+				"font-size": "16px",
+				"line-height": "24px"
+			}
+		},
+		"five": {
+			"desk": {
+				"font-size": "20px",
+				"line-height": "28px"
+			},
+			"mobile": {
+				"font-size": "12px",
+				"line-height": "20px"
+			}
+		},
+		"six": {
+			"desk": {
+				"font-size": "16px",
+				"line-height": "24px"
+			},
+			"mobile": {
+				"font-size": "8px",
+				"line-height": "16px"
+			}
+		}
+	},
+	"button": {
+		"font-family": "Open Sans",
+		"font-weight": "600",
+		"font-size": "14px",
+		"line-height": "22px"
+	}
 }
