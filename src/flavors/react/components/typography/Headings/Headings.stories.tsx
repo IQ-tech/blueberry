@@ -4,7 +4,7 @@ import { H1, H2, H3, H4, H5, H6 } from "./index";
 /* import "core/base-styles/main.styl"; */
 
 export default {
-  title: "Typography/Heading",
+  title: "Components/Typography/Heading",
   component: H1,
   parameters: {
     docs: {

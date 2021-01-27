@@ -1,8 +1,46 @@
 @import '../../variables'
 
-.header-classic
-	background-color blueberry-60
-	color red
+$main-blue = #352ca4
+$color-white = #fff
 
-	+aboveSmall()
-		background-color cyan-70
+.header-classic
+	position absolute
+	top 0
+	left 0
+	right 0
+	color $color-white
+	font-family 'Open sans'
+
+	&__navbar
+		background-color $main-blue
+		height 60px
+		display flex
+		align-items center
+
+		+aboveSmall()
+			height 70px
+
+	&__container
+		display flex
+		justify-content space-between
+		align-items center
+		width 100%
+		max-width 1280px
+		margin 0 auto
+		padding-left 15px
+		padding-right 15px
+
+	&__logo
+		height 100%
+		width 100%
+
+	&__logo-link
+		height 46px
+		width 33px
+		display block
+		color $color-white
+		margin-right 20px
+
+	&__panel-right
+		background-color red
+		flex 1
