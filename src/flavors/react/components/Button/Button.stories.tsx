@@ -3,7 +3,6 @@ import { Meta } from "@storybook/react/types-6-0";
 import Button from "./index";
 
 //@ts-ignore
-import colors from "core/tokens/colors";
 import "core/components/Button.styl";
 
 export default {

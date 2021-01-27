@@ -5,12 +5,14 @@
 	"main": "dist/main.js",
 	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"asd": "webpack -c config/webpack.prod.js",
+		"bundle": "webpack -c config/webpack.prod.js",
 		"generate:types": "tsc --emitDeclarationOnly",
 		"build:lib": "gulp build-lib && yarn generate:types",
 		"dev:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
 		"dev:pug": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/pug",
-		"build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/react"
+		"build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/react",
+		"build-storybook:pug": "node_modules/@storybook/html/bin/build.js -c .storybook/pug -o build/static-version",
+		"build-storybook": "yarn build-storybook:react && yarn build-storybook:pug"
 	},
 	"repository": {
 		"type": "git",
