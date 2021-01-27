@@ -4,12 +4,17 @@ $main-blue = #352ca4
 $color-white = #fff
 
 .header-classic
+	*
+		box-sizing border-box
+
 	position absolute
 	top 0
 	left 0
 	right 0
 	color $color-white
 	font-family 'Open sans'
+	font-size 14px
+	font-weight 400
 
 	&__navbar
 		background-color $main-blue
@@ -40,7 +45,49 @@ $color-white = #fff
 		display block
 		color $color-white
 		margin-right 20px
+		transform scale(0.8)
+
+		+aboveMedium()
+			transform scale(1)
 
 	&__panel-right
-		background-color red
 		flex 1
+		display flex
+		justify-content space-between
+
+	&__hamburger
+		display flex
+		background-color transparent
+		outline none
+		border none
+		height 17px
+		width 20px
+		flex-direction column
+		justify-content space-between
+		cursor pointer
+
+		+aboveMedium()
+			display none
+
+	&__hamburger-line
+		background-color $color-white
+		height 1px
+		width 20px
+
+		&--one
+			transition transform 0.75s cubic-bezier(1, -0.4, 0, 1.41)
+			will-change transform
+
+		&--two, &--three
+			transition 0.9s cubic-bezier(0.38, 0.52, 0.11, 1.2)
+			will-change transform, width
+
+	.header-classic__hamburger--close
+		.header-classic__hamburger-line--one
+			transform translateX(270px)
+
+		.header-classic__hamburger-line--two
+			transform rotate(45deg)
+
+		.header-classic__hamburger-line--three
+			transform rotate(-45deg) translate(6px, -6px)
