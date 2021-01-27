@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { NavigationLink } from "./types";
 
 export const HamburgerButton = ({ isOpen, onToggleMenu }) => {
   const componentClass = classNames("header-classic__hamburger", {
@@ -34,5 +35,38 @@ export const IqLogo = ({ onClick }) => {
         ></path>
       </svg>
     </a>
+  );
+};
+
+const DesktopSubmenu = () => {};
+
+const DesktopNavigationLink = ({
+  label,
+  href,
+  isActive,
+  subLinks,
+}: NavigationLink) => {
+  const linkClass = classNames("header-classic__desktop-navigation-link", {
+    "header-classic__desktop-navigation-link--active": !!isActive,
+  });
+  return (
+    <li className="header-classic__desktop-navigation-item">
+      <a className={linkClass} href={href}>
+        {label}
+      </a>
+    </li>
+  );
+};
+
+export const DesktopNavigation = ({ links }: { links: NavigationLink[] }) => {
+  return (
+    <ul className="header-classic__desktop-navigation">
+      {links.map((link, index) => (
+        <DesktopNavigationLink
+          {...link}
+          key={`desk-navigation-link-${index}`}
+        />
+      ))}
+    </ul>
   );
 };

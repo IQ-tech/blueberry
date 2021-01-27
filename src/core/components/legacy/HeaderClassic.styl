@@ -7,12 +7,15 @@ $color-white = #fff
 	*
 		box-sizing border-box
 
+	ul
+		list-style none
+
 	position absolute
 	top 0
 	left 0
 	right 0
 	color $color-white
-	font-family 'Open sans'
+	font-family 'Open Sans', sans-serif
 	font-size 14px
 	font-weight 400
 
@@ -91,3 +94,28 @@ $color-white = #fff
 
 		.header-classic__hamburger-line--three
 			transform rotate(-45deg) translate(6px, -6px)
+
+	&__desktop-navigation
+		display flex
+		margin-left 30px
+
+	&__desktop-navigation-item
+		&:not(:first-of-type)
+			margin-left 10px
+
+	&__desktop-navigation-link
+		color $color-white
+		text-decoration none
+		display block
+		padding 10px 15px
+		font-weight 400
+		border-radius 20px
+		font-size 14px
+		border 1.5px solid transparent
+		transition border 0.3s ease
+
+		&:hover
+			border-color #251f73
+
+		&--active
+			border-color #0de3f2

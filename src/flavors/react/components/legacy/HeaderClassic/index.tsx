@@ -1,28 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classNames from "classnames";
 import If from "../../misc/If";
-import { IqLogo, HamburgerButton } from "./Subcomponents";
 
+import { HeaderClassicProps } from "./types";
+import { IqLogo, HamburgerButton, DesktopNavigation } from "./Subcomponents";
 import useClassicHeader from "./hooks";
 
-interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
-  /** Dislpays user name and a menu that redirects iq logged pages if true */
-  isLogged?: boolean;
-  /** Displays sign in and sign up buttons if not isLogged */
-  showAuthButtons?: boolean;
-  /** Displays notifications bell */
-  showNotifications?: boolean;
-  /** Notifications number to show on the icon bell */
-  notificationsNumber?: number;
-  /** Username to be displayed if isLogged */
-  userName?: string;
-  /** Callback to run on open the mobile version of the menu */
-  onOpenMenu?: (e: any) => any;
-  /** Callback function to run when user click on logout button */
-  onLogout?: (e: any) => any;
-}
-
-const HeaderClassic: React.FC<HeaderClassicProps> = ({ isLogged = false }) => {
+const HeaderClassic: React.FC<HeaderClassicProps> = ({
+  isLogged = false,
+  filterLoggedMenuItems,
+}) => {
   const headerClass = classNames("header-classic", {
     "header-classic--logged": !!isLogged,
   });
@@ -32,7 +19,8 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({ isLogged = false }) => {
     goToHomePage,
     isMobileMenuOpen,
     toggleMobileMenu,
-  } = useClassicHeader({ isLogged });
+    loggedoutNavigationLinks,
+  } = useClassicHeader({ isLogged, filterLoggedMenuItems });
 
   return (
     <header className={headerClass}>
@@ -46,7 +34,9 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({ isLogged = false }) => {
               condition={isLogged}
               renderIf={<p>username</p>}
               renderElse={
-                <div className="header-classic__navigation">navigation</div>
+                <Fragment>
+                  <DesktopNavigation links={loggedoutNavigationLinks} />
+                </Fragment>
               }
             />
             <HamburgerButton

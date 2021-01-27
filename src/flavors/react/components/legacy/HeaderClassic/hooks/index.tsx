@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { loggedoutNavigationLinks } from "./data";
 
-function useClassicHeader({ isLogged }: { isLogged: boolean | undefined }) {
+function useClassicHeader({ isLogged, filterLoggedMenuItems }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   function goToHomePage(e: React.MouseEvent<HTMLElement>) {
@@ -18,6 +19,9 @@ function useClassicHeader({ isLogged }: { isLogged: boolean | undefined }) {
     goToHomePage,
     isMobileMenuOpen,
     toggleMobileMenu,
+    loggedoutNavigationLinks: filterLoggedMenuItems
+      ? filterLoggedMenuItems(loggedoutNavigationLinks)
+      : loggedoutNavigationLinks,
   };
 }
 
