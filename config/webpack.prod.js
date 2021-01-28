@@ -9,6 +9,7 @@ module.exports = {
 	output: {
 		filename: "main.js",
 		libraryTarget: "umd",
+		globalObject: "this",
 	},
 	externals: {
 		react: "react", //this config keeps react out of the bundle
