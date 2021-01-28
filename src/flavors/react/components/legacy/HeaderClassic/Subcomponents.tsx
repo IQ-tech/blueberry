@@ -16,10 +16,6 @@ export const HamburgerButton = ({ isOpen, onToggleMenu }) => {
   );
 };
 
-export const LoggedOutOutNavigation = ({ showAuthButtons }) => {
-  return <nav></nav>;
-};
-
 export const IqLogo = ({ onClick }) => {
   return (
     <a href="#" onClick={onClick} className="header-classic__logo-link">
@@ -38,19 +34,21 @@ export const IqLogo = ({ onClick }) => {
   );
 };
 
+const AuthButtons = () => {};
+
 const DesktopSubmenu = () => {};
 
-const DesktopNavigationLink = ({
+const LoggedOutNavigationLink = ({
   label,
   href,
   isActive,
   subLinks,
 }: NavigationLink) => {
-  const linkClass = classNames("header-classic__desktop-navigation-link", {
-    "header-classic__desktop-navigation-link--active": !!isActive,
+  const linkClass = classNames("header-classic__logged-out-navigation-link", {
+    "header-classic__logged-out-navigation-link--active": !!isActive,
   });
   return (
-    <li className="header-classic__desktop-navigation-item">
+    <li className="header-classic__logged-out-navigation-item">
       <a className={linkClass} href={href}>
         {label}
       </a>
@@ -58,15 +56,17 @@ const DesktopNavigationLink = ({
   );
 };
 
-export const DesktopNavigation = ({ links }: { links: NavigationLink[] }) => {
+export const LoggedOutNavigation = ({ links }: { links: NavigationLink[] }) => {
   return (
-    <ul className="header-classic__desktop-navigation">
-      {links.map((link, index) => (
-        <DesktopNavigationLink
-          {...link}
-          key={`desk-navigation-link-${index}`}
-        />
-      ))}
-    </ul>
+    <div className="header-classic__logged-out-navigation">
+      <ul className="header-classic__logged-out-navigation-list">
+        {links.map((link, index) => (
+          <LoggedOutNavigationLink
+            {...link}
+            key={`desk-navigation-link-${index}`}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };

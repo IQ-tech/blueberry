@@ -2,6 +2,7 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import HeaderClassic from "./index";
 
+import "core/fonts.styl";
 import "core/components/legacy/HeaderClassic.styl";
 
 export default {

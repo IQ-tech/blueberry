@@ -1,7 +1,9 @@
 @import '../../variables'
 
 $main-blue = #352ca4
+$color-blue-light = #0de3f2
 $color-white = #fff
+$header-mobile-height = 60px
 
 .header-classic
 	*
@@ -56,7 +58,10 @@ $color-white = #fff
 	&__panel-right
 		flex 1
 		display flex
-		justify-content space-between
+		justify-content flex-end
+
+		+aboveMedium()
+			justify-content space-between
 
 	&__hamburger
 		display flex
@@ -95,27 +100,81 @@ $color-white = #fff
 		.header-classic__hamburger-line--three
 			transform rotate(-45deg) translate(6px, -6px)
 
-	&__desktop-navigation
+	// Menu holder
+	&__menu-holder
+		width 100vw
+		height 'calc(100vh - %s)' % $header-mobile-height
+		position fixed
+		background-color $main-blue
+		top $header-mobile-height
+		left 0
+		transform translateX(-100vw)
+		transition transform 0.3s ease-in
+
+		+aboveMedium()
+			width auto
+			height auto
+			position static
+			transform translateX(0)
+
+	&--menu-mobile-open &__menu-holder
+		transform translateX(0)
+
+	&--logged .header-classic__menu-holder
+		background-color red
+		height 100vh
+		top 0
+
+	&__logged-out-navigation
 		display flex
-		margin-left 30px
+		flex-direction column
+		height 100%
+		width 100%
+		justify-content center
 
-	&__desktop-navigation-item
-		&:not(:first-of-type)
-			margin-left 10px
+		+aboveMedium()
+			margin-left 30px
+			flex-direction row
+			justify-content flex-start
 
-	&__desktop-navigation-link
+	&__logged-out-navigation-list
+		display flex
+		flex-direction column
+		max-width 250px
+		margin 0 auto
+
+		+aboveMedium()
+			flex-direction row
+			margin 0
+			max-width none
+
+	&__logged-out-navigation-item
+		+aboveMedium()
+			&:not(:first-of-type)
+				margin-left 10px
+
+	&__logged-out-navigation-link
 		color $color-white
 		text-decoration none
 		display block
-		padding 10px 15px
+		padding 20px
 		font-weight 400
 		border-radius 20px
-		font-size 14px
-		border 1.5px solid transparent
+		font-size 18px
 		transition border 0.3s ease
 
-		&:hover
-			border-color #251f73
-
 		&--active
-			border-color #0de3f2
+			color $color-blue-light
+			font-weight 700
+
+		+aboveMedium()
+			font-size 14px
+			padding 10px 15px
+			border 1.5px solid transparent
+
+			&:hover
+				border-color #251f73
+
+			&--active
+				border-color $color-blue-light
+				font-weight 400

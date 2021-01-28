@@ -3,17 +3,13 @@ import classNames from "classnames";
 import If from "../../misc/If";
 
 import { HeaderClassicProps } from "./types";
-import { IqLogo, HamburgerButton, DesktopNavigation } from "./Subcomponents";
+import { IqLogo, HamburgerButton, LoggedOutNavigation } from "./Subcomponents";
 import useClassicHeader from "./hooks";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
   isLogged = false,
   filterLoggedMenuItems,
 }) => {
-  const headerClass = classNames("header-classic", {
-    "header-classic--logged": !!isLogged,
-  });
-
   const {
     unloggedMenuItems,
     goToHomePage,
@@ -22,6 +18,11 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     loggedoutNavigationLinks,
   } = useClassicHeader({ isLogged, filterLoggedMenuItems });
 
+  const headerClass = classNames("header-classic", {
+    "header-classic--logged": isLogged,
+    "header-classic--menu-mobile-open": isMobileMenuOpen,
+  });
+
   return (
     <header className={headerClass}>
       <nav className="header-classic__navbar">
@@ -29,16 +30,17 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
           <div className="header-classic__panel-left">
             <IqLogo onClick={goToHomePage} />
           </div>
+
           <div className="header-classic__panel-right">
-            <If
-              condition={isLogged}
-              renderIf={<p>username</p>}
-              renderElse={
-                <Fragment>
-                  <DesktopNavigation links={loggedoutNavigationLinks} />
-                </Fragment>
-              }
-            />
+            <div className="header-classic__menu-holder">
+              <If
+                condition={isLogged}
+                renderIf={<p>username</p>}
+                renderElse={
+                  <LoggedOutNavigation links={loggedoutNavigationLinks} />
+                }
+              />
+            </div>
             <HamburgerButton
               isOpen={isMobileMenuOpen}
               onToggleMenu={toggleMobileMenu}

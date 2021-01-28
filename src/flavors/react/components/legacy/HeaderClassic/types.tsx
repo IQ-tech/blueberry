@@ -15,6 +15,9 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   onLogout?: (e: any) => any;
   /** filter displayed navigation itens, or set current page active item */
   filterLoggedMenuItems?: (links: NavigationLink[]) => NavigationLink[];
+  /** Alternative link to register page */
+  registerLink?: string;
+  /** Use transparent version, color is added on scroll */
 }
 
 export interface NavigationLink {
