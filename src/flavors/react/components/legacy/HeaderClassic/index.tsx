@@ -11,6 +11,7 @@ import useClassicHeader from "./hooks";
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
   isLogged = false,
   filterLoggedMenuItems,
+  showAuthButtons = true,
 }) => {
   const {
     unloggedMenuItems,
@@ -18,11 +19,15 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     isMobileMenuOpen,
     toggleMobileMenu,
     loggedoutNavigationLinks,
+    openSubmenu,
+    closeSubmenu,
+    isSubmenuOpen,
   } = useClassicHeader({ isLogged, filterLoggedMenuItems });
 
   const headerClass = classNames("header-classic", {
     "header-classic--logged": isLogged,
     "header-classic--menu-mobile-open": isMobileMenuOpen,
+    "header-classic--submenu-open": isSubmenuOpen,
   });
 
   return (
@@ -39,7 +44,13 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                 condition={isLogged}
                 renderIf={<p>username</p>}
                 renderElse={
-                  <LoggedOutNavigation links={loggedoutNavigationLinks} />
+                  <LoggedOutNavigation
+                    showAuthButtons={showAuthButtons}
+                    links={loggedoutNavigationLinks}
+                    openSubmenu={openSubmenu}
+                    closeSubmenu={closeSubmenu}
+                    isSubmenuOpen={isSubmenuOpen}
+                  />
                 }
               />
             </div>
@@ -50,7 +61,6 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
           </div>
         </div>
       </nav>
-      my header
     </header>
   );
 };

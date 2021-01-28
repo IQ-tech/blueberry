@@ -3,6 +3,7 @@ import { loggedoutNavigationLinks } from "./data";
 
 function useClassicHeader({ isLogged, filterLoggedMenuItems }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
 
   function goToHomePage(e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();
@@ -14,11 +15,23 @@ function useClassicHeader({ isLogged, filterLoggedMenuItems }) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
+  function openSubmenu(e) {
+    e.preventDefault();
+    setIsMobileSubmenuOpen(true);
+  }
+
+  function closeSubmenu() {
+    setIsMobileSubmenuOpen(false);
+  }
+
   return {
     unloggedMenuItems: [],
     goToHomePage,
     isMobileMenuOpen,
     toggleMobileMenu,
+    openSubmenu,
+    closeSubmenu,
+    isSubmenuOpen,
     loggedoutNavigationLinks: filterLoggedMenuItems
       ? filterLoggedMenuItems(loggedoutNavigationLinks)
       : loggedoutNavigationLinks,
