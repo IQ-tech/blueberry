@@ -1,4 +1,5 @@
 import React from "react";
-declare const HeaderClassic: React.FC;
+import { HeaderClassicProps } from "./types";
+declare const HeaderClassic: React.FC<HeaderClassicProps>;
 export default HeaderClassic;
 //# sourceMappingURL=index.d.ts.map
