@@ -1,9 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import classNames from "classnames";
 import If from "../../misc/If";
 
 import { HeaderClassicProps } from "./types";
-import { IqLogo, HamburgerButton, LoggedOutNavigation } from "./Subcomponents";
+import IqLogo from "./subcomponents/IqLogo";
+import HamburgerButton from "./subcomponents/HamburgerButton";
+import LoggedOutNavigation from "./subcomponents/LoggedOutNavigation";
 import useClassicHeader from "./hooks";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
