@@ -464,6 +464,13 @@ $header-desk-height = 70px
 		font-size 14px
 		font-weight 900
 
+	&__logged-links-icon-holder
+		svg
+			width 20px
+			height 20px
+			color #666
+			margin-right 18px
+
 	&__logged-in-menu-header-profile
 		color #483fb1
 		text-decoration underline
@@ -515,9 +522,22 @@ $header-desk-height = 70px
 		text-decoration none
 		font-size 14px
 		transition background-color 0.2s ease-in
+		display flex
+		align-items center
+
 
 		&:hover
 			background-color $color-blue-dark
+
+		svg
+			color #bfb8ff
+			height 15px
+			width 15px
+
+		.bills
+			margin-right 12px
+		.arrow
+			margin-left auto
 
 	&__logged-links-list
 		width 100%

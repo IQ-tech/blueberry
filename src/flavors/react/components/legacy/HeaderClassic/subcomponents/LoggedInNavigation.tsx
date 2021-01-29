@@ -2,6 +2,8 @@ import React from "react";
 import FirstLetterIcon from "./FirstLetterIcon";
 import classNames from "classnames";
 import { loggedMenuLinks } from "../data";
+import If from "../../../misc/If";
+import AddBillsButton from "./AddBillsButton";
 
 const LoggedInMenuHeader = ({ username }) => {
   return (
@@ -45,14 +47,21 @@ const LoggedInNavigation = ({ username }) => {
         <LoggedInMenuHeader username={username} />
         <div className="header-classic__logged-menu-actions">
           <div className="header-classic__add-new-bill">
-            <a href="#" className="header-classic__add-new-bill-button">
-              Adicionar nova conta
-            </a>
+            <AddBillsButton />
           </div>
           <ul className="header-classic__logged-links-list">
-            {loggedMenuLinks.map(({ label, separator }) => (
+            {loggedMenuLinks.map(({ label, separator, rawIcon }) => (
               <li className={getItemClass(separator)}>
                 <a href="#" className="header-classic__logged-links-link">
+                  <If
+                    condition={!!rawIcon}
+                    renderIf={
+                      <div
+                        className="header-classic__logged-links-icon-holder"
+                        dangerouslySetInnerHTML={{ __html: rawIcon }}
+                      />
+                    }
+                  />
                   {label}
                 </a>
               </li>

@@ -1,4 +1,5 @@
 import { NavigationLink, LoggedNavigationLink } from "./types";
+import { loggedMenuItemsIcons } from "./icons";
 
 export const loggedoutNavigationLinks: NavigationLink[] = [
   {
@@ -43,13 +44,35 @@ export const loggedoutNavigationLinks: NavigationLink[] = [
 ];
 
 export const loggedMenuLinks: LoggedNavigationLink[] = [
-  { label: "Home", path: "/app", rawIcon: "" },
-  { label: "Proximas contas", path: "/app", rawIcon: "" },
-  { label: "Comprovante", path: "/app", rawIcon: "" },
-  { label: "Forma de pagamento", path: "/app", rawIcon: "" },
-  { label: "Convidar amigos", path: "/app", rawIcon: "", separator: true },
-  { label: "Perfil", path: "/app", rawIcon: "" },
-  { label: "Gerenciar notificações", path: "/app", rawIcon: "" },
-  { label: "Ajuda", path: "/app", rawIcon: "" },
-  { label: "Sair da conta", path: "/app", rawIcon: "", separator: true },
+  { label: "Home", path: "/app", rawIcon: loggedMenuItemsIcons.home },
+  {
+    label: "Proximas contas",
+    path: "/app",
+    rawIcon: loggedMenuItemsIcons.calendar,
+  },
+  { label: "Comprovante", path: "/app", rawIcon: loggedMenuItemsIcons.money },
+  {
+    label: "Forma de pagamento",
+    path: "/app",
+    rawIcon: loggedMenuItemsIcons.cards,
+  },
+  {
+    label: "Convidar amigos",
+    path: "/app",
+    rawIcon: loggedMenuItemsIcons.gift,
+    separator: true,
+  },
+  { label: "Perfil", path: "/app", rawIcon: loggedMenuItemsIcons.person },
+  {
+    label: "Gerenciar notificações",
+    path: "/app",
+    rawIcon: loggedMenuItemsIcons.bell,
+  },
+  { label: "Ajuda", path: "/app", rawIcon: loggedMenuItemsIcons.floater },
+  {
+    label: "Sair da conta",
+    path: "/app",
+    rawIcon: loggedMenuItemsIcons.signOut,
+    separator: true,
+  },
 ];
