@@ -17,7 +17,7 @@ phases:
       - yarn build-storybook
 
       - >
-        aws s3 sync public "$S3_URI"
+        aws s3 sync build "$S3_URI"
         --region "$AWS_DEFAULT_REGION"
         --acl public-read
         --exclude '*.gitkeep'
@@ -25,7 +25,7 @@ phases:
         --cache-control 'max-age=3888000'
         --delete
       - >
-        aws s3 sync public "$S3_URI"
+        aws s3 sync build "$S3_URI"
         --region "$AWS_DEFAULT_REGION"
         --acl public-read
         --exclude '*'
