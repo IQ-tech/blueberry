@@ -159,6 +159,8 @@ $header-mobile-height = 60px
 
 	&__logged-out-navigation-item
 		+aboveMedium()
+			position relative
+
 			&:not(:first-of-type)
 				margin-left 10px
 
@@ -289,11 +291,28 @@ $header-mobile-height = 60px
 			background-repeat no-repeat
 
 		+aboveMedium()
+			position absolute
+			top 100%
+			width 200px
+			height auto
+			opacity 0
+			visibility hidden
+			transform translateY(-20px)
+			transition opacity 0.3s cubic-bezier(0.69, 0.01, 0.25, 1), transform 0.3s cubic-bezier(0.69, 0.01, 0.25, 1)
+
 			&::before, &::after
 				display none
 
 	&--submenu-open &__submenu
 		transform translateX(0)
+
+	&__logged-out-navigation-link--submenu
+		+aboveMedium()
+			&:hover ~ .header-classic__submenu
+				transform translateY(10px)
+				opacity 1
+				visibility visible
+				z-index 2
 
 	&__close-submenu
 		position fixed
@@ -323,6 +342,11 @@ $header-mobile-height = 60px
 		&:first-of-type
 			margin-top 200px
 
+		+aboveMedium()
+			&:first-of-type
+				margin-top 0
+				border-top 4px solid #0de3f2
+
 	&__sublink
 		color $color-white
 		max-width 300px
@@ -330,5 +354,14 @@ $header-mobile-height = 60px
 		display block
 		padding 20px
 		font-size 18px
-		text-decoration: none 
+		text-decoration none
 		font-weight 400
+
+		+aboveMedium()
+			background-color #f2f2f2
+			color #1c1277
+			padding 15px 20px
+			transition background 0.3s cubic-bezier(0.69, 0.01, 0.25, 1), font-weight 0.3s cubic-bezier(0.69, 0.01, 0.25, 1)
+			font-size 14px
+			font-weight 300
+			border-top 1px solid #d7d5f4

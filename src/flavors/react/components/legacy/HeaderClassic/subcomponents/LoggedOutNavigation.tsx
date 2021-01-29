@@ -7,13 +7,14 @@ const LoggedOutNavigationLink = ({
   label,
   href,
   isActive,
-  subLinks= [],
+  subLinks = [],
   openSubmenu,
   closeSubmenu,
   isSubmenuOpen,
 }) => {
   const linkClass = classNames("header-classic__logged-out-navigation-link", {
     "header-classic__logged-out-navigation-link--active": !!isActive,
+    "header-classic__logged-out-navigation-link--submenu": !!subLinks.length,
   });
   return (
     <li className="header-classic__logged-out-navigation-item">
