@@ -261,7 +261,7 @@ $header-mobile-height = 60px
 		left 0
 		top -60px
 		transition transform 0.41s cubic-bezier(0.69, 0.01, 0.25, 1)
-		transform translateX(100%)
+		transform translateX(200%)
 
 		&::before
 			content ''
@@ -272,9 +272,24 @@ $header-mobile-height = 60px
 			height 145px
 			background-color #1c1277
 
+		&::after
+			content attr(data-subtext)
+			color #0de3f2
+			font-size 20px
+			position absolute
+			bottom calc(100% - 146px)
+			padding-bottom 25px
+			left 50px
+			font-weight 700
+			transform translateX(-20px)
+			transition opacity 0.1s cubic-bezier(0.69, 0.01, 0.25, 1) 0.68s, transform 0.1s cubic-bezier(0.69, 0.01, 0.25, 1) 0.68s
+			background linear-gradient(90deg, #0de3f2 50%, transparent 0)
+			background-position 0 100%
+			background-size 64px 3px
+			background-repeat no-repeat
+
 		+aboveMedium()
-			&::before,
-			&::after
+			&::before, &::after
 				display none
 
 	&--submenu-open &__submenu
@@ -303,3 +318,17 @@ $header-mobile-height = 60px
 		transition-duration 0.77s
 		transition-delay 0.3425s
 		z-index 2
+
+	&__subitem
+		&:first-of-type
+			margin-top 200px
+
+	&__sublink
+		color $color-white
+		max-width 300px
+		margin 0 auto
+		display block
+		padding 20px
+		font-size 18px
+		text-decoration: none 
+		font-weight 400

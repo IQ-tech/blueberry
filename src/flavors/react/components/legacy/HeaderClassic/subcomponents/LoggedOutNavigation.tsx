@@ -21,7 +21,7 @@ const LoggedOutNavigationLink = ({
         {label}
       </a>
       <If
-        condition={!!subLinks}
+        condition={!!subLinks.length}
         renderIf={
           <ul className="header-classic__submenu" data-subtext={label}>
             {subLinks.map(({ label, href }) => (
