@@ -10,7 +10,7 @@ import LoggedInNavigation from "./subcomponents/LoggedInNavigation";
 import useClassicHeader from "./hooks";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
-  isLogged = false,
+  isLogged = true,
   filterLoggedMenuItems,
   showAuthButtons = true,
   username = "username",

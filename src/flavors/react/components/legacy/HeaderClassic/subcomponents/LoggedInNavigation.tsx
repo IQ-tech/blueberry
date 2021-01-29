@@ -28,6 +28,18 @@ const LoggedInNavigation = ({ username }) => {
       <div className="header-classic__logged-in-desk-name-holder">
         <FirstLetterIcon word={username} customModifier="desk-external" />
         <p className="header-classic__logged-in-desk-name">{username}</p>
+
+        <svg
+          viewBox="0 0 9.7 5.7"
+          className="header-classic__logged-in-arrow-down"
+        >
+          <path
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth=".5"
+            d="M8.8.4L4.9 4.2.9.4.4.9l4.5 4.5L9.4.9z"
+          />
+        </svg>
       </div>
       <div className="header-classic__logged-menu">
         <LoggedInMenuHeader username={username} />
