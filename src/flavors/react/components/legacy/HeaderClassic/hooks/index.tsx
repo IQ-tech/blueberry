@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { loggedoutNavigationLinks } from "./data";
+import { loggedoutNavigationLinks } from "../data";
 
-function useClassicHeader({ isLogged, filterLoggedMenuItems }) {
+function capitalize(word: string): string {
+  const lower = word.toLowerCase();
+  return word.charAt(0).toUpperCase() + lower.slice(1);
+}
+
+function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
 
@@ -32,6 +37,7 @@ function useClassicHeader({ isLogged, filterLoggedMenuItems }) {
     openSubmenu,
     closeSubmenu,
     isSubmenuOpen,
+    formattedUsername: capitalize(username),
     loggedoutNavigationLinks: filterLoggedMenuItems
       ? filterLoggedMenuItems(loggedoutNavigationLinks)
       : loggedoutNavigationLinks,

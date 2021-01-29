@@ -27,3 +27,10 @@ export interface NavigationLink {
   subLinks?: NavigationLink[];
   isActive?: boolean;
 }
+
+export interface LoggedNavigationLink {
+  label: string;
+  path: string;
+  separator?: boolean;
+  rawIcon?: string;
+}

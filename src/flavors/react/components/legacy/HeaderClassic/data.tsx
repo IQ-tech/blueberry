@@ -1,4 +1,4 @@
-import { NavigationLink } from "../types";
+import { NavigationLink, LoggedNavigationLink } from "./types";
 
 export const loggedoutNavigationLinks: NavigationLink[] = [
   {
@@ -40,4 +40,16 @@ export const loggedoutNavigationLinks: NavigationLink[] = [
     label: "FAQ",
     href: "https://www.iq.com.br/faq",
   },
+];
+
+export const loggedMenuLinks: LoggedNavigationLink[] = [
+  { label: "Home", path: "/app", rawIcon: "" },
+  { label: "Proximas contas", path: "/app", rawIcon: "" },
+  { label: "Comprovante", path: "/app", rawIcon: "" },
+  { label: "Forma de pagamento", path: "/app", rawIcon: "" },
+  { label: "Convidar amigos", path: "/app", rawIcon: "", separator: true },
+  { label: "Perfil", path: "/app", rawIcon: "" },
+  { label: "Gerenciar notificações", path: "/app", rawIcon: "" },
+  { label: "Ajuda", path: "/app", rawIcon: "" },
+  { label: "Sair da conta", path: "/app", rawIcon: "", separator: true },
 ];

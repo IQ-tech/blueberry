@@ -1,7 +1,6 @@
 @import '../../variables'
 
 // Logged-in and logged-out versions implemented
-
 $main-blue = #352ca4
 $color-blue-light = #0de3f2
 $color-blue-dark = #1c1277
@@ -69,7 +68,7 @@ $header-desk-height = 70px
 
 	&--logged &__panel-right
 		+aboveMedium()
-			justify-content: flex-end
+			justify-content flex-end
 
 	&__hamburger
 		display flex
@@ -136,7 +135,6 @@ $header-desk-height = 70px
 		z-index 2
 
 	&--logged .header-classic__menu-holder
-		background-color red
 		height 100vh
 		top 0
 		display flex
@@ -397,13 +395,59 @@ $header-desk-height = 70px
 
 		+aboveMedium()
 			display block
-			background-color orange
 			height 100%
 			cursor pointer
+			display flex
+			align-items center
+
+	&__letter-circle
+		background #7874e6
+		min-width 38px
+		width 38px
+		height 38px
+		border-radius 50%
+		color $color-white
+		justify-content center
+		align-items center
+		font-size 14px
+		display flex
+		font-weight 400
+
+	&__logged-in-desk-name
+		color $color-white
+		font-weight 900
+		font-size 14px
+
+	&__logged-in-desk-name
+		margin 0 10px
+
+	&__logged-in-menu-header
+		padding 24px
+		display flex
+		align-items center
+		font-size 14px
+		font-weight 900
+
+	&__logged-in-menu-header-profile
+		color #483fb1
+		text-decoration underline
+		font-size 14px
+
+	&__logged-in-menu-header-name
+		color #000
+		font-size 18px
+
+		+aboveMedium()
+			font-size 14px
+
+	&__logged-in-menu-header-text
+		padding 0 10px
 
 	&__logged-menu
-		background-color cyan
+		background-color #E8E6FF
 		height 100%
+		display flex
+		flex-direction column
 
 		+aboveMedium()
 			position absolute
@@ -411,11 +455,72 @@ $header-desk-height = 70px
 			right 0
 			width 300px
 			min-height 500px
-			transform translateY(-100%)
-			transition transform .15s ease-in
+			transform translateY(-200%)
+			transition transform 0.2s cubic-bezier(0.79, 0.02, 0.17, 0.99)
+			box-shadow 0 5px 33px 0 rgba(0, 0, 0, 6%)
 
 	&--logged &__menu-holder
 		+aboveMedium()
 			&:hover
 				.header-classic__logged-menu
 					transform translateY(0)
+
+	&__add-new-bill
+		padding 24px 24px 11px 24px
+
+	&__add-new-bill-button
+		display block
+		padding 24px
+		background-color $main-blue
+		font-weight 600
+		padding 12px 20px
+		border-radius 4px
+		color $color-white
+		text-decoration none
+		font-size 14px
+		transition background-color 0.2s ease-in
+
+		&:hover
+			background-color $color-blue-dark
+
+	&__logged-links-list
+		width 100%
+
+	&__logged-links-item
+		&--separator
+			margin 5px 0
+			border-top 1px solid #d7d7d7
+			border-bottom 1px solid #d7d7d7
+
+	&__logged-links-link
+		display flex
+		color #000
+		text-decoration none
+		padding 13px 24px
+		position relative
+		font-weight 400
+		z-index 1
+
+		&:before
+			content ''
+			background #e6e6e6
+			position absolute
+			top 0
+			left 0
+			right 0
+			bottom 0
+			z-index -1
+			transform scale(1, 0)
+			transition-property transform, opacity, visibility
+			transition-duration 0.2s
+			transition-timing-function cubic-bezier(0.79, 0.02, 0.17, 0.99)
+			transition-delay 0s
+
+		&:hover
+			&:before
+				transform scaleY(1)
+
+	&__logged-menu-actions
+		background-color $color-white
+		flex 1
+		border-radius 16px 16px 0 0
