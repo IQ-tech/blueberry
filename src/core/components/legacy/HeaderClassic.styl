@@ -1,5 +1,7 @@
 @import '../../variables'
 
+// Logged-in and logged-out versions implemented
+
 $main-blue = #352ca4
 $color-blue-light = #0de3f2
 $color-blue-dark = #1c1277
@@ -65,6 +67,10 @@ $header-desk-height = 70px
 		+aboveMedium()
 			justify-content space-between
 
+	&--logged &__panel-right
+		+aboveMedium()
+			justify-content: flex-end
+
 	&__hamburger
 		display flex
 		background-color transparent
@@ -105,7 +111,7 @@ $header-desk-height = 70px
 	&--menu-mobile-open&--logged &__hamburger-line
 		background-color #000
 
-	// Menu holder
+	// Menu holder - holds logged in or logged out menus
 	&__menu-holder
 		width 100vw
 		height 'calc(100vh - %s)' % $header-mobile-height
@@ -139,8 +145,8 @@ $header-desk-height = 70px
 		+aboveMedium()
 			position static
 			height auto
-			justify-content flex-end
 			height $header-desk-height
+			flex 0 0 200px
 
 	&__logged-out-navigation
 		display flex
@@ -383,10 +389,10 @@ $header-desk-height = 70px
 
 		+aboveMedium()
 			flex auto
-			width 300px
+			width 100%
 			margin-left auto
 
-	&__logged-in-desk-name
+	&__logged-in-desk-name-holder
 		display none
 
 		+aboveMedium()
@@ -400,4 +406,15 @@ $header-desk-height = 70px
 
 		+aboveMedium()
 			position absolute
+			top 0
+			right 0
 			width 300px
+			min-height 500px
+			transform translateY(-100%)
+			transition transform .15s ease-in
+
+	&--logged &__menu-holder
+		+aboveMedium()
+			&:hover
+				.header-classic__logged-menu
+					transform translateY(0)
