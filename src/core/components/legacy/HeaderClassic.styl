@@ -228,6 +228,7 @@ $header-desk-height = 70px
 
 			&--submenu
 				padding-right 23px
+
 				&:after
 					transform rotate(45deg)
 
@@ -330,8 +331,11 @@ $header-desk-height = 70px
 			position absolute
 			top 100%
 			width 200px
+			padding-top 10px
+			background-color transparent
 			height auto
-			opacity 0
+			opacity 1
+			z-index -1
 			visibility hidden
 			transform translateY(-20px)
 			transition opacity 0.3s cubic-bezier(0.69, 0.01, 0.25, 1), transform 0.3s cubic-bezier(0.69, 0.01, 0.25, 1)
@@ -339,14 +343,20 @@ $header-desk-height = 70px
 			&::before, &::after
 				display none
 
+			&:hover
+				transform translateY(0px)
+				opacity 1
+				visibility visible
+				z-index 2
+
 	&--submenu-open &__submenu
-		transform translateX(0)
+		transform translateY(0)
 		z-index 1
 
 	&__logged-out-navigation-link--submenu
 		+aboveMedium()
 			&:hover ~ .header-classic__submenu
-				transform translateY(10px)
+				transform translateY(0px)
 				opacity 1
 				visibility visible
 				z-index 2
