@@ -8,7 +8,7 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   /** Notifications number to show on the icon bell */
   notificationsNumber?: number;
   /** Username to be displayed if isLogged */
-  userName?: string;
+  username?: string;
   /** Callback to run on open the mobile version of the menu */
   onOpenMenu?: (e: any) => any;
   /** Callback function to run when user click on logout button */

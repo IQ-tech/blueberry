@@ -5,6 +5,7 @@ $color-blue-light = #0de3f2
 $color-blue-dark = #1c1277
 $color-white = #fff
 $header-mobile-height = 60px
+$header-desk-height = 70px
 
 .header-classic
 	*
@@ -29,7 +30,7 @@ $header-mobile-height = 60px
 		align-items center
 
 		+aboveSmall()
-			height 70px
+			height $header-desk-height
 
 	&__container
 		display flex
@@ -101,6 +102,9 @@ $header-mobile-height = 60px
 		.header-classic__hamburger-line--three
 			transform rotate(-45deg) translate(6px, -6px)
 
+	&--menu-mobile-open&--logged &__hamburger-line
+		background-color #000
+
 	// Menu holder
 	&__menu-holder
 		width 100vw
@@ -129,6 +133,14 @@ $header-mobile-height = 60px
 		background-color red
 		height 100vh
 		top 0
+		display flex
+		flex-direction column
+
+		+aboveMedium()
+			position static
+			height auto
+			justify-content flex-end
+			height $header-desk-height
 
 	&__logged-out-navigation
 		display flex
@@ -365,3 +377,27 @@ $header-mobile-height = 60px
 			font-size 14px
 			font-weight 300
 			border-top 1px solid #d7d5f4
+
+	&__logged-in-navigation
+		flex 1
+
+		+aboveMedium()
+			flex auto
+			width 300px
+			margin-left auto
+
+	&__logged-in-desk-name
+		display none
+
+		+aboveMedium()
+			display block
+			background-color orange
+			height 100%
+
+	&__logged-menu
+		background-color cyan
+		height 100%
+
+		+aboveMedium()
+			position absolute
+			width 300px

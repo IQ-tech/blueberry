@@ -6,12 +6,14 @@ import { HeaderClassicProps } from "./types";
 import IqLogo from "./subcomponents/IqLogo";
 import HamburgerButton from "./subcomponents/HamburgerButton";
 import LoggedOutNavigation from "./subcomponents/LoggedOutNavigation";
+import LoggedInNavigation from "./subcomponents/LoggedInNavigation";
 import useClassicHeader from "./hooks";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
-  isLogged = false,
+  isLogged = true,
   filterLoggedMenuItems,
   showAuthButtons = true,
+  username = "username",
 }) => {
   const {
     unloggedMenuItems,
@@ -42,7 +44,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
             <div className="header-classic__menu-holder">
               <If
                 condition={isLogged}
-                renderIf={<p>username</p>}
+                renderIf={<LoggedInNavigation username={username} />}
                 renderElse={
                   <LoggedOutNavigation
                     showAuthButtons={showAuthButtons}
