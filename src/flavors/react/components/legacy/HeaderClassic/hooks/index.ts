@@ -6,9 +6,19 @@ function capitalize(word: string): string {
   return word.charAt(0).toUpperCase() + lower.slice(1);
 }
 
+function getFirstTwoNames(fullName): string {
+  if (!fullName) return "";
+  const splittedName = fullName.split(" ");
+  const firstTwoNames = splittedName.slice(0, 2);
+  return firstTwoNames.join(" ");
+}
+
 function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
+
+  const capitalizedUsername = capitalize(username);
+  const firstTwoNames = getFirstTwoNames(capitalizedUsername);
 
   function toggleMobileMenu() {
     //verify if is mobile
@@ -31,7 +41,7 @@ function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
     openSubmenu,
     closeSubmenu,
     isSubmenuOpen,
-    formattedUsername: capitalize(username),
+    formattedUsername: firstTwoNames,
     loggedoutNavigationLinks: filterLoggedMenuItems
       ? filterLoggedMenuItems(loggedoutNavigationLinks)
       : loggedoutNavigationLinks,
