@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
-import HeaderClassic from "./index";
+import HeaderClassic from "../HeaderClassic";
 
 import "core/fonts.styl";
 import "core/components/legacy/HeaderClassic.styl";

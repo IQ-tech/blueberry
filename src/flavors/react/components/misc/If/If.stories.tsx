@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
-import If from "./index";
+import If from "../If";
 
 export default {
   title: "Components/Utils/If",
