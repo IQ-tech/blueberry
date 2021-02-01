@@ -74,12 +74,42 @@
 	&__links-group-title
 		font-size 14px
 		padding 15px 20px
+		position relative
+
+		&:after, &:before
+			content ''
+			border 1px solid #000
+			position absolute
+			top 50%
+			width 1px
+			height 13px
+			margin-top -8px
+			transition transform 0.34s cubic-bezier(0.69, 0.01, 0.25, 1)
+			opacity 0.15
+
+		&:after
+			right 16px
+			transform rotate(45deg)
+
+		&:before
+			right 25px
+			transform rotate(-45deg)
 
 		+aboveMedium()
 			font-size 18px
 			line-height 20px
 			cursor default
 			padding-top 0
+
+			&:after, &:before
+				display none
+
+	&__links-group--open &__links-group-title
+		&:before
+			transform rotate(-135deg)
+
+		&:after
+			transform rotate(135deg)
 
 	&__links-list
 		list-style none
