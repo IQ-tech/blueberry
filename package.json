@@ -5,7 +5,7 @@
 	"main": "dist/main.js",
 	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"bundle": "webpack -c config/webpack.prod.js",
+		"only-bundle": "webpack -c config/webpack.prod.js",
 		"generate:types": "tsc --emitDeclarationOnly",
 		"build:lib": "gulp build-lib && yarn generate:types",
 		"dev:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react",
