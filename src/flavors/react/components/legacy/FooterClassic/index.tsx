@@ -4,6 +4,7 @@ import footerLinks from "core/data/footer-links.json";
 
 import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";
+import InfoSection from "./subcomponents/InfoSection";
 
 const FooterClassic = () => {
   return (
@@ -32,9 +33,7 @@ const FooterClassic = () => {
           <SocialIcons />
         </div>
       </nav>
-      <div className="footer-classic__info">
-        <div className="footer-classic__container footer-classic__container--info"></div>
-      </div>
+      <InfoSection />
     </footer>
   );
 };
