@@ -8,6 +8,17 @@
 		margin 0
 		padding 0
 
+	+aboveMedium()
+		padding-top 40px
+
+	h2
+		display block
+		cursor pointer
+		color #000
+		font-weight 700
+		line-height 15px
+		font-family 'Open Sans', sans-serif
+
 	&__container
 		max-width 1220px
 		margin 0 auto
@@ -18,17 +29,19 @@
 
 			+aboveMedium()
 				flex-direction row
-				justify-content: space-between
+				justify-content space-between
 
 	&__logo
+		padding 0 20px
+
 		svg
 			width 42px
 			height 55px
 
+		+aboveMedium()
+			flex 0.5
+
 	&__pages-menu
-		border-top 1px solid #dcdcdc
-		border-bottom 1px solid #dcdcdc
-		padding 15px 0
 		margin 25px 0
 		display flex
 		flex-direction column
@@ -36,30 +49,42 @@
 		+aboveMedium()
 			margin 0
 			flex-direction row
-			border-top none
-			border-bottom none
+			flex 2.5
 
 	&__links-group
-		&:not(:last-of-type)
-			border-bottom 1px solid #dcdcdc
+		border-bottom 1px solid #dcdcdc
+		overflow hidden
+		max-height 45px
+		transition max-height 0.3s ease-out
 
-			+aboveMedium()
-				border-bottom none
+		&:first-of-type
+			border-top 1px solid #dcdcdc
+
+		&--open
+			max-height 500px
+
+		+aboveMedium()
+			border-bottom none
+			max-height none
+			flex 1
+
+			&:first-of-type
+				border none
 
 	&__links-group-title
-		font-family 'Open Sans', sans-serif
 		font-size 14px
-		display block
-		cursor pointer
-		color #000
-		font-weight 700
+		padding 15px 20px
 
 		+aboveMedium()
 			font-size 18px
+			line-height 20px
 			cursor default
+			padding-top 0
 
 	&__links-list
 		list-style none
+		padding-right 20px
+		padding-left 20px
 
 	&__links-group-link
 		text-decoration none
@@ -72,3 +97,33 @@
 
 		&:hover
 			text-decoration underline
+
+	&__social-icons
+		flex 1
+		text-align center
+		display flex
+		flex-direction column
+		align-items center
+
+	&__social-icons-title
+		font-size 14px
+
+		+aboveMedium()
+			font-size 18px
+
+	&__social-icons-box
+		display flex
+		justify-content space-between
+		width 60%
+		margin-top 15px
+
+		+aboveMedium()
+			width 100%
+
+	&__social-icon
+		max-width 30px
+		color #000
+
+		svg
+			height 100%
+			width 100%
