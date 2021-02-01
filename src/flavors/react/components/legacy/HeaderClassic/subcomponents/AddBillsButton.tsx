@@ -1,9 +1,9 @@
 import React from "react";
 
-const AddBillsButton = () => {
+const AddBillsButton = ({ getAbsoluteLink }) => {
   return (
     <a
-      href="/app/encontrar-servicos/"
+      href={getAbsoluteLink("/app/encontrar-servicos/")}
       className="header-classic__add-new-bill-button"
     >
       <svg viewBox="0 0 19 22" className="bills">

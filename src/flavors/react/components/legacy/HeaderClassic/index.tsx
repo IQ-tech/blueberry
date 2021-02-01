@@ -10,7 +10,7 @@ import LoggedInNavigation from "./subcomponents/LoggedInNavigation";
 import useClassicHeader from "./hooks";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
-  isLogged = false,
+  isLogged = true,
   filterLoggedMenuItems,
   showAuthButtons = true,
   username = "username",
@@ -23,6 +23,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     closeSubmenu,
     isSubmenuOpen,
     formattedUsername,
+    getAbsoluteLink,
   } = useClassicHeader({ isLogged, filterLoggedMenuItems, username });
 
   const headerClass = classNames("header-classic", {
@@ -43,7 +44,12 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
             <div className="header-classic__menu-holder">
               <Conditional
                 condition={isLogged}
-                renderIf={<LoggedInNavigation username={formattedUsername} />}
+                renderIf={
+                  <LoggedInNavigation
+                    username={formattedUsername}
+                    getAbsoluteLink={getAbsoluteLink}
+                  />
+                }
                 renderElse={
                   <LoggedOutNavigation
                     showAuthButtons={showAuthButtons}

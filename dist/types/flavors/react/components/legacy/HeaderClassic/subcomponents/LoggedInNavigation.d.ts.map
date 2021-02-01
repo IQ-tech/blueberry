@@ -1,1 +1,1 @@
-{"version":3,"file":"LoggedInNavigation.d.ts","sourceRoot":"","sources":["../../../../../../../../src/flavors/react/components/legacy/HeaderClassic/subcomponents/LoggedInNavigation.tsx"],"names":[],"mappings":"AAyBA,QAAA,MAAM,kBAAkB;;iBA6DvB,CAAC;AAEF,eAAe,kBAAkB,CAAC"}
+{"version":3,"file":"LoggedInNavigation.d.ts","sourceRoot":"","sources":["../../../../../../../../src/flavors/react/components/legacy/HeaderClassic/subcomponents/LoggedInNavigation.tsx"],"names":[],"mappings":"AAyBA,QAAA,MAAM,kBAAkB;;;iBAgEvB,CAAC;AAEF,eAAe,kBAAkB,CAAC"}

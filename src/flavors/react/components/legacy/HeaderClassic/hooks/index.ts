@@ -21,7 +21,6 @@ function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
   const firstTwoNames = getFirstTwoNames(capitalizedUsername);
 
   function toggleMobileMenu() {
-    //verify if is mobile
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
@@ -34,6 +33,16 @@ function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
     setIsMobileSubmenuOpen(false);
   }
 
+  function getAbsoluteLink(relativePath: string): string {
+    const getNewPath = (relativePath) => {
+      const pageOrigin = window.origin;
+      return `${pageOrigin}${relativePath}`;
+    };
+    return typeof window !== undefined
+      ? getNewPath(relativePath)
+      : relativePath;
+  }
+
   return {
     unloggedMenuItems: [],
     isMobileMenuOpen,
@@ -41,6 +50,7 @@ function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
     openSubmenu,
     closeSubmenu,
     isSubmenuOpen,
+    getAbsoluteLink,
     formattedUsername: firstTwoNames,
     loggedoutNavigationLinks: filterLoggedMenuItems
       ? filterLoggedMenuItems(loggedoutNavigationLinks)

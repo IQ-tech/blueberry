@@ -5,14 +5,14 @@ import { loggedMenuLinks } from "../data";
 import Conditional from "../../../misc/Conditional";
 import AddBillsButton from "./AddBillsButton";
 
-const LoggedInMenuHeader = ({ username }) => {
+const LoggedInMenuHeader = ({ username, getAbsoluteLink }) => {
   return (
     <header className="header-classic__logged-in-menu-header">
       <FirstLetterIcon word={username} />
       <div className="header-classic__logged-in-menu-header-text">
         <p className="header-classic__logged-in-menu-header-name">{username}</p>
         <a
-          href="/app/profile/"
+          href={getAbsoluteLink("/app/profile/")}
           className="header-classic__logged-in-menu-header-profile"
           data-clicked="logged-header-menu-profile-link"
         >
@@ -23,7 +23,7 @@ const LoggedInMenuHeader = ({ username }) => {
   );
 };
 
-const LoggedInNavigation = ({ username }) => {
+const LoggedInNavigation = ({ username, getAbsoluteLink }) => {
   const getItemClass = (separator) =>
     classNames("header-classic__logged-links-item", {
       "header-classic__logged-links-item--separator": !!separator,
@@ -48,10 +48,13 @@ const LoggedInNavigation = ({ username }) => {
         </svg>
       </div>
       <div className="header-classic__logged-menu">
-        <LoggedInMenuHeader username={username} />
+        <LoggedInMenuHeader
+          username={username}
+          getAbsoluteLink={getAbsoluteLink}
+        />
         <div className="header-classic__logged-menu-actions">
           <div className="header-classic__add-new-bill">
-            <AddBillsButton />
+            <AddBillsButton getAbsoluteLink={getAbsoluteLink} />
           </div>
           <ul className="header-classic__logged-links-list">
             {loggedMenuLinks.map(
@@ -61,7 +64,7 @@ const LoggedInNavigation = ({ username }) => {
                   key={`logged-in-menu-item-${index}`}
                 >
                   <a
-                    href={path}
+                    href={getAbsoluteLink(path)}
                     className="header-classic__logged-links-link"
                     data-clicked={`header-logged-menu-item-${label}`}
                   >
