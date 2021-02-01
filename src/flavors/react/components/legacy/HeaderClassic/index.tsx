@@ -10,14 +10,12 @@ import LoggedInNavigation from "./subcomponents/LoggedInNavigation";
 import useClassicHeader from "./hooks";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
-  isLogged = false,
+  isLogged = true,
   filterLoggedMenuItems,
   showAuthButtons = true,
   username = "username",
 }) => {
   const {
-    unloggedMenuItems,
-    goToHomePage,
     isMobileMenuOpen,
     toggleMobileMenu,
     loggedoutNavigationLinks,
@@ -38,7 +36,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
       <nav className="header-classic__navbar">
         <div className="header-classic__container">
           <div className="header-classic__panel-left">
-            <IqLogo onClick={goToHomePage} />
+            <IqLogo isLogged={isLogged} />
           </div>
 
           <div className="header-classic__panel-right">

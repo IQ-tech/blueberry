@@ -12,21 +12,39 @@ const LoggedOutNavigationLink = ({
   closeSubmenu,
   isSubmenuOpen,
 }) => {
+  const hasSubmenu = !!subLinks.length;
+
   const linkClass = classNames("header-classic__logged-out-navigation-link", {
     "header-classic__logged-out-navigation-link--active": !!isActive,
-    "header-classic__logged-out-navigation-link--submenu": !!subLinks.length,
+    "header-classic__logged-out-navigation-link--submenu": hasSubmenu,
   });
+
+  function onClickItem(e) {
+    if (hasSubmenu) {
+      openSubmenu(e);
+    }
+  }
+
   return (
     <li className="header-classic__logged-out-navigation-item">
-      <a className={linkClass} href={href} onClick={openSubmenu}>
+      <a
+        className={linkClass}
+        href={href}
+        onClick={onClickItem}
+        target="_blank"
+        rel="noopener"
+      >
         {label}
       </a>
       <If
-        condition={!!subLinks.length}
+        condition={hasSubmenu}
         renderIf={
           <ul className="header-classic__submenu" data-subtext={label}>
-            {subLinks.map(({ label, href }) => (
-              <li className="header-classic__subitem">
+            {subLinks.map(({ label, href }, index) => (
+              <li
+                className="header-classic__subitem"
+                key={`header-submenu-item-${index}`}
+              >
                 <a
                   href={href}
                   className="header-classic__sublink"

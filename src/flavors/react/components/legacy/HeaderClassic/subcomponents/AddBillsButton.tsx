@@ -2,7 +2,10 @@ import React from "react";
 
 const AddBillsButton = () => {
   return (
-    <a href="#" className="header-classic__add-new-bill-button">
+    <a
+      href="/app/encontrar-servicos/"
+      className="header-classic__add-new-bill-button"
+    >
       <svg viewBox="0 0 19 22" className="bills">
         <g fill="currentColor">
           <path d="M4.513 4.513h11.369v8.52h1.42v-9.23a.71.71 0 00-.71-.71H3.802a.71.71 0 00-.71.71v14.994c0 .393.318.71.71.71h6.64v-1.42h-5.93V4.513z" />

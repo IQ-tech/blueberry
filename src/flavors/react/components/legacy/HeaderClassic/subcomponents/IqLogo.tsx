@@ -1,8 +1,14 @@
 import React from "react";
 
-const IqLogo = ({ onClick }) => {
+const IqLogo = ({ isLogged }) => {
+  const redirectLink = isLogged ? "/app/home" : "/";
+
   return (
-    <a href="#" onClick={onClick} className="header-classic__logo-link">
+    <a
+      href={redirectLink}
+      className="header-classic__logo-link"
+      data-clicked="iq-header-logo"
+    >
       <svg
         className="header-classic__logo"
         xmlns="http://www.w3.org/2000/svg"

@@ -11,7 +11,11 @@ const LoggedInMenuHeader = ({ username }) => {
       <FirstLetterIcon word={username} />
       <div className="header-classic__logged-in-menu-header-text">
         <p className="header-classic__logged-in-menu-header-name">{username}</p>
-        <a href="#" className="header-classic__logged-in-menu-header-profile">
+        <a
+          href="/app/profile/"
+          className="header-classic__logged-in-menu-header-profile"
+          data-clicked="logged-header-menu-profile-link"
+        >
           Editar perfil
         </a>
       </div>
@@ -50,22 +54,31 @@ const LoggedInNavigation = ({ username }) => {
             <AddBillsButton />
           </div>
           <ul className="header-classic__logged-links-list">
-            {loggedMenuLinks.map(({ label, separator, rawIcon }) => (
-              <li className={getItemClass(separator)}>
-                <a href="#" className="header-classic__logged-links-link">
-                  <If
-                    condition={!!rawIcon}
-                    renderIf={
-                      <div
-                        className="header-classic__logged-links-icon-holder"
-                        dangerouslySetInnerHTML={{ __html: rawIcon }}
-                      />
-                    }
-                  />
-                  {label}
-                </a>
-              </li>
-            ))}
+            {loggedMenuLinks.map(
+              ({ label, separator, rawIcon, path }, index) => (
+                <li
+                  className={getItemClass(separator)}
+                  key={`logged-in-menu-item-${index}`}
+                >
+                  <a
+                    href={path}
+                    className="header-classic__logged-links-link"
+                    data-clicked={`header-logged-menu-item-${label}`}
+                  >
+                    <If
+                      condition={!!rawIcon}
+                      renderIf={
+                        <div
+                          className="header-classic__logged-links-icon-holder"
+                          dangerouslySetInnerHTML={{ __html: rawIcon }}
+                        />
+                      }
+                    />
+                    {label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </div>

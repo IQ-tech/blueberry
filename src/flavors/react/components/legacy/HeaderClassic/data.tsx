@@ -44,34 +44,42 @@ export const loggedoutNavigationLinks: NavigationLink[] = [
 ];
 
 export const loggedMenuLinks: LoggedNavigationLink[] = [
-  { label: "Home", path: "/app", rawIcon: loggedMenuItemsIcons.home },
+  { label: "Home", path: "/app/home/", rawIcon: loggedMenuItemsIcons.home },
   {
     label: "Proximas contas",
-    path: "/app",
+    path: "/app/proximas-contas/",
     rawIcon: loggedMenuItemsIcons.calendar,
   },
-  { label: "Comprovante", path: "/app", rawIcon: loggedMenuItemsIcons.money },
+  {
+    label: "Comprovante",
+    path: "/app/controle/#1",
+    rawIcon: loggedMenuItemsIcons.money,
+  },
   {
     label: "Forma de pagamento",
-    path: "/app",
+    path: "/app/meus-cartoes/",
     rawIcon: loggedMenuItemsIcons.cards,
   },
   {
     label: "Convidar amigos",
-    path: "/app",
+    path: "/app/convidar/",
     rawIcon: loggedMenuItemsIcons.gift,
     separator: true,
   },
-  { label: "Perfil", path: "/app", rawIcon: loggedMenuItemsIcons.person },
+  {
+    label: "Perfil",
+    path: "/app/perfil/",
+    rawIcon: loggedMenuItemsIcons.person,
+  },
   {
     label: "Gerenciar notificações",
-    path: "/app",
+    path: "/app/gerenciar/notificacoes/",
     rawIcon: loggedMenuItemsIcons.bell,
   },
   { label: "Ajuda", path: "/app", rawIcon: loggedMenuItemsIcons.floater },
   {
     label: "Sair da conta",
-    path: "/app",
+    path: "/app/logout/",
     rawIcon: loggedMenuItemsIcons.signOut,
     separator: true,
   },
