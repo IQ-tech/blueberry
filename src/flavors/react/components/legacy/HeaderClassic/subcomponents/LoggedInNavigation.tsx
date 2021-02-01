@@ -2,7 +2,7 @@ import React from "react";
 import FirstLetterIcon from "./FirstLetterIcon";
 import classNames from "classnames";
 import { loggedMenuLinks } from "../data";
-import If from "../../../misc/If";
+import Conditional from "../../../misc/Conditional";
 import AddBillsButton from "./AddBillsButton";
 
 const LoggedInMenuHeader = ({ username }) => {
@@ -65,7 +65,7 @@ const LoggedInNavigation = ({ username }) => {
                     className="header-classic__logged-links-link"
                     data-clicked={`header-logged-menu-item-${label}`}
                   >
-                    <If
+                    <Conditional
                       condition={!!rawIcon}
                       renderIf={
                         <div

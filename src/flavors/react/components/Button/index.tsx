@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import If from "../misc/If";
+import Conditional from "../misc/Conditional";
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** Defines the button vertical size */
@@ -48,7 +48,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button className={buttonClasses} onClick={handleClick} {...props}>
       {children}
-      <If
+      <Conditional
         condition={loading}
         renderIf={
           <div className="btn__loading-overlay">

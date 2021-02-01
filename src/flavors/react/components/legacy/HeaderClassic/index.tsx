@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import If from "../../misc/If";
+import Conditional from "../../misc/Conditional";
 
 import { HeaderClassicProps } from "./types";
 import IqLogo from "./subcomponents/IqLogo";
@@ -41,7 +41,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
 
           <div className="header-classic__panel-right">
             <div className="header-classic__menu-holder">
-              <If
+              <Conditional
                 condition={isLogged}
                 renderIf={<LoggedInNavigation username={formattedUsername} />}
                 renderElse={

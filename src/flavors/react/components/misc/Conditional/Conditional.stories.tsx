@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
-import If from "../If";
+import Conditional from "../Conditional";
 
 export default {
   title: "Components/Utils/If",
-  component: If,
+  component: Conditional,
   parameters: {
     docs: {
       description: {
@@ -15,7 +15,7 @@ export default {
 } as Meta;
 
 const Template = ({ condition, renderIf, renderElse }) => (
-  <If condition={condition} renderIf={renderIf} renderElse={renderElse} />
+  <Conditional condition={condition} renderIf={renderIf} renderElse={renderElse} />
 );
 
 export const Default = Template.bind({});

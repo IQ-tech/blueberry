@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import AuthButtons from "./AuthButttons";
-import If from "../../../misc/If";
+import Conditional from "../../../misc/Conditional";
 
 const LoggedOutNavigationLink = ({
   label,
@@ -36,7 +36,7 @@ const LoggedOutNavigationLink = ({
       >
         {label}
       </a>
-      <If
+      <Conditional
         condition={hasSubmenu}
         renderIf={
           <ul className="header-classic__submenu" data-subtext={label}>
@@ -89,7 +89,7 @@ const LoggedOutNavigation = ({
           />
         ))}
       </ul>
-      <If condition={showAuthButtons} renderIf={<AuthButtons />} />
+      <Conditional condition={showAuthButtons} renderIf={<AuthButtons />} />
     </div>
   );
 };

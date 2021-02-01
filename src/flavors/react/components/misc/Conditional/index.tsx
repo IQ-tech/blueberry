@@ -1,4 +1,6 @@
-export interface IfProps {
+import { Condition } from "webpack";
+
+export interface ConditionalProps {
   /** condition to render something */
   condition: boolean;
   /** Content to render if true (Component, text, template) */
@@ -7,8 +9,12 @@ export interface IfProps {
   renderElse?: any;
 }
 
-const If = ({ condition, renderIf, renderElse = null }: IfProps) => {
+const Conditional = ({
+  condition,
+  renderIf,
+  renderElse = null,
+}: ConditionalProps) => {
   return condition ? renderIf : renderElse;
 };
 
-export default If;
+export default Conditional;

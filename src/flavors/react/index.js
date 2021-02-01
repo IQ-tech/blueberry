@@ -5,7 +5,7 @@ export { H1, H2, H3, H4, H5, H6 } from "./components/typography/Headings";
 
 // misc
 export { default as TagComponent } from "./components/misc/TagComponent";
-export { default as If } from "./components/misc/If";
+export { default as Conditional } from "./components/misc/Conditional";
 
 // legacy components
 export { default as HeaderClassic } from "./components/legacy/HeaderClassic";
