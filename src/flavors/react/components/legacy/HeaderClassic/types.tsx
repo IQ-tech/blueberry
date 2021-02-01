@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   /** Dislpays user name and a menu that redirects iq logged pages if true */
   isLogged?: boolean;

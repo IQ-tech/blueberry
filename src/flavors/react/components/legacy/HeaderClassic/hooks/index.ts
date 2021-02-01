@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { loggedoutNavigationLinks } from "../data";
 
 function capitalize(word: string): string {

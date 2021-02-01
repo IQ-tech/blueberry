@@ -11,7 +11,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "A helper component to conditionally render it's content",
+        component: "Legacy iq header",
       },
     },
   },
