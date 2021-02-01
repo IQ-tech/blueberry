@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
     /** Dislpays user name and a menu that redirects iq logged pages if true */
     isLogged?: boolean;
@@ -9,7 +9,7 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
     /** Notifications number to show on the icon bell */
     notificationsNumber?: number;
     /** Username to be displayed if isLogged */
-    userName?: string;
+    username?: string;
     /** Callback to run on open the mobile version of the menu */
     onOpenMenu?: (e: any) => any;
     /** Callback function to run when user click on logout button */
@@ -25,5 +25,11 @@ export interface NavigationLink {
     onClick?: (args: any) => any;
     subLinks?: NavigationLink[];
     isActive?: boolean;
+}
+export interface LoggedNavigationLink {
+    label: string;
+    path: string;
+    separator?: boolean;
+    rawIcon?: string;
 }
 //# sourceMappingURL=types.d.ts.map
