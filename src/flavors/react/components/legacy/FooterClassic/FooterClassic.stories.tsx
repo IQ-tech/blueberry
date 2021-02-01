@@ -1,12 +1,12 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
-import FooterClassic from "./index";
+import FooterClassic from "../FooterClassic";
 
 import "core/fonts.styl";
 import "core/components/legacy/FooterClassic.styl";
 
 export default {
-  title: "Components/legacy/FooterClassic",
+  title: "Components/Legacy/FooterClassic",
   component: FooterClassic,
   parameters: {
     docs: {

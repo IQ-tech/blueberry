@@ -1,188 +1,74 @@
 @import '../../variables'
 
-$footer-breakpoint = 860px
-color-gray-light = #4D4D4D
-color-purple-medium = #352CA4
+.footer-classic
+	font-family 'Open Sans', sans-serif
 
-.footer
-	background-color #fff
-	padding-top 25px
-	padding-bottom 15px
-
-	*
+	&, *
 		box-sizing border-box
+		margin 0
+		padding 0
 
-	button
-		background-color transparent
-		outline none
-		border none
+	&__container
+		max-width 1220px
+		margin 0 auto
 
-	ul
+		&--navigation
+			display flex
+			flex-direction column
+
+			+aboveMedium()
+				flex-direction row
+				justify-content: space-between
+
+	&__logo
+		svg
+			width 42px
+			height 55px
+
+	&__pages-menu
+		border-top 1px solid #dcdcdc
+		border-bottom 1px solid #dcdcdc
+		padding 15px 0
+		margin 25px 0
+		display flex
+		flex-direction column
+
+		+aboveMedium()
+			margin 0
+			flex-direction row
+			border-top none
+			border-bottom none
+
+	&__links-group
+		&:not(:last-of-type)
+			border-bottom 1px solid #dcdcdc
+
+			+aboveMedium()
+				border-bottom none
+
+	&__links-group-title
+		font-family 'Open Sans', sans-serif
+		font-size 14px
+		display block
+		cursor pointer
+		color #000
+		font-weight 700
+
+		+aboveMedium()
+			font-size 18px
+			cursor default
+
+	&__links-list
 		list-style none
 
-	+aboveMedium()
-		padding-top 40px
+	&__links-group-link
+		text-decoration none
+		display block
+		padding 10px 0
+		color #2f2f2f
+		font-size 14px
+		font-weight 300
+		transition text-decoration 0.3s ease
 
-	// Container
-	// ==========================================================================
-	> .container
-		max-width 1220px
-
-		+aboveMedium()
-			position relative
-			display flex
-			justify-content space-between
-
-	// Logo
-	// ==========================================================================
-	&__logo
-		width 42px
-		height 59px
-		overflow hidden
-
-		svg
-			max-width none
-			width 42px
-			height 59px
-
-	// Navigation
-	// ==========================================================================
-	&__navigation
-		margin-left -20px
-		margin-top 25px
-		margin-bottom 25px
-		width calc(100% + 40px)
-
-		+aboveMedium()
-			display flex
-			justify-content space-between
-			margin-left 100px
-			flex 1
-			max-width 690px
-			flex-basis 690px
-
-		// Intern menu
-		.footer-menu
-			border-bottom solid 1px gray
-
-			&:first-of-type
-				border-top solid 1px color-gray-light
-
-			+aboveMedium()
-				width 50%
-
-				&:not(:first-child)
-					margin-left 2%
-
-			// Menu
-			&__button
-				color color-black
-				border none
-				font-weight 600
-				text-align left
-				font-size 14px
-				display block
-				width 100%
-				text-align left
-				padding 15px 20px
-				position relative
-				cursor pointer
-
-				&:before, &:after
-					content ''
-					border solid 1px #000
-					position absolute
-					top 50%
-					width 1px
-					height 13px
-					margin-top -8px
-					transition transform 0.34s ease
-					opacity 0.15
-
-				&:before
-					right 25px
-					transform rotate(-45deg)
-
-				&:after
-					right 16px
-					transform rotate(45deg)
-
-				+aboveMedium()
-					font-size 16px
-
-					&:before, &:after
-						display none
-
-			// Sub
-			&__sub
-				max-height 0
-				overflow hidden
-				transition max-height 0.4s ease, flex-grow 0.4s ease, margin-bottom 0.6s ease
-				padding-left 20px
-				padding-right 20px
-
-				a
-					display block
-					padding 10px 0
-					transition color 0.3s ease
-					font-size 14px
-					color color-gray-dark
-
-					&:hover, &:focus
-						color color-purple-medium
-
-			// Active state
-			&.is-open
-				.footer-menu__button
-					&:before
-						transform rotate(-135deg)
-
-					&:after
-						transform rotate(135deg)
-
-				.footer-menu__sub
-					max-height 300px
-					overflow auto
-
-	// Social
-	// ==========================================================================
-	&__social
-		min-width 170px
-		text-align center
-		margin-left auto
-		margin-right auto
-		margin-bottom 30px
-
-		> p
-			font-size 16px
-			color color-black
-			margin-bottom 30px
-			font-weight 600
-
-			+aboveMedium()
-				margin-bottom 30px
-
-		&__link
-			max-width 30px
-			display inline-block
-			vertical-align middle
-			height 24px
-			color #000
-			cursor pointer
-			transition opacity 0.3s ease
-
-			&:hover, &:focus
-				opacity 0.75
-
-			&:not(:first-of-type)
-				margin-left 15px
-
-			svg
-				width auto
-				height 30px
-
-				&:not(:first-of-type)
-					margin-left 25px
-
-			+aboveMedium()
-				height 100%
+		&:hover
+			text-decoration underline

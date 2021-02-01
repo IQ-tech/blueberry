@@ -6,7 +6,7 @@ import "core/fonts.styl";
 import "core/components/legacy/HeaderClassic.styl";
 
 export default {
-  title: "Components/legacy/HeaderClassic",
+  title: "Components/Legacy/HeaderClassic",
   component: HeaderClassic,
   parameters: {
     docs: {
