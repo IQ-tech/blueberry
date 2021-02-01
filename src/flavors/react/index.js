@@ -9,3 +9,4 @@ export { default as Conditional } from "./components/misc/Conditional";
 
 // legacy components
 export { default as HeaderClassic } from "./components/legacy/HeaderClassic";
+export { default as FooterClassic } from "./components/legacy/FooterClassic";

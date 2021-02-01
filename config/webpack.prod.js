@@ -22,7 +22,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.tsx$/,
+				test: /\.tsx?$/,
 				use: [babelConfig],
 				exclude: "/node_modules/",
 			},

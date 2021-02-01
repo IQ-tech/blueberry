@@ -1,12 +1,12 @@
 import React from "react";
 // @ts-ignore
-import footerLinks from "core/data/footer-links.json";
+import footerLinks from "../../../../../core/data/footer-links.json";
 
 import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";
 import InfoSection from "./subcomponents/InfoSection";
 
-const FooterClassic = () => {
+const FooterClassic: React.FC = () => {
   return (
     <footer className="footer-classic">
       <nav className="footer-classic__navigation">

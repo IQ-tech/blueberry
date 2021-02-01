@@ -1,6 +1,6 @@
 import React from "react";
 //@ts-ignore
-import publicInfo from "core/data/public-info";
+import publicInfo from "../../../../../../core/data/public-info.json";
 
 const InfoSection = () => (
   <div className="footer-classic__info">
@@ -15,7 +15,7 @@ const InfoSection = () => (
         </div>
       </div>
       <div className="footer-classic__info-right">
-        <div className="footer-classic__info-block">
+        <div className="footer-classic__info-block footer-classic__info-block--contact">
           <span>
             <strong>Atendimento</strong>
           </span>

@@ -1,7 +1,7 @@
 import React from "react";
 
 // @ts-ignore
-import socialLinks from "core/data/social-media";
+import socialLinks from "../../../../../../core/data/social-media";
 
 const socialLinksArray = Object.keys(socialLinks).map(
   (key) => socialLinks[key]
