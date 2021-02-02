@@ -57,6 +57,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                     openSubmenu={openSubmenu}
                     closeSubmenu={closeSubmenu}
                     isSubmenuOpen={isSubmenuOpen}
+                    getAbsoluteLink={getAbsoluteLink}
                   />
                 }
               />

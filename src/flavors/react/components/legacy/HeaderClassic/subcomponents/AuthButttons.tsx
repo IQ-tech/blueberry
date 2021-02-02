@@ -1,11 +1,25 @@
 import React from "react";
 
-const AuthButtons = () => {
+const AuthButtons = ({ getAbsoluteLink }) => {
+  function redirectToPath(url: string): void {
+    if (typeof window !== undefined) {
+      window.location.href = url;
+    }
+  }
+  function onLogin() {
+    redirectToPath(getAbsoluteLink("/entrar"));
+  }
+
+  function onRegister() {
+    redirectToPath(getAbsoluteLink("/cadastrar"));
+  }
+
   return (
     <div className="header-classic__auth-buttons">
       <button
         data-clicked="btn-register-header"
         className="header-classic__auth-button header-classic__auth-button--sign-in"
+        onClick={onLogin}
       >
         <svg
           viewBox="0 0 17 19"
@@ -32,6 +46,7 @@ const AuthButtons = () => {
       <button
         data-clicked="btn-login-header"
         className="header-classic__auth-button header-classic__auth-button--sign-up"
+        onClick={onRegister}
       >
         Começar agora
       </button>
