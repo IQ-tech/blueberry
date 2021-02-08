@@ -1,75 +1,155 @@
-@import '../variables'
+@import '../variables.styl'
 
-$grid-fixed-size = 1270px
+$column-padding-xsmall = 'calc((%s / 2))' % grid-fluid-gutter-xsmall
+$column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 .grid
-	background-color #C0B8FF
+	box-sizing border-box
+	margin 0 auto
+	padding 0 grid-fixed-margin-xsmall
 	max-width grid-fixed-max-width
-	overflow-x hidden
+	display flex
+	flex-direction column
+
+	+aboveMedium()
+		padding 0 grid-fixed-margin-medium
 
 	&--fluid
-		background-color orange
 		max-width none
+		padding 0 grid-fluid-margin-xsmall
 
-	&__container
+		+aboveMedium()
+			padding 0 grid-fluid-margin-medium
+
+	&--prototyping
+		background-color blueberry-30
+		position relative
+
+		&:after, &:before
+			display block
+			content ''
+			position absolute
+			background-color blueberry-80
+			top 0
+			height 100%
+			width grid-fixed-margin-xsmall
+
+			+aboveMedium()
+				width grid-fixed-margin-medium
+
+		&:before
+			left 0
+
+		&:after
+			right 0
+
+	&--prototyping&--fluid
+		background-color cyan-30
+
+		&:before, &:after
+			background-color cyan-80
+			width grid-fluid-margin-xsmall
+
+			+aboveMedium()
+				width grid-fluid-margin-medium
+
+	&__row
 		display flex
-		flex-flow row wrap
+		flex-wrap wrap
+		margin 0 'calc(-%s / 2)' % grid-fluid-gutter-xsmall
+		box-sizing border-box
 
-		+above(breakpoints-xsmall)
-			margin 0 'calc(-%s / 2)' % grid-gutter-xsmall
+		+aboveMedium()
+			margin 0 'calc(-%s / 2)' % grid-fluid-gutter-medium
 
-		+above(breakpoints-medium)
-			margin 0 'calc(-%s / 2)' % grid-gutter-medium
+		&:not(:last-of-type)
+			margin-bottom grid-fluid-gutter-xsmall
 
-	.col
+			+aboveMedium()
+				margin-bottom grid-fluid-gutter-medium
+
+		&--no-wrap
+			flex-wrap none
+
+	// columns
+	&__column
 		padding-top 0
-		flex-grow 0
-		flex-shrink 0
+		flex 0 0 'calc((100% / %s) - %s)' % (grid-columns-xsmall grid-fluid-gutter-xsmall)
+		margin 0 $column-padding-xsmall
+		box-sizing border-box
+		overflow hidden
 
-		+above(breakpoints-xsmall)
-			flex-basis 'calc((100% / %s))' % grid-columns-xsmall
-			padding-left 'calc((%s / 2))' % grid-gutter-xsmall
-			padding-right 'calc((%s / 2))' % grid-gutter-xsmall
-			padding-bottom grid-gutter-xsmall
+		&:not(:nth-child(-n+4))
+			margin-top grid-fluid-gutter-xsmall
 
-		+above(breakpoints-small)
-			flex-basis 'calc((100% / %s))' % grid-columns-small
+		+aboveSmall()
+			flex-basis 'calc((100% / %s) - %s)' % (grid-columns-small grid-fluid-gutter-xsmall)
 
-		+above(breakpoints-medium)
-			flex-basis 'calc((100% / %s))' % grid-columns-medium
-			padding-left 'calc((%s / 2))' % grid-gutter-medium
-			padding-right 'calc((%s / 2))' % grid-gutter-medium
-			padding-bottom grid-gutter-medium
+			&:not(:nth-child(-n+4))
+				margin-top 0
+
+			&:not(:nth-child(-n+8))
+				margin-top grid-fluid-gutter-xsmall
+
+		+aboveMedium()
+			flex-basis 'calc((100% / %s) - %s)' % (grid-columns-medium grid-fluid-gutter-medium)
+			margin 0 $column-padding-medium
+
+			&:not(:nth-child(-n+4))
+				margin-top 0
+
+			&:not(:nth-child(-n+8))
+				margin-top 0
+
+			&:not(:nth-child(-n+12))
+				margin-top grid-fluid-gutter-xsmall
+
+		// Phone columns
+		&--phone-half
+			flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
+
+		&--phone-full
+			flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
+
+		&--phone-hide
+			display none
+
+		for columnSpan in 1 .. 4
+			&--phone-{columnSpan}
+				flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-xsmall columnSpan grid-fluid-gutter-xsmall)
+
+		// Tablet columns
+		&--tablet-half
+			flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
+
+		&--tablet-full
+			flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
+
+		&--tablet-hide
+			display none
+
+		for columnSpan in 1 .. 8
+			&--tablet-{columnSpan}
+				+aboveSmall()
+					flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-small columnSpan grid-fluid-gutter-xsmall)
+
+		// Desktop columns
+		&--desktop-half
+			flex-basis 'calc(50% - %s)' % grid-fluid-gutter-medium
+
+		&--desktop-full
+			flex-basis 'calc(100% - %s)' % grid-fluid-gutter-medium
+
+		&--desktop-hide
+			display none
 
 		for columnSpan in 1 .. 12
-			&--span-{columnSpan}
-				+above(breakpoints-xsmall)
-					if (columnSpan <= grid-columns-xsmall)
-						flex-basis 'calc((100% / %s) * %s)' % (grid-columns-xsmall columnSpan)
+			&--desktop-{columnSpan}
+				+aboveMedium()
+					flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-medium columnSpan grid-fluid-gutter-medium)
 
-				+above(breakpoints-small)
-					if (columnSpan <= grid-columns-small)
-						flex-basis 'calc((100% / %s) * %s)' % (grid-columns-small columnSpan)
+	&--prototyping &__column
+		background-color cyan-50
 
-				+above(breakpoints-medium)
-					if (columnSpan <= grid-columns-medium)
-						flex-basis 'calc((100% / %s) * %s)' % (grid-columns-medium columnSpan)
-
-			&--span-{columnSpan}-phone
-				+between(breakpoints-xsmall, breakpoints-medium)
-					if (columnSpan <= grid-columns-xsmall)
-						flex-basis 'calc((100% / %s) * %s)' % (grid-columns-xsmall columnSpan)
-
-			&--span-{columnSpan}-tablet
-				+between(breakpoints-medium, breakpoints-large)
-					if (columnSpan <= grid-columns-medium)
-						flex-basis 'calc((100% / %s) * %s)' % (grid-columns-medium columnSpan)
-
-			&--span-{columnSpan}-desktop
-				+above(breakpoints-large)
-					flex-basis 'calc((100% / %s) * %s)' % (grid-columns-medium columnSpan)
-
-.demo-content
-	background-color #E8E5FF
-	width 100%
-	height 100px
+	&--prototyping&--fluid &__column
+		background-color cyan-70

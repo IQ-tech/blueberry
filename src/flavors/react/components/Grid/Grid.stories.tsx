@@ -1,14 +1,14 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import FlexGrid from "../FlexGrid";
+import { Meta, Story } from "@storybook/react/types-6-0";
+import Grid, { GridProps } from "../Grid";
 
 //@ts-ignore
 import "core/base-styles/main.styl";
-import "core/components/FlexGrid.styl";
+import "core/components/Grid.styl";
 
 export default {
-  title: "Components/Layout/FlexGrid",
-  component: FlexGrid,
+  title: "Components/Layout/Grid",
+  component: Grid,
   parameters: {
     docs: {
       description: {
@@ -29,38 +29,44 @@ const DemoCard = ({ label }) => (
       alignItems: "center",
       justifyContent: "center",
       height: "50px",
+      fontFamily: "Open Sans",
+      fontSize: "13px",
+      color: "white",
     }}
   >
     {label}
   </div>
 );
 
-const Template = (args) => (
-  <FlexGrid {...args}>
-    <FlexGrid.Row>
+const Template: Story<GridProps> = (args) => (
+  <Grid {...args}>
+    <Grid.Row>
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((number) => (
-        <FlexGrid.Column key={`flexColumn-${number}`}>
+        <Grid.Column key={`flexColumn-${number}`}>
           <DemoCard label="column" />
-        </FlexGrid.Column>
+        </Grid.Column>
       ))}
-    </FlexGrid.Row>
-
-    <FlexGrid.Row>
-      <FlexGrid.Column phone={2} tablet={3} desktop={"half"}>
+      <Grid.Column desktop="full">
         <DemoCard label="column" />
-      </FlexGrid.Column>
+      </Grid.Column>
+    </Grid.Row>
 
-      <FlexGrid.Column phone={2} tablet={5} desktop={5}>
+    <Grid.Row>
+      <Grid.Column phone={2} tablet={3} desktop={"half"}>
         <DemoCard label="column" />
-      </FlexGrid.Column>
-    </FlexGrid.Row>
+      </Grid.Column>
 
-    <FlexGrid.Row>
-      <FlexGrid.Column>
+      <Grid.Column phone={2} tablet={5} desktop={5}>
         <DemoCard label="column" />
-      </FlexGrid.Column>
-    </FlexGrid.Row>
-  </FlexGrid>
+      </Grid.Column>
+    </Grid.Row>
+
+    <Grid.Row>
+      <Grid.Column>
+        <DemoCard label="column" />
+      </Grid.Column>
+    </Grid.Row>
+  </Grid>
 );
 
 export const Fixed = Template.bind({});
