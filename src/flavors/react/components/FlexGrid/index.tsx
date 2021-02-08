@@ -1,23 +1,41 @@
 import React from "react";
 import classNames from "classnames";
 
-// Row
-interface RowProps {
-  justifySelf?: string;
-}
-const Row: React.FC<RowProps> = ({ children }) => {
-  return <div className="flex-grid__row">{children}</div>;
-};
-
-// Column
+/** Column sub-component */
+type ColumnSpan = number | "full" | "half";
 interface ColumnProps {
-  xs?: number;
+  phone?: ColumnSpan;
+  tablet?: ColumnSpan;
+  desktop?: ColumnSpan;
 }
-const Column: React.FC<ColumnProps> = ({ children }) => {
-  return <div className="flex-grid__column">{children}</div>;
+const Column: React.FC<ColumnProps> = ({
+  children,
+  phone,
+  tablet,
+  desktop,
+}) => {
+  const componentClass = classNames("flex-grid__column", {
+    [`flex-grid__column--phone-${phone}`]: !!phone,
+    [`flex-grid__column--tablet-${tablet}`]: !!tablet,
+    [`flex-grid__column--desktop-${desktop}`]: !!desktop,
+  });
+  return <div className={componentClass}>{children}</div>;
 };
 
-// Grid main component
+/** Row sub-component */
+interface RowProps {
+  /** Automatically wrap content when columns exceed row space */
+  wrap?: boolean;
+}
+const Row: React.FC<RowProps> = ({ children, wrap = true }) => {
+  const componentClass = classNames("flex-grid__row", {
+    "flex-grid__row--no-wrap": !wrap,
+  });
+
+  return <div className={componentClass}>{children}</div>;
+};
+
+/** Grid main component */
 interface GridProps {
   /** Use Fluid version of grid */
   fluid: boolean;
