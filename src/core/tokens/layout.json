@@ -7,15 +7,32 @@
 		"xlarge": "1920px"
 	},
 	"grid": {
-		"fixed-max-width": "1270px",
+		"fixed": {
+			"max-width": "1270px",
+			"margin": {
+				"xsmall": "16px",
+				"medium": "32px"
+			},
+			"gutter": {
+				"xsmall": "24px",
+				"medium": "32px"
+			}
+		},
+		"fluid": {
+			"margin": {
+				"xsmall": "16px",
+				"medium": "48px"
+			},
+			"gutter": {
+				"xsmall": "24px",
+				"medium": "32px"
+			}
+		},
+
 		"columns": {
 			"xsmall": "4",
 			"small": "8",
 			"medium": "12"
-		},
-		"gutter": {
-			"xsmall": "24px",
-			"medium": "32px"
 		}
 	}
 }

@@ -1,0 +1,49 @@
+@import '../variables.styl'
+
+.flex-grid
+	box-sizing border-box
+	margin 0 auto
+	padding 0 grid-fixed-margin-xsmall
+	max-width grid-fixed-max-width
+
+	+aboveMedium()
+		padding 0 grid-fixed-margin-medium
+
+	&--fluid
+		max-width none
+		padding 0 grid-fluid-margin-xsmall
+
+		+aboveMedium()
+			padding 0 grid-fluid-margin-medium
+
+	&--prototyping
+		background-color blueberry-30
+		position relative
+
+		&:after, &:before
+			display block
+			content ''
+			position absolute
+			background-color blueberry-80
+			top 0
+			height 100%
+			width grid-fixed-margin-xsmall
+
+			+aboveMedium()
+				width grid-fixed-margin-medium
+
+		&:before
+			left 0
+
+		&:after
+			right 0
+
+	&--prototyping&--fluid
+		background-color cyan-30
+
+		&:before, &:after
+			background-color cyan-80
+			width grid-fluid-margin-xsmall
+
+			+aboveMedium()
+				width grid-fluid-margin-medium
