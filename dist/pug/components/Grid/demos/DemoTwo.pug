@@ -1,0 +1,13 @@
+include ../Grid.pug
+include ../Row.pug
+include ../Column
+
+mixin GridDemo()
+	+Grid({prototyping: true})
+		+GridRow({})
+			+GridColumn({phone: "full", tablet: 4, desktop: 2})
+				.demo-content col
+
+			+GridColumn({phone: "half", tablet: 4, desktop: 10})
+				.demo-content col
+

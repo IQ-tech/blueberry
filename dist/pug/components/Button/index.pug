@@ -1,0 +1,21 @@
+mixin Button({type, size, color, loading, expand, text, disabled})
+	- const baseClass = 'btn'
+	- const typeClass = !!type ? `${baseClass}--type-${type}` : ''
+	- const sizeClass = !!size ? `${baseClass}--size-${size}` : ''
+	- const expandClass = !!expand ? `${baseClass}--expand-${expand}` : ''
+	- const colorClass = !!color && color !== "default" ? `${baseClass}--color-${color}` : ''
+	- const disabledClass = !!disabled ? `${baseClass}--disabled` : ''
+	- const loadingClass = !!loading ? `${baseClass}--loading` : ''
+	button(
+		class=baseClass
+		class=typeClass
+		class=sizeClass
+		class=expandClass
+		class=colorClass
+		class=disabledClass
+		class=loadingClass
+	)&attributes( attributes )
+		span #{text}
+		if loading
+			div.btn__loading-overlay
+				div.btn__loading-spinner
