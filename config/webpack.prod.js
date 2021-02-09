@@ -3,6 +3,7 @@ const postStylus = require("poststylus");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const babelConfig = require("./config-babel");
+const path = require("path")
 
 module.exports = {
 	entry: "./src/main.js",
@@ -18,6 +19,13 @@ module.exports = {
 	resolve: {
 		modules: ["node_modules"],
 		extensions: [".js", ".ts", ".tsx", ".styl", ".json"],
+		alias: {
+			core: path.resolve(__dirname, "../src/core/"),
+			fonts: path.resolve(__dirname, "../src/fonts/"),
+			icons: path.resolve(__dirname, "../src/icons/"),
+			flavors: path.resolve(__dirname, "../src/flavors/"),
+			react: path.resolve(__dirname, "../src/flavors/react/"),
+		}
 	},
 	module: {
 		rules: [

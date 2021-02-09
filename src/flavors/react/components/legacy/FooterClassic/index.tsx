@@ -1,6 +1,6 @@
 import React from "react";
 // @ts-ignore
-import footerLinks from "../../../../../core/data/footer-links.json";
+import footerLinks from "core/data/footer-links.json";
 
 import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";

@@ -1,6 +1,6 @@
 import React from "react";
 //@ts-ignore
-import publicInfo from "../../../../../../core/data/public-info.json";
+import publicInfo from "core/data/public-info.json";
 
 const InfoSection = () => (
   <div className="footer-classic__info">
