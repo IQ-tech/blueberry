@@ -22,7 +22,7 @@ mixin FooterClassic()
 
 				.footer-classic__pages-menu
 					.footer-classic__links-group
-						h2.footer-classic__links-group-title Sobre o iq
+						h2.footer-classic__links-group-title(data-menu='0') Sobre o iq
 						ul.footer-classic__links-list
 							+FooterLink({label: "Quem Somos", href: "https://www.iq.com.br/quem-somos/"})
 							+FooterLink({label: "Termos de Uso", href: "https://www.iq.com.br/termos-e-condicoes/"})
@@ -30,7 +30,7 @@ mixin FooterClassic()
 							+FooterLink({label: "FAQ", href: "https://www.iq.com.br/faq/"})
 
 					.footer-classic__links-group
-						h2.footer-classic__links-group-title Nossas soluções
+						h2.footer-classic__links-group-title(data-menu='1') Nossas soluções
 						ul.footer-classic__links-list
 							+FooterLink({label: "iq contas", href: "https://www.iq.com.br/"})
 							+FooterLink({label: "iq cartões", href: "https://www.iq.com.br/cartao-de-credito/"})
