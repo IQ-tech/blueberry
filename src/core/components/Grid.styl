@@ -62,12 +62,6 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 		+aboveMedium()
 			margin 0 'calc(-%s / 2)' % grid-fluid-gutter-medium
 
-		&:not(:last-of-type)
-			margin-bottom grid-fluid-gutter-xsmall
-
-			+aboveMedium()
-				margin-bottom grid-fluid-gutter-medium
-
 		&--no-wrap
 			flex-wrap none
 
@@ -78,31 +72,15 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 		margin 0 $column-padding-xsmall
 		box-sizing border-box
 		overflow hidden
-
-		&:not(:nth-child(-n+4))
-			margin-top grid-fluid-gutter-xsmall
+		margin-bottom grid-fluid-gutter-xsmall
 
 		+aboveSmall()
 			flex-basis 'calc((100% / %s) - %s)' % (grid-columns-small grid-fluid-gutter-xsmall)
 
-			&:not(:nth-child(-n+4))
-				margin-top 0
-
-			&:not(:nth-child(-n+8))
-				margin-top grid-fluid-gutter-xsmall
-
 		+aboveMedium()
 			flex-basis 'calc((100% / %s) - %s)' % (grid-columns-medium grid-fluid-gutter-medium)
 			margin 0 $column-padding-medium
-
-			&:not(:nth-child(-n+4))
-				margin-top 0
-
-			&:not(:nth-child(-n+8))
-				margin-top 0
-
-			&:not(:nth-child(-n+12))
-				margin-top grid-fluid-gutter-xsmall
+			margin-bottom grid-fluid-gutter-medium
 
 		// Phone columns
 		&--phone-half
