@@ -1,0 +1,15 @@
+
+mixin GridColumn({phone, tablet, desktop})
+	- const baseClass = 'grid__column'
+	- // On breakpoint variables, the values can be the number of columns, "half", "full" or "hide"
+	- const phoneClass = !!phone ? `${baseClass}--phone-${phone}` : ''
+	- const tabletClass = !!tablet ? `${baseClass}--tablet-${tablet}` : ''
+	- const desktopClass = !!desktop ? `${baseClass}--desktop-${desktop}` : ''
+	div(
+		class=baseClass
+		class=phoneClass
+		class=tabletClass
+		class=desktopClass
+	)
+		if block
+			block

@@ -1,0 +1,12 @@
+mixin Grid({prototyping, fluid})
+	- const baseClass = 'grid'
+	- const protoClass = !!prototyping ? `${baseClass}--prototyping` : ''
+	- const fluidClass = !!fluid ? `${baseClass}--fluid` : ''
+	div(
+		class=baseClass
+		class=protoClass
+		class=fluidClass
+	)
+		if block
+			block
+
