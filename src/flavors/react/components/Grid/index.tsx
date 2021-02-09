@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 /** Column sub-component */
 type ColumnSpan = number | "full" | "half" | "hide";
-interface ColumnProps {
+export interface ColumnProps {
   phone?: ColumnSpan;
   tablet?: ColumnSpan;
   desktop?: ColumnSpan;

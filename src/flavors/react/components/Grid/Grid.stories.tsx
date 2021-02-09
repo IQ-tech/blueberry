@@ -1,10 +1,18 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react/types-6-0";
-import Grid, { GridProps } from "../Grid";
+import { Meta } from "@storybook/react/types-6-0";
+import Grid, { GridProps, ColumnProps } from "../Grid";
 
 //@ts-ignore
 import "core/base-styles/main.styl";
 import "core/components/Grid.styl";
+
+const testRowsAndColumns = [
+  [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+  [
+    { phone: 2, tablet: 3, desktop: "half" },
+    { phone: 2, tablet: 5, desktop: 5 },
+  ],
+];
 
 export default {
   title: "Components/Layout/Grid",
@@ -16,6 +24,13 @@ export default {
       },
       source: {
         type: "code",
+      },
+    },
+  },
+  argTypes: {
+    testingRowsAndColumns: {
+      control: {
+        type: "object",
       },
     },
   },
@@ -38,34 +53,20 @@ const DemoCard = ({ label }) => (
   </div>
 );
 
-const Template: Story<GridProps> = (args) => (
+const Template = ({ testingRowsAndColumns = [], ...args }) => (
   <Grid {...args}>
-    <Grid.Row>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((number) => (
-        <Grid.Column key={`flexColumn-${number}`}>
-          <DemoCard label="column" />
-        </Grid.Column>
-      ))}
-      <Grid.Column desktop="full">
-        <DemoCard label="column" />
-      </Grid.Column>
-    </Grid.Row>
-
-    <Grid.Row>
-      <Grid.Column phone={2} tablet={3} desktop={"half"}>
-        <DemoCard label="column" />
-      </Grid.Column>
-
-      <Grid.Column phone={2} tablet={5} desktop={5}>
-        <DemoCard label="column" />
-      </Grid.Column>
-    </Grid.Row>
-
-    <Grid.Row>
-      <Grid.Column>
-        <DemoCard label="column" />
-      </Grid.Column>
-    </Grid.Row>
+    {testingRowsAndColumns.map((columns = [], indexRow) => (
+      <Grid.Row key={`grid-row-${indexRow}`}>
+        {columns.map((column = {}, indexColumn) => (
+          <Grid.Column
+            {...column}
+            key={`flexColumn-${indexRow}-${indexColumn}`}
+          >
+            <DemoCard label="column" />
+          </Grid.Column>
+        ))}
+      </Grid.Row>
+    ))}
   </Grid>
 );
 
@@ -73,10 +74,12 @@ export const Fixed = Template.bind({});
 Fixed.args = {
   fluid: false,
   prototyping: true,
+  testingRowsAndColumns: testRowsAndColumns,
 };
 
 export const Fluid = Template.bind({});
 Fluid.args = {
   fluid: true,
   prototyping: true,
+  testingRowsAndColumns: testRowsAndColumns,
 };
