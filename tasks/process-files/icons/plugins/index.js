@@ -1,15 +1,17 @@
-const fs = require("fs");
-const path = require("path");
-const { src, dest, series } = require("gulp");
-const html2pug = require("gulp-html2pug");
 const through = require("through2");
 const { pascalCase } = require("change-case");
+const path = require("path");
 
-function transformPugFragmentToMixinPlugin() {
+/**
+ * After convert the svg icon to pug syntax, we neeed to
+ * insert this new pug fragment inside a pug mixin,
+ * and that's exactly what this file stream plugin does
+ */
+exports.transformPugFragmentToMixinPlugin = function () {
 	return through.obj(function (file, enc, cb) {
 		const filename = file.relative;
 		const fileNameWithoutExtension = path.parse(filename).name;
-		const mixinName = pascalCase(fileNameWithoutExtension)
+		const mixinName = pascalCase(fileNameWithoutExtension);
 		const fileContent = file.contents.toString();
 		const fragmentLines = fileContent.split("\n");
 		const linesWithNewTab = fragmentLines.map((line) => `\t${line}`).join("\n");
@@ -19,9 +21,15 @@ function transformPugFragmentToMixinPlugin() {
 		this.push(file);
 		cb(null, file);
 	});
-}
+};
 
-function renamePugIconPlugin() {
+
+/**
+ * This file stream plugin should modify the name
+ * of the outputted file to always use pascal case
+ * ex.: my-icon.svg -> MyIcon.pug
+ */
+exports.renamePugIconPlugin = function () {
 	return through.obj(function (file, enc, cb) {
 		const filename = file.relative;
 		const filePath = file.path;
@@ -36,23 +44,4 @@ function renamePugIconPlugin() {
 		file.path = newFilePath;
 		cb(null, file);
 	});
-}
-
-function generatePugIconsTask() {
-	return src("./src/icons/*.svg")
-		.pipe(html2pug({ tabs: true, fragment: true }))
-		.pipe(renamePugIconPlugin())
-		.pipe(transformPugFragmentToMixinPlugin())
-		.pipe(dest("./src/flavors/pug/components/icons"));
-}
-
-module.exports = function updateIconsTask() {
-	return generatePugIconsTask();
-
-	// clear pug icons folder
-	// clear pug icons file
-
-	// generate pug file
-
-	//  modify demo file
 };

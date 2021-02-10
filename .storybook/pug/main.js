@@ -11,10 +11,6 @@ module.exports = {
 
   webpackFinal: async (config, { configType }) => {
     addCommonConfig(config);
-    config.module.rules.push({
-      test: /\.pug$/,
-      use: [path.resolve(__dirname, "./pug-loader.js")],
-    });
 
     return config;
   },

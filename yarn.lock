@@ -6381,6 +6381,13 @@ gulp-html2pug@^3.0.3:
     through2 "^3.0.1"
     vinyl-contents-tostring "^3.0.0"
 
+gulp-svgo@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/gulp-svgo/-/gulp-svgo-2.2.1.tgz#a89e3a8d2c3288b6cd5f1e074da53fe5bde3c591"
+  integrity sha512-SjAwrSGTyLOdGcXphCQuwSQyWNWTgTLbmgx7WYGAXrzuQSacA5dgxKDp7TPl5GrbdOpzMzXYnwlnDndzp95jtg==
+  dependencies:
+    svgo "^1.0.0"
+
 gulp@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-4.0.2.tgz#543651070fd0f6ab0a0650c6a3e6ff5a7cb09caa"

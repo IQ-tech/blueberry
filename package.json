@@ -45,6 +45,7 @@
 		"file-loader": "^6.2.0",
 		"gulp": "^4.0.2",
 		"gulp-html2pug": "^3.0.3",
+		"gulp-svgo": "^2.2.1",
 		"mini-css-extract-plugin": "^1.1.1",
 		"optimize-css-assets-webpack-plugin": "^5.0.4",
 		"poststylus": "^1.0.1",
