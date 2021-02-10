@@ -2,7 +2,7 @@ const { series, parallel } = require("gulp");
 const { cleanFolderTaskFactory } = require("../../../task-factories");
 
 const clearReactOutputFolderTask = cleanFolderTaskFactory(
-	"src/flavors/react/components/icons/*.tsx"
+	"src/flavors/react/components/icons/generated/*.tsx"
 );
 
 const generateReactIconsTask = require("./generate-react-icons");

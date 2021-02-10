@@ -3,5 +3,4 @@ const { parallel } = require("gulp");
 const pugIconsTask = require("./pug-icons");
 const reactIconsTask = require("./react-icons");
 
-/* module.exports = parallel(pugIconsTask, reactIconsTask); */
-module.exports = reactIconsTask;
+module.exports = parallel(pugIconsTask, reactIconsTask);

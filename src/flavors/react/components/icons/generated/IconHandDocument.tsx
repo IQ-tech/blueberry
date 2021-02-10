@@ -5,6 +5,9 @@ import React from "react";
 export default function IconHandDocument({width = '100%', height = '100%', style = {}}){
 	const componentStyles = {
 		...style,
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
 		...(!!width ? {width} : {}),
 		...(!!height ? {height} : {})
 	};

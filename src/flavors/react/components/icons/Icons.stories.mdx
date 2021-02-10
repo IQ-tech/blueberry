@@ -1,0 +1,30 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import PresentationComponent from "./PresentationComponent";
+
+<Meta title="Icons" />
+
+## Icons
+
+### How to import
+
+Look for the icon name in the table down below, then, you just need to:
+
+```
+// Isolated icons
+import IconHandApp from "iq-blueberry/dist/reactIcons/IconName"
+
+const myComponent = () => (
+	<div>
+		<IconHandApp />
+	</div>
+)
+
+```
+
+## All icons
+
+<Canvas>
+	<Story name="icons list">
+		<PresentationComponent />
+	</Story>
+</Canvas>
