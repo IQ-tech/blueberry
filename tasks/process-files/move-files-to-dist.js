@@ -1,9 +1,6 @@
-const { src, dest, parallel } = require("gulp");
+const { parallel } = require("gulp");
+const { moveFromToTaskFactory } = require("../task-factories")
 
-function moveFromToTaskFactory(from, to) {
-	const moveFiles = () => src(from).pipe(dest(to));
-	return moveFiles;
-}
 
 const moveStylusUtilsFilesTask = moveFromToTaskFactory(
 	"src/core/stylus-utils/**/*.styl",
