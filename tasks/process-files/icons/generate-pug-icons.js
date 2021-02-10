@@ -4,7 +4,7 @@ const { src, dest } = require("gulp");
 
 const {
 	transformPugFragmentToMixinPlugin,
-	renamePugIconPlugin,
+	filenameCamelCasePlugin,
 } = require("./plugins");
 
 /** This task function should create a pug mixin file based on
@@ -22,7 +22,7 @@ module.exports = function generatePugIconsTask() {
 			})
 		)
 		.pipe(html2pug({ tabs: true, fragment: true }))
-		.pipe(renamePugIconPlugin())
+		.pipe(filenameCamelCasePlugin())
 		.pipe(transformPugFragmentToMixinPlugin())
 		.pipe(dest("./src/flavors/pug/components/icons"));
 };

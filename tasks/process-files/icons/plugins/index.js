@@ -28,8 +28,9 @@ exports.transformPugFragmentToMixinPlugin = function () {
  * This file stream plugin should modify the name
  * of the outputted file to always use pascal case
  * ex.: my-icon.svg -> MyIcon.pug
+ * ex.: my-icon.svg -> MyIcon.tsx
  */
-exports.renamePugIconPlugin = function () {
+exports.filenameCamelCasePlugin = function () {
 	return through.obj(function (file, enc, cb) {
 		const filename = file.relative;
 		const filePath = file.path;
