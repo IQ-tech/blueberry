@@ -47,3 +47,6 @@ describe component development workflow
 
 ## Technologies used
 list used technologies
+
+## Build tasks
+Summarize build tasks, paths and gulp
