@@ -1,0 +1,13 @@
+include ../../Grid/Column.pug
+
+mixin IconBox({filename})
+	+GridColumn({})
+		.icon-box(
+			title=filename
+		)
+			.icon-holder
+				if block
+					block
+			p.icon-box__name #{filename}
+
+

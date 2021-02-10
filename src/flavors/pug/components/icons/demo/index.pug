@@ -1,1 +1,16 @@
+include ../IconHandApp.pug
+include ../IconHandDocument.pug
+
+include ../../Grid/Grid.pug
+include ../../Grid/Row.pug
+include ./IconBox.pug
+
 mixin IconsDemo()
+	+Grid({})
+		+GridRow()
+			+IconBox({filename: "tesasdast.pug"})
+				+IconHandApp()
+
+			+IconBox({filename: "test.pug"})
+				+IconHandApp()
+
