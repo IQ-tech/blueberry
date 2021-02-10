@@ -48,5 +48,5 @@ module.exports = function generateReactIconsTask() {
 			})
 		)
 		.pipe(svgToTSXPlugin())
-		.pipe(dest("./src/flavors/react/components/icons"));
+		.pipe(dest("./src/flavors/react/components/icons/generated"));
 };

@@ -2,35 +2,31 @@ const fs = require("fs");
 const path = require("path");
 
 const moduleTemplate = (componentName) =>
-	`export {default as ${componentName}} from "./${componentName}"`;
+	`export {default as ${componentName}} from "./generated/${componentName}"`;
 
-module.exports = function GenIconRootModuleTaskFactory(
-	folderToScan,
-	extensionToScan = ".js"
-) {
-	const generatingIconsRootComponent = (cb) => {
-		const folderFiles = fs.readdirSync(folderToScan) || [];
-		const extFiles = folderFiles.filter((iconFile) =>
-			iconFile.endsWith(extensionToScan)
-		);
-		const fileNames = extFiles.map((filename) => path.parse(filename).name);
-		const modulesFileLines = fileNames.map((filename) =>
-			moduleTemplate(filename)
-		);
+module.exports = function genIconRootModuleTask(cb) {
+	const reactIconsFolder = "./src/flavors/react/components/icons/";
+	const reactGeneratedIconsFolder = `${reactIconsFolder}generated/`;
+	const extensionToScan = ".tsx";
 
-		const modulesFileContent = [
-			"// This is a generated file, do not modify manually",
-			...modulesFileLines,
-		].join("\n");
+	const folderFiles = fs.readdirSync(reactGeneratedIconsFolder) || [];
+	const extFiles = folderFiles.filter((iconFile) =>
+		iconFile.endsWith(extensionToScan)
+	);
 
-		const folderHasSlash = !!folderToScan.endsWith("/");
-		const newFilePath = folderHasSlash
-			? `${folderToScan}index${extensionToScan}`
-			: `${folderToScan}/index${extensionToScan}`;
+	const fileNames = extFiles.map((filename) => path.parse(filename).name);
+	const modulesFileLines = fileNames.map((filename) =>
+		moduleTemplate(filename)
+	);
 
-		fs.writeFileSync(newFilePath, modulesFileContent);
+	const modulesFileContent = [
+		"// This is a generated file, do not modify manually",
+		...modulesFileLines,
+	].join("\n");
 
-		cb();
-	};
-	return generatingIconsRootComponent;
+	const newFilePath = `${reactIconsFolder}index${extensionToScan}`;
+
+	fs.writeFileSync(newFilePath, modulesFileContent);
+
+	cb();
 };
