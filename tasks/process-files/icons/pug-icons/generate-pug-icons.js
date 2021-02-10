@@ -5,7 +5,7 @@ const { src, dest } = require("gulp");
 const {
 	transformPugFragmentToMixinPlugin,
 	filenameCamelCasePlugin,
-} = require("./plugins");
+} = require("../plugins");
 
 /** This task function should create a pug mixin file based on
  * every svg icon on src/icons folder

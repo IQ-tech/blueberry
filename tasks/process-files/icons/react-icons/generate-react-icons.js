@@ -3,27 +3,11 @@ const svgo = require("gulp-svgo");
 const through = require("through2");
 const path = require("path");
 const { pascalCase } = require("change-case");
+const ReactIconTemplate = require("./component-template");
 
-const ReactIconTemplate = ( componentName, iconSvg ) => `
-	import React from "react";
-
-	export default function ${componentName}({width = '100%', height = '100%', style = {}}){
-		const componentStyles = {
-			...style,
-			...(!!width ? {width} : {}),
-			...(!!height ? {height} : {})
-		};
-
-		return (
-			<div 
-				className="iq-icon iq-icon--${componentName}" 
-				style={componentStyles} 
-				dangerouslySetInnerHTML={{__html:'${iconSvg}'}} 
-			/>
-		)
-	}
-`;
-
+/**
+ * This plugin parse the svg file into a react component
+ */
 function svgToTSXPlugin() {
 	return through.obj(function (file, enc, cb) {
 		const getNewFilePath = (componentName) => {
@@ -44,8 +28,7 @@ function svgToTSXPlugin() {
 		const componentName = pascalCase(name);
 
 		const svgFileContent = file.contents.toString();
-		const componentContent = ReactIconTemplate(componentName, svgFileContent)
-
+		const componentContent = ReactIconTemplate(componentName, svgFileContent);
 
 		file.path = getNewFilePath(componentName);
 		file.contents = Buffer.from(componentContent);
@@ -54,7 +37,7 @@ function svgToTSXPlugin() {
 }
 
 module.exports = function generateReactIconsTask() {
-	src("./src/icons/*.svg")
+	return src("./src/icons/*.svg")
 		.pipe(
 			svgo({
 				plugins: [
