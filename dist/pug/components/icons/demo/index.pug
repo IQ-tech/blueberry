@@ -1,0 +1,17 @@
+include ../IconHandsBackground.pug
+include ../IconHandDocument.pug
+include ../IconHandApp.pug
+include ../../Grid/Grid.pug
+include ../../Grid/Row.pug
+include ./IconBox.pug
+mixin IconsDemo()
+	+Grid({})
+		+GridRow()
+			+IconBox({filename: "IconHandApp.pug"})
+				+IconHandApp()
+
+			+IconBox({filename: "IconHandDocument.pug"})
+				+IconHandDocument()
+
+			+IconBox({filename: "IconHandsBackground.pug"})
+				+IconHandsBackground()

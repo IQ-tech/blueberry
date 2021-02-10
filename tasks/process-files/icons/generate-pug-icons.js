@@ -12,7 +12,15 @@ const {
  */
 module.exports = function generatePugIconsTask() {
 	return src("./src/icons/*.svg")
-		.pipe(svgo())
+		.pipe(
+			svgo({
+				plugins: [
+					{
+						removeDimensions: true, // replace inline svg width and height by the viewbox to keep responsivity
+					},
+				],
+			})
+		)
 		.pipe(html2pug({ tabs: true, fragment: true }))
 		.pipe(renamePugIconPlugin())
 		.pipe(transformPugFragmentToMixinPlugin())

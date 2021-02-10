@@ -1,14 +1,12 @@
 const rimraf = require("rimraf");
 
 /** Clear the lib dist folder */
-function cleanDistTask() {
-  const distFolderWildcard = `dist/*`;
+function cleanDistTask(cb) {
+	const distFolderWildcard = `dist/*`;
 
-  return new Promise((resolve) => {
-    rimraf(distFolderWildcard, () => {
-      resolve();
-    });
-  });
+	rimraf(distFolderWildcard, () => {
+		cb();
+	});
 }
 
 module.exports = cleanDistTask;
