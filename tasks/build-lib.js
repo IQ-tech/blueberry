@@ -7,11 +7,14 @@ const { cleanFolderTaskFactory } = require("./task-factories");
 
 const cleanDistTask = cleanFolderTaskFactory("dist/*");
 
+const generateDistReactIcons = require("./process-files/icons/react-icons/generate-dist-icons");
+
 // Do all tasks imported above in the correct order
 const buildLibTask = series(
 	cleanDistTask,
 	bundleLibTask,
-	moveCoreFilesToDistTask
+	moveCoreFilesToDistTask,
+	generateDistReactIcons
 );
 
 module.exports = buildLibTask;
