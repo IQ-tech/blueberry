@@ -5,7 +5,7 @@ const path = require("path");
 
 const iconsFilesFolderPath = "./src/flavors/react/components/icons/generated";
 
-module.exports = function generateDistIconsTasK(cb) {
+module.exports = function generateDistIconsTask(cb) {
 	const generateIconsFiles = fs.readdirSync(iconsFilesFolderPath);
 
 	const newInputFiles = generateIconsFiles.reduce((acc, nextPath) => {
@@ -30,7 +30,9 @@ module.exports = function generateDistIconsTasK(cb) {
 
 	compiler.run((err) => {
 		if (err) {
-			cb();
+			throw new Error(
+				"`generateDistIconsTask` task failed, React icons transpiling didn't work  "
+			);
 		}
 		cb();
 	});

@@ -7,16 +7,17 @@ const webpackProdConfig = require("../../config/webpack.prod");
  *
  * it also compile all stylus code into a single iq-design-system.css file
  */
-function bundleLibTask() {
+function bundleLibTask(cb) {
 	const compiler = webpack(webpackProdConfig);
 
-	return new Promise((res, rej) => {
-		compiler.run((err) => {
-			if (err) {
-				rej(err);
-			}
-			res();
-		});
+	compiler.run((err) => {
+		if (err) {
+			throw new Error(
+				"Webpack compiling failed, run `yarn only-bundle` to see the details"
+			);
+		} else {
+			cb();
+		}
 	});
 }
 

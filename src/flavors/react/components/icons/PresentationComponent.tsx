@@ -1,7 +1,6 @@
 import React from "react";
 
 import * as Icons from "./index";
-import Grid from "../Grid";
 
 const PresentaionComponent = () => {
   const iconsNames = Object.keys({ ...Icons });
