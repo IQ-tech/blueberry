@@ -29,7 +29,7 @@ $header-desk-height = 70px
 		height 60px
 		display flex
 		align-items center
-		box-shadow 0 2px 5px 0 rgba(0 0 0 .5)
+		box-shadow 0 2px 5px 0 rgba(0 0 0 30%)
 
 		+aboveSmall()
 			height $header-desk-height
@@ -193,6 +193,7 @@ $header-desk-height = 70px
 
 		&:hover
 			color #099faa
+			text-decoration none
 
 		&--active
 			color $color-blue-light
@@ -574,6 +575,7 @@ $header-desk-height = 70px
 			transition-delay 0s
 
 		&:hover
+			text-decoration none
 			&:before
 				transform scaleY(1)
 

@@ -1,6 +1,5 @@
 const { parallel } = require("gulp");
-const { moveFromToTaskFactory } = require("../task-factories")
-
+const { moveFromToTaskFactory } = require("../task-factories");
 
 const moveStylusUtilsFilesTask = moveFromToTaskFactory(
 	"src/core/stylus-utils/**/*.styl",
@@ -22,9 +21,15 @@ const movePugFilesTask = moveFromToTaskFactory(
 	"dist/pug/"
 );
 
+const movePugJsFilesTask = moveFromToTaskFactory(
+	["src/flavors/pug/**/*.js", "!src/flavors/pug/**/*.stories.js"],
+	"dist/pug/"
+);
+
 module.exports = parallel(
 	moveStylusUtilsFilesTask,
 	moveTokensFilesTask,
 	moveStyleVariablesTask,
-	movePugFilesTask
+	movePugFilesTask,
+	movePugJsFilesTask
 );
