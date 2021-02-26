@@ -1,0 +1,68 @@
+@import '../variables.styl'
+
+.tag
+  border none
+  border-radius 12px
+  padding 5px 10px
+  display inline-block
+
+  &__label
+    font-family "Open Sans"
+    font-size 12px
+    font-weight 600
+    letter-spacing 0
+    line-height 12px
+    text-align center
+
+  // Possible color combinations of provider
+  &--provider&--connected
+    background-color blueberry-10
+    .tag__label
+      color blueberry-80
+
+  &--provider&--payment-active
+    background-color cyan-20
+    .tag__label
+      color cyan-80
+    
+  &--provider&--connecting
+    background-color gray-30
+    .tag__label
+      color gray-100
+    
+  &--provider&--error
+    background-color red-10
+    .tag__label
+      color red-100
+    
+  &--provider&--pending-action
+    background-color yellow-20
+    .tag__label
+      color yellow-100
+
+  // Possible color combinations of bill
+
+  &--bill&--available
+    background-color blueberry-20
+    .tag__label
+      color blueberry-80
+
+  &--bill&--overdue
+    background-color red-20
+    .tag__label
+      color red-100
+    
+  &--bill&--accumulated
+    background-color yellow-30
+    .tag__label
+      color yellow-100
+    
+  &--bill&--charge 
+    background-color cyan-30
+    .tag__label
+      color cyan-80
+    
+  &--bill&--paid
+    background-color green-20
+    .tag__label
+      color green-100
