@@ -15,56 +15,54 @@
     text-align center
 
   // Possible color combinations of provider
-  &.--provider
-    &.--connected
-      background-color blueberry-10
-      .tag__label
-        color blueberry-80
+  &--provider&--connected
+    background-color blueberry-10
+    .tag__label
+      color blueberry-80
 
-    &.--payment-active
-      background-color cyan-20
-      .tag__label
-        color cyan-80
+  &--provider&--payment-active
+    background-color cyan-20
+    .tag__label
+      color cyan-80
     
-    &.--connecting
-      background-color gray-30
-      .tag__label
-        color gray-100
+  &--provider&--connecting
+    background-color gray-30
+    .tag__label
+      color gray-100
     
-    &.--error
-      background-color red-10
-      .tag__label
-        color red-100
+  &--provider&--error
+    background-color red-10
+    .tag__label
+      color red-100
     
-    &.--pending-action
-      background-color yellow-20
-      .tag__label
-        color yellow-100
+  &--provider&--pending-action
+    background-color yellow-20
+    .tag__label
+      color yellow-100
 
   // Possible color combinations of bill
 
-  &.--bill
-    &.--available
-      background-color blueberry-20
-      .tag__label
-        color blueberry-80
+  &--bill&--available
+    background-color blueberry-20
+    .tag__label
+      color blueberry-80
 
-    &.--overdue
-      background-color red-20
-      .tag__label
-        color red-100
+  &--bill&--overdue
+    background-color red-20
+    .tag__label
+      color red-100
     
-    &.--accumulated
-      background-color yellow-30
-      .tag__label
-        color yellow-100
+  &--bill&--accumulated
+    background-color yellow-30
+    .tag__label
+      color yellow-100
     
-    &.--charge 
-      background-color cyan-30
-      .tag__label
-        color cyan-80
+  &--bill&--charge 
+    background-color cyan-30
+    .tag__label
+      color cyan-80
     
-    &.--paid
-      background-color green-20
-      .tag__label
-        color green-100
+  &--bill&--paid
+    background-color green-20
+    .tag__label
+      color green-100

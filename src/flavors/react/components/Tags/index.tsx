@@ -33,10 +33,10 @@ const Tags:React.FC<TagsProps> = ({ type, label, billStatus, providerStatus }) =
   const currentBillClass = billClassesConfig[billStatus]
   
   const tagClasses = classNames('tag', {
-    '--bill': type === 'bill',
-    '--provider': type === 'provider',
-    [currentProviderClass]: providerStatus,
-    [currentBillClass]: billStatus
+    'tag--bill': type === 'bill',
+    'tag--provider': type === 'provider',
+    [`tag${currentProviderClass}`]: providerStatus,
+    [`tag${currentBillClass}`]: billStatus
   })
 
   return (
