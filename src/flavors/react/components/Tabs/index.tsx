@@ -28,7 +28,11 @@ const Tabs:React.FC<TabsProps> = ({
   }
 
   useEffect(() => {
-    setActiveIndex(customIndex)
+    setActiveIndex(activeIndex)
+
+    if (!isNaN(customIndex)) {
+      setActiveIndex(customIndex)
+    }
   }, [])
 
   return (
