@@ -3,18 +3,20 @@ import TabsHeader from './TabsHeader'
 import TabsContent from './Content'
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
+  /* Defining header buttons */
   tabsHeader: [],
+  /* Customized index to define which table to select itself */
   customIndex: number,
   className: string,
   children: JSX.Element[] | JSX.Element,
-  setCustomActiveIndex: any,
+  /* Defining if has notification style */
   isNotificationActive: boolean
 }
 
 const Tabs:React.FC<TabsProps> = ({
 	children,
-  tabsHeader,
 	className,
+  tabsHeader,
   customIndex,
   isNotificationActive
 }) => {

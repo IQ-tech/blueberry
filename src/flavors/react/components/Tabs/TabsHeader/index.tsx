@@ -8,9 +8,9 @@ const TabsHeader = ({
 	customClass,
 	isNotificationActive
 }) => {
-	const listClass = classnames('tabs-button__list', {
+	const listClass = classnames('tabs-button', {
 		[`${customClass}`]: !!customClass,
-		'tabs-button__list--notification-active': isNotificationActive
+		'tabs-button--notification-active': isNotificationActive
 	})
 
 	const buttonsMap = data =>

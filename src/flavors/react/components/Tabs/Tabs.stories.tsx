@@ -11,7 +11,10 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Default Tabs component`,
+        component: `
+          To use this component you need to define the header buttons 
+          with an array of objects and use it wrapping in another markup.
+        `,
       },
     },
   },
@@ -19,8 +22,8 @@ export default {
 
 const Template = (args) => <Tabs {...args} />;
 
-export const TabExample = Template.bind({});
-TabExample.args = {
+export const TabExampleWithNotification = Template.bind({});
+TabExampleWithNotification.args = {
   tabsHeader: [
     { title: 'Notícias', notificationAmount: 1 }, 
     { title: 'Avisos', notificationAmount: 2 }
@@ -28,4 +31,14 @@ TabExample.args = {
   className: '',
   children: [1, 2],
   isNotificationActive: true
+};
+
+export const TabSimpleExample = Template.bind({});
+TabSimpleExample.args = {
+  tabsHeader: [
+    { title: 'Notícias' }, 
+    { title: 'Avisos' }
+  ],
+  className: '',
+  children: [1, 2]
 };
