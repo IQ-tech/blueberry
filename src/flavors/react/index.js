@@ -13,3 +13,6 @@ export { default as Conditional } from "./components/misc/Conditional";
 // Legacy components
 export { default as HeaderClassic } from "./components/legacy/HeaderClassic";
 export { default as FooterClassic } from "./components/legacy/FooterClassic";
+
+export { default as Tags } from "./components/Tags";
+export { default as Tabs } from "./components/Tabs";
