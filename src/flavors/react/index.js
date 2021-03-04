@@ -14,5 +14,7 @@ export { default as Conditional } from "./components/misc/Conditional";
 export { default as HeaderClassic } from "./components/legacy/HeaderClassic";
 export { default as FooterClassic } from "./components/legacy/FooterClassic";
 
+// Regular components
 export { default as Tags } from "./components/Tags";
 export { default as Tabs } from "./components/Tabs";
+export { default as Button } from "./components/Button";
