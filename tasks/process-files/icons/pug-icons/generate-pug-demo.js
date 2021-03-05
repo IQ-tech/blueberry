@@ -10,13 +10,15 @@ const path = require("path");
  * when running yarn register-icons
  */
 module.exports = function generatePugIconsDemo(cb) {
-	const demosPugTemplate = `include ../../Grid/Grid.pug\ninclude ../../Grid/Row.pug\ninclude ./IconBox.pug\nmixin IconsDemo()\n\t+Grid({})\n\t\t+GridRow()`;
+	const demosPugTemplate = `\ninclude ../../Grid/Grid.pug\ninclude ../../Grid/Row.pug\ninclude ./IconBox.pug\nmixin IconsDemo()\n\t.icons-demo\n\t\t+Grid({})\n\t\t\t+GridRow()`;
 	const demosPugTemplateLines = demosPugTemplate.split("\n");
 
 	const iconDemoTemplate = (filename, mixinName) =>
-		`\t\t\t+IconBox({filename: "${filename}"})\n\t\t\t\t+${mixinName}()\n`;
+		`\t\t\t\t+IconBox({filename: "${filename}"})\n\t\t\t\t\t+${mixinName}()\n`;
 
 	const importPugTemplate = (filename) => `include ../${filename}`;
+
+	const disclaimer = '//Generated file, do not modify manually\n'
 
 	const IconsFolderFiles =
 		fs.readdirSync("./src/flavors/pug/components/icons") || [];
@@ -38,7 +40,9 @@ module.exports = function generatePugIconsDemo(cb) {
 
 	}, demosPugTemplateLines)
 
-	const newFileContent = newTemplateLines.join("\n")
+	const withCommentLine = [disclaimer, ...newTemplateLines]
+
+	const newFileContent = withCommentLine.join("\n")
 
 	fs.writeFileSync('./src/flavors/pug/components/icons/demo/index.pug', newFileContent)
 
