@@ -3,7 +3,6 @@ import { Meta } from "@storybook/react/types-6-0";
 import Grid, { GridProps, ColumnProps } from "../Grid";
 
 //@ts-ignore
-import "core/base-styles/main.styl";
 import "core/components/Grid.styl";
 
 const testRowsAndColumns = [

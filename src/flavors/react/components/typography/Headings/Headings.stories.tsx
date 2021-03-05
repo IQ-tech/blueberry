@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { H1, H2, H3, H4, H5, H6 } from "./index";
-/* import "core/base-styles/main.styl"; */
+import "core/components/typography/Headings.styl";
 
 export default {
   title: "Components/Typography/Heading",

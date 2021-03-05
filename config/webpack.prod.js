@@ -73,6 +73,7 @@ module.exports = {
 						discardComments: { removeAll: true },
 						normalizeWhitespace: false,
 						minifyFontValues: false,
+						mergeLonghand: false
 					},
 				],
 			},

@@ -3,7 +3,6 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import Grid, { RowProps } from "../Grid";
 
 //@ts-ignore
-import "core/base-styles/main.styl";
 import "core/components/Grid.styl";
 
 export default {

@@ -1,7 +1,7 @@
-@import '../variables'
-@import '../stylus-utils/mixins'
+@import '../../variables'
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h6
+.h1, .h2, .h3, .h4, .h5, .h6
+	componentDeepReset()
 	font-family 'Baloo Chettan 2', 'Open Sans'
 
 	&, &--primary
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h6
 	&--tertiary
 		color gray-50
 
-h1, .h1
+.h1
 	font-size heading-one-mobile-font-size
 	line-height heading-one-mobile-line-height
 
@@ -21,7 +21,7 @@ h1, .h1
 		font-size heading-one-desk-font-size
 		line-height heading-one-desk-line-height
 
-h2, .h2
+.h2
 	font-size heading-two-mobile-font-size
 	line-height heading-two-mobile-line-height
 
@@ -29,7 +29,7 @@ h2, .h2
 		font-size heading-two-desk-font-size
 		line-height heading-two-desk-line-height
 
-h3, .h3
+.h3
 	font-size heading-three-mobile-font-size
 	line-height heading-three-mobile-line-height
 
@@ -37,7 +37,7 @@ h3, .h3
 		font-size heading-three-desk-font-size
 		line-height heading-three-desk-line-height
 
-h4, .h4
+.h4
 	font-size heading-four-mobile-font-size
 	line-height heading-four-mobile-line-height
 
@@ -45,7 +45,7 @@ h4, .h4
 		font-size heading-four-desk-font-size
 		line-height heading-four-desk-line-height
 
-h5, .h5
+.h5
 	font-size heading-five-mobile-font-size
 	line-height heading-five-mobile-line-height
 
@@ -53,16 +53,10 @@ h5, .h5
 		font-size heading-five-desk-font-size
 		line-height heading-five-desk-line-height
 
-h6, .h6
+.h6
 	font-size heading-six-mobile-font-size
 	line-height heading-one-mobile-line-height
 
 	+aboveSmall()
 		font-size heading-six-desk-font-size
 		line-height heading-one-desk-line-height
-
-.iq-icon
-	svg
-		width auto
-		height 100%
-		display block
