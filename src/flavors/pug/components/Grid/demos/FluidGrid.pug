@@ -1,10 +1,10 @@
 include ../Grid.pug
 include ../Row.pug
-include ../Column
+include ../SpanColumns.pug
 
 mixin GridDemo()
 	+Grid({prototyping: true, fluid: true})
 		+GridRow()
 			each val in [1,2,3,4,5,6,7,8,9,10,11,12]
-				+GridColumn({})
+				+GridSpanColumns({})
 					div.demo-content #{val}
