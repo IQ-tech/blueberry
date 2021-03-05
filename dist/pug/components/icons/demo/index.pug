@@ -1,17 +1,21 @@
+//Generated file, do not modify manually
+
 include ../IconHandsBackground.pug
 include ../IconHandDocument.pug
 include ../IconHandApp.pug
+
 include ../../Grid/Grid.pug
 include ../../Grid/Row.pug
 include ./IconBox.pug
 mixin IconsDemo()
-	+Grid({})
-		+GridRow()
-			+IconBox({filename: "IconHandApp.pug"})
-				+IconHandApp()
+	.icons-demo
+		+Grid({})
+			+GridRow()
+				+IconBox({filename: "IconHandApp.pug"})
+					+IconHandApp()
 
-			+IconBox({filename: "IconHandDocument.pug"})
-				+IconHandDocument()
+				+IconBox({filename: "IconHandDocument.pug"})
+					+IconHandDocument()
 
-			+IconBox({filename: "IconHandsBackground.pug"})
-				+IconHandsBackground()
+				+IconBox({filename: "IconHandsBackground.pug"})
+					+IconHandsBackground()

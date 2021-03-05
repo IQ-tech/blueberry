@@ -1,0 +1,12 @@
+mixin H2({type})
+	- const baseClass = 'h2'
+	- const typeClass = !!type ? `${baseClass}--${type}` : `${baseClass}--primary`
+	- const defaultTitle = 'Heading Two'
+	h2(
+		class=baseClass
+		class=typeClass
+	)
+		if block
+			block
+		else
+			span #{defaultTitle}

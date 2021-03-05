@@ -1,0 +1,12 @@
+mixin H6({type})
+	- const baseClass = 'h6'
+	- const typeClass = !!type ? `${baseClass}--${type}` : `${baseClass}--primary`
+	- const defaultTitle = 'Heading Six'
+	h6(
+		class=baseClass
+		class=typeClass
+	)
+		if block
+			block
+		else
+			span #{defaultTitle}
