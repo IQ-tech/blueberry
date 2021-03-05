@@ -22,6 +22,94 @@
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
 }
+.h1,.h2,.h3,.h4,.h5,.h6{
+  font-family:"Baloo Chettan 2", "Open Sans";
+}
+.h1,.h1 *,.h1 :after,.h1 :before,.h2,.h2 *,.h2 :after,.h2 :before,.h3,.h3 *,.h3 :after,.h3 :before,.h4,.h4 *,.h4 :after,.h4 :before,.h5,.h5 *,.h5 :after,.h5 :before,.h6,.h6 *,.h6 :after,.h6 :before{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  padding-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  margin-bottom:0;
+  text-decoration:none;
+}
+.h1 li,.h1 ul,.h2 li,.h2 ul,.h3 li,.h3 ul,.h4 li,.h4 ul,.h5 li,.h5 ul,.h6 li,.h6 ul{
+  list-style:none;
+}
+.h1,.h1--primary,.h2,.h2--primary,.h3,.h3--primary,.h4,.h4--primary,.h5,.h5--primary,.h6,.h6--primary{
+  color:#1c1277;
+}
+.h1--secondary,.h2--secondary,.h3--secondary,.h4--secondary,.h5--secondary,.h6--secondary{
+  color:#1a1a1a;
+}
+.h1--tertiary,.h2--tertiary,.h3--tertiary,.h4--tertiary,.h5--tertiary,.h6--tertiary{
+  color:#444;
+}
+.h1{
+  font-size:40px;
+  line-height:48px;
+}
+@media (min-width:600px){
+  .h1{
+    font-size:40px;
+    line-height:48px;
+  }
+}
+.h2{
+  font-size:24px;
+  line-height:32px;
+}
+@media (min-width:600px){
+  .h2{
+    font-size:32px;
+    line-height:40px;
+  }
+}
+.h3{
+  font-size:20px;
+  line-height:28px;
+}
+@media (min-width:600px){
+  .h3{
+    font-size:28px;
+    line-height:36px;
+  }
+}
+.h4{
+  font-size:16px;
+  line-height:24px;
+}
+@media (min-width:600px){
+  .h4{
+    font-size:24px;
+    line-height:32px;
+  }
+}
+.h5{
+  font-size:12px;
+  line-height:20px;
+}
+@media (min-width:600px){
+  .h5{
+    font-size:20px;
+    line-height:28px;
+  }
+}
+.h6{
+  font-size:8px;
+  line-height:48px;
+}
+@media (min-width:600px){
+  .h6{
+    font-size:16px;
+    line-height:48px;
+  }
+}
 .btn{
   padding-left:0;
   padding-right:0;
