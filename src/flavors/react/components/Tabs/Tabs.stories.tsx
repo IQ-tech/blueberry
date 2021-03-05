@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import Tabs from "./index";
+import Card from "../Card"
 
 //@ts-ignore
 import "core/components/Tabs.styl";
@@ -42,3 +43,14 @@ TabSimpleExample.args = {
   className: '',
   children: [1, 2]
 };
+
+const SecondTemplate = () => (
+  <Card fixedSize={{ width: "400px", height: "200px"}}>
+    <Tabs tabsHeader={[{title: 'First'}, {title: "second"}]}>
+      <Card.Section>first tab</Card.Section>
+      <Card.Section>second tab</Card.Section>
+    </Tabs>
+  </Card>
+)
+
+export const TabInsideCard = SecondTemplate.bind({});

@@ -3,15 +3,20 @@ import { Fragment, useState, useEffect } from 'react'
 import TabsHeader from './TabsHeader'
 import TabsContent from './Content'
 
+interface Tab {
+  title: string;
+  notificationAmount?: number;
+}
+
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   /* Defining header buttons */
-  tabsHeader: [],
+  tabsHeader: Tab[],
   /* Customized index to define which table to select itself */
-  customIndex: number,
-  className: string,
-  children: JSX.Element[] | JSX.Element,
+  customIndex?: number,
+  className?: string,
+  children?: JSX.Element[] | JSX.Element,
   /* Defining if has notification style */
-  isNotificationActive: boolean
+  isNotificationActive?: boolean
 }
 
 const Tabs:React.FC<TabsProps> = ({
