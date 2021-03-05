@@ -4,6 +4,7 @@ import H3 from "./H3.pug";
 import H4 from "./H4.pug";
 import H5 from "./H5.pug";
 import H6 from "./H6.pug";
+
 import "core/components/typography/Headings.styl";
 
 export default {

@@ -1,5 +1,5 @@
 mixin Button({type, size, color, loading, expand, text, disabled})
-	- const baseClass = 'btn'
+	- const baseClass = 'iq-btn'
 	- const typeClass = !!type ? `${baseClass}--type-${type}` : ''
 	- const sizeClass = !!size ? `${baseClass}--size-${size}` : ''
 	- const expandClass = !!expand ? `${baseClass}--expand-${expand}` : ''
@@ -17,5 +17,5 @@ mixin Button({type, size, color, loading, expand, text, disabled})
 	)&attributes( attributes )
 		span #{text}
 		if loading
-			div.btn__loading-overlay
-				div.btn__loading-spinner
+			div.iq-btn__loading-overlay
+				div.iq-btn__loading-spinner

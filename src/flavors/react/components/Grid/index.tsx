@@ -15,10 +15,10 @@ const Span: React.FC<SpanProps> = ({
   children,
   columns
 }) => {
-  const componentClass = classNames("grid__span", {
-    [`grid__span--phone-${columns?.phone}`]: !!columns?.phone,
-    [`grid__span--tablet-${columns?.tablet}`]: !!columns?.tablet,
-    [`grid__span--desktop-${columns?.desktop}`]: !!columns?.desktop,
+  const componentClass = classNames("iq-grid__span", {
+    [`iq-grid__span--phone-${columns?.phone}`]: !!columns?.phone,
+    [`iq-grid__span--tablet-${columns?.tablet}`]: !!columns?.tablet,
+    [`iq-grid__span--desktop-${columns?.desktop}`]: !!columns?.desktop,
   });
   return <div className={componentClass}>{children}</div>;
 };
@@ -33,8 +33,8 @@ export interface RowProps {
   justifyColumns?: "spaceBetween" | "right" | "left" | "center" | "spaceAround";
 }
 const Row: React.FC<RowProps> = ({ children, wrap = true, order }) => {
-  const componentClass = classNames("grid__row", {
-    "grid__row--no-wrap": !wrap,
+  const componentClass = classNames("iq-grid__row", {
+    "iq-grid__row--no-wrap": !wrap,
   });
 
   const inlinestyle = {
@@ -66,9 +66,9 @@ const Grid: GridComponentType<GridProps> = ({
   fluid = false,
   prototyping = false,
 }) => {
-  const componentClass = classNames("grid", {
-    "grid--fluid": !!fluid,
-    "grid--prototyping": !!prototyping,
+  const componentClass = classNames("iq-grid", {
+    "iq-grid--fluid": !!fluid,
+    "iq-grid--prototyping": !!prototyping,
   });
 
   return <div className={componentClass}>{children}</div>;

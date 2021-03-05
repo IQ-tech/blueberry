@@ -32,13 +32,13 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  const buttonClasses = classNames("btn", {
-    [`btn--type-${type}`]: !!type,
-    [`btn--size-${size}`]: !!size,
-    [`btn--expand-${expand}`]: !!expand,
-    [`btn--color-${color}`]: !!color && color !== "default",
-    "btn--disabled": !!disabled,
-    "btn--loading": !!loading,
+  const buttonClasses = classNames("iq-btn", {
+    [`iq-btn--type-${type}`]: !!type,
+    [`iq-btn--size-${size}`]: !!size,
+    [`iq-btn--expand-${expand}`]: !!expand,
+    [`iq-btn--color-${color}`]: !!color && color !== "default",
+    "iq-btn--disabled": !!disabled,
+    "iq-btn--loading": !!loading,
   });
 
   function handleClick(e) {
@@ -51,8 +51,8 @@ const Button: React.FC<ButtonProps> = ({
       <Conditional
         condition={loading}
         renderIf={
-          <div className="btn__loading-overlay">
-            <div className="btn__loading-spinner" />
+          <div className="iq-btn__loading-overlay">
+            <div className="iq-btn__loading-spinner" />
           </div>
         }
       />

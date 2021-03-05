@@ -20,8 +20,8 @@ const BaseHeadingComp: React.FC<BaseHeadingCompProps> = ({
   customColor,
   ...props
 }) => {
-  const componentClass = classNames(tag, {
-    [`${tag}--${type}`]: !!type,
+  const componentClass = classNames(`iq-${tag}`, {
+    [`iq-${tag}--${type}`]: !!type,
   });
 
   const customInlineStyles = {

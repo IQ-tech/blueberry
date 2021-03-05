@@ -8,17 +8,17 @@ const TabsHeader = ({
 	customClass,
 	isNotificationActive
 }) => {
-	const listClass = classnames('tabs-button', {
+	const listClass = classnames('iq-tabs-button', {
 		[`${customClass}`]: !!customClass,
-		'tabs-button--notification-active': isNotificationActive
+		'iq-tabs-button--notification-active': isNotificationActive
 	})
 
 	return  (
 		<ul className={listClass}>
 			{
 				tabsHeader.map(({ title, notificationAmount }, index) => {
-					const buttonClasses = classnames('tabs-button__item', {
-						'tabs-button__item--active': index === activeIndex
+					const buttonClasses = classnames('iq-tabs-button__item', {
+						'iq-tabs-button__item--active': index === activeIndex
 					})
 					return (
 						<li
@@ -28,7 +28,7 @@ const TabsHeader = ({
 							onClick={onTabClick}
 							data-clicked={`btn-tab-${index}`}
 						>
-							<p className="tabs-button__item-text">
+							<p className="iq-tabs-button__item-text">
 								{title}
 								<span>{notificationAmount}</span>
 							</p>

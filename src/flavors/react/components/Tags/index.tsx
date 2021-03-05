@@ -32,16 +32,16 @@ const Tags:React.FC<TagsProps> = ({ type, label, billStatus, providerStatus }) =
   const currentProviderClass = providerClassesConfig[providerStatus]
   const currentBillClass = billClassesConfig[billStatus]
   
-  const tagClasses = classNames('tag', {
-    'tag--bill': type === 'bill',
-    'tag--provider': type === 'provider',
-    [`tag${currentProviderClass}`]: providerStatus,
-    [`tag${currentBillClass}`]: billStatus
+  const tagClasses = classNames('iq-tag', {
+    'iq-tag--bill': type === 'bill',
+    'iq-tag--provider': type === 'provider',
+    [`iq-tag${currentProviderClass}`]: providerStatus,
+    [`iq-tag${currentBillClass}`]: billStatus
   })
 
   return (
     <div className={tagClasses}>
-      <p className="tag__label">
+      <p className="iq-tag__label">
         {label}
       </p>
     </div>
