@@ -3,7 +3,7 @@ const postStylus = require("poststylus");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const babelConfig = require("./config-babel");
-const path = require("path")
+const path = require("path");
 
 module.exports = {
 	entry: "./src/main.js",
@@ -25,7 +25,7 @@ module.exports = {
 			icons: path.resolve(__dirname, "../src/icons/"),
 			flavors: path.resolve(__dirname, "../src/flavors/"),
 			react: path.resolve(__dirname, "../src/flavors/react/"),
-		}
+		},
 	},
 	module: {
 		rules: [
@@ -67,7 +67,14 @@ module.exports = {
 		new OptimizeCssAssetsPlugin({
 			cssProcessor: require("cssnano"),
 			cssProcessorPluginOptions: {
-				preset: ["default", { discardComments: { removeAll: true } }],
+				preset: [
+					"default",
+					{
+						discardComments: { removeAll: true },
+						normalizeWhitespace: false,
+						minifyFontValues: false,
+					},
+				],
 			},
 		}),
 	],
