@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
-import Grid, { GridProps, ColumnProps } from "../Grid";
+import Grid, { GridProps, SpanProps } from "../Grid";
 
 //@ts-ignore
 import "core/components/Grid.styl";
@@ -56,13 +56,13 @@ const Template = ({ testingRowsAndColumns = [], ...args }) => (
   <Grid {...args}>
     {testingRowsAndColumns.map((columns = [], indexRow) => (
       <Grid.Row key={`grid-row-${indexRow}`}>
-        {columns.map((column = {}, indexColumn) => (
-          <Grid.Column
-            {...column}
+        {columns.map((spanConfig, indexColumn) => (
+          <Grid.Span
+            columns={spanConfig}
             key={`flexColumn-${indexRow}-${indexColumn}`}
           >
             <DemoCard label="column" />
-          </Grid.Column>
+          </Grid.Span>
         ))}
       </Grid.Row>
     ))}

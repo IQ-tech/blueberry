@@ -66,8 +66,8 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 		&--no-wrap
 			flex-wrap none
 
-	// columns
-	&__column
+	// columns span
+	&__span
 		elementReset()
 		padding-top 0
 		flex 0 0 'calc((100% / %s) - %s)' % (grid-columns-xsmall grid-fluid-gutter-xsmall)
@@ -84,54 +84,55 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 			margin 0 $column-padding-medium
 			margin-bottom grid-fluid-gutter-medium
 
-		// Phone columns
-		&--phone-half
-			flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
+		// Phone span columns
+		+between(breakpoints-xsmall, breakpoints-small)
+			&--phone-half
+				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
 
-		&--phone-full
-			flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
+			&--phone-full
+				flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
 
-		&--phone-hide
-			display none
+			&--phone-hide
+				display none
 
-		for columnSpan in 1 .. 4
-			&--phone-{columnSpan}
-				flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-xsmall columnSpan grid-fluid-gutter-xsmall)
+			for columnSpan in 1 .. 4
+				&--phone-{columnSpan}
+					flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-xsmall columnSpan grid-fluid-gutter-xsmall)
 
-		// Tablet columns
-		&--tablet-half
-			flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
+		// Tablet span columns
+		+between(breakpoints-small, breakpoints-medium)
+			&--tablet-half
+				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
 
-		&--tablet-full
-			flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
+			&--tablet-full
+				flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
 
-		&--tablet-hide
-			display none
+			&--tablet-hide
+				display none
 
-		for columnSpan in 1 .. 8
-			&--tablet-{columnSpan}
-				+aboveSmall()
+			for columnSpan in 1 .. 8
+				&--tablet-{columnSpan}
 					flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-small columnSpan grid-fluid-gutter-xsmall)
 
-		// Desktop columns
-		&--desktop-half
-			flex-basis 'calc(50% - %s)' % grid-fluid-gutter-medium
+		// Desktop span columns
+		+aboveMedium()
+			&--desktop-half
+				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-medium
 
-		&--desktop-full
-			flex-basis 'calc(100% - %s)' % grid-fluid-gutter-medium
+			&--desktop-full
+				flex-basis 'calc(100% - %s)' % grid-fluid-gutter-medium
 
-		&--desktop-hide
-			display none
+			&--desktop-hide
+				display none
 
-		for columnSpan in 1 .. 12
-			&--desktop-{columnSpan}
-				+aboveMedium()
+			for columnSpan in 1 .. 12
+				&--desktop-{columnSpan}
 					flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-medium columnSpan grid-fluid-gutter-medium)
 
-	&--prototyping &__column
+	&--prototyping &__span
 		background-color cyan-50
 
-	&--prototyping&--fluid &__column
+	&--prototyping&--fluid &__span
 		background-color cyan-70
 
 .demo-content

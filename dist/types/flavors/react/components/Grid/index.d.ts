@@ -1,10 +1,13 @@
 import * as React from "react";
 /** Column sub-component */
-declare type ColumnSpan = number | "full" | "half" | "hide";
-export interface ColumnProps {
-    phone?: ColumnSpan;
-    tablet?: ColumnSpan;
-    desktop?: ColumnSpan;
+declare type ColumnsSpan = number | "full" | "half" | "hide";
+interface ColumnsConfig {
+    phone?: ColumnsSpan;
+    tablet?: ColumnsSpan;
+    desktop?: ColumnsSpan;
+}
+export interface SpanProps {
+    columns?: ColumnsConfig;
 }
 /** Row sub-component */
 export interface RowProps {
@@ -23,7 +26,7 @@ export interface GridProps {
     prototyping?: boolean;
 }
 interface GridComponentType<T> extends React.FC<T> {
-    Column: React.FC<ColumnProps>;
+    Span: React.FC<SpanProps>;
     Row: React.FC<RowProps>;
 }
 declare const Grid: GridComponentType<GridProps>;

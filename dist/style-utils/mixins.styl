@@ -20,6 +20,12 @@ aboveXLarge()
 	@media (min-width breakpoints-xlarge)
 		{block}
 
+
+between(bpA, bpB)
+	condition = '(min-width: %s) and (max-width: %s)' % (bpA bpB)
+	@media condition
+		{block}
+
 // Resets for components
 elementReset()
 	box-sizing border-box

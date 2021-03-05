@@ -2,22 +2,23 @@ import * as React from "react";
 import classNames from "classnames";
 
 /** Column sub-component */
-type ColumnSpan = number | "full" | "half" | "hide";
-export interface ColumnProps {
-  phone?: ColumnSpan;
-  tablet?: ColumnSpan;
-  desktop?: ColumnSpan;
+type ColumnsSpan = number | "full" | "half" | "hide";
+interface ColumnsConfig {
+  phone?: ColumnsSpan,
+  tablet?: ColumnsSpan,
+  desktop?: ColumnsSpan
 }
-const Column: React.FC<ColumnProps> = ({
+export interface SpanProps {
+  columns?: ColumnsConfig
+}
+const Span: React.FC<SpanProps> = ({
   children,
-  phone,
-  tablet,
-  desktop,
+  columns
 }) => {
-  const componentClass = classNames("grid__column", {
-    [`grid__column--phone-${phone}`]: !!phone,
-    [`grid__column--tablet-${tablet}`]: !!tablet,
-    [`grid__column--desktop-${desktop}`]: !!desktop,
+  const componentClass = classNames("grid__span", {
+    [`grid__span--phone-${columns?.phone}`]: !!columns?.phone,
+    [`grid__span--tablet-${columns?.tablet}`]: !!columns?.tablet,
+    [`grid__span--desktop-${columns?.desktop}`]: !!columns?.desktop,
   });
   return <div className={componentClass}>{children}</div>;
 };
@@ -56,7 +57,7 @@ export interface GridProps {
 }
 
 interface GridComponentType<T> extends React.FC<T> {
-  Column: React.FC<ColumnProps>;
+  Span: React.FC<SpanProps>;
   Row: React.FC<RowProps>;
 }
 
@@ -74,6 +75,6 @@ const Grid: GridComponentType<GridProps> = ({
 };
 
 Grid.Row = Row;
-Grid.Column = Column;
+Grid.Span = Span;
 
 export default Grid;
