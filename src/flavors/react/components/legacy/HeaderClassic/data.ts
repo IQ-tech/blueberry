@@ -39,7 +39,7 @@ export const loggedoutNavigationLinks: NavigationLink[] = [
   },
   {
     label: "FAQ",
-    href: "https://www.iq.com.br/faq",
+    href: "https://www.iq.com.br/app/faq",
   },
 ];
 
