@@ -1,6 +1,6 @@
 
 // This is a generated file, do not modify manually
-import React from "react";
+import * as React from "react";
 
 export default function IconHandDocument({width = '100%', height = '100%', style = {}}){
 	const componentStyles = {

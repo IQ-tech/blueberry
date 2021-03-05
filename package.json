@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
-	"types": "dist/types/index.d.ts",
+	"types": "dist/types/main.d.ts",
 	"scripts": {
 		"register-icons": "gulp register-icons",
 		"only-bundle": "webpack -c config/webpack.prod.js",

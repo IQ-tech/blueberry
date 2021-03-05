@@ -6,7 +6,7 @@ const babelConfig = require("./config-babel");
 const path = require("path");
 
 module.exports = {
-	entry: "./src/main.js",
+	entry: "./src/main.ts",
 	output: {
 		filename: "main.js",
 		libraryTarget: "umd",

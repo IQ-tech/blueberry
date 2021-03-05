@@ -1,4 +1,5 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import * as React from "react"
+import { Fragment, useState, useEffect } from 'react'
 import TabsHeader from './TabsHeader'
 import TabsContent from './Content'
 

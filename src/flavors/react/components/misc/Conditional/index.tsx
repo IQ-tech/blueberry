@@ -1,5 +1,3 @@
-import { Condition } from "webpack";
-
 export interface ConditionalProps {
   /** condition to render something */
   condition: boolean;

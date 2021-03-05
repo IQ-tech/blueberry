@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 interface TagComponentProps extends React.HTMLAttributes<HTMLElement> {
   /** Html tag that this component root should have */

@@ -1,11 +1,12 @@
 {
 	// Change this to match your project
-	"include": ["src/flavors/**/*.ts", "src/flavors/**/*.tsx"],
-	"exclude": ["node_modules", "/bin", "/obj"],
+	"include": ["src/main.ts"],
+	"exclude": ["/bin", "/obj"],
 	"compilerOptions": {
+		"resolveJsonModule": true,
 		"esModuleInterop": true,
-		"sourceMap": true,
-		"module": "esnext",
+		"sourceMap": false,
+		"module": "commonjs",
 		"moduleResolution": "node",
 		"jsx": "react",
 		// Tells TypeScript to read JS files, as
@@ -16,7 +17,7 @@
 		// This compiler run should
 		// only output d.ts files
 		"emitDeclarationOnly": true,
-		"declarationMap": true,
+		"declarationMap": false,
 		// Types should go into this directory.
 		// Removing this would place the .d.ts files
 		// next to the .js files

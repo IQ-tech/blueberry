@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 
 interface TagsProps extends React.HTMLAttributes<HTMLDivElement> {
