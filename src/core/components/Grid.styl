@@ -4,6 +4,7 @@ $column-padding-xsmall = 'calc((%s / 2))' % grid-fluid-gutter-xsmall
 $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 .grid
+	elementReset()
 	box-sizing border-box
 	margin 0 auto
 	padding 0 grid-fixed-margin-xsmall
@@ -54,10 +55,10 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 				width grid-fluid-margin-medium
 
 	&__row
+		elementReset()
 		display flex
 		flex-wrap wrap
 		margin 0 'calc(-%s / 2)' % grid-fluid-gutter-xsmall
-		box-sizing border-box
 
 		+aboveMedium()
 			margin 0 'calc(-%s / 2)' % grid-fluid-gutter-medium
@@ -67,6 +68,7 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 	// columns
 	&__column
+		elementReset()
 		padding-top 0
 		flex 0 0 'calc((100% / %s) - %s)' % (grid-columns-xsmall grid-fluid-gutter-xsmall)
 		margin 0 $column-padding-xsmall

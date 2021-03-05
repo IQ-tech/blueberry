@@ -9,8 +9,7 @@ $header-mobile-height = 60px
 $header-desk-height = 70px
 
 .header-classic
-	*
-		box-sizing border-box
+	componentDeepReset()
 
 	ul
 		list-style none
@@ -582,6 +581,7 @@ $header-desk-height = 70px
 
 		&:hover
 			text-decoration none
+
 			&:before
 				transform scaleY(1)
 

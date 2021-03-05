@@ -8,10 +8,12 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 		transform rotate(360deg)
 
 .btn
+	componentDeepReset()
 	font-family button-font-family
 	font-weight button-font-weight
 	font-size button-font-size
 	line-height button-line-height
+	box-sizing border-box
 	outline none
 	cursor pointer
 	border none

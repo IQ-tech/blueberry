@@ -1,6 +1,7 @@
 @import '../variables.styl'
 
 .tag
+  componentDeepReset()
   border none
   border-radius 12px
   padding 5px 10px
@@ -24,17 +25,17 @@
     background-color cyan-20
     .tag__label
       color cyan-80
-    
+
   &--provider&--connecting
     background-color gray-30
     .tag__label
       color gray-100
-    
+
   &--provider&--error
     background-color red-10
     .tag__label
       color red-100
-    
+
   &--provider&--pending-action
     background-color yellow-20
     .tag__label
@@ -51,17 +52,17 @@
     background-color red-20
     .tag__label
       color red-100
-    
+
   &--bill&--accumulated
     background-color yellow-30
     .tag__label
       color yellow-100
-    
-  &--bill&--charge 
+
+  &--bill&--charge
     background-color cyan-30
     .tag__label
       color cyan-80
-    
+
   &--bill&--paid
     background-color green-20
     .tag__label

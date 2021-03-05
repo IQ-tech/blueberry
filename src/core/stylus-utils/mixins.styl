@@ -1,3 +1,5 @@
+
+// Responsive css
 aboveXsmall()
 	@media (min-width breakpoints-xsmall)
 		{block}
@@ -17,3 +19,27 @@ aboveLarge()
 aboveXLarge()
 	@media (min-width breakpoints-xlarge)
 		{block}
+
+// Resets for components
+elementReset()
+	box-sizing border-box
+	padding-left 0
+	padding-right 0
+	padding-top 0
+	padding-bottom 0
+	margin-left 0
+	margin-right 0
+	margin-top 0
+	margin-bottom 0
+	text-decoration none
+
+componentDeepReset()
+	elementReset()
+	*
+		elementReset()
+	*:before
+		elementReset()
+	&:after
+		elementReset()
+	ul,li
+		list-style none
