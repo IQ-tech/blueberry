@@ -6,6 +6,7 @@ const babelConfig = require("./config-babel");
 const path = require("path");
 
 module.exports = {
+	mode: "production",
 	entry: "./src/main.ts",
 	output: {
 		filename: "main.js",
@@ -73,7 +74,7 @@ module.exports = {
 						discardComments: { removeAll: true },
 						normalizeWhitespace: false,
 						minifyFontValues: false,
-						mergeLonghand: false
+						mergeLonghand: false,
 					},
 				],
 			},
