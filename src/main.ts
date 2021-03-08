@@ -10,3 +10,6 @@ export { default as typography } from "./core/tokens/typography.json";
 
 // React components lib
 export * from "./flavors/react";
+
+// CSS in js utils
+export * from "./core/ts-utils/media";
