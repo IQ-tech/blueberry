@@ -45,12 +45,12 @@ const DemoCard = ({ label }) => (
 const Template: Story<RowProps> = (args) => (
   <Grid prototyping>
     <Grid.Row {...args}>
-      <Grid.Column phone={2} tablet={5} desktop={3}>
+      <Grid.Span columns={{ phone: 2, tablet: 5, desktop: 3 }}>
         <DemoCard label="column" />
-      </Grid.Column>
-      <Grid.Column phone={2} tablet={5} desktop={3}>
+      </Grid.Span>
+      <Grid.Span columns={{ phone: 2, tablet: 5, desktop: 3 }}>
         <DemoCard label="column" />
-      </Grid.Column>
+      </Grid.Span>
     </Grid.Row>
   </Grid>
 );

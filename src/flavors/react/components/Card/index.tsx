@@ -10,8 +10,8 @@ interface CardComponentType<T> extends React.FC<T> {
 }
 
 interface CardSize {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
 }
 
 interface CardComponentProps {
@@ -32,7 +32,12 @@ const Card: CardComponentType<CardComponentProps> = ({
   dark = false,
 }) => {
   const inlineStyles = {
-    ...(!!fixedSize ? fixedSize : {}),
+    ...(!!fixedSize
+      ? {
+          height: fixedSize?.height || "auto",
+          width: fixedSize?.width || "auto",
+        }
+      : {}),
     ...(!!customBackgroundColor
       ? { backgroundColor: customBackgroundColor }
       : {}),

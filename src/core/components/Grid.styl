@@ -11,16 +11,27 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 	max-width grid-fixed-max-width
 	display flex
 	flex-direction column
+	flex 1
+	padding-top grid-fluid-gutter-xsmall
 
 	+aboveMedium()
 		padding 0 grid-fixed-margin-medium
+		padding-top grid-fluid-gutter-medium
+
+	&--no-padding-top
+		padding-top 0
+
+		+aboveMedium()
+			padding-top 0
 
 	&--fluid
 		max-width none
 		padding 0 grid-fluid-margin-xsmall
+		padding-top grid-fluid-gutter-xsmall
 
 		+aboveMedium()
 			padding 0 grid-fluid-margin-medium
+			padding-top grid-fluid-gutter-medium
 
 	&--prototyping
 		background-color blueberry-30
@@ -66,6 +77,12 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 		&--no-wrap
 			flex-wrap none
 
+		&--no-bottom-margin
+			margin-bottom '-%s' % grid-fluid-gutter-xsmall
+
+			+aboveMedium()
+				margin-bottom '-%s' % grid-fluid-gutter-medium
+
 	// columns span
 	&__span
 		elementReset()
@@ -86,13 +103,13 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 		// Phone span columns
 		+between(breakpoints-xsmall, breakpoints-small)
-			&--phone-half
+			&--phone-half, &--const-half
 				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
 
-			&--phone-full
+			&--phone-full, &--const-full
 				flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
 
-			&--phone-hide
+			&--phone-hide, &--const-hide
 				display none
 
 			for columnSpan in 1 .. 4
@@ -101,13 +118,13 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 		// Tablet span columns
 		+between(breakpoints-small, breakpoints-medium)
-			&--tablet-half
+			&--tablet-half, &--const-half
 				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
 
-			&--tablet-full
+			&--tablet-full, &--const-full
 				flex-basis 'calc(100% - %s)' % grid-fluid-gutter-xsmall
 
-			&--tablet-hide
+			&--tablet-hide, &--const-hide
 				display none
 
 			for columnSpan in 1 .. 8
@@ -116,13 +133,13 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 		// Desktop span columns
 		+aboveMedium()
-			&--desktop-half
+			&--desktop-half, &--const-half
 				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-medium
 
-			&--desktop-full
+			&--desktop-full, &--const-full
 				flex-basis 'calc(100% - %s)' % grid-fluid-gutter-medium
 
-			&--desktop-hide
+			&--desktop-hide, &--const-hide
 				display none
 
 			for columnSpan in 1 .. 12
@@ -134,6 +151,15 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 	&--prototyping&--fluid &__span
 		background-color cyan-70
+
+	&__cell
+		width 100%
+
+		&:not(:last-of-type)
+			margin-bottom grid-fluid-gutter-xsmall
+
+			+aboveMedium()
+				margin-bottom grid-fluid-gutter-medium
 
 .demo-content
 	width 100%

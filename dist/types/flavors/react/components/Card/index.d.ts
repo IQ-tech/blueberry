@@ -3,8 +3,8 @@ interface CardComponentType<T> extends React.FC<T> {
     Section: React.FC;
 }
 interface CardSize {
-    width: string;
-    height: string;
+    width?: string;
+    height?: string;
 }
 interface CardComponentProps {
     dark?: boolean;
