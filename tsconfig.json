@@ -3,6 +3,10 @@
 	"include": ["src/main.ts"],
 	"exclude": ["/bin", "/obj"],
 	"compilerOptions": {
+		"baseUrl": "./src",
+		"paths": {
+			"flavors/*": ["./flavors/*"]
+		},
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"sourceMap": false,

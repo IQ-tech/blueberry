@@ -25,7 +25,6 @@ module.exports = {
 			fonts: path.resolve(__dirname, "../src/fonts/"),
 			icons: path.resolve(__dirname, "../src/icons/"),
 			flavors: path.resolve(__dirname, "../src/flavors/"),
-			react: path.resolve(__dirname, "../src/flavors/react/"),
 		},
 	},
 	module: {

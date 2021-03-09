@@ -1,14 +1,15 @@
-const { src, dest } = require("gulp");
+const { src, dest, series } = require("gulp");
 const svgo = require("gulp-svgo");
 const through = require("through2");
 const path = require("path");
 const { pascalCase } = require("change-case");
-const ReactIconTemplate = require("./component-template");
+const ReactIconTemplate = require("./templates/component-template");
+const iconsConfig = require("../../../../icons.config");
 
 /**
  * This plugin parse the svg file into a react component
  */
-function svgToTSXPlugin() {
+function svgToTSXPlugin(collectionName) {
 	return through.obj(function (file, enc, cb) {
 		const getNewFilePath = (componentName) => {
 			const newExtension = ".tsx";
@@ -25,7 +26,7 @@ function svgToTSXPlugin() {
 		const filePath = file.path;
 		const parsedPath = path.parse(filePath);
 		const { name } = parsedPath;
-		const componentName = pascalCase(name);
+		const componentName = `${pascalCase(collectionName)}${pascalCase(name)}`;
 
 		const svgFileContent = file.contents.toString();
 		const componentContent = ReactIconTemplate(componentName, svgFileContent);
@@ -36,17 +37,39 @@ function svgToTSXPlugin() {
 	});
 }
 
+function iconCollectionTask(collection = {}) {
+	const folderSrc = collection.folder;
+	const collectionName = collection.name;
+	const iconsGlob = folderSrc.endsWith("/")
+		? `${folderSrc}*.svg`
+		: `${folderSrc}/*.svg`;
+
+	const destFolder = `src/flavors/react/components/icons/generated/${collectionName}`;
+
+	return new Promise((res) => {
+		src(iconsGlob)
+			.pipe(
+				svgo({
+					plugins: [
+						{
+							removeDimensions: true, // replace inline svg width and height by the viewbox to keep responsivity
+						},
+					],
+				})
+			)
+			.pipe(svgToTSXPlugin(collectionName))
+			.pipe(dest(destFolder))
+			.on("finish", () => {
+				res();
+			});
+	});
+}
+
 module.exports = function generateReactIconsTask() {
-	return src("./src/icons/*.svg")
-		.pipe(
-			svgo({
-				plugins: [
-					{
-						removeDimensions: true, // replace inline svg width and height by the viewbox to keep responsivity
-					},
-				],
-			})
-		)
-		.pipe(svgToTSXPlugin())
-		.pipe(dest("./src/flavors/react/components/icons/generated"));
+	const iconsCollections = iconsConfig.iconCollections;
+	const genCollectionsTasks = iconsCollections.map((collection) =>
+		iconCollectionTask(collection)
+	);
+
+	return Promise.all(genCollectionsTasks);
 };

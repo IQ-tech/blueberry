@@ -6,20 +6,40 @@ const path = require("path");
 const iconsFilesFolderPath = "./src/flavors/react/components/icons/generated";
 
 module.exports = function generateDistIconsTask(cb) {
-	const generateIconsFiles = fs.readdirSync(iconsFilesFolderPath);
+	const generatedIconCollections = fs.readdirSync(iconsFilesFolderPath) || [];
+	const onlyCollectionFolders = generatedIconCollections.filter(
+		(item) => !item.includes(".")
+	);
 
-	const newInputFiles = generateIconsFiles.reduce((acc, nextPath) => {
+	const filesToBeTranspiled = onlyCollectionFolders.reduce((acc, folder) => {
+		const folderFilesPath = `${iconsFilesFolderPath}/${folder}`;
+		const folderFiles = fs.readdirSync(folderFilesPath) || [];
+		const iconsFiles = folderFiles.filter(
+			(file) =>
+				file.endsWith(".tsx") &&
+				!file.endsWith(".stories.tsx") &&
+				!file.endsWith("index.tsx")
+		);
+
+		const fullPathFiles = iconsFiles.map(
+			(fileName) => `${folderFilesPath}/${fileName}`
+		);
+
+		return [...acc, ...fullPathFiles];
+	}, []);
+
+	const webpackEntryPoints = filesToBeTranspiled.reduce((acc, nextPath) => {
 		const filename = path.parse(nextPath).name;
 
 		return {
 			...acc,
-			[filename]: `${iconsFilesFolderPath}/${nextPath}`,
+			[filename]: nextPath,
 		};
 	}, {});
 
 	const newWebpackConfig = {
 		...webpackConfig,
-		entry: { ...newInputFiles },
+		entry: { ...webpackEntryPoints },
 		output: {
 			path: path.resolve(__dirname, "../../../../dist/reactIcons"),
 			filename: "[name].js",

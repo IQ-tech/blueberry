@@ -1,8 +1,6 @@
 import React from "react";
 
-import * as Icons from "./index";
-
-const PresentaionComponent = () => {
+const PresentationComponent = ({Icons}) => {
   const iconsNames = Object.keys({ ...Icons });
 
   return (
@@ -53,4 +51,4 @@ const PresentaionComponent = () => {
   );
 };
 
-export default PresentaionComponent;
+export default PresentationComponent;
