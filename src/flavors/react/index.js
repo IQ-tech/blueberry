@@ -17,5 +17,6 @@ export { default as FooterClassic } from "./components/legacy/FooterClassic";
 // Regular components
 export { default as Tags } from "./components/Tags";
 export { default as Tabs } from "./components/Tabs";
+export { default as Card } from "./components/Card";
 export { default as Button } from "./components/Button";
-export { default as Card } from "./components/Card"
+export { default as Carrossel } from "./components/Carrossel";
