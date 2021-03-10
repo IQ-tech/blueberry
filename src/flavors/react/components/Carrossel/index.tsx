@@ -2,6 +2,8 @@ import React from "react";
 import Staw from 'staw';
 import classnames from "classnames";
 
+import { H3 } from '../typography/Headings'
+
 interface CarrosselProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: JSX.Element[] | JSX.Element,
   type: 'swipe' | 'mixed' | 'desktop',
@@ -22,9 +24,9 @@ const Carrossel:React.FC<CarrosselProps> = ({ type, title, children, ...props })
 
   return (
     <div className={carrosselClass}>
-      <h2 className="iq-carrossel__title">
+      <H3 type="tertiary" className="iq-carrossel__title">
         {title}
-      </h2>
+      </H3>
       <Staw
         startAt={0}
         visibleGutter={visibleGutterConfig[type]}
