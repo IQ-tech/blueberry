@@ -1,0 +1,56 @@
+@require '~staw/src/components/Staw/Staw.styl'
+@import '../variables.styl'
+
+.iq-carrossel
+  &__title
+    display none
+
+  .staw
+    &__controls
+      .staw__arrows
+        .staw__arrow
+          border-color blueberry-60
+
+          &--disabled
+            border-color gray-30
+            opacity 1
+
+  &--mixed, &--desktop
+    position relative
+    .staw
+      &__controls
+        .staw__arrows
+          position absolute
+          top 14px
+          display flex
+          width 120px
+          height 20px
+          justify-content space-between
+          margin 0 auto
+
+  &--mixed
+    .staw
+      .staw__holder
+        .staw__slide
+          position relative
+          text-align center
+          width 100% !important
+
+      .staw__controls
+        display flex
+        justify-content center
+
+  &--desktop
+    .iq-carrossel__title
+      display block
+      color gray-40
+      font-family: 'Baloo Chettan 2'
+
+    .staw
+      &__holder
+        position relative
+
+      &__controls
+        .staw__arrows
+          top 3px
+          right 0
