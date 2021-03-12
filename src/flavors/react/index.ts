@@ -18,4 +18,6 @@ export { default as FooterClassic } from "./components/legacy/FooterClassic";
 export { default as Tags } from "./components/Tags";
 export { default as Tabs } from "./components/Tabs";
 export { default as Button } from "./components/Button";
-export { default as Card } from "./components/Card"
+export { default as Card } from "./components/Card";
+
+export { default as Icon } from "./components/Icon";
