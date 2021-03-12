@@ -7,32 +7,18 @@ interface IconProps {
   style?: React.CSSProperties;
   iconMarkup?: string;
   iconName?: string;
+  expand?: boolean;
 }
 
-const Icon: React.FC<IconProps> = ({
-  width = "100%",
-  height = "100%",
-  style = {},
-  iconMarkup,
-  iconName,
-}) => {
-  const componentStyles = {
-    ...style,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    ...(!!width ? { width } : {}),
-    ...(!!height ? { height } : {}),
-  };
-
+const Icon: React.FC<IconProps> = ({ iconMarkup, iconName, expand }) => {
   const componentClass = classNames("iq-icon", {
     [`iq-icon--${iconName}`]: !!iconName,
+    "iq-icon--expand": !!expand,
   });
 
   return (
     <div
       className={componentClass}
-      style={componentStyles}
       dangerouslySetInnerHTML={{
         __html: iconMarkup,
       }}

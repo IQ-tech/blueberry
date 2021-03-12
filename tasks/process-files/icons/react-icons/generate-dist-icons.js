@@ -2,10 +2,10 @@ const webpackConfig = require("../../../../config/webpack.prod");
 const fs = require("fs");
 const webpack = require("webpack");
 const path = require("path");
-
+const { series } = require("gulp");
 const iconsFilesFolderPath = "./src/flavors/react/components/icons/generated";
 
-module.exports = function generateDistIconsTask(cb) {
+function bundleIndividualIconsTask(cb) {
 	const generatedIconCollections = fs.readdirSync(iconsFilesFolderPath) || [];
 	const onlyCollectionFolders = generatedIconCollections.filter(
 		(item) => !item.includes(".")
@@ -42,6 +42,8 @@ module.exports = function generateDistIconsTask(cb) {
 		entry: { ...webpackEntryPoints },
 		output: {
 			path: path.resolve(__dirname, "../../../../dist/reactIcons"),
+			libraryTarget: "umd",
+			globalObject: "this",
 			filename: "[name].js",
 		},
 	};
@@ -56,4 +58,18 @@ module.exports = function generateDistIconsTask(cb) {
 		}
 		cb();
 	});
-};
+}
+
+function generateRootModuleTask(cb) {
+	const outputDir = "dist/reactIcons";
+	const iconsFiles = fs.readdirSync(outputDir) || [];
+	const iconNames = iconsFiles.map((fileName) => fileName.split(".")[0]);
+	const moduleFileContent = iconNames
+		.map((iconName) => `export {default as ${iconName}} from "./${iconName}"`)
+		.join("\n");
+
+	fs.writeFileSync(`${outputDir}/index.js`, moduleFileContent);
+	cb();
+}
+
+module.exports = series(bundleIndividualIconsTask, generateRootModuleTask);

@@ -1,0 +1,14 @@
+
+// This is a generated file, do not modify manually
+import * as React from "react"
+import Icon from "../../index";
+
+export default function OutlineCalendar(props) {
+  return (
+    <Icon
+      iconMarkup={'<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.521 21H3.48C3.19 21 3 20.81 3 20.521V6.255c0-.287.191-.478.479-.478H20.52c.287 0 .479.191.479.478v14.267c0 .191-.287.478-.479.478zM7.404 3v4.692M16.5 3v4.692M3.574 10.277h17.33" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
+			iconName="OutlineCalendar"
+      {...props}
+    />
+  );
+}

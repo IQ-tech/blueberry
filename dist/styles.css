@@ -828,6 +828,12 @@
 }
 .demo-content{
   width:100%;
+  height:50px;
+  font-family:"Open Sans";
+  font-size:13px;
+  color:#fff;
+}
+.demo-content,.iq-icon{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -837,10 +843,16 @@
   -webkit-box-pack:center;
       -ms-flex-pack:center;
           justify-content:center;
-  height:50px;
-  font-family:"Open Sans";
-  font-size:13px;
-  color:#fff;
+}
+.iq-icon{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+  width:24px;
+  height:24px;
+}
+.iq-icon--expand{
+  width:100%;
+  height:100%;
 }
 .iq-icon svg{
   width:auto;

@@ -12,7 +12,7 @@ module.exports = {
 		filename: "main.js",
 		libraryTarget: "umd",
 		globalObject: "this",
-		chunkFilename: "chunks/[name].js"
+		chunkFilename: "chunks/[name].js",
 	},
 	externals: {
 		react: "react", //this config keeps react out of the bundle

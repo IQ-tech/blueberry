@@ -14,6 +14,7 @@ export default {
   title: "icons/misc",
   component: Icon,
   parameters: {
+		options: { showPanel: false },
     docs: {
       description: {
         component: "misc icons",

@@ -9,7 +9,7 @@ const PresentationComponent = ({Icons}) => {
         const IconComponent = Icons[iconName];
         return (
           <div
-            style={{ width: "80px", margin: "10px" }}
+            style={{ width: "80px", margin: "25px" }}
             key={`icon-${iconName}-${index}`}
           >
             <div

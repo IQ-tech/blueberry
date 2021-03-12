@@ -14,6 +14,7 @@ export default {
   title: "icons/${collectionName}",
   component: Icon,
   parameters: {
+		options: { showPanel: false },
     docs: {
       description: {
         component: "${collectionName} icons",
@@ -26,8 +27,6 @@ export default {
 } as Meta;
 
 const Template = () => {
-  const iconsNames = Object.keys({ ...Icons });
-
   return (
 		<PresentationComponent Icons={Icons} />
   );

@@ -14,6 +14,7 @@ export default {
   title: "icons/outline",
   component: Icon,
   parameters: {
+		options: { showPanel: false },
     docs: {
       description: {
         component: "outline icons",

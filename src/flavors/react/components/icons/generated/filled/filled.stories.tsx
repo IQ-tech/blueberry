@@ -14,6 +14,7 @@ export default {
   title: "icons/filled",
   component: Icon,
   parameters: {
+		options: { showPanel: false },
     docs: {
       description: {
         component: "filled icons",
