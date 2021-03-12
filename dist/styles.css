@@ -390,6 +390,133 @@
 .iq-card__section:not(:first-of-type){
   border-top:1px solid #efefef;
 }
+.staw{
+  width:100%;
+}
+.staw__holder{
+  display:block;
+  overflow:hidden;
+  position:relative;
+}
+.staw__roller{
+  -webkit-transform:translateX(0);
+          transform:translateX(0);
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-transition:.3s ease-in-out;
+  transition:.3s ease-in-out;
+  will-change:transform;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  -webkit-transform-style:preserve-3d;
+          transform-style:preserve-3d;
+}
+.staw__slide{
+  -ms-flex-negative:0;
+      flex-shrink:0;
+}
+.staw__dots{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+.staw__dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background-color:#fff;
+  margin:0 4px;
+  cursor:pointer;
+}
+.staw__dot--active{
+  background-color:#000;
+}
+.staw__arrow{
+  position:absolute;
+  top:0;
+  bottom:0;
+  margin:auto 0;
+  width:12px;
+  height:12px;
+  border-top:3px solid #979797;
+  border-left:3px solid #979797;
+  opacity:1;
+  -webkit-transition:opacity .3s ease-in-out;
+  transition:opacity .3s ease-in-out;
+  cursor:pointer;
+}
+.staw__arrow--disabled{
+  opacity:0;
+  pointer-events:none;
+}
+.staw__arrow--prev{
+  left:7px;
+  -webkit-transform:rotate(-45deg);
+          transform:rotate(-45deg);
+}
+.staw__arrow--next{
+  right:7px;
+  -webkit-transform:rotate(135deg);
+          transform:rotate(135deg);
+}
+.iq-carrossel__title{
+  display:none;
+}
+.iq-carrossel .staw__controls .staw__arrows .staw__arrow{
+  border-color:#453ad3;
+}
+.iq-carrossel .staw__controls .staw__arrows .staw__arrow--disabled{
+  border-color:#d5d5d5;
+  opacity:1;
+}
+.iq-carrossel--desktop,.iq-carrossel--mixed{
+  position:relative;
+}
+.iq-carrossel--desktop .staw__controls .staw__arrows,.iq-carrossel--mixed .staw__controls .staw__arrows{
+  position:absolute;
+  top:14px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  width:120px;
+  height:20px;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  margin:0 auto;
+}
+.iq-carrossel--mixed .staw .staw__holder .staw__slide{
+  position:relative;
+  text-align:center;
+  width:100% !important;
+}
+.iq-carrossel--mixed .staw .staw__controls{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+.iq-carrossel--desktop .iq-carrossel__title{
+  display:block;
+  color:#666;
+  font-family:"Baloo Chettan 2";
+}
+.iq-carrossel--desktop .staw__holder{
+  position:relative;
+}
+.iq-carrossel--desktop .staw__controls .staw__arrows{
+  top:3px;
+  right:0;
+}
 .iq-grid{
   -webkit-box-sizing:border-box;
   padding-left:0;
