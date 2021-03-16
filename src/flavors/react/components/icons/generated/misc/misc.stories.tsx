@@ -27,8 +27,6 @@ export default {
 } as Meta;
 
 const Template = () => {
-  const iconsNames = Object.keys({ ...Icons });
-
   return (
 		<PresentationComponent Icons={Icons} />
   );

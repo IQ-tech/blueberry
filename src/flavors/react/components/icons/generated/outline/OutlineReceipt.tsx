@@ -1,0 +1,14 @@
+
+// This is a generated file, do not modify manually
+import * as React from "react"
+import Icon from "../../index";
+
+export default function OutlineReceipt(props) {
+  return (
+    <Icon
+      iconMarkup={'<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 18.905L16.718 21l-2.383-1.905L11.95 21l-2.384-1.905L7.182 21 4.5 18.905V3.476c0-.286.199-.476.497-.476h14.006c.298 0 .497.19.497.476V18.905z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="6.228" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.977 7.571h2.682M7.977 14.143h7.649M7.977 10.81h5.265" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
+			iconName="OutlineReceipt"
+      {...props}
+    />
+  );
+}
