@@ -14,6 +14,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   filterLoggedMenuItems,
   showAuthButtons = true,
   username = "username",
+  whiteVersion,
 }) => {
   const {
     isMobileMenuOpen,
@@ -30,6 +31,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     "header-classic--logged": isLogged,
     "header-classic--menu-mobile-open": isMobileMenuOpen,
     "header-classic--submenu-open": isSubmenuOpen,
+    "header-classic--white-version": isLogged && whiteVersion,
   });
 
   return (

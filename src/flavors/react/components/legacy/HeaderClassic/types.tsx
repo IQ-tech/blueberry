@@ -19,7 +19,9 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   filterLoggedMenuItems?: (links: NavigationLink[]) => NavigationLink[];
   /** Alternative link to register page */
   registerLink?: string;
-  /** Use transparent version, color is added on scroll */
+  /** White background on logged navigation */
+  whiteVersion?: boolean;
+
 }
 
 export interface NavigationLink {

@@ -33,6 +33,9 @@ $header-desk-height = 70px
 		+aboveSmall()
 			height $header-desk-height
 
+	&--white-version &__navbar
+		background-color $color-white
+
 	&__container
 		display flex
 		justify-content space-between
@@ -57,6 +60,9 @@ $header-desk-height = 70px
 
 		+aboveMedium()
 			transform scale(1)
+
+	&--white-version &__logo-link
+		color $color-blue-dark
 
 	&__panel-right
 		flex 1
@@ -97,6 +103,9 @@ $header-desk-height = 70px
 			transition 0.9s cubic-bezier(0.38, 0.52, 0.11, 1.2)
 			will-change transform, width
 
+	&--white-version &__hamburger-line
+		background-color #000
+
 	.header-classic__hamburger--close
 		.header-classic__hamburger-line--one
 			transform translateX(270px)
@@ -127,6 +136,9 @@ $header-desk-height = 70px
 			position static
 			transform translateX(0)
 			flex 1
+
+	&--white-version &__menu-holder
+		background-color $color-white
 
 	&--menu-mobile-open &__menu-holder
 		transform translateX(0)
@@ -455,6 +467,9 @@ $header-desk-height = 70px
 		color $color-white
 		font-weight 900
 		font-size 14px
+
+	&--white-version &__logged-in-desk-name
+		color black
 
 	&__logged-in-desk-name
 		margin 0 10px
