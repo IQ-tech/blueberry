@@ -79,7 +79,7 @@ export const loggedMenuLinks: LoggedNavigationLink[] = [
   { label: "Ajuda", path: "/app", rawIcon: loggedMenuItemsIcons.floater },
   {
     label: "Sair da conta",
-    path: "/app/logout/",
+    path: "/app/sair/",
     rawIcon: loggedMenuItemsIcons.signOut,
     separator: true,
   },
