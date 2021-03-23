@@ -7,11 +7,11 @@ const AuthButtons = ({ getAbsoluteLink }) => {
     }
   }
   function onLogin() {
-    redirectToPath(getAbsoluteLink("/entrar"));
+    redirectToPath(getAbsoluteLink("/app/entrar"));
   }
 
   function onRegister() {
-    redirectToPath(getAbsoluteLink("/cadastrar"));
+    redirectToPath(getAbsoluteLink("/app/cadastrar"));
   }
 
   return (
