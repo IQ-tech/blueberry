@@ -108,3 +108,8 @@ Large.args = {
   children: "Large button",
   size: "large",
 };
+
+
+const IconTemplate = (args) => <Button {...args} />
+
+const IconOnlyButton = IconTemplate.bind({})
