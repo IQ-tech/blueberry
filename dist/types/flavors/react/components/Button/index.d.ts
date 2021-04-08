@@ -3,7 +3,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     /** Defines the button vertical size */
     size: "large" | "medium" | "small";
     /** Button main style */
-    type: "primary" | "secondary" | "text" | "icon";
+    type: "primary" | "secondary" | "text";
     /** Button color scheme */
     color: "default" | "inverted" | "danger";
     /** Disabled style and blocks onClick events */
@@ -12,8 +12,12 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     loading: boolean;
     /** Defines how the button should expand */
     expand: "x" | "y" | "xy";
-    icon: string;
-    iconPosition: "left" | "right";
+    /** Icon to show */
+    Icon: React.FC<any>;
+    /** side to show icon */
+    iconRight: boolean;
+    /** Display round icon button */
+    onlyIcon: boolean;
 }
 declare const Button: React.FC<ButtonProps>;
 export default Button;

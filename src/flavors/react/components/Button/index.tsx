@@ -6,7 +6,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** Defines the button vertical size */
   size: "large" | "medium" | "small";
   /** Button main style */
-  type: "primary" | "secondary" | "text" | "icon";
+  type: "primary" | "secondary" | "text";
   /** Button color scheme */
   color: "default" | "inverted" | "danger";
   /** Disabled style and blocks onClick events */
@@ -15,21 +15,26 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   loading: boolean;
   /** Defines how the button should expand */
   expand: "x" | "y" | "xy";
-  icon: string;
-  iconPosition: "left" | "right";
+  /** Icon to show */
+  Icon: React.FC<any>;
+  /** side to show icon */
+  iconRight: boolean;
+  /** Display round icon button */
+  onlyIcon: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
   size = "medium",
   type = "primary",
-  iconPosition = "left",
+  iconRight = false,
   children = "Button component",
   disabled = false,
-  icon = "",
+  Icon = '',
   loading = false,
   color = "default",
   expand,
   onClick,
+  onlyIcon = false,
   ...props
 }) => {
   const buttonClasses = classNames("iq-btn", {
@@ -39,6 +44,8 @@ const Button: React.FC<ButtonProps> = ({
     [`iq-btn--color-${color}`]: !!color && color !== "default",
     "iq-btn--disabled": !!disabled,
     "iq-btn--loading": !!loading,
+    "iq-btn--icn-right": !!iconRight && !onlyIcon,
+    "iq-btn--only-icon": !!onlyIcon,
   });
 
   function handleClick(e) {
@@ -47,7 +54,19 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button className={buttonClasses} onClick={handleClick} {...props}>
-      {children}
+      <Conditional
+        condition={!!Icon}
+        renderIf={
+          <div className="iq-btn__icon-slot">
+            <Icon />
+          </div>
+        }
+      />
+
+      <Conditional
+        condition={!onlyIcon}
+        renderIf={<span className="iq-btn__text">{children}</span>}
+      />
       <Conditional
         condition={loading}
         renderIf={

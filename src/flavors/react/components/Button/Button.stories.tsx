@@ -1,6 +1,11 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import Button from "./index";
+import {
+  OutlinePlus,
+  OutlineArrowLeftOne,
+  OutlineCalendar,
+} from "../icons/generated/outline";
 
 //@ts-ignore
 import "core/components/Button.styl";
@@ -107,4 +112,25 @@ export const Large = Template.bind({});
 Large.args = {
   children: "Large button",
   size: "large",
+};
+
+const IconTemplate = (args) => <Button {...args} />;
+
+export const IconButton = IconTemplate.bind({});
+IconButton.args = {
+  Icon: OutlineCalendar,
+  children: "Icon Button",
+};
+
+export const RightIconButton = IconTemplate.bind({});
+RightIconButton.args = {
+  Icon: OutlineArrowLeftOne,
+  children: "Right Icon Button",
+  iconRight: true,
+};
+
+export const OnlyIconButton = IconTemplate.bind({});
+OnlyIconButton.args = {
+  Icon: OutlinePlus,
+  onlyIcon: true,
 };

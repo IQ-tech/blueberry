@@ -20,9 +20,32 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 	border-radius 4px
 	text-align center
 	padding 13px 16px
+	display flex
+	align-items center
 	background-color blueberry-60
 	color gray-0
 	transition background-color 0.15s ease-in, border-color 0.15s ease-in, color 0.15s ease-in // padronizar depois as animações
+
+	&__icon-slot
+		margin-right 10px
+		order 1
+
+	&--only-icon
+		.iq-btn__icon-slot
+			margin 0
+
+	&--icn-right
+		.iq-btn__icon-slot
+			order 2
+			margin-right 0
+			margin-left 10px
+
+	&__text
+		order 2
+
+	&--icn-right
+		.iq-btn__text
+			order 1
 
 	// Color definitions by type and scheme
 	// Primary default
@@ -91,6 +114,20 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			border-color blueberry-70
 			color gray-0
 
+	// Secondary danger
+	&--type-secondary&--color-danger
+		color red-30
+		border-color red-30
+
+		&:hover
+			background-color red-20
+			border-color red-20
+			color red-100
+
+		&:active
+			background-color red-40
+			border-color red-40
+
 	// Secondary inverted
 	&--type-secondary&--color-inverted
 		border-color cyan-30
@@ -140,6 +177,17 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 		&:active
 			color cyan-40
 			border-color cyan-40
+
+	// type text danger
+	&--type-text&--color-danger
+		color red-30
+
+		&:hover
+			color red-20
+
+		&:active
+			color red-40
+			border-color red-40
 
 	// type text disabled
 	&--type-text&--disabled
@@ -215,3 +263,10 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 
 	&--expand-y, &--expand-xy
 		height 100%
+
+	&--only-icon
+		border-radius 100%
+		width 48px
+		height 48px
+		padding 0
+		justify-content center

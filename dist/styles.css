@@ -125,6 +125,12 @@
   border-radius:4px;
   text-align:center;
   padding:13px 16px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
   -webkit-transition:background-color .15s ease-in,border-color .15s ease-in,color .15s ease-in;
   transition:background-color .15s ease-in,border-color .15s ease-in,color .15s ease-in;
 }
@@ -158,6 +164,29 @@
 }
 .iq-btn li,.iq-btn ul{
   list-style:none;
+}
+.iq-btn__icon-slot{
+  margin-right:10px;
+  -webkit-box-ordinal-group:2;
+      -ms-flex-order:1;
+          order:1;
+}
+.iq-btn--only-icon .iq-btn__icon-slot{
+  margin:0;
+}
+.iq-btn--icn-right .iq-btn__icon-slot{
+  margin-right:0;
+  margin-left:10px;
+}
+.iq-btn--icn-right .iq-btn__icon-slot,.iq-btn__text{
+  -webkit-box-ordinal-group:3;
+      -ms-flex-order:2;
+          order:2;
+}
+.iq-btn--icn-right .iq-btn__text{
+  -webkit-box-ordinal-group:2;
+      -ms-flex-order:1;
+          order:1;
 }
 .iq-btn{
   background-color:#453ad3;
@@ -219,6 +248,19 @@
   border-color:#2319a5;
   color:#fff;
 }
+.iq-btn--type-secondary.iq-btn--color-danger{
+  color:#f95151;
+  border-color:#f95151;
+}
+.iq-btn--type-secondary.iq-btn--color-danger:hover{
+  background-color:#fe7f7f;
+  border-color:#fe7f7f;
+  color:#3e0303;
+}
+.iq-btn--type-secondary.iq-btn--color-danger:active{
+  background-color:#e33d3d;
+  border-color:#e33d3d;
+}
 .iq-btn--type-secondary.iq-btn--color-inverted{
   border-color:#20e9f3;
   color:#20e9f3;
@@ -258,6 +300,16 @@
 .iq-btn--type-text.iq-btn--color-inverted:active{
   color:#00d3e8;
   border-color:#00d3e8;
+}
+.iq-btn--type-text.iq-btn--color-danger{
+  color:#f95151;
+}
+.iq-btn--type-text.iq-btn--color-danger:hover{
+  color:#fe7f7f;
+}
+.iq-btn--type-text.iq-btn--color-danger:active{
+  color:#e33d3d;
+  border-color:#e33d3d;
 }
 .iq-btn--type-text.iq-btn--disabled,.iq-btn--type-text.iq-btn--disabled:active,.iq-btn--type-text.iq-btn--disabled:hover{
   background-color:transparent;
@@ -338,6 +390,15 @@
 }
 .iq-btn--expand-xy,.iq-btn--expand-y{
   height:100%;
+}
+.iq-btn--only-icon{
+  border-radius:100%;
+  width:48px;
+  height:48px;
+  padding:0;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
 }
 @-webkit-keyframes spin{
   to{

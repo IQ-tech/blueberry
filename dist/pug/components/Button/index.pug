@@ -15,7 +15,7 @@ mixin Button({type, size, color, loading, expand, text, disabled})
 		class=disabledClass
 		class=loadingClass
 	)&attributes( attributes )
-		span #{text}
+		span.iq-btn__text #{text}
 		if loading
 			div.iq-btn__loading-overlay
 				div.iq-btn__loading-spinner
