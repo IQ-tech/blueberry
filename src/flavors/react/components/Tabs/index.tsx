@@ -42,7 +42,7 @@ const Tabs:React.FC<TabsProps> = ({
   }, [])
 
   return (
-		<Fragment>
+		<div className="iq-tabs">
 			<TabsHeader
 				customClass={className}
 				tabsHeader={tabsHeader}
@@ -51,7 +51,7 @@ const Tabs:React.FC<TabsProps> = ({
         isNotificationActive={isNotificationActive}
 			/>
 			<TabsContent activeIndex={activeIndex} children={children} />
-		</Fragment>
+    </div>
 	)
 };
 
