@@ -1,29 +1,45 @@
 import * as React from "react";
-import Item from "./Item"
+import Item, { AccordionItemProps } from "./Item";
+
+import useAccordion from "./logic";
 
 interface AccordionType<T> extends React.FC<T> {
-  Item: React.FC;
+  Item: React.FC<AccordionItemProps>;
 }
 
-interface AccordionProps extends React.HTMLAttributes<HTMLUListElement> {
+interface AccordionProps {
   /** Tells the accordion to keep only one item opened per time */
   onlyOneItemOpen?: boolean;
+  /** Accordion.Item[] */
+  children?: JSX.Element[];
 }
 
 const Accordion: AccordionType<AccordionProps> = ({
   onlyOneItemOpen = false,
-  children,
+  children = [],
 }) => {
-  return <ul className="iq-accordion">{
-    React.Children.map(children, (child) => {
-      // @ts-ignore
-      const hasProps = child.hasOwnPropery("props")
-/*       return React.cloneElement(child, {
+  const { openedItems, openItemHandler, closeItemHandler } = useAccordion({
+    onlyOneItemOpen,
+  });
 
-      }) */
-      
-    })
-  }</ul>;
+  return (
+    <ul className="iq-accordion">
+      {React.Children.map(children, (child, index) => {
+        const hasProps = !!child.props;
+        if (hasProps) {
+          return React.cloneElement(child, {
+            ...child.props,
+            accIndex: index,
+            openedItems,
+            onOpenItem: openItemHandler,
+            onCloseItem: closeItemHandler,
+          });
+        } else {
+          return child;
+        }
+      })}
+    </ul>
+  );
 };
 
 Accordion.Item = Item;

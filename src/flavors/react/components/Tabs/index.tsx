@@ -10,13 +10,13 @@ interface Tab {
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   /* Defining header buttons */
-  tabsHeader: Tab[],
+  tabsHeader: Tab[];
   /* Customized index to define which table to select itself */
-  customIndex?: number,
-  className?: string,
-  children?: JSX.Element[] | JSX.Element,
+  customIndex?: number;
+  className?: string;
+  children?: JSX.Element[] | JSX.Element;
   /* Defining if has notification style */
-  isNotificationActive?: boolean
+  isNotificationActive?: boolean;
 }
 
 const Tabs:React.FC<TabsProps> = ({

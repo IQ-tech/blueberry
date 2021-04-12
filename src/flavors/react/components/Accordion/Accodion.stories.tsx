@@ -22,7 +22,10 @@ export default {
 
 const Template = (args) => (
   <Accordion {...args}>
-    <Accordion.Item>test</Accordion.Item>
+    <Accordion.Item titleChildren="title one">test</Accordion.Item>
+    <Accordion.Item titleChildren="title two">test 2</Accordion.Item>
+    <Accordion.Item titleChildren="title three">test 3</Accordion.Item>
+    <Accordion.Item titleChildren="title four">test 4</Accordion.Item>
   </Accordion>
 );
 
