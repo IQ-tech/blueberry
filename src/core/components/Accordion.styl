@@ -1,0 +1,71 @@
+@import '../variables.styl'
+
+.iq-accordion
+	componentDeepReset()
+	list-style none
+	font-family 'Open Sans'
+	font-size 16px
+	color gray-50
+
+	&__item
+		border-bottom 1px solid blueberry-20
+		margin-bottom 24px
+
+		&--open
+			margin-bottom 16px
+
+		&--color-s-purple-head
+			border-bottom 1px solid transparent
+
+	&__item-head
+		width 100%
+		font-family 'Baloo Chettan 2'
+		color blueberry-60
+		font-size inherit
+		background transparent
+		border none
+		justify-content flex-start
+		text-align left
+		padding 24px 16px
+		cursor pointer
+		display flex
+		align-items center
+		border-radius 8px
+
+
+		&:hover
+			background-color blueberry-0
+
+		&:focus
+			border 2px solid blueberry-60
+			outline none
+
+	&__item--color-s-purple-head
+		.iq-accordion__item-head
+			background-color blueberry-10
+
+	&__item-body
+		padding 0 13px 0 13px
+		opacity 0
+		max-height 0
+		visibility hidden
+		overflow hidden
+		transition max-height 0.2s ease, opacity 0.2s ease-in, padding 0.2s ease
+
+	.iq-accordion__item--open
+		.iq-accordion__item-body
+			padding 16px 13px 24px 13px
+			opacity 1
+			visibility visible
+			max-height 5000px
+
+	&__head-content
+		width 100%
+
+	&__arrow-holder
+		color blueberry-60
+		transition transform 0.3s ease
+
+	&__item--open
+		.iq-accordion__arrow-holder
+			transform rotate(-180deg)

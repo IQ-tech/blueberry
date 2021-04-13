@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Fragment, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import TabsHeader from './TabsHeader'
 import TabsContent from './Content'
 
@@ -10,13 +10,13 @@ interface Tab {
 
 interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   /* Defining header buttons */
-  tabsHeader: Tab[],
+  tabsHeader: Tab[];
   /* Customized index to define which table to select itself */
-  customIndex?: number,
-  className?: string,
-  children?: JSX.Element[] | JSX.Element,
+  customIndex?: number;
+  className?: string;
+  children?: JSX.Element[] | JSX.Element;
   /* Defining if has notification style */
-  isNotificationActive?: boolean
+  isNotificationActive?: boolean;
 }
 
 const Tabs:React.FC<TabsProps> = ({
@@ -42,7 +42,7 @@ const Tabs:React.FC<TabsProps> = ({
   }, [])
 
   return (
-		<Fragment>
+		<div className="iq-tabs">
 			<TabsHeader
 				customClass={className}
 				tabsHeader={tabsHeader}
@@ -51,7 +51,7 @@ const Tabs:React.FC<TabsProps> = ({
         isNotificationActive={isNotificationActive}
 			/>
 			<TabsContent activeIndex={activeIndex} children={children} />
-		</Fragment>
+    </div>
 	)
 };
 

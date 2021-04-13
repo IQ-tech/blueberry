@@ -110,6 +110,98 @@
     line-height:48px;
   }
 }
+.iq-accordion{
+  list-style:none;
+  font-family:"Open Sans";
+  font-size:16px;
+  color:#444;
+}
+.iq-accordion,.iq-accordion *,.iq-accordion :after,.iq-accordion :before{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  padding-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  margin-bottom:0;
+  text-decoration:none;
+}
+.iq-accordion li,.iq-accordion ul{
+  list-style:none;
+}
+.iq-accordion__item{
+  border-bottom:1px solid #bdb8ff;
+  margin-bottom:24px;
+}
+.iq-accordion__item--open{
+  margin-bottom:16px;
+}
+.iq-accordion__item--color-s-purple-head{
+  border-bottom:1px solid transparent;
+}
+.iq-accordion__item-head{
+  width:100%;
+  font-family:"Baloo Chettan 2";
+  color:#453ad3;
+  font-size:inherit;
+  background:transparent;
+  border:none;
+  -webkit-box-pack:start;
+      -ms-flex-pack:start;
+          justify-content:flex-start;
+  text-align:left;
+  padding:24px 16px;
+  cursor:pointer;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border-radius:8px;
+}
+.iq-accordion__item-head:hover{
+  background-color:#f5f2ff;
+}
+.iq-accordion__item-head:focus{
+  border:2px solid #453ad3;
+  outline:none;
+}
+.iq-accordion__item--color-s-purple-head .iq-accordion__item-head{
+  background-color:#e4e2ff;
+}
+.iq-accordion__item-body{
+  padding:0 13px 0 13px;
+  opacity:0;
+  max-height:0;
+  visibility:hidden;
+  overflow:hidden;
+  -webkit-transition:max-height .2s ease,opacity .2s ease-in,padding .2s ease;
+  transition:max-height .2s ease,opacity .2s ease-in,padding .2s ease;
+}
+.iq-accordion .iq-accordion__item--open .iq-accordion__item-body{
+  padding:16px 13px 24px 13px;
+  opacity:1;
+  visibility:visible;
+  max-height:5000px;
+}
+.iq-accordion__head-content{
+  width:100%;
+}
+.iq-accordion__arrow-holder{
+  color:#453ad3;
+  -webkit-transition:-webkit-transform .3s ease;
+  transition:-webkit-transform .3s ease;
+  transition:transform .3s ease;
+  transition:transform .3s ease,-webkit-transform .3s ease;
+}
+.iq-accordion__item--open .iq-accordion__arrow-holder{
+  -webkit-transform:rotate(-180deg);
+          transform:rotate(-180deg);
+}
 .iq-btn{
   padding-left:0;
   padding-right:0;
@@ -919,6 +1011,9 @@
   width:auto;
   height:100%;
   display:block;
+}
+.iq-tabs{
+  width:100%;
 }
 .iq-tabs-button{
   border-radius:4px;
