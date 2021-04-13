@@ -1,33 +1,18 @@
 import * as React from "react";
 import classNames from "classnames";
-
+import OutlineAngleDownMini from "../../icons/generated/outline/OutlineAngleDownMini";
+import { AccordionItemProps } from "../types";
 import useAccordionItem from "./logic";
-
-export interface AccordionItemProps {
-  /** if true, the Accoridon item starts opened */
-  open?: boolean;
-  /** index number inside the accordion (automatically assigned by the Accodion component)  */
-  accIndex?: number;
-  /** Item children */
-  children: React.ReactNode;
-  /** Item titleChildren */
-  titleChildren?: React.ReactNode;
-  /** List of all opened items */
-  openedItems?: number[];
-  /** event to open Item */
-  onOpenItem?: (...args: any) => any;
-  /** event to close panel */
-  onCloseItem?: (...args: any) => any;
-}
 
 const Item: React.FC<AccordionItemProps> = ({
   accIndex,
   open,
   children,
-  titleChildren = "Accodion item",
+  titleChild = "Accodion item",
   openedItems = [],
   onOpenItem,
   onCloseItem,
+  colorScheme,
 }) => {
   const { isItemOpened, headClickHandler } = useAccordionItem({
     accIndex,
@@ -39,13 +24,17 @@ const Item: React.FC<AccordionItemProps> = ({
 
   const componentClass = classNames("iq-accordion__item", {
     "iq-accordion__item--open": isItemOpened,
+    [`iq-accordion__item--color-s-${colorScheme}`]: !!colorScheme,
   });
 
   return (
     <li className={componentClass}>
-      <div className="iq-accordion__item-head" onClick={headClickHandler}>
-        {titleChildren}
-      </div>
+      <button className="iq-accordion__item-head" onClick={headClickHandler}>
+        <div className="iq-accordion__head-content">{titleChild}</div>
+        <div className="iq-accordion__arrow-holder">
+          <OutlineAngleDownMini />
+        </div>
+      </button>
       <div className="iq-accordion__item-body">{children}</div>
     </li>
   );

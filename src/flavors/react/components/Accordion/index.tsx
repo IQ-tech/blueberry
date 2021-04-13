@@ -1,22 +1,13 @@
 import * as React from "react";
-import Item, { AccordionItemProps } from "./Item";
+import Item from "./Item";
+import { AccordionType, AccordionProps } from "./types";
 
 import useAccordion from "./logic";
-
-interface AccordionType<T> extends React.FC<T> {
-  Item: React.FC<AccordionItemProps>;
-}
-
-interface AccordionProps {
-  /** Tells the accordion to keep only one item opened per time */
-  onlyOneItemOpen?: boolean;
-  /** Accordion.Item[] */
-  children?: JSX.Element[];
-}
 
 const Accordion: AccordionType<AccordionProps> = ({
   onlyOneItemOpen = false,
   children = [],
+  colorScheme,
 }) => {
   const { openedItems, openItemHandler, closeItemHandler } = useAccordion({
     onlyOneItemOpen,
@@ -28,11 +19,12 @@ const Accordion: AccordionType<AccordionProps> = ({
         const hasProps = !!child.props;
         if (hasProps) {
           return React.cloneElement(child, {
-            ...child.props,
+            colorScheme,
             accIndex: index,
             openedItems,
             onOpenItem: openItemHandler,
             onCloseItem: closeItemHandler,
+            ...child.props,
           });
         } else {
           return child;

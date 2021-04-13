@@ -13,32 +13,26 @@ export default {
       description: {
         component: "Accordion component",
       },
-      source: {
-        type: "code",
-      },
     },
   },
 } as Meta;
 
 const Template = (args) => (
   <Accordion {...args}>
-    <Accordion.Item titleChildren="title one">test</Accordion.Item>
-    <Accordion.Item titleChildren="title two">test 2</Accordion.Item>
-    <Accordion.Item titleChildren="title three">test 3</Accordion.Item>
-    <Accordion.Item titleChildren="title four">test 4</Accordion.Item>
+    <Accordion.Item titleChild="title one">test</Accordion.Item>
+    <Accordion.Item titleChild="title two">test 2</Accordion.Item>
+    <Accordion.Item titleChild="title three">test 3</Accordion.Item>
+    <Accordion.Item titleChild="title four">test 4</Accordion.Item>
   </Accordion>
 );
 
 export const AccordionBasic = Template.bind({});
+AccordionBasic.args = {
+  onlyOneItemOpen: false,
+  colorScheme: "",
+};
 
-/* 
-export const BlankCard = Template.bind({});
-BlankCard.args = {
-  children: "My Card",
-  fixedSize: { width: "400px", height: "200px" },
-  dark: false,
+export const AccordionWithScheme = Template.bind({});
+AccordionWithScheme.args = {
+  colorScheme: "purple-head",
 };
-BlankCard.parameters = {
-  backgrounds: { default: "opaque" },
-};
- */
