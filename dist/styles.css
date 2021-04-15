@@ -670,6 +670,100 @@
   top:3px;
   right:0;
 }
+.iq-dropdown{
+  position:relative;
+}
+.iq-dropdown--opened .iq-dropdown__selected:before{
+  -webkit-transform:rotate(-135deg);
+          transform:rotate(-135deg);
+}
+.iq-dropdown--opened .iq-dropdown__selected:after{
+  -webkit-transform:rotate(135deg);
+          transform:rotate(135deg);
+}
+.iq-dropdown--opened .iq-dropdown__items{
+  display:block;
+}
+.iq-dropdown--transparent .iq-dropdown__selected{
+  background-color:transparent;
+}
+.iq-dropdown--background .iq-dropdown__selected{
+  background-color:#f5f2ff;
+}
+.iq-dropdown--small{
+  width:104px;
+}
+.iq-dropdown--medium{
+  width:128px;
+}
+.iq-dropdown__items,.iq-dropdown__selected{
+  width:100%;
+}
+.iq-dropdown__items-item button,.iq-dropdown__selected{
+  font-size:12px;
+}
+.iq-dropdown__selected{
+  cursor:pointer;
+  color:#453ad3;
+  border:none;
+  margin-bottom:3px;
+  font-weight:bold;
+  padding:8px;
+  text-align:left;
+  line-height:16px;
+  position:relative;
+  border-radius:4px;
+}
+.iq-dropdown__selected:after,.iq-dropdown__selected:before{
+  content:"";
+  background-color:#453ad3;
+  position:absolute;
+  top:50%;
+  width:2px;
+  height:10px;
+  margin-top:-5px;
+  -webkit-transition:-webkit-transform .34s cubic-bezier(.69, .01, .25, 1);
+  transition:-webkit-transform .34s cubic-bezier(.69, .01, .25, 1);
+  transition:transform .34s cubic-bezier(.69, .01, .25, 1);
+  transition:transform .34s cubic-bezier(.69, .01, .25, 1),-webkit-transform .34s cubic-bezier(.69, .01, .25, 1);
+}
+.iq-dropdown__selected:after{
+  right:18px;
+  -webkit-transform:rotate(45deg);
+          transform:rotate(45deg);
+}
+.iq-dropdown__selected:before{
+  right:24px;
+  -webkit-transform:rotate(-45deg);
+          transform:rotate(-45deg);
+}
+.iq-dropdown__items{
+  display:none;
+  position:absolute;
+  background-color:#fff;
+  -webkit-box-shadow:1px 3px 19px -6px rgba(0, 0, 0, .3);
+          box-shadow:1px 3px 19px -6px rgba(0, 0, 0, .3);
+  z-index:1;
+  margin:0;
+  padding:0;
+  text-align:center;
+  border-radius:4px;
+}
+.iq-dropdown__items-item{
+  text-decoration:none;
+  display:block;
+  border-bottom:1px solid #f5f2ff;
+}
+.iq-dropdown__items-item button{
+  width:100%;
+  border:none;
+  cursor:pointer;
+  background-color:transparent;
+  text-align:center;
+  color:#453ad3;
+  line-height:20px;
+  padding:16px 0;
+}
 .iq-grid{
   -webkit-box-sizing:border-box;
   padding-left:0;
