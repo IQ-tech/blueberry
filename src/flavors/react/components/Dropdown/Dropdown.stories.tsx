@@ -19,8 +19,8 @@ export default {
 
 const Template = (args) => <Dropdown {...args} />;
 
-export const DropdownTransparentSmall = Template.bind({});
-DropdownTransparentSmall.args = {
+export const DynamicDropdown = Template.bind({});
+DynamicDropdown.args = {
   type: 'transparent', 
   size: 'small', 
   prefix: 'Ano',
