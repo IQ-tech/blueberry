@@ -1,0 +1,91 @@
+@import '../variables.styl'
+
+.iq-dropdown
+  position: relative;
+
+  &--opened
+    .iq-dropdown__selected
+      &:before
+        transform rotate(-135deg)
+
+      &:after
+        transform rotate(135deg)
+    
+    .iq-dropdown__items
+      display block
+
+  &--transparent
+    .iq-dropdown__selected 
+      background-color transparent
+
+  &--background
+    .iq-dropdown__selected 
+      background-color blueberry-0
+
+  &--small
+    width 104px
+
+  &--medium
+    width 128px
+
+  &__selected, &__items
+    width 100%
+
+  &__selected, &__items-item button
+    font-size 12px
+
+  &__selected
+    cursor pointer
+    color blueberry-60
+    border none
+    margin-bottom 3px
+    font-weight bold
+    padding 8px
+    text-align left
+    line-height 16px
+    position relative
+    border-radius 4px
+    
+    &:after, &:before
+      content ''
+      background-color blueberry-60
+      position absolute
+      top 50%
+      width 2px
+      height 10px
+      margin-top -5px
+      transition transform 0.34s cubic-bezier(0.69, 0.01, 0.25, 1)
+
+    &:after
+      right 18px
+      transform rotate(45deg)
+
+    &:before
+      right 24px
+      transform rotate(-45deg)
+
+  &__items
+    display none
+    position absolute
+    background-color #FFFFFF
+    box-shadow 1px 3px 19px -6px rgba(0, 0, 0, 0.3)
+    z-index 1
+    margin 0
+    padding 0px
+    text-align center
+    border-radius 4px
+
+    &-item
+      text-decoration: none;
+      display: block;
+      border-bottom 1px solid blueberry-0
+
+      button 
+        width 100%
+        border none
+        cursor pointer
+        background-color transparent
+        text-align center
+        color blueberry-60
+        line-height 20px
+        padding 16px 0
