@@ -11,7 +11,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "Default dropdown component",
+        component: `Dropdowns present a list of items from which the user can select one or more options as desired. Within these dropdowns, it can contain an action to filter or classify the content.`,
       }
     },
   },
