@@ -1,13 +1,24 @@
 import * as React from "react";
 import classNames from "classnames";
 
+import logic from './logic';
+
 interface DropdownProps {
+  items: [],
   type: 'transparent' | 'background',
   size: 'medium' | 'small',
-  items: []
+  prefix: string,
+  callback: Function
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ type, size, items }) => {
+const Dropdown: React.FC<DropdownProps> = ({ callback, prefix, type, size, items }) => {
+
+  const {
+    openedDropdown,
+    toggleDropdown,
+    selectedItem,
+    setCurrentSelectedItem
+  } = logic({ callback, items })
 
   const typesClassesConfig = {
     'transparent': '--transparent',
@@ -23,20 +34,28 @@ const Dropdown: React.FC<DropdownProps> = ({ type, size, items }) => {
   const currentSizeClass = sizeClassesConfig[size]
 
   const dropdownClass = classNames("iq-dropdown", {
+    ['iq-dropdown--opened']: openedDropdown,
     [`iq-dropdown${currentTypeClass}`]: type,
-    [`iq-dropdown${currentSizeClass}`]: size
+    [`iq-dropdown${currentSizeClass}`]: size,
   })
 
   return (
-    <ul className={dropdownClass}>
-      {items.map(({ label }, index) => {
-        return (
-          <li className="iq-dropdown__item" key={`dropdown-key-${index}`}>
-            <button>{ label }</button>
-          </li>
-        )
-      })}
-    </ul>
+    <div className={dropdownClass}>
+      <button className="iq-dropdown__selected" onClick={toggleDropdown}>
+        {prefix} {selectedItem} 
+      </button>
+      <ul className="iq-dropdown__items">
+
+        {items.map((item, index) => {
+          return (
+            <li className="iq-dropdown__items-item" key={`dropdown-key-${index}`} onClick={setCurrentSelectedItem}>
+              <button>{item}</button>
+            </li>
+          )
+        })}
+
+      </ul>
+    </div>
   );
 };
 

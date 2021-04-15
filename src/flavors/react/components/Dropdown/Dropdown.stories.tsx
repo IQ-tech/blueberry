@@ -19,7 +19,11 @@ export default {
 
 const Template = (args) => <Dropdown {...args} />;
 
-export const Test = Template.bind({});
-Test.args = {
-  test: "Primary button",
+export const DropdownTransparentSmall = Template.bind({});
+DropdownTransparentSmall.args = {
+  type: 'transparent', 
+  size: 'small', 
+  prefix: 'Ano',
+  items: ['2019', '2020', '2021'],
+  callback: (selectedItem) => console.log({ selectedItem })
 };
