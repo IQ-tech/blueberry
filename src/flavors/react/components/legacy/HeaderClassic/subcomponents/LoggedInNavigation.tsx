@@ -12,7 +12,7 @@ const LoggedInMenuHeader = ({ username, getAbsoluteLink }) => {
       <div className="header-classic__logged-in-menu-header-text">
         <p className="header-classic__logged-in-menu-header-name">{username}</p>
         <a
-          href={getAbsoluteLink("/app/profile/")}
+          href={getAbsoluteLink("/app/perfil/")}
           className="header-classic__logged-in-menu-header-profile"
           data-clicked="logged-header-menu-profile-link"
         >
