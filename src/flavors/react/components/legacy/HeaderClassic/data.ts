@@ -76,7 +76,7 @@ export const loggedMenuLinks: LoggedNavigationLink[] = [
     path: "/app/gerenciar/notificacoes/",
     rawIcon: loggedMenuItemsIcons.bell,
   },
-  { label: "Ajuda", path: "/app", rawIcon: loggedMenuItemsIcons.floater },
+  { label: "Ajuda", path: "/faq/", rawIcon: loggedMenuItemsIcons.floater },
   {
     label: "Sair da conta",
     path: "/app/sair/",
