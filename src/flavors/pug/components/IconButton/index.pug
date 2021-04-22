@@ -1,0 +1,9 @@
+include ../Button/index.pug
+include ../Button/ButtonIcon.pug
+
+
+mixin IconButton({type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})
+	+Button({type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})
+		+ButtonIcon()
+			if block
+				block
