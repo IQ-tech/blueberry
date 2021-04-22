@@ -3,7 +3,7 @@ include ../Button/ButtonIcon.pug
 
 
 mixin IconButton({type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})
-	+Button({type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})
+	+Button({type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})&attributes( attributes )
 		+ButtonIcon()
 			if block
 				block
