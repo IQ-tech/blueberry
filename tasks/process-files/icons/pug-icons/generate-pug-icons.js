@@ -11,7 +11,7 @@ const {
  * every svg icon on src/icons folder
  */
 module.exports = function generatePugIconsTask() {
-	return src("./src/icons/*.svg")
+	return src("./src/icons/**/*.svg")
 		.pipe(
 			svgo({
 				plugins: [
@@ -22,7 +22,7 @@ module.exports = function generatePugIconsTask() {
 			})
 		)
 		.pipe(html2pug({ tabs: true, fragment: true }))
-		.pipe(filenameCamelCasePlugin())
+		.pipe(filenameCamelCasePlugin({useCollection: true}))
 		.pipe(transformPugFragmentToMixinPlugin())
 		.pipe(dest("./src/flavors/pug/components/icons"));
 };
