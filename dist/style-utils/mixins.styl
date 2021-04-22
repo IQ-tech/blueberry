@@ -1,32 +1,22 @@
-
-// Responsive css
 aboveXsmall()
 	@media (min-width breakpoints-xsmall)
 		{block}
-
 aboveSmall()
 	@media (min-width breakpoints-small)
 		{block}
-
 aboveMedium()
 	@media (min-width breakpoints-medium)
 		{block}
-
 aboveLarge()
 	@media (max-width breakpoints-large)
 		{block}
-
 aboveXLarge()
 	@media (min-width breakpoints-xlarge)
 		{block}
-
-
-between(bpA, bpB)
+betweenAB(bpA, bpB)
 	condition = '(min-width: %s) and (max-width: %s)' % (bpA bpB)
 	@media condition
 		{block}
-
-// Resets for components
 elementReset()
 	box-sizing border-box
 	padding-left 0
@@ -38,7 +28,6 @@ elementReset()
 	margin-top 0
 	margin-bottom 0
 	text-decoration none
-
 componentDeepReset()
 	elementReset()
 	*
@@ -47,5 +36,5 @@ componentDeepReset()
 		elementReset()
 	*:after
 		elementReset()
-	ul,li
+	ul, li
 		list-style none

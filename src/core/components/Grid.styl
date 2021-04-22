@@ -102,7 +102,7 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 			margin-bottom grid-fluid-gutter-medium
 
 		// Phone span columns
-		+between(breakpoints-xsmall, breakpoints-small)
+		+betweenAB(breakpoints-xsmall, breakpoints-small)
 			&--phone-half, &--const-half
 				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
 
@@ -117,7 +117,7 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 					flex-basis 'calc((100% / %s) * %s - %s)' % (grid-columns-xsmall columnSpan grid-fluid-gutter-xsmall)
 
 		// Tablet span columns
-		+between(breakpoints-small, breakpoints-medium)
+		+betweenAB(breakpoints-small, breakpoints-medium)
 			&--tablet-half, &--const-half
 				flex-basis 'calc(50% - %s)' % grid-fluid-gutter-xsmall
 
