@@ -2,8 +2,8 @@ include ../Button/index.pug
 include ../Button/ButtonIcon.pug
 
 
-mixin IconButton({spaceBetween, type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})
-	+Button({spaceBetween, type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})&attributes( attributes )
+mixin IconButton(args)
+	+Button(args)&attributes( attributes )
 		+ButtonIcon()
 			if block
 				block
