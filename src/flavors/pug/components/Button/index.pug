@@ -1,4 +1,4 @@
-mixin Button({type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})
+mixin Button({spaceBetween, type, size, color, loading, expand, text, disabled, onlyIcon, iconRight})
 	- const baseClass = 'iq-btn'
 	- const typeClass = !!type ? `${baseClass}--type-${type}` : ''
 	- const sizeClass = !!size ? `${baseClass}--size-${size}` : ''
@@ -8,6 +8,7 @@ mixin Button({type, size, color, loading, expand, text, disabled, onlyIcon, icon
 	- const loadingClass = !!loading ? `${baseClass}--loading` : ''
 	- const iconPosition = !!iconRight && !onlyIcon ? 'iq-btn--icn-right' : ''
 	- const roundOnlyIcon = !!onlyIcon ? 'iq-btn--only-icon' : ''
+	- const spaceBetweenClass = !!spaceBetween && !loading ? 'iq-btn--space-between' : ''
 	button(
 		class=baseClass
 		class=typeClass
@@ -18,6 +19,7 @@ mixin Button({type, size, color, loading, expand, text, disabled, onlyIcon, icon
 		class=loadingClass
 		class=iconPosition
 		class=onlyIcon
+		class=spaceBetweenClass
 	)&attributes( attributes )
 		span.iq-btn__text #{text}
 		if loading

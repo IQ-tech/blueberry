@@ -21,6 +21,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   iconRight: boolean;
   /** Display round icon button */
   onlyIcon: boolean;
+  /** adds a space between button text and icons */
+  spaceBetween: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -35,6 +37,7 @@ const Button: React.FC<ButtonProps> = ({
   expand,
   onClick,
   onlyIcon = false,
+  spaceBetween = false,
   ...props
 }) => {
   const buttonClasses = classNames("iq-btn", {
@@ -46,6 +49,7 @@ const Button: React.FC<ButtonProps> = ({
     "iq-btn--loading": !!loading,
     "iq-btn--icn-right": !!iconRight && !onlyIcon,
     "iq-btn--only-icon": !!onlyIcon,
+    "iq-btn--space-between": !!spaceBetween && !loading
   });
 
   function handleClick(e) {
