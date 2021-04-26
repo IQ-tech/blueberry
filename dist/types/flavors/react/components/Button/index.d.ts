@@ -18,6 +18,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     iconRight: boolean;
     /** Display round icon button */
     onlyIcon: boolean;
+    /** adds a space between button text and icons */
+    spaceBetween: boolean;
 }
 declare const Button: React.FC<ButtonProps>;
 export default Button;

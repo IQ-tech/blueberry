@@ -257,6 +257,11 @@
 .iq-btn li,.iq-btn ul{
   list-style:none;
 }
+.iq-btn--space-between{
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}
 .iq-btn__icon-slot{
   margin-right:10px;
   -webkit-box-ordinal-group:2;
