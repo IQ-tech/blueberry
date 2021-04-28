@@ -35,13 +35,13 @@ include ../IconHandDocument.pug
 include ../IconHandApp.pug
 include ../FilledIconHandApp.pug
 
-include ../../Grid/index.pug
-include ../../Grid/Row.pug
+include ../../FlexGrid/index.pug
+include ../../FlexGrid/Row.pug
 include ./IconBox.pug
 mixin IconsDemo()
 	.icons-demo
-		+Grid({})
-			+GridRow()
+		+FlexGrid({})
+			+FlexGridRow()
 				+IconBox({filename: "FilledIconHandApp.pug"})
 					+FilledIconHandApp()
 

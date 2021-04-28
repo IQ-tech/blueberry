@@ -1,6 +1,6 @@
 
-mixin GridSpanColumns({phone, tablet, desktop})
-	- const baseClass = 'iq-grid__span'
+mixin FlexGridSpanColumns({phone, tablet, desktop})
+	- const baseClass = 'iq-flex-grid__span'
 	- // On breakpoint variables, the values can be the number of columns, "half", "full" or "hide"
 	- const phoneClass = !!phone ? `${baseClass}--phone-${phone}` : ''
 	- const tabletClass = !!tablet ? `${baseClass}--tablet-${tablet}` : ''

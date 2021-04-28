@@ -1,5 +1,5 @@
-mixin Grid({prototyping, fluid})
-	- const baseClass = 'iq-grid'
+mixin FlexGrid({prototyping, fluid})
+	- const baseClass = 'iq-flex-grid'
 	- const protoClass = !!prototyping ? `${baseClass}--prototyping` : ''
 	- const fluidClass = !!fluid ? `${baseClass}--fluid` : ''
 	div(

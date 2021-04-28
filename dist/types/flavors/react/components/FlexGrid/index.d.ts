@@ -25,7 +25,7 @@ export interface RowProps {
     noBottomMargin?: boolean;
 }
 /** Grid main component */
-export interface GridProps {
+export interface FlexGridProps {
     /** Use Fluid version of grid */
     fluid?: boolean;
     /** Renders a colored version of the grid for prototyping  */
@@ -33,10 +33,10 @@ export interface GridProps {
     /** Can remove the grid margin top */
     noMarginTop?: boolean;
 }
-interface GridComponentType<T> extends React.FC<T> {
+interface FlexGridComponentType<T> extends React.FC<T> {
     Span: React.FC<SpanProps>;
     Row: React.FC<RowProps>;
     Cell: React.FC;
 }
-declare const Grid: GridComponentType<GridProps>;
-export default Grid;
+declare const FlexGrid: FlexGridComponentType<FlexGridProps>;
+export default FlexGrid;

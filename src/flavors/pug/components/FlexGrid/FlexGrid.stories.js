@@ -4,7 +4,7 @@ import FluidGrid from "./demos/FluidGrid.pug";
 import "core/components/FlexGrid.styl";
 
 export default {
-	title: "Componentes/layout/Grid",
+	title: "Componentes/layout/FlexGrid",
 };
 
 export const Fixed = () => DemoOne({});

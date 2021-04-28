@@ -10,7 +10,7 @@ const path = require("path");
  * when running yarn register-icons
  */
 module.exports = function generatePugIconsDemo(cb) {
-	const demosPugTemplate = `\ninclude ../../Grid/index.pug\ninclude ../../Grid/Row.pug\ninclude ./IconBox.pug\nmixin IconsDemo()\n\t.icons-demo\n\t\t+Grid({})\n\t\t\t+GridRow()`;
+	const demosPugTemplate = `\ninclude ../../FlexGrid/index.pug\ninclude ../../FlexGrid/Row.pug\ninclude ./IconBox.pug\nmixin IconsDemo()\n\t.icons-demo\n\t\t+FlexGrid({})\n\t\t\t+FlexGridRow()`;
 	const demosPugTemplateLines = demosPugTemplate.split("\n");
 
 	const iconDemoTemplate = (filename, mixinName) =>

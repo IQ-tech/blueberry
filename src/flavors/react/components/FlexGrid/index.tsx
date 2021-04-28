@@ -65,7 +65,7 @@ const Cell: React.FC = ({ children }) => {
 };
 
 /** Grid main component */
-export interface GridProps {
+export interface FlexGridProps {
   /** Use Fluid version of grid */
   fluid?: boolean;
   /** Renders a colored version of the grid for prototyping  */
@@ -74,13 +74,13 @@ export interface GridProps {
   noMarginTop?: boolean;
 }
 
-interface GridComponentType<T> extends React.FC<T> {
+interface FlexGridComponentType<T> extends React.FC<T> {
   Span: React.FC<SpanProps>;
   Row: React.FC<RowProps>;
   Cell: React.FC;
 }
 
-const FlexGrid: GridComponentType<GridProps> = ({
+const FlexGrid: FlexGridComponentType<FlexGridProps> = ({
   children,
   fluid = false,
   prototyping = false,
