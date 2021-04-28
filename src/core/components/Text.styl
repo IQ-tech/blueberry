@@ -1,0 +1,98 @@
+@import '../variables.styl'
+
+$above-small-variation = 'above-small-'
+
+headings(viewport = '')
+	&--{viewport}heading-one, &--{viewport}heading-two, &--{viewport}heading-three, &--{viewport}heading-four, &--{viewport}heading-five, &--{viewport}heading-six
+		font-family font-secondary-font-family
+		font-weight font-secondary-weight-default
+
+	&--{viewport}heading-one
+		font-size font-variants-heading-one-font-size
+		line-height font-variants-heading-one-line-height
+
+	&--{viewport}heading-two
+		font-size font-variants-heading-two-font-size
+		line-height font-variants-heading-two-line-height
+
+	&--{viewport}heading-three
+		font-size font-variants-heading-three-font-size
+		line-height font-variants-heading-three-line-height
+
+	&--{viewport}heading-four
+		font-size font-variants-heading-four-font-size
+		line-height font-variants-heading-four-line-height
+
+	&--{viewport}heading-five
+		font-size font-variants-heading-five-font-size
+		line-height font-variants-heading-five-line-height
+
+	&--{viewport}heading-six
+		font-size font-variants-heading-six-font-size
+		line-height font-variants-heading-six-line-height
+
+bodyText(viewport = '')
+	&--{vieport}body-large, &--{vieport}body-medium, &--{vieport}body-small, &--{vieport}body-micro
+		font-family font-primary-font-family
+		font-weight font-primary-weight-default
+
+	&--{viewport}body-large
+		font-size font-variants-body-large-font-size
+		line-height font-variants-heading-six-line-height
+
+	&--{viewport}body-medium
+		font-size font-variants-body-medium-font-size
+		line-height font-variants-heading-six-line-height
+
+	&--{viewport}body-small
+		font-size font-variants-body-small-font-size
+		line-height font-variants-heading-six-line-height
+
+	&--{viewport}body-micro
+		font-size font-variants-body-micro-font-size
+		line-height font-variants-heading-six-line-height
+
+numbers(viewport = '')
+	&--{viewport}number-large, &--{viewport}number-medium, &--{viewport}number-small, &--{viewport}number-micro
+		font-family font-secondary-font-family
+		font-weight font-secondary-weight-default
+
+	&--{viewport}number-large
+		font-size font-variants-number-large-font-size
+		line-height font-variants-number-large-line-height
+
+	&--{viewport}number-medium
+		font-size font-variants-number-medium-font-size
+		line-height font-variants-number-medium-line-height
+
+	&--{viewport}number-small
+		font-size font-variants-number-small-font-size
+		line-height font-variants-number-small-line-height
+
+	&--{viewport}number-micro
+		font-size font-variants-number-micro-font-size
+		line-height font-variants-number-micro-line-height
+
+.iq-text
+	elementReset()
+	color font-colors-common
+	font-family font-primary-font-family
+	font-weight font-primary-weight-default
+
+	&--color-title
+		color font-colors-title
+
+	&--color-subtitle
+		color font-colors-subtitle
+
+	&--color-common
+		color font-colors-common
+
+	headings()
+	bodyText()
+	numbers()
+
+	+aboveSmall()
+		headings($above-small-variation)
+		bodyText($above-small-variation)
+		numbers($above-small-variation)

@@ -15,6 +15,7 @@ export { default as HeaderClassic } from "./components/legacy/HeaderClassic";
 export { default as FooterClassic } from "./components/legacy/FooterClassic";
 
 // Regular components
+export { default as Text } from "./components/Text"
 export { default as Tags } from "./components/Tags";
 export { default as Tabs } from "./components/Tabs";
 export { default as Card } from "./components/Card";

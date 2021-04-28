@@ -22,94 +22,6 @@
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
 }
-.iq-h1,.iq-h2,.iq-h3,.iq-h4,.iq-h5,.iq-h6{
-  font-family:"Baloo Chettan 2", "Open Sans";
-}
-.iq-h1,.iq-h1 *,.iq-h1 :after,.iq-h1 :before,.iq-h2,.iq-h2 *,.iq-h2 :after,.iq-h2 :before,.iq-h3,.iq-h3 *,.iq-h3 :after,.iq-h3 :before,.iq-h4,.iq-h4 *,.iq-h4 :after,.iq-h4 :before,.iq-h5,.iq-h5 *,.iq-h5 :after,.iq-h5 :before,.iq-h6,.iq-h6 *,.iq-h6 :after,.iq-h6 :before{
-  -webkit-box-sizing:border-box;
-          box-sizing:border-box;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
-  padding-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  margin-bottom:0;
-  text-decoration:none;
-}
-.iq-h1 li,.iq-h1 ul,.iq-h2 li,.iq-h2 ul,.iq-h3 li,.iq-h3 ul,.iq-h4 li,.iq-h4 ul,.iq-h5 li,.iq-h5 ul,.iq-h6 li,.iq-h6 ul{
-  list-style:none;
-}
-.iq-h1,.iq-h1--primary,.iq-h2,.iq-h2--primary,.iq-h3,.iq-h3--primary,.iq-h4,.iq-h4--primary,.iq-h5,.iq-h5--primary,.iq-h6,.iq-h6--primary{
-  color:#1c1277;
-}
-.iq-h1--secondary,.iq-h2--secondary,.iq-h3--secondary,.iq-h4--secondary,.iq-h5--secondary,.iq-h6--secondary{
-  color:#1a1a1a;
-}
-.iq-h1--tertiary,.iq-h2--tertiary,.iq-h3--tertiary,.iq-h4--tertiary,.iq-h5--tertiary,.iq-h6--tertiary{
-  color:#444;
-}
-.iq-h1{
-  font-size:40px;
-  line-height:48px;
-}
-@media (min-width:600px){
-  .iq-h1{
-    font-size:40px;
-    line-height:48px;
-  }
-}
-.iq-h2{
-  font-size:24px;
-  line-height:32px;
-}
-@media (min-width:600px){
-  .iq-h2{
-    font-size:32px;
-    line-height:40px;
-  }
-}
-.iq-h3{
-  font-size:20px;
-  line-height:28px;
-}
-@media (min-width:600px){
-  .iq-h3{
-    font-size:28px;
-    line-height:36px;
-  }
-}
-.iq-h4{
-  font-size:16px;
-  line-height:24px;
-}
-@media (min-width:600px){
-  .iq-h4{
-    font-size:24px;
-    line-height:32px;
-  }
-}
-.iq-h5{
-  font-size:12px;
-  line-height:20px;
-}
-@media (min-width:600px){
-  .iq-h5{
-    font-size:20px;
-    line-height:28px;
-  }
-}
-.iq-h6{
-  font-size:8px;
-  line-height:48px;
-}
-@media (min-width:600px){
-  .iq-h6{
-    font-size:16px;
-    line-height:48px;
-  }
-}
 .iq-accordion{
   list-style:none;
   font-family:"Open Sans";
@@ -1313,5 +1225,168 @@
 }
 .iq-tag--bill.iq-tag--paid .iq-tag__label{
   color:#00421d;
+}
+.iq-text{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  padding-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  margin-bottom:0;
+  text-decoration:none;
+  color:#444;
+  font-family:"Open Sans";
+  font-weight:400;
+}
+.iq-text--color-title{
+  color:#1c1277;
+}
+.iq-text--color-subtitle{
+  color:#1a1a1a;
+}
+.iq-text--color-common{
+  color:#444;
+}
+.iq-text--heading-five,.iq-text--heading-four,.iq-text--heading-one,.iq-text--heading-six,.iq-text--heading-three,.iq-text--heading-two{
+  font-family:"Baloo Chettan 2";
+  font-weight:600;
+}
+.iq-text--heading-one{
+  font-size:40px;
+  line-height:48px;
+}
+.iq-text--heading-two{
+  font-size:32px;
+  line-height:40px;
+}
+.iq-text--heading-three{
+  font-size:28px;
+  line-height:36px;
+}
+.iq-text--heading-four{
+  font-size:24px;
+  line-height:32px;
+}
+.iq-text--heading-five{
+  font-size:20px;
+  line-height:28px;
+}
+.iq-text--heading-six{
+  font-size:16px;
+  line-height:24px;
+}
+.iq-text--vieportbody-large,.iq-text--vieportbody-medium,.iq-text--vieportbody-micro,.iq-text--vieportbody-small{
+  font-family:"Open Sans";
+  font-weight:400;
+}
+.iq-text--body-large{
+  font-size:18px;
+  line-height:24px;
+}
+.iq-text--body-medium{
+  font-size:16px;
+  line-height:24px;
+}
+.iq-text--body-small{
+  font-size:14px;
+  line-height:24px;
+}
+.iq-text--body-micro{
+  font-size:12px;
+  line-height:24px;
+}
+.iq-text--number-large,.iq-text--number-medium,.iq-text--number-micro,.iq-text--number-small{
+  font-family:"Baloo Chettan 2";
+  font-weight:600;
+}
+.iq-text--number-large{
+  font-size:24px;
+  line-height:32px;
+}
+.iq-text--number-medium{
+  font-size:16px;
+  line-height:24px;
+}
+.iq-text--number-small{
+  font-size:14px;
+  line-height:22px;
+}
+.iq-text--number-micro{
+  font-size:12px;
+  line-height:20px;
+}
+@media (min-width:600px){
+  .iq-text--above-small-heading-five,.iq-text--above-small-heading-four,.iq-text--above-small-heading-one,.iq-text--above-small-heading-six,.iq-text--above-small-heading-three,.iq-text--above-small-heading-two{
+    font-family:"Baloo Chettan 2";
+    font-weight:600;
+  }
+  .iq-text--above-small-heading-one{
+    font-size:40px;
+    line-height:48px;
+  }
+  .iq-text--above-small-heading-two{
+    font-size:32px;
+    line-height:40px;
+  }
+  .iq-text--above-small-heading-three{
+    font-size:28px;
+    line-height:36px;
+  }
+  .iq-text--above-small-heading-four{
+    font-size:24px;
+    line-height:32px;
+  }
+  .iq-text--above-small-heading-five{
+    font-size:20px;
+    line-height:28px;
+  }
+  .iq-text--above-small-heading-six{
+    font-size:16px;
+    line-height:24px;
+  }
+  .iq-text--vieportbody-large,.iq-text--vieportbody-medium,.iq-text--vieportbody-micro,.iq-text--vieportbody-small{
+    font-family:"Open Sans";
+    font-weight:400;
+  }
+  .iq-text--above-small-body-large{
+    font-size:18px;
+    line-height:24px;
+  }
+  .iq-text--above-small-body-medium{
+    font-size:16px;
+    line-height:24px;
+  }
+  .iq-text--above-small-body-small{
+    font-size:14px;
+    line-height:24px;
+  }
+  .iq-text--above-small-body-micro{
+    font-size:12px;
+    line-height:24px;
+  }
+  .iq-text--above-small-number-large,.iq-text--above-small-number-medium,.iq-text--above-small-number-micro,.iq-text--above-small-number-small{
+    font-family:"Baloo Chettan 2";
+    font-weight:600;
+  }
+  .iq-text--above-small-number-large{
+    font-size:24px;
+    line-height:32px;
+  }
+  .iq-text--above-small-number-medium{
+    font-size:16px;
+    line-height:24px;
+  }
+  .iq-text--above-small-number-small{
+    font-size:14px;
+    line-height:22px;
+  }
+  .iq-text--above-small-number-micro{
+    font-size:12px;
+    line-height:20px;
+  }
 }
 

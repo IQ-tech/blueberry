@@ -1,4 +1,85 @@
 {
+	"font-primary": {
+		"font-family": "'Open Sans'",
+		"weight": {
+			"default": "400"
+		}
+	},
+	"font-secondary": {
+		"font-weight": "600",
+		"font-family": "'Baloo Chettan 2'",
+		"weight": {
+			"default": "600"
+		}
+	},
+
+	"font-colors": {
+		"title": "blueberry-80",
+		"subtitle": "gray-100",
+		"common": "gray-50"
+	},
+
+	"font-variants": {
+		"heading-one": {
+			"font-size": "40px",
+			"line-height": "48px"
+		},
+		"heading-two": {
+			"font-size": "32px",
+			"line-height": "40px"
+		},
+		"heading-three": {
+			"font-size": "28px",
+			"line-height": "36px"
+		},
+		"heading-four": {
+			"font-size": "24px",
+			"line-height": "32px"
+		},
+		"heading-five": {
+			"font-size": "20px",
+			"line-height": "28px"
+		},
+		"heading-six": {
+			"font-size": "16px",
+			"line-height": "24px"
+		},
+
+		"body-large": {
+			"font-size": "18px",
+			"line-height": "26px"
+		},
+		"body-medium": {
+			"font-size": "16px",
+			"line-height": "24px"
+		},
+		"body-small": {
+			"font-size": "14px",
+			"line-height": "22px"
+		},
+		"body-micro": {
+			"font-size": "12px",
+			"line-height": "20px"
+		},
+
+		"number-large": {
+			"font-size": "24px",
+			"line-height": "32px"
+		},
+		"number-medium": {
+			"font-size": "16px",
+			"line-height": "24px"
+		},
+		"number-small": {
+			"font-size": "14px",
+			"line-height": "22px"
+		},
+		"number-micro": {
+			"font-size": "12px",
+			"line-height": "20px"
+		}
+	},
+
 	"heading": {
 		"one": {
 			"desk": {
