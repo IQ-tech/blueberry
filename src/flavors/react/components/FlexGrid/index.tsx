@@ -16,11 +16,11 @@ export interface SpanProps {
   constant?: SpanConstant;
 }
 const Span: React.FC<SpanProps> = ({ children, columns, constant }) => {
-  const componentClass = classNames("iq-grid__span", {
-    [`iq-grid__span--phone-${columns?.phone}`]: !!columns?.phone,
-    [`iq-grid__span--tablet-${columns?.tablet}`]: !!columns?.tablet,
-    [`iq-grid__span--desktop-${columns?.desktop}`]: !!columns?.desktop,
-    [`iq-grid__span--const-${constant}`]: !!constant,
+  const componentClass = classNames("iq-flex-grid__span", {
+    [`iq-flex-grid__span--phone-${columns?.phone}`]: !!columns?.phone,
+    [`iq-flex-grid__span--tablet-${columns?.tablet}`]: !!columns?.tablet,
+    [`iq-flex-grid__span--desktop-${columns?.desktop}`]: !!columns?.desktop,
+    [`iq-flex-grid__span--const-${constant}`]: !!constant,
   });
   return <div className={componentClass}>{children}</div>;
 };
@@ -42,9 +42,9 @@ const Row: React.FC<RowProps> = ({
   order,
   noBottomMargin = false,
 }) => {
-  const componentClass = classNames("iq-grid__row", {
-    "iq-grid__row--no-wrap": !wrap,
-    "iq-grid__row--no-bottom-margin": !!noBottomMargin,
+  const componentClass = classNames("iq-flex-grid__row", {
+    "iq-flex-grid__row--no-wrap": !wrap,
+    "iq-flex-grid__row--no-bottom-margin": !!noBottomMargin,
   });
 
   const inlinestyle = {
@@ -61,7 +61,7 @@ const Row: React.FC<RowProps> = ({
 /** Optional Grid Cell Component */
 
 const Cell: React.FC = ({ children }) => {
-  return <div className="iq-grid__cell">{children}</div>;
+  return <div className="iq-flex-grid__cell">{children}</div>;
 };
 
 /** Grid main component */
@@ -80,23 +80,23 @@ interface GridComponentType<T> extends React.FC<T> {
   Cell: React.FC;
 }
 
-const Grid: GridComponentType<GridProps> = ({
+const FlexGrid: GridComponentType<GridProps> = ({
   children,
   fluid = false,
   prototyping = false,
   noMarginTop = false,
 }) => {
-  const componentClass = classNames("iq-grid", {
-    "iq-grid--fluid": !!fluid,
-    "iq-grid--prototyping": !!prototyping,
-    "iq-grid--no-margin-top": !!noMarginTop,
+  const componentClass = classNames("iq-flex-grid", {
+    "iq-flex-grid--fluid": !!fluid,
+    "iq-flex-grid--prototyping": !!prototyping,
+    "iq-flex-grid--no-margin-top": !!noMarginTop,
   });
 
   return <div className={componentClass}>{children}</div>;
 };
 
-Grid.Row = Row;
-Grid.Span = Span;
-Grid.Cell = Cell;
+FlexGrid.Row = Row;
+FlexGrid.Span = Span;
+FlexGrid.Cell = Cell;
 
-export default Grid;
+export default FlexGrid;

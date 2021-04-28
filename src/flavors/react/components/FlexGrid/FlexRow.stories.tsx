@@ -1,13 +1,13 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import Grid, { RowProps } from "../Grid";
+import FlexGrid, { RowProps } from "../FlexGrid";
 
 //@ts-ignore
-import "core/components/Grid.styl";
+import "core/components/FlexGrid.styl";
 
 export default {
-  title: "Components/Layout/Row",
-  component: Grid.Row,
+  title: "Components/Layout/FlexGridRow",
+  component: FlexGrid.Row,
   parameters: {
     docs: {
       description: {
@@ -43,16 +43,16 @@ const DemoCard = ({ label }) => (
 );
 
 const Template: Story<RowProps> = (args) => (
-  <Grid prototyping>
-    <Grid.Row {...args}>
-      <Grid.Span columns={{ phone: 2, tablet: 5, desktop: 3 }}>
+  <FlexGrid prototyping>
+    <FlexGrid.Row {...args}>
+      <FlexGrid.Span columns={{ phone: 2, tablet: 5, desktop: 3 }}>
         <DemoCard label="column" />
-      </Grid.Span>
-      <Grid.Span columns={{ phone: 2, tablet: 5, desktop: 3 }}>
+      </FlexGrid.Span>
+      <FlexGrid.Span columns={{ phone: 2, tablet: 5, desktop: 3 }}>
         <DemoCard label="column" />
-      </Grid.Span>
-    </Grid.Row>
-  </Grid>
+      </FlexGrid.Span>
+    </FlexGrid.Row>
+  </FlexGrid>
 );
 
 export const Fixed = Template.bind({});

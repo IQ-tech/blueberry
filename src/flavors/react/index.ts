@@ -4,7 +4,7 @@
 export { H1, H2, H3, H4, H5, H6 } from "./components/typography/Headings";
 
 // Layout
-export { default as Grid } from "./components/Grid";
+export { default as FlexGrid } from "./components/FlexGrid";
 
 // Misc
 export { default as TagComponent } from "./components/misc/TagComponent";

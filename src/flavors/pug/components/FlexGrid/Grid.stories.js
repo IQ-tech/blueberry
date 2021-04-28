@@ -1,7 +1,7 @@
 import DemoOne from "./demos/DemoOne.pug";
 import DemoTwo from "./demos/DemoTwo.pug";
 import FluidGrid from "./demos/FluidGrid.pug";
-import "core/components/Grid.styl";
+import "core/components/FlexGrid.styl";
 
 export default {
 	title: "Componentes/layout/Grid",
