@@ -1,6 +1,6 @@
 export { H1, H2, H3, H4, H5, H6 } from "./components/typography/Headings";
 export { default as FlexGrid } from "./components/FlexGrid";
-export { default as TagComponent } from "./components/misc/TagComponent";
+export { default as DynamicTagComponent } from "./components/misc/DynamicTagComponent";
 export { default as Conditional } from "./components/misc/Conditional";
 export { default as HeaderClassic } from "./components/legacy/HeaderClassic";
 export { default as FooterClassic } from "./components/legacy/FooterClassic";

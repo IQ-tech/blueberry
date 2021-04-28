@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
-import TagComponent from "../TagComponent";
+import DynamicTagComponent from "../DynamicTagComponent";
 
 export default {
-  title: "Components/Utils/TagComponent",
-  component: TagComponent,
+  title: "Components/Utils/DynamicTagComponent",
+  component: DynamicTagComponent,
   parameters: {
     docs: {
       description: {
@@ -15,7 +15,7 @@ export default {
 } as Meta;
 
 const Template = ({ tag, ...otherProps }) => (
-  <TagComponent tag={tag} {...otherProps} />
+  <DynamicTagComponent tag={tag} {...otherProps} />
 );
 
 export const Default = Template.bind({});

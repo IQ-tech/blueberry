@@ -1,6 +1,6 @@
 import * as React from "react";
 import classNames from "classnames";
-import TagComponent from "../../misc/TagComponent";
+import DynamicTagComponent from "../../misc/DynamicTagComponent";
 
 // props used by all heading components (H1, H2, H3 ..)
 interface HeadingProps extends React.HTMLAttributes<HTMLElement> {
@@ -34,7 +34,13 @@ const BaseHeadingComp: React.FC<BaseHeadingCompProps> = ({
     ? { ...props, ...customInlineStyles }
     : { ...props };
 
-  return <TagComponent tag={tag} className={componentClass} {...propsToPass} />;
+  return (
+    <DynamicTagComponent
+      tag={tag}
+      className={componentClass}
+      {...propsToPass}
+    />
+  );
 };
 
 /** Heading components */

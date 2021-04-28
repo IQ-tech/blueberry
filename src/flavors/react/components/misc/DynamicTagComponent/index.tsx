@@ -1,14 +1,14 @@
 import * as React from "react";
 
-interface TagComponentProps extends React.HTMLAttributes<HTMLElement> {
+interface DynamicTagComponentProps extends React.HTMLAttributes<HTMLElement> {
   /** Html tag that this component root should have */
   tag: string;
 }
 
-const TagComponent: React.FC<TagComponentProps> = ({
+const DynamicTagComponent: React.FC<DynamicTagComponentProps> = ({
   children = "Dynamic tag component",
   tag = "button",
   ...props
 }) => React.createElement(tag, { ...props }, children);
 
-export default TagComponent;
+export default DynamicTagComponent;
