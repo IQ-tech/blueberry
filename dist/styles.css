@@ -1137,11 +1137,6 @@
 .iq-tabs-button li,.iq-tabs-button ul{
   list-style:none;
 }
-@media (max-width:1024px){
-  .iq-tabs-button{
-    margin-bottom:40px;
-  }
-}
 .iq-tabs-button--notification-active .iq-tabs-button__item{
   display:block;
 }
