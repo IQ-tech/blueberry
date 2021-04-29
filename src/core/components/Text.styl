@@ -1,6 +1,6 @@
 @import '../variables.styl'
 
-$above-small-variation = 'above-small-'
+$desk-variation = 'desk-'
 
 headings(viewport = '')
 	&--{viewport}heading-one, &--{viewport}heading-two, &--{viewport}heading-three, &--{viewport}heading-four, &--{viewport}heading-five, &--{viewport}heading-six
@@ -38,19 +38,19 @@ bodyText(viewport = '')
 
 	&--{viewport}body-large
 		font-size font-variants-body-large-font-size
-		line-height font-variants-heading-six-line-height
+		line-height font-variants-body-large-line-height
 
 	&--{viewport}body-medium
 		font-size font-variants-body-medium-font-size
-		line-height font-variants-heading-six-line-height
+		line-height font-variants-body-medium-line-height
 
 	&--{viewport}body-small
 		font-size font-variants-body-small-font-size
-		line-height font-variants-heading-six-line-height
+		line-height font-variants-body-small-line-height
 
 	&--{viewport}body-micro
 		font-size font-variants-body-micro-font-size
-		line-height font-variants-heading-six-line-height
+		line-height font-variants-body-micro-line-height
 
 numbers(viewport = '')
 	&--{viewport}number-large, &--{viewport}number-medium, &--{viewport}number-small, &--{viewport}number-micro
@@ -93,6 +93,6 @@ numbers(viewport = '')
 	numbers()
 
 	+aboveSmall()
-		headings($above-small-variation)
-		bodyText($above-small-variation)
-		numbers($above-small-variation)
+		headings($desk-variation)
+		bodyText($desk-variation)
+		numbers($desk-variation)

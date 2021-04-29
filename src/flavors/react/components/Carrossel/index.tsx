@@ -2,7 +2,6 @@ import React from "react";
 import Staw from "staw";
 import classnames from "classnames";
 
-import { H3 } from "../typography/Headings";
 import Conditional from "../misc/Conditional";
 
 interface CarrosselProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -33,9 +32,11 @@ const Carrossel: React.FC<CarrosselProps> = ({
       <Conditional
         condition={!!title}
         renderIf={
-          <H3 type="tertiary" className="iq-carrossel__title">
+          {
+            /* <H3 type="tertiary" className="iq-carrossel__title">
             {title}
-          </H3>
+          </H3> */
+          }
         }
       />
       <Staw

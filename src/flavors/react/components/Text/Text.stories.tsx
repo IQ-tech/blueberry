@@ -4,7 +4,7 @@ import Text from "./index";
 import "core/components/Text.styl";
 
 export default {
-  title: "Components/Text",
+  title: "Components/Text/variants",
   component: Text,
   parameters: {
     docs: {
@@ -117,6 +117,7 @@ NumberMicro.args = {
 export const DynamicVariant = Template.bind({});
 DynamicVariant.args = {
   children: "Dynamic variant",
-  variant: { default: "body-medium", aboveSmall: "heading-six" },
+  variant: "body-medium",
+  variantDesk: "heading-six",
   as: "p",
 };

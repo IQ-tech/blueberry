@@ -24,41 +24,29 @@ type NumberTextVariant =
 
 type TextVariant = HeadingVariant | BodyTextVariant | NumberTextVariant;
 
-interface DynamicVariant {
-  default: TextVariant;
-  aboveSmall: TextVariant;
-}
-
 interface TextProps extends React.HTMLAttributes<HTMLElement> {
   /* Component tag */
   as: keyof React.ReactHTML;
   /* Design system text Variant */
-  variant?: TextVariant | DynamicVariant;
+  variant?: TextVariant;
+  /* sets variant on desktop */
+  variantDesk?: TextVariant;
   /* Sets the default text color */
   defaultColor?: "title" | "subtitle" | "common";
 }
 
 const Text: React.FC<TextProps> = ({
   as = "p",
-  variant,
+  variant = "body-medium",
+  variantDesk,
   children,
   className,
   defaultColor,
   ...props
 }) => {
-  const getDefaultVariant = (): string => {
-    if (typeof variant === "string") return variant;
-    else if (typeof variant === "object") return variant?.default;
-    else return "";
-  };
-
-  const aboveSmallVariant =
-    typeof variant === "object" ? variant?.aboveSmall : "";
-  const defaultVariant: string = getDefaultVariant();
-
   const rootClasses = classNames("iq-text", {
-    [`iq-text--${defaultVariant}`]: !!defaultVariant,
-    [`iq-text--above-small-${aboveSmallVariant}`]: !!aboveSmallVariant,
+    [`iq-text--${variant}`]: !!variant,
+    [`iq-text--desk-${variantDesk}`]: !!variantDesk,
     [`iq-text--color-${defaultColor}`]: !!defaultColor,
     [className]: !!className,
   });

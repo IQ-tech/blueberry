@@ -1,8 +1,5 @@
 // React lib entry point
 
-// Typography
-export { H1, H2, H3, H4, H5, H6 } from "./components/typography/Headings";
-
 // Layout
 export { default as FlexGrid } from "./components/FlexGrid";
 

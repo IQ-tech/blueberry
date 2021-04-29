@@ -1,4 +1,3 @@
-export { H1, H2, H3, H4, H5, H6 } from "./components/typography/Headings";
 export { default as FlexGrid } from "./components/FlexGrid";
 export { default as DynamicTagComponent } from "./components/misc/DynamicTagComponent";
 export { default as Conditional } from "./components/misc/Conditional";

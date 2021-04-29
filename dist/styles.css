@@ -1285,7 +1285,7 @@
 }
 .iq-text--body-large{
   font-size:18px;
-  line-height:24px;
+  line-height:26px;
 }
 .iq-text--body-medium{
   font-size:16px;
@@ -1293,11 +1293,11 @@
 }
 .iq-text--body-small{
   font-size:14px;
-  line-height:24px;
+  line-height:22px;
 }
 .iq-text--body-micro{
   font-size:12px;
-  line-height:24px;
+  line-height:20px;
 }
 .iq-text--number-large,.iq-text--number-medium,.iq-text--number-micro,.iq-text--number-small{
   font-family:"Baloo Chettan 2";
@@ -1320,31 +1320,31 @@
   line-height:20px;
 }
 @media (min-width:600px){
-  .iq-text--above-small-heading-five,.iq-text--above-small-heading-four,.iq-text--above-small-heading-one,.iq-text--above-small-heading-six,.iq-text--above-small-heading-three,.iq-text--above-small-heading-two{
+  .iq-text--desk-heading-five,.iq-text--desk-heading-four,.iq-text--desk-heading-one,.iq-text--desk-heading-six,.iq-text--desk-heading-three,.iq-text--desk-heading-two{
     font-family:"Baloo Chettan 2";
     font-weight:600;
   }
-  .iq-text--above-small-heading-one{
+  .iq-text--desk-heading-one{
     font-size:40px;
     line-height:48px;
   }
-  .iq-text--above-small-heading-two{
+  .iq-text--desk-heading-two{
     font-size:32px;
     line-height:40px;
   }
-  .iq-text--above-small-heading-three{
+  .iq-text--desk-heading-three{
     font-size:28px;
     line-height:36px;
   }
-  .iq-text--above-small-heading-four{
+  .iq-text--desk-heading-four{
     font-size:24px;
     line-height:32px;
   }
-  .iq-text--above-small-heading-five{
+  .iq-text--desk-heading-five{
     font-size:20px;
     line-height:28px;
   }
-  .iq-text--above-small-heading-six{
+  .iq-text--desk-heading-six{
     font-size:16px;
     line-height:24px;
   }
@@ -1352,39 +1352,39 @@
     font-family:"Open Sans";
     font-weight:400;
   }
-  .iq-text--above-small-body-large{
+  .iq-text--desk-body-large{
     font-size:18px;
-    line-height:24px;
+    line-height:26px;
   }
-  .iq-text--above-small-body-medium{
+  .iq-text--desk-body-medium{
     font-size:16px;
     line-height:24px;
   }
-  .iq-text--above-small-body-small{
-    font-size:14px;
-    line-height:24px;
-  }
-  .iq-text--above-small-body-micro{
-    font-size:12px;
-    line-height:24px;
-  }
-  .iq-text--above-small-number-large,.iq-text--above-small-number-medium,.iq-text--above-small-number-micro,.iq-text--above-small-number-small{
-    font-family:"Baloo Chettan 2";
-    font-weight:600;
-  }
-  .iq-text--above-small-number-large{
-    font-size:24px;
-    line-height:32px;
-  }
-  .iq-text--above-small-number-medium{
-    font-size:16px;
-    line-height:24px;
-  }
-  .iq-text--above-small-number-small{
+  .iq-text--desk-body-small{
     font-size:14px;
     line-height:22px;
   }
-  .iq-text--above-small-number-micro{
+  .iq-text--desk-body-micro{
+    font-size:12px;
+    line-height:20px;
+  }
+  .iq-text--desk-number-large,.iq-text--desk-number-medium,.iq-text--desk-number-micro,.iq-text--desk-number-small{
+    font-family:"Baloo Chettan 2";
+    font-weight:600;
+  }
+  .iq-text--desk-number-large{
+    font-size:24px;
+    line-height:32px;
+  }
+  .iq-text--desk-number-medium{
+    font-size:16px;
+    line-height:24px;
+  }
+  .iq-text--desk-number-small{
+    font-size:14px;
+    line-height:22px;
+  }
+  .iq-text--desk-number-micro{
     font-size:12px;
     line-height:20px;
   }
