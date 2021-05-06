@@ -1,0 +1,16 @@
+mixin Text({variant, variantDesk, defaultColor, as})
+	- const baseClass = 'iq-text'
+	- const variantClass = !!variant ? `${baseClass}--${variant}` : `${baseClass}--body-medium`
+	- const variantDeskClass = !!variantDesk ? `${baseClass}--desk-${variantDesk}` : ''
+	- const defaultColorClass = !!defaultColor ? `${baseClass}--color-${defaultColor}` : ''
+	- const asTag = !!as ? as : 'p'
+	#{asTag}(
+		class=baseClass
+		class=variantClass
+		class=cariantClass
+		class=variantDeskClass
+		class=defaultColorClass
+		class=defaultColorClass
+	)&attributes( attributes )
+		if block
+			block
