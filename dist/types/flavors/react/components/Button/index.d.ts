@@ -20,6 +20,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     onlyIcon: boolean;
     /** adds a space between button text and icons */
     spaceBetween: boolean;
+    /** Change html type role for button */
+    htmlType?: "button" | "submit" | "reset";
 }
 declare const Button: React.FC<ButtonProps>;
 export default Button;

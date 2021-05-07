@@ -23,6 +23,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   onlyIcon: boolean;
   /** adds a space between button text and icons */
   spaceBetween: boolean;
+  /** Change html type role for button */
+  htmlType?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -31,13 +33,14 @@ const Button: React.FC<ButtonProps> = ({
   iconRight = false,
   children = "Button component",
   disabled = false,
-  Icon = '',
+  Icon = "",
   loading = false,
   color = "default",
   expand,
   onClick,
   onlyIcon = false,
   spaceBetween = false,
+  htmlType = "button",
   ...props
 }) => {
   const buttonClasses = classNames("iq-btn", {
@@ -49,7 +52,7 @@ const Button: React.FC<ButtonProps> = ({
     "iq-btn--loading": !!loading,
     "iq-btn--icn-right": !!iconRight && !onlyIcon,
     "iq-btn--only-icon": !!onlyIcon,
-    "iq-btn--space-between": !!spaceBetween && !loading
+    "iq-btn--space-between": !!spaceBetween && !loading,
   });
 
   function handleClick(e) {
@@ -57,7 +60,12 @@ const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button className={buttonClasses} onClick={handleClick} {...props}>
+    <button
+      className={buttonClasses}
+      type={htmlType}
+      onClick={handleClick}
+      {...props}
+    >
       <Conditional
         condition={!!Icon}
         renderIf={
