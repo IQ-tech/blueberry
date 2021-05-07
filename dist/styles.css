@@ -169,10 +169,25 @@
 .iq-btn li,.iq-btn ul{
   list-style:none;
 }
-.iq-btn--space-between{
+.iq-btn--justify-space-between,.iq-btn--space-between{
   -webkit-box-pack:justify;
       -ms-flex-pack:justify;
           justify-content:space-between;
+}
+.iq-btn--justify-center{
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+.iq-btn--justify-end{
+  -webkit-box-pack:end;
+      -ms-flex-pack:end;
+          justify-content:flex-end;
+}
+.iq-btn--justify-start{
+  -webkit-box-pack:start;
+      -ms-flex-pack:start;
+          justify-content:flex-start;
 }
 .iq-btn__icon-slot{
   margin-right:10px;

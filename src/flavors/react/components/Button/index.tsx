@@ -25,6 +25,9 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   spaceBetween: boolean;
   /** Change html type role for button */
   htmlType?: "button" | "submit" | "reset";
+  /** justify icon or/and label */
+  justify?: "space-between" | "center" | "start" | "end"
+
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -41,6 +44,7 @@ const Button: React.FC<ButtonProps> = ({
   onlyIcon = false,
   spaceBetween = false,
   htmlType = "button",
+  justify,
   ...props
 }) => {
   const buttonClasses = classNames("iq-btn", {
@@ -48,11 +52,12 @@ const Button: React.FC<ButtonProps> = ({
     [`iq-btn--size-${size}`]: !!size,
     [`iq-btn--expand-${expand}`]: !!expand,
     [`iq-btn--color-${color}`]: !!color && color !== "default",
+    [`iq-btn--justify-${justify}`]: !!justify,
     "iq-btn--disabled": !!disabled,
     "iq-btn--loading": !!loading,
     "iq-btn--icn-right": !!iconRight && !onlyIcon,
     "iq-btn--only-icon": !!onlyIcon,
-    "iq-btn--space-between": !!spaceBetween && !loading,
+    "iq-btn--space-between": !!spaceBetween && !loading, //deprecated
   });
 
   function handleClick(e) {
