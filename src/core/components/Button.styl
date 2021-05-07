@@ -27,7 +27,21 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 	transition background-color 0.15s ease-in, border-color 0.15s ease-in, color 0.15s ease-in // padronizar depois as animações
 
 	&--space-between
+		// deprecated
 		justify-content space-between
+
+	&--justify
+		&-space-between
+			justify-content space-between
+
+		&-center
+			justify-content center
+
+		&-end
+			justify-content flex-end
+
+		&-start
+			justify-content flex-start
 
 	&__icon-slot
 		margin-right 10px
