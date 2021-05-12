@@ -16,6 +16,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   username = "username",
   whiteVersion,
   mapLoggedInMenuItems,
+  customClass,
 }) => {
   const {
     isMobileMenuOpen,
@@ -38,6 +39,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     "header-classic--menu-mobile-open": isMobileMenuOpen,
     "header-classic--submenu-open": isSubmenuOpen,
     "header-classic--white-version": isLogged && whiteVersion,
+    [customClass]: !!customClass,
   });
 
   return (

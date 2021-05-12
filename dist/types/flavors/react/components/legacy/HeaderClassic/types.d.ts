@@ -22,6 +22,8 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
     registerLink?: string;
     /** White background on logged navigation */
     whiteVersion?: boolean;
+    /** Custom class */
+    customClass?: string;
 }
 export interface NavigationLink {
     label: string;
