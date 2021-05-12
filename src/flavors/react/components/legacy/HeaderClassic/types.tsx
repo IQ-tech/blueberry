@@ -16,12 +16,15 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   /** Callback function to run when user click on logout button */
   onLogout?: (e: any) => any;
   /** filter displayed navigation itens, or set current page active item */
-  filterLoggedMenuItems?: (links: NavigationLink[]) => NavigationLink[];
+  mapLoggedOutMenuItems?: (links: NavigationLink[]) => NavigationLink[];
+  /** filter logged menu items */
+  mapLoggedInMenuItems?: (
+    links: LoggedNavigationLink[]
+  ) => LoggedNavigationLink[];
   /** Alternative link to register page */
   registerLink?: string;
   /** White background on logged navigation */
   whiteVersion?: boolean;
-
 }
 
 export interface NavigationLink {

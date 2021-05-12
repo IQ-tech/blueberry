@@ -1,7 +1,6 @@
-import React from "react";
+import * as React from "react";
 import FirstLetterIcon from "./FirstLetterIcon";
 import classNames from "classnames";
-import { loggedMenuLinks } from "../data";
 import Conditional from "../../../misc/Conditional";
 import AddBillsButton from "./AddBillsButton";
 
@@ -23,7 +22,7 @@ const LoggedInMenuHeader = ({ username, getAbsoluteLink }) => {
   );
 };
 
-const LoggedInNavigation = ({ username, getAbsoluteLink }) => {
+const LoggedInNavigation = ({ username, getAbsoluteLink, loggedMenuLinks }) => {
   const getItemClass = (separator) =>
     classNames("header-classic__logged-links-item", {
       "header-classic__logged-links-item--separator": !!separator,

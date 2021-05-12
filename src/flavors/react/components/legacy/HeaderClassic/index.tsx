@@ -11,21 +11,27 @@ import useClassicHeader from "./hooks";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
   isLogged = false,
-  filterLoggedMenuItems,
+  mapLoggedOutMenuItems,
   showAuthButtons = true,
   username = "username",
   whiteVersion,
+  mapLoggedInMenuItems,
 }) => {
   const {
     isMobileMenuOpen,
     toggleMobileMenu,
     loggedoutNavigationLinks,
+    loggedNavigationLinks,
     openSubmenu,
     closeSubmenu,
     isSubmenuOpen,
     formattedUsername,
     getAbsoluteLink,
-  } = useClassicHeader({ isLogged, filterLoggedMenuItems, username });
+  } = useClassicHeader({
+    mapLoggedOutMenuItems,
+    username,
+    mapLoggedInMenuItems,
+  });
 
   const headerClass = classNames("header-classic", {
     "header-classic--logged": isLogged,
@@ -50,6 +56,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                   <LoggedInNavigation
                     username={formattedUsername}
                     getAbsoluteLink={getAbsoluteLink}
+                    loggedMenuLinks={loggedNavigationLinks}
                   />
                 }
                 renderElse={

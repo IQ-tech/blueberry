@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { loggedoutNavigationLinks } from "../data";
+import { loggedoutNavigationLinks, loggedMenuLinks } from "../data";
 
 function capitalize(word: string): string {
   const lower = word.toLowerCase();
@@ -13,7 +13,11 @@ function getFirstTwoNames(fullName): string {
   return firstTwoNames.join(" ");
 }
 
-function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
+function useClassicHeader({
+  mapLoggedInMenuItems,
+  mapLoggedOutMenuItems,
+  username,
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
 
@@ -52,9 +56,12 @@ function useClassicHeader({ isLogged, filterLoggedMenuItems, username }) {
     isSubmenuOpen,
     getAbsoluteLink,
     formattedUsername: firstTwoNames,
-    loggedoutNavigationLinks: filterLoggedMenuItems
-      ? filterLoggedMenuItems(loggedoutNavigationLinks)
+    loggedoutNavigationLinks: mapLoggedOutMenuItems
+      ? mapLoggedOutMenuItems(loggedoutNavigationLinks)
       : loggedoutNavigationLinks,
+    loggedNavigationLinks: mapLoggedInMenuItems
+      ? mapLoggedInMenuItems(loggedMenuLinks)
+      : loggedMenuLinks,
   };
 }
 
