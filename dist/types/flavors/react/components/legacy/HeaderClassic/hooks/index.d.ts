@@ -1,6 +1,6 @@
-declare function useClassicHeader({ isLogged, filterLoggedMenuItems, username }: {
-    isLogged: any;
-    filterLoggedMenuItems: any;
+declare function useClassicHeader({ mapLoggedInMenuItems, mapLoggedOutMenuItems, username, }: {
+    mapLoggedInMenuItems: any;
+    mapLoggedOutMenuItems: any;
     username: any;
 }): {
     unloggedMenuItems: any[];
@@ -12,5 +12,6 @@ declare function useClassicHeader({ isLogged, filterLoggedMenuItems, username }:
     getAbsoluteLink: (relativePath: string) => string;
     formattedUsername: string;
     loggedoutNavigationLinks: any;
+    loggedNavigationLinks: any;
 };
 export default useClassicHeader;
