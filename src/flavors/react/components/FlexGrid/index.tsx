@@ -19,6 +19,7 @@ export interface SpanProps {
 const Span: React.FC<SpanProps> = ({ children, columns, constant }) => {
   const componentClass = classNames("iq-flex-grid__span", {
     [`iq-flex-grid__span--phone-${columns?.phone}`]: !!columns?.phone,
+    [`iq-flex-grid__span--phablet-${columns?.phablet}`]: !!columns?.phablet,
     [`iq-flex-grid__span--tablet-${columns?.tablet}`]: !!columns?.tablet,
     [`iq-flex-grid__span--desktop-${columns?.desktop}`]: !!columns?.desktop,
     [`iq-flex-grid__span--const-${constant}`]: !!constant,
