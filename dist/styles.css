@@ -858,7 +858,7 @@
         flex-basis:calc(12.5% - 24px);
   }
 }
-@media (min-width:720px){
+@media (min-width:1024px){
   .iq-flex-grid__span{
     -ms-flex-preferred-size:calc(8.33333% - 32px);
         flex-basis:calc(8.33333% - 32px);
