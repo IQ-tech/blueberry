@@ -72,6 +72,8 @@ export interface FlexGridProps {
   prototyping?: boolean;
   /** Can remove the grid margin top */
   noMarginTop?: boolean;
+  /** Remove grid margins */
+  noOuterSpacing?: boolean;
 }
 
 interface FlexGridComponentType<T> extends React.FC<T> {
@@ -85,11 +87,13 @@ const FlexGrid: FlexGridComponentType<FlexGridProps> = ({
   fluid = false,
   prototyping = false,
   noMarginTop = false,
+  noOuterSpacing = false,
 }) => {
   const componentClass = classNames("iq-flex-grid", {
     "iq-flex-grid--fluid": !!fluid,
     "iq-flex-grid--prototyping": !!prototyping,
     "iq-flex-grid--no-margin-top": !!noMarginTop,
+    "iq-flex-grid--no-outer-spacing": !!noOuterSpacing,
   });
 
   return <div className={componentClass}>{children}</div>;

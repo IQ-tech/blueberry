@@ -77,6 +77,7 @@ Fixed.args = {
   fluid: false,
   prototyping: true,
   testingRowsAndColumns: testRowsAndColumns,
+  noOuterSpacing: false
 };
 
 export const Fluid = Template.bind({});
@@ -84,9 +85,9 @@ Fluid.args = {
   fluid: true,
   prototyping: true,
   testingRowsAndColumns: testRowsAndColumns,
+  noOuterSpacing: false
 };
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const SimpleLayoutTemplate = () => (
   <div style={{ width: "100%", backgroundColor: colors["gray-30"] }}>

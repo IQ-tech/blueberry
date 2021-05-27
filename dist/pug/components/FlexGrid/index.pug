@@ -1,7 +1,8 @@
-mixin FlexGrid({prototyping, fluid})
+mixin FlexGrid({prototyping, fluid, noOuterSpacing })
 	- const baseClass = 'iq-flex-grid'
 	- const protoClass = !!prototyping ? `${baseClass}--prototyping` : ''
 	- const fluidClass = !!fluid ? `${baseClass}--fluid` : ''
+	- const noOuterSpacingClass = !!noOuterSpacing ? `${baseClass}--no-outer-spacing` : ''
 	div(
 		class=baseClass
 		class=protoClass

@@ -18,7 +18,7 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 		padding 0 grid-fixed-margin-medium
 		padding-top grid-fluid-gutter-medium
 
-	&--no-padding-top
+	&--no-margin-top
 		padding-top 0
 
 		+aboveMedium()
@@ -32,6 +32,14 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 		+aboveMedium()
 			padding 0 grid-fluid-margin-medium
 			padding-top grid-fluid-gutter-medium
+
+	&--no-outer-spacing
+		pading-top 0
+		padding 0
+
+		+aboveMedium()
+			padding 0
+			padding-top 0
 
 	&--prototyping
 		background-color blueberry-30
@@ -64,6 +72,11 @@ $column-padding-medium = 'calc((%s / 2))' % grid-fluid-gutter-medium
 
 			+aboveMedium()
 				width grid-fluid-margin-medium
+
+	&--prototyping&--no-outer-spacing
+		&:before,
+		&:after
+			display none
 
 	&__row
 		elementReset()

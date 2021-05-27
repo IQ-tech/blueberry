@@ -32,6 +32,8 @@ export interface FlexGridProps {
     prototyping?: boolean;
     /** Can remove the grid margin top */
     noMarginTop?: boolean;
+    /** Remove grid margins */
+    noOuterSpacing?: boolean;
 }
 interface FlexGridComponentType<T> extends React.FC<T> {
     Span: React.FC<SpanProps>;
