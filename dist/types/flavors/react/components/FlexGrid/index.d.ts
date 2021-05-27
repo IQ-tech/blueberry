@@ -4,6 +4,7 @@ declare type SpanConstant = "full" | "half" | "hide";
 declare type ColumnsSpan = number | SpanConstant;
 interface ColumnsConfig {
     phone?: ColumnsSpan;
+    phablet?: ColumnsSpan;
     tablet?: ColumnsSpan;
     desktop?: ColumnsSpan;
 }

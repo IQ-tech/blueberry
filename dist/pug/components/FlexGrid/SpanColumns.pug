@@ -1,8 +1,9 @@
 
-mixin FlexGridSpanColumns({phone, tablet, desktop})
+mixin FlexGridSpanColumns({phone, tablet, desktop, phablet})
 	- const baseClass = 'iq-flex-grid__span'
 	- // On breakpoint variables, the values can be the number of columns, "half", "full" or "hide"
 	- const phoneClass = !!phone ? `${baseClass}--phone-${phone}` : ''
+	- const phabletClass = !!phablet ? `${baseClass}--phone-${phablet}` : ''
 	- const tabletClass = !!tablet ? `${baseClass}--tablet-${tablet}` : ''
 	- const desktopClass = !!desktop ? `${baseClass}--desktop-${desktop}` : ''
 	div(
@@ -10,6 +11,7 @@ mixin FlexGridSpanColumns({phone, tablet, desktop})
 		class=phoneClass
 		class=tabletClass
 		class=desktopClass
+		class=phabletClass
 	)
 		if block
 			block
