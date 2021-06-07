@@ -66,7 +66,7 @@ const LoggedOutNavigation = ({
   openSubmenu,
   closeSubmenu,
   isSubmenuOpen,
-  getAbsoluteLink,
+  useAbsoluteLinks,
 }) => {
   return (
     <div className="header-classic__logged-out-navigation">
@@ -84,14 +84,12 @@ const LoggedOutNavigation = ({
             openSubmenu={openSubmenu}
             closeSubmenu={closeSubmenu}
             isSubmenuOpen={isSubmenuOpen}
+            useAbsoluteLinks={useAbsoluteLinks}
             key={`desk-navigation-link-${index}`}
           />
         ))}
       </ul>
-      <Conditional
-        condition={showAuthButtons}
-        renderIf={<AuthButtons getAbsoluteLink={getAbsoluteLink} />}
-      />
+      <Conditional condition={showAuthButtons} renderIf={<AuthButtons />} />
     </div>
   );
 };

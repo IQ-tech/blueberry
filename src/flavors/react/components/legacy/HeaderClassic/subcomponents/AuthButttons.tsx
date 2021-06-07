@@ -1,6 +1,7 @@
 import React from "react";
+import {getAbsoluteLink } from "../helpers"
 
-const AuthButtons = ({ getAbsoluteLink }) => {
+const AuthButtons = () => {
   function redirectToPath(url: string): void {
     if (typeof window !== undefined) {
       window.location.href = url;

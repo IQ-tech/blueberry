@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { loggedoutNavigationLinks, loggedMenuLinks } from "../data";
+import { loggedoutNavigationLinks, loggedMenuLinks } from "./data";
 
 function capitalize(word: string): string {
   const lower = word.toLowerCase();
@@ -37,16 +37,6 @@ function useClassicHeader({
     setIsMobileSubmenuOpen(false);
   }
 
-  function getAbsoluteLink(relativePath: string): string {
-    const getNewPath = (relativePath) => {
-      const pageOrigin = window.origin;
-      return `${pageOrigin}${relativePath}`;
-    };
-    return typeof window !== undefined
-      ? getNewPath(relativePath)
-      : relativePath;
-  }
-
   return {
     unloggedMenuItems: [],
     isMobileMenuOpen,
@@ -54,7 +44,6 @@ function useClassicHeader({
     openSubmenu,
     closeSubmenu,
     isSubmenuOpen,
-    getAbsoluteLink,
     formattedUsername: firstTwoNames,
     loggedoutNavigationLinks: mapLoggedOutMenuItems
       ? mapLoggedOutMenuItems(loggedoutNavigationLinks)

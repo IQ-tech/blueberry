@@ -3,8 +3,9 @@ import FirstLetterIcon from "./FirstLetterIcon";
 import classNames from "classnames";
 import Conditional from "../../../misc/Conditional";
 import AddBillsButton from "./AddBillsButton";
+import { getAbsoluteLink } from "../helpers";
 
-const LoggedInMenuHeader = ({ username, getAbsoluteLink }) => {
+const LoggedInMenuHeader = ({ username }) => {
   return (
     <header className="header-classic__logged-in-menu-header">
       <FirstLetterIcon word={username} />
@@ -22,7 +23,7 @@ const LoggedInMenuHeader = ({ username, getAbsoluteLink }) => {
   );
 };
 
-const LoggedInNavigation = ({ username, getAbsoluteLink, loggedMenuLinks }) => {
+const LoggedInNavigation = ({ username, loggedMenuLinks }) => {
   const getItemClass = (separator) =>
     classNames("header-classic__logged-links-item", {
       "header-classic__logged-links-item--separator": !!separator,
@@ -47,13 +48,10 @@ const LoggedInNavigation = ({ username, getAbsoluteLink, loggedMenuLinks }) => {
         </svg>
       </div>
       <div className="header-classic__logged-menu">
-        <LoggedInMenuHeader
-          username={username}
-          getAbsoluteLink={getAbsoluteLink}
-        />
+        <LoggedInMenuHeader username={username} />
         <div className="header-classic__logged-menu-actions">
           <div className="header-classic__add-new-bill">
-            <AddBillsButton getAbsoluteLink={getAbsoluteLink} />
+            <AddBillsButton />
           </div>
           <ul className="header-classic__logged-links-list">
             {loggedMenuLinks.map(

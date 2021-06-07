@@ -4,16 +4,16 @@ import { loggedMenuItemsIcons } from "./icons";
 export const loggedoutNavigationLinks: NavigationLink[] = [
   {
     label: "Gerencie suas contas",
-    href: "https://www.iq.com.br/",
+    href: "/",
     isActive: true,
   },
   {
     label: "Cartões de crédito",
-    href: "https://www.iq.com.br/cartoes/",
+    href: "/cartoes/",
   },
   {
     label: "Blog",
-    href: "https://www.iq.com.br/conteudo",
+    href: "/conteudo/",
     subLinks: [
       {
         label: "Newsletter",
@@ -35,11 +35,11 @@ export const loggedoutNavigationLinks: NavigationLink[] = [
   },
   {
     label: "Quem somos",
-    href: "https://www.iq.com.br/quem-somos",
+    href: "/quem-somos/",
   },
   {
     label: "FAQ",
-    href: "https://www.iq.com.br/faq",
+    href: "/faq/",
   },
 ];
 

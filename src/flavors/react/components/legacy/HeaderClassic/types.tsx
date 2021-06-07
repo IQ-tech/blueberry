@@ -1,6 +1,8 @@
 import React from "react";
 
 export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
+  /** Use absolute or relative links on loggedout menu */
+  useLoggedOutAbsoluteLinks?: boolean;
   /** Dislpays user name and a menu that redirects iq logged pages if true */
   isLogged?: boolean;
   /** Displays sign in and sign up buttons if not isLogged */

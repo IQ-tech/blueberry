@@ -1,6 +1,7 @@
 import React from "react";
+import { getAbsoluteLink } from "../helpers";
 
-const AddBillsButton = ({ getAbsoluteLink }) => {
+const AddBillsButton = () => {
   return (
     <a
       href={getAbsoluteLink("/app/encontrar-servicos/")}

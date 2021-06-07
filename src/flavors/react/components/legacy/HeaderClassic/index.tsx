@@ -7,7 +7,7 @@ import IqLogo from "./subcomponents/IqLogo";
 import HamburgerButton from "./subcomponents/HamburgerButton";
 import LoggedOutNavigation from "./subcomponents/LoggedOutNavigation";
 import LoggedInNavigation from "./subcomponents/LoggedInNavigation";
-import useClassicHeader from "./hooks";
+import useClassicHeader from "./hook";
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
   isLogged = false,
@@ -16,6 +16,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   username = "username",
   whiteVersion,
   mapLoggedInMenuItems,
+  useLoggedOutAbsoluteLinks = true,
   customClass,
 }) => {
   const {
@@ -27,7 +28,6 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     closeSubmenu,
     isSubmenuOpen,
     formattedUsername,
-    getAbsoluteLink,
   } = useClassicHeader({
     mapLoggedOutMenuItems,
     username,
@@ -57,7 +57,6 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                 renderIf={
                   <LoggedInNavigation
                     username={formattedUsername}
-                    getAbsoluteLink={getAbsoluteLink}
                     loggedMenuLinks={loggedNavigationLinks}
                   />
                 }
@@ -68,7 +67,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                     openSubmenu={openSubmenu}
                     closeSubmenu={closeSubmenu}
                     isSubmenuOpen={isSubmenuOpen}
-                    getAbsoluteLink={getAbsoluteLink}
+                    useAbsoluteLinks={useLoggedOutAbsoluteLinks}
                   />
                 }
               />
