@@ -1,4 +1,2 @@
-declare const AuthButtons: ({ getAbsoluteLink }: {
-    getAbsoluteLink: any;
-}) => JSX.Element;
+declare const AuthButtons: () => JSX.Element;
 export default AuthButtons;

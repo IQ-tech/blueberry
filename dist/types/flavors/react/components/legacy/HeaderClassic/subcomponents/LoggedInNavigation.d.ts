@@ -1,6 +1,5 @@
-declare const LoggedInNavigation: ({ username, getAbsoluteLink, loggedMenuLinks }: {
+declare const LoggedInNavigation: ({ username, loggedMenuLinks }: {
     username: any;
-    getAbsoluteLink: any;
     loggedMenuLinks: any;
 }) => JSX.Element;
 export default LoggedInNavigation;

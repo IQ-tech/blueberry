@@ -1,4 +1,2 @@
-declare const AddBillsButton: ({ getAbsoluteLink }: {
-    getAbsoluteLink: any;
-}) => JSX.Element;
+declare const AddBillsButton: () => JSX.Element;
 export default AddBillsButton;

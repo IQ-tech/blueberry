@@ -9,7 +9,6 @@ declare function useClassicHeader({ mapLoggedInMenuItems, mapLoggedOutMenuItems,
     openSubmenu: (e: any) => void;
     closeSubmenu: () => void;
     isSubmenuOpen: boolean;
-    getAbsoluteLink: (relativePath: string) => string;
     formattedUsername: string;
     loggedoutNavigationLinks: any;
     loggedNavigationLinks: any;
