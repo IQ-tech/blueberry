@@ -6,6 +6,7 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement>, CommonField
     htmlType?: string;
     errorMessage?: string;
     icon?: React.FC<any>;
+    customClass?: string;
 }
-declare const Input: React.FC<InputProps>;
-export default Input;
+declare const InputField: React.FC<InputProps>;
+export default InputField;

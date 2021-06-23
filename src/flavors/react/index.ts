@@ -22,4 +22,5 @@ export { default as Accordion } from "./components/Accordion";
 export { default as Dropdown } from "./components/Dropdown";
 
 // Form components
-export { default as Input } from "./components/form/Input";
+export { default as Input } from "./components/form/InputField";
+export { default as PasswordField } from "./components/form/PasswordField";

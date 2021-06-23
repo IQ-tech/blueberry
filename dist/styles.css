@@ -1587,4 +1587,8 @@
   -webkit-transform:translateY(-50%);
           transform:translateY(-50%);
 }
+.iq-password-field__eye{
+  cursor:pointer;
+  color:#453ad3;
+}
 

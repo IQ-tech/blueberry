@@ -14,9 +14,10 @@ interface InputProps
   htmlType?: string;
   errorMessage?: string;
   icon?: React.FC<any>;
+  customClass?: string;
 }
 
-const Input: React.FC<InputProps> = ({
+const InputField: React.FC<InputProps> = ({
   mask,
   htmlType = "text",
   placeholder = "",
@@ -30,6 +31,7 @@ const Input: React.FC<InputProps> = ({
   invalid,
   disabled,
   icon,
+  customClass,
   ...rest
 }) => {
   const RenderIcon = (() => {
@@ -41,6 +43,7 @@ const Input: React.FC<InputProps> = ({
   const inputClassName = classNames("iq-input-field", {
     "iq-input-field--invalid": !!invalid,
     "iq-input-field--disabled": !!disabled,
+    [`iq-input-field--${customClass}`]: !!customClass,
   });
 
   return (
@@ -74,4 +77,4 @@ const Input: React.FC<InputProps> = ({
   );
 };
 
-export default Input;
+export default InputField;
