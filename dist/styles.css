@@ -1485,10 +1485,59 @@
   color:#a92525;
   margin-top:8px;
   font-size:12px;
+  -webkit-animation:shake-horizontal .8s cubic-bezier(.455, .03, .515, .955) both;
+          animation:shake-horizontal .8s cubic-bezier(.455, .03, .515, .955) both;
+}
+@-webkit-keyframes shake-horizontal{
+  0%,to{
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+  }
+  10%,30%,50%,70%{
+    -webkit-transform:translateX(-10px);
+    transform:translateX(-10px);
+  }
+  20%,40%,60%{
+    -webkit-transform:translateX(10px);
+    transform:translateX(10px);
+  }
+  80%{
+    -webkit-transform:translateX(8px);
+    transform:translateX(8px);
+  }
+  90%{
+    -webkit-transform:translateX(-8px);
+    transform:translateX(-8px);
+  }
+}
+@keyframes shake-horizontal{
+  0%,to{
+    -webkit-transform:translateX(0);
+    transform:translateX(0);
+  }
+  10%,30%,50%,70%{
+    -webkit-transform:translateX(-10px);
+    transform:translateX(-10px);
+  }
+  20%,40%,60%{
+    -webkit-transform:translateX(10px);
+    transform:translateX(10px);
+  }
+  80%{
+    -webkit-transform:translateX(8px);
+    transform:translateX(8px);
+  }
+  90%{
+    -webkit-transform:translateX(-8px);
+    transform:translateX(-8px);
+  }
 }
 .iq-input-field *,.iq-input-field :after,.iq-input-field :before{
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
+}
+.iq-input-field__input-holder{
+  position:relative;
 }
 .iq-input-field__input{
   height:48px;
@@ -1529,5 +1578,13 @@
 }
 .iq-input-field--disabled .iq-input-field__input ::placeholder{
   color:#d5d5d5;
+}
+.iq-input-field__icon{
+  width:24px;
+  position:absolute;
+  right:13px;
+  top:50%;
+  -webkit-transform:translateY(-50%);
+          transform:translateY(-50%);
 }
 

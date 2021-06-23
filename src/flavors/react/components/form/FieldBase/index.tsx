@@ -1,5 +1,4 @@
 import React from "react";
-import IconFilledError from "../../icons/generated/filled/FilledError";
 import Conditional from "../../misc/Conditional";
 
 interface FieldBaseProps {
@@ -9,7 +8,6 @@ interface FieldBaseProps {
   name?: string;
   label?: string;
   optional?: boolean;
-  icon?: React.FC<any>;
 }
 
 const FieldBase: React.FC<FieldBaseProps> = ({
@@ -20,10 +18,7 @@ const FieldBase: React.FC<FieldBaseProps> = ({
   invalid,
   errorMessage,
   optional,
-  icon,
 }) => {
-  const RenderIcon = IconFilledError || icon;
-
   return (
     <div className="iq-field-base">
       <Conditional
@@ -48,9 +43,12 @@ const FieldBase: React.FC<FieldBaseProps> = ({
       />
 
       <div className="iq-field-base__input-holder">{children}</div>
-      {!!invalid && !!errorMessage ? (
-        <p className="iq-field-base__error-message">{errorMessage}</p>
-      ) : null}
+      <Conditional
+        condition={!!invalid && !!errorMessage}
+        renderIf={
+          <p className="iq-field-base__error-message">{errorMessage}</p>
+        }
+      />
     </div>
   );
 };

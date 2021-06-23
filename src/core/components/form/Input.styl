@@ -3,6 +3,9 @@
 .iq-input-field
 	resetBoxSizing()
 
+	&__input-holder
+		position relative
+
 	&__input
 		height 48px
 		border 1px solid gray-30
@@ -34,3 +37,10 @@
 
 			::placeholder
 				color gray-30
+
+	&__icon
+		width 24px
+		position absolute
+		right 13px
+		top 50%
+		transform translateY(-50%)
