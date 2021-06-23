@@ -1,22 +1,29 @@
 aboveXsmall()
 	@media (min-width breakpoints-xsmall)
 		{block}
+
 aboveSmall()
 	@media (min-width breakpoints-small)
 		{block}
+
 aboveMedium()
 	@media (min-width breakpoints-medium)
 		{block}
+
 aboveLarge()
 	@media (min-width breakpoints-large)
 		{block}
+
 aboveXLarge()
 	@media (min-width breakpoints-xlarge)
 		{block}
+
 betweenAB(bpA, bpB)
 	condition = '(min-width: %s) and (max-width: %s)' % (bpA bpB)
+
 	@media condition
 		{block}
+
 elementReset()
 	box-sizing border-box
 	padding-left 0
@@ -28,13 +35,22 @@ elementReset()
 	margin-top 0
 	margin-bottom 0
 	text-decoration none
+
 componentDeepReset()
 	elementReset()
+
 	*
 		elementReset()
+
 	*:before
 		elementReset()
+
 	*:after
 		elementReset()
+
 	ul, li
 		list-style none
+
+resetBoxSizing()
+	*, *:after, *:before
+		box-sizing border-box
