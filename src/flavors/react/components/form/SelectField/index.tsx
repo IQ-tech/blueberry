@@ -2,6 +2,7 @@ import React from "react";
 import { CommonFieldsProps } from "../form-defs";
 import FieldBase from "../FieldBase";
 import classNames from "classnames";
+import OutlineAngleDown from "../../icons/generated/outline/OutlineAngleDown";
 
 type Modify<T, R> = Omit<T, keyof R> & R;
 
@@ -56,32 +57,37 @@ const SelectField: React.FC<SelectFieldProps> = ({
         optional={optional}
         invalid={invalid}
       >
-        <select
-          className="iq-select-field__input"
-          {...props}
-          value={value}
-          disabled={disabled}
-          required={required}
-          placeholder={placeholder}
-          onChange={onChangeHandler}
-        >
-          <option disabled value="">
-            {placeholder}
-          </option>
-          <option value="b">test</option>
-          <option value="a">testa</option>
-          {options.map((option) => {
-            return (
-              <option
-                className="iq-select-field__option"
-                value={option?.value}
-                key={option?.value}
-              >
-                {option?.label}
-              </option>
-            );
-          })}
-        </select>
+        <div className="iq-select-field__select-holder">
+          <select
+            className="iq-select-field__input"
+            {...props}
+            value={value}
+            disabled={disabled}
+            required={required}
+            placeholder={placeholder}
+            onChange={onChangeHandler}
+          >
+            <option disabled value="">
+              {placeholder}
+            </option>
+            <option value="b">test</option>
+            <option value="a">testa</option>
+            {options.map((option) => {
+              return (
+                <option
+                  className="iq-select-field__option"
+                  value={option?.value}
+                  key={option?.value}
+                >
+                  {option?.label}
+                </option>
+              );
+            })}
+          </select>
+          <div className="iq-select-field__icon-holder">
+            <OutlineAngleDown />
+          </div>
+        </div>
       </FieldBase>
     </div>
   );

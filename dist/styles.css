@@ -1181,6 +1181,9 @@
   display:block;
   color:#444;
   width:100%;
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
 }
 .iq-select-field__input:focus{
   outline-color:#5e52f9;
@@ -1201,6 +1204,18 @@
   border:1px  #d5d5d5;
   background-color:#f9f9f9;
   color:#d5d5d5;
+}
+.iq-select-field__select-holder{
+  position:relative;
+}
+.iq-select-field__icon-holder{
+  color:#444;
+  width:24px;
+  position:absolute;
+  right:13px;
+  top:50%;
+  -webkit-transform:translateY(-50%);
+          transform:translateY(-50%);
 }
 @-webkit-keyframes shake-horizontal{
   0%,to{
