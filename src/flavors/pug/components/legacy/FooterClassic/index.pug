@@ -2,7 +2,7 @@ include ./subcomponents/FooterLink.pug
 include ./subcomponents/Social.pug
 include ./subcomponents/FooterInfo.pug
 
-mixin FooterClassic(partnerLogo = null)
+mixin FooterClassic(partnerLogo = null, partnerEmail = null)
 	footer.footer-classic
 		nav.footer-classic__navigation
 			.footer-classic__container(
@@ -47,7 +47,7 @@ mixin FooterClassic(partnerLogo = null)
 							+FooterLink({label: "Consulta placa", href: "https://www.iq.com.br/veiculos/consulta-placa/"})
 
 				+SocialIcons()
-		+FooterInfo()
+		+FooterInfo(partnerEmail)
 
 
 

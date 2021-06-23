@@ -200,6 +200,16 @@
 		padding 40px
 		padding-bottom 70px
 
+		&-right
+			> .footer-classic__info-block
+				+aboveMedium()
+					text-align right
+		
+		&-left
+			> .footer-classic__info-block
+				+aboveMedium()
+					text-align left
+
 	&__info-block
 		text-align center
 
@@ -217,6 +227,3 @@
 
 		&:not(:last-of-type)
 			margin-bottom 30px
-
-		+aboveMedium()
-			text-align left
