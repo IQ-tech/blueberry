@@ -12,7 +12,6 @@ interface InputProps
     CommonFieldsProps {
   mask?: maskArray | ((value: string) => maskArray);
   htmlType?: string;
-  errorMessage?: string;
   icon?: React.FC<any>;
   customClass?: string;
 }
@@ -45,6 +44,7 @@ const InputField: React.FC<InputProps> = ({
     "iq-input-field--disabled": !!disabled,
     [`iq-input-field--${customClass}`]: !!customClass,
   });
+
 
   return (
     <div className={inputClassName}>

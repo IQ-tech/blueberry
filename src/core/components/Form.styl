@@ -1,0 +1,137 @@
+@import '../variables.styl'
+
+@keyframes shake-horizontal
+	0%, 100%
+		-webkit-transform translateX(0)
+		transform translateX(0)
+
+	10%, 30%, 50%, 70%
+		-webkit-transform translateX(-10px)
+		transform translateX(-10px)
+
+	20%, 40%, 60%
+		-webkit-transform translateX(10px)
+		transform translateX(10px)
+
+	80%
+		-webkit-transform translateX(8px)
+		transform translateX(8px)
+
+	90%
+		-webkit-transform translateX(-8px)
+		transform translateX(-8px)
+
+.iq-field-base
+	resetBoxSizing()
+	font-family 'Open Sans'
+
+	&__label
+		font-weight 600
+		font-size 14px
+		margin-bottom 8px
+		line-height 22px
+		display block
+
+	&__required
+		color red-50
+
+	&__error-message
+		padding 0
+		margin 0
+		line-height 20px
+		color red-50
+		margin-top 8px
+		font-size 12px
+		animation shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both
+
+.iq-input-field
+	resetBoxSizing()
+
+	&__input-holder
+		position relative
+
+	&__input
+		height 48px
+		border 1px solid gray-30
+		border-radius 4px
+		font-size 14px
+		padding 11px 16px
+		line-height 26px
+		transition outline-color 0.3s ease
+		outline-color transparent
+		display block
+		color gray-50
+		width 100%
+
+		&:focus
+			outline-color blueberry-50
+
+	&--invalid
+		.iq-input-field__input
+			border 1px solid red-40
+
+			&:focus
+				outline-color red-40
+
+	&--disabled
+		.iq-input-field__input
+			border 1px color gray-30
+			background-color gray-10
+			color gray-30
+
+			::placeholder
+				color gray-30
+
+	&__icon
+		width 24px
+		position absolute
+		right 13px
+		top 50%
+		transform translateY(-50%)
+
+.iq-password-field
+	&__eye
+		cursor pointer
+		color blueberry-60
+
+.iq-select-field
+	resetBoxSizing()
+
+	&__input
+		height 48px
+		border 1px solid gray-30
+		border-radius 4px
+		font-size 14px
+		padding 11px 16px
+		line-height 26px
+		transition outline-color 0.3s ease
+		outline-color transparent
+		display block
+		color gray-50
+		width 100%
+
+		&:focus
+			outline-color blueberry-50
+
+		&:invalid
+			color red
+
+	&--empty
+		.iq-select-field__input
+			color gray-30
+
+	&--invalid
+		.iq-select-field__input
+			border 1px solid red-40
+
+			&:focus
+				outline-color red-40
+
+	&--disabled
+		.iq-select-field__input
+			border 1px color gray-30
+			background-color gray-10
+			color gray-30
+
+
+

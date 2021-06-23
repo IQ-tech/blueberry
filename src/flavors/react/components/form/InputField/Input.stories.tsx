@@ -3,8 +3,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import Input from "./index";
 
 //@ts-ignore
-import "core/components/form/FieldBase.styl";
-import "core/components/form/Input.styl";
+import "core/components/Form.styl";
 
 export default {
   title: "Components/form/Input",

@@ -4,7 +4,6 @@ import { CommonFieldsProps } from "../form-defs";
 interface InputProps extends React.HTMLAttributes<HTMLInputElement>, CommonFieldsProps {
     mask?: maskArray | ((value: string) => maskArray);
     htmlType?: string;
-    errorMessage?: string;
     icon?: React.FC<any>;
     customClass?: string;
 }
