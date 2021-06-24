@@ -1,5 +1,7 @@
 //Generated file, do not modify manually
 
+include ../OutlineViewPassword.pug
+include ../OutlineSearch.pug
 include ../OutlineReceipt.pug
 include ../OutlineQuestion.pug
 include ../OutlinePlusMini.pug
@@ -14,6 +16,7 @@ include ../OutlineMoney.pug
 include ../OutlineMenuLogout.pug
 include ../OutlineMenu.pug
 include ../OutlineHouse.pug
+include ../OutlineHidePassword.pug
 include ../OutlineHelp.pug
 include ../OutlineGraphicbar.pug
 include ../OutlineGift.pug
@@ -39,6 +42,7 @@ include ../IconHandsBackground.pug
 include ../IconHandDocument.pug
 include ../IconHandApp.pug
 include ../FilledIconHandApp.pug
+include ../FilledError.pug
 
 include ../../FlexGrid/index.pug
 include ../../FlexGrid/Row.pug
@@ -47,6 +51,9 @@ mixin IconsDemo()
 	.icons-demo
 		+FlexGrid({})
 			+FlexGridRow()
+				+IconBox({filename: "FilledError.pug"})
+					+FilledError()
+
 				+IconBox({filename: "FilledIconHandApp.pug"})
 					+FilledIconHandApp()
 
@@ -122,6 +129,9 @@ mixin IconsDemo()
 				+IconBox({filename: "OutlineHelp.pug"})
 					+OutlineHelp()
 
+				+IconBox({filename: "OutlineHidePassword.pug"})
+					+OutlineHidePassword()
+
 				+IconBox({filename: "OutlineHouse.pug"})
 					+OutlineHouse()
 
@@ -163,3 +173,9 @@ mixin IconsDemo()
 
 				+IconBox({filename: "OutlineReceipt.pug"})
 					+OutlineReceipt()
+
+				+IconBox({filename: "OutlineSearch.pug"})
+					+OutlineSearch()
+
+				+IconBox({filename: "OutlineViewPassword.pug"})
+					+OutlineViewPassword()

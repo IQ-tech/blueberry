@@ -11,3 +11,6 @@ export { default as Button } from "./components/Button";
 export { default as Carrossel } from "./components/Carrossel";
 export { default as Accordion } from "./components/Accordion";
 export { default as Dropdown } from "./components/Dropdown";
+export { default as Input } from "./components/form/InputField";
+export { default as PasswordField } from "./components/form/PasswordField";
+export { default as SelectField } from "./components/form/SelectField";
