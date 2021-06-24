@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import MaskedInput, { maskArray } from "react-text-mask";
 import classNames from "classnames";
 import { CommonFieldsProps } from "../form-defs";
@@ -37,6 +37,7 @@ const InputField: React.FC<InputProps> = ({
   const RenderIcon = (() => {
     if (!!invalid) return IconFilledError;
     else if (!!icon) return icon;
+    else return Fragment;
   })();
 
   const shouldRenderIcon = !!RenderIcon ? true : false;
