@@ -22,7 +22,7 @@ interface SelectFieldProps extends ModifiedSelectProps, CommonFieldsProps {
 const SelectField: React.FC<SelectFieldProps> = ({
   optional,
   label,
-  placeholder = "Select",
+  placeholder,
   required,
   errorMessage,
   invalid,
@@ -33,7 +33,8 @@ const SelectField: React.FC<SelectFieldProps> = ({
   onChange,
   ...props
 }) => {
-  console.log(value);
+  const safeValue = value || "";
+  const safePlaceholder = placeholder || "Selecione";
   const componentClassName = classNames("iq-select-field", {
     "iq-select-field--empty": !value,
     "iq-select-field--invalid": !!invalid,
@@ -42,8 +43,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
 
   function onChangeHandler(e) {
     if (!!onChange) {
-      console.log(onChange, e.target.value);
-      onChange(e.target.value);
+      onChange(e?.target?.value);
     }
   }
 
@@ -61,17 +61,15 @@ const SelectField: React.FC<SelectFieldProps> = ({
           <select
             className="iq-select-field__input"
             {...props}
-            value={value}
+            value={safeValue}
             disabled={disabled}
             required={required}
-            placeholder={placeholder}
+            placeholder={safePlaceholder}
             onChange={onChangeHandler}
           >
             <option disabled value="">
-              {placeholder}
+              {safePlaceholder}
             </option>
-            <option value="b">test</option>
-            <option value="a">testa</option>
             {options.map((option) => {
               return (
                 <option

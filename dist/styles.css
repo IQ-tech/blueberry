@@ -1075,11 +1075,13 @@
       -ms-flex-pack:center;
           justify-content:center;
   height:50px;
+  font-family:"Open Sans";
   font-size:13px;
   color:#fff;
 }
-.demo-content,.iq-field-base{
+.iq-field-base{
   font-family:"Open Sans";
+  margin-bottom:25px;
 }
 .iq-field-base *,.iq-field-base :after,.iq-field-base :before{
   -webkit-box-sizing:border-box;
@@ -1210,7 +1212,7 @@
 }
 .iq-select-field__icon-holder{
   color:#444;
-  width:24px;
+  width:20px;
   position:absolute;
   right:13px;
   top:50%;

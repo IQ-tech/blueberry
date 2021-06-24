@@ -30,21 +30,28 @@ const InputField: React.FC<InputProps> = ({
   invalid,
   disabled,
   icon,
+  onChange,
   customClass,
   ...rest
 }) => {
   const RenderIcon = (() => {
     if (!!invalid) return IconFilledError;
     else if (!!icon) return icon;
-    else return null;
   })();
+
+  const shouldRenderIcon = !!RenderIcon ? true : false;
+
+  function onChangeHandler(e) {
+    if (!!onChange) {
+      onChange(e?.target?.value);
+    }
+  }
 
   const inputClassName = classNames("iq-input-field", {
     "iq-input-field--invalid": !!invalid,
     "iq-input-field--disabled": !!disabled,
     [`iq-input-field--${customClass}`]: !!customClass,
   });
-
 
   return (
     <div className={inputClassName}>
@@ -62,6 +69,7 @@ const InputField: React.FC<InputProps> = ({
             className="iq-input-field__input"
             placeholder={placeholder}
             type={htmlType}
+            onChange={onChangeHandler}
             mask={mask ? mask : false}
             autoComplete={autoComplete}
             value={value}
@@ -69,7 +77,10 @@ const InputField: React.FC<InputProps> = ({
             {...rest}
           />
           <div className="iq-input-field__icon">
-            <Conditional condition={!!RenderIcon} renderIf={<RenderIcon />} />
+            <Conditional
+              condition={shouldRenderIcon}
+              renderIf={<RenderIcon />}
+            />
           </div>
         </div>
       </FieldBase>

@@ -40,4 +40,8 @@ BasicSelectField.args = {
   optional: false,
   required: true,
   label: "Simple select field",
+  options: [
+    { value: "A", label: "a" },
+    { value: "B", label: "b" },
+  ],
 };
