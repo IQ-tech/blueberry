@@ -5,10 +5,8 @@
 	font-family 'Open Sans', sans-serif
 	background-color #fff
 
-
 	+aboveMedium()
 		padding-top 40px
-
 
 	h2
 		display block
@@ -38,13 +36,41 @@
 
 	&__logo
 		padding 0 20px
+		display flex
+		justify-content space-between
+		align-items center
+
+		+aboveMedium()
+			display block
+			flex 0.5
+	
+	&__iq
+		display flex
+		align-items center
+
+		+aboveMedium()
+			display block
 
 		svg
 			width 42px
 			height 55px
 
-		+aboveMedium()
-			flex 0.5
+		span
+			font-size 12px
+			line-height 22px
+			font-weight 400
+			color gray-40
+			margin-left 10px
+
+			+aboveMedium()
+				display block
+				margin-left 0
+				margin-bottom 5px
+
+	&__partnership
+
+		img
+			height 16px
 
 	&__pages-menu
 		margin 25px 0
@@ -174,6 +200,16 @@
 		padding 40px
 		padding-bottom 70px
 
+		&-right
+			> .footer-classic__info-block
+				+aboveMedium()
+					text-align right
+		
+		&-left
+			> .footer-classic__info-block
+				+aboveMedium()
+					text-align left
+
 	&__info-block
 		text-align center
 
@@ -191,6 +227,3 @@
 
 		&:not(:last-of-type)
 			margin-bottom 30px
-
-		+aboveMedium()
-			text-align left
