@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface CommonFieldsProps {
   name?: string;
   optional?: boolean;
@@ -14,3 +16,10 @@ export interface CommonFieldsProps {
 
 
 export type Modify<T, R> = Omit<T, keyof R> & R;
+
+export type ModifiedInputProps = Modify<
+  React.HTMLAttributes<HTMLInputElement>,
+  {
+    onChange(value: string): void;
+  }
+>;

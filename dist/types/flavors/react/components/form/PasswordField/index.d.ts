@@ -1,6 +1,6 @@
 import React from "react";
-import { CommonFieldsProps } from "../form-defs";
-interface PasswordProps extends React.HTMLAttributes<HTMLInputElement>, CommonFieldsProps {
+import { CommonFieldsProps, ModifiedInputProps } from "../form-defs";
+interface PasswordProps extends ModifiedInputProps, CommonFieldsProps {
     showEye?: boolean;
 }
 declare const PasswordField: React.FC<PasswordProps>;

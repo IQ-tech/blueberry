@@ -1242,6 +1242,10 @@
           transform:translateY(-50%);
   z-index:0;
 }
+.iq-search-field__loader-holder{
+  -webkit-animation:rotating 2s linear infinite;
+          animation:rotating 2s linear infinite;
+}
 @-webkit-keyframes shake-horizontal{
   0%,to{
     -webkit-transform:translateX(0);
@@ -1284,6 +1288,26 @@
   90%{
     -webkit-transform:translateX(-8px);
     transform:translateX(-8px);
+  }
+}
+@-webkit-keyframes rotatating{
+  0%{
+    -webkit-transform:rotate(0deg);
+            transform:rotate(0deg);
+  }
+  to{
+    -webkit-transform:rotate(1turn);
+            transform:rotate(1turn);
+  }
+}
+@keyframes rotatating{
+  0%{
+    -webkit-transform:rotate(0deg);
+            transform:rotate(0deg);
+  }
+  to{
+    -webkit-transform:rotate(1turn);
+            transform:rotate(1turn);
   }
 }
 .iq-icon{

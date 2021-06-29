@@ -1,5 +1,6 @@
 //Generated file, do not modify manually
 
+include ../SearchLoader.pug
 include ../OutlineViewPassword.pug
 include ../OutlineSearch.pug
 include ../OutlineReceipt.pug
@@ -41,7 +42,6 @@ include ../OutlineAngleDown.pug
 include ../IconHandsBackground.pug
 include ../IconHandDocument.pug
 include ../IconHandApp.pug
-include ../FilledIconHandApp.pug
 include ../FilledError.pug
 
 include ../../FlexGrid/index.pug
@@ -53,9 +53,6 @@ mixin IconsDemo()
 			+FlexGridRow()
 				+IconBox({filename: "FilledError.pug"})
 					+FilledError()
-
-				+IconBox({filename: "FilledIconHandApp.pug"})
-					+FilledIconHandApp()
 
 				+IconBox({filename: "IconHandApp.pug"})
 					+IconHandApp()
@@ -179,3 +176,6 @@ mixin IconsDemo()
 
 				+IconBox({filename: "OutlineViewPassword.pug"})
 					+OutlineViewPassword()
+
+				+IconBox({filename: "SearchLoader.pug"})
+					+SearchLoader()

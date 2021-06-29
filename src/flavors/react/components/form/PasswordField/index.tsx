@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import OutlineHidePassword from "../../icons/generated/outline/OutlineHidePassword";
 import OutlineViewPassword from "../../icons/generated/outline/OutlineViewPassword";
 import InputField from "../InputField";
-import { CommonFieldsProps } from "../form-defs";
+import { CommonFieldsProps, ModifiedInputProps } from "../form-defs";
 
-interface PasswordProps
-  extends React.HTMLAttributes<HTMLInputElement>,
-    CommonFieldsProps {
+interface PasswordProps extends ModifiedInputProps, CommonFieldsProps {
   showEye?: boolean;
 }
 

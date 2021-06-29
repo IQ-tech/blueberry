@@ -1,6 +1,5 @@
 import React from "react";
-import { CommonFieldsProps } from "../form-defs";
-declare type Modify<T, R> = Omit<T, keyof R> & R;
+import { CommonFieldsProps, Modify } from "../form-defs";
 declare type ModifiedSelectProps = Modify<React.HTMLAttributes<HTMLSelectElement>, {
     onChange(value: string): void;
 }>;
