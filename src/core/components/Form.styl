@@ -21,6 +21,14 @@
 		-webkit-transform translateX(-8px)
 		transform translateX(-8px)
 
+@keyframes rotatating
+	from
+		transform rotate(0deg)
+
+	to
+		transform rotate(360deg)
+
+// field base (label + error message)
 .iq-field-base
 	resetBoxSizing()
 	font-family 'Open Sans'
@@ -45,6 +53,7 @@
 		font-size 12px
 		animation shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both
 
+// base input field
 .iq-input-field
 	resetBoxSizing()
 
@@ -100,14 +109,17 @@
 
 		&--left
 			left 13px
+
 		&--right
 			right 13px
 
+// password field
 .iq-password-field
 	&__eye
 		cursor pointer
 		color blueberry-60
 
+// select field
 .iq-select-field
 	resetBoxSizing()
 
@@ -165,3 +177,8 @@
 		top 50%
 		transform translateY(-50%)
 		z-index 0
+
+// search field
+.iq-search-field
+	&__loader-holder
+		animation rotating 2s linear infinite

@@ -1,10 +1,10 @@
 import React from "react";
-import { CommonFieldsProps } from "../form-defs";
+import { CommonFieldsProps, Modify } from "../form-defs";
 import FieldBase from "../FieldBase";
 import classNames from "classnames";
 import OutlineAngleDown from "../../icons/generated/outline/OutlineAngleDown";
 
-type Modify<T, R> = Omit<T, keyof R> & R;
+
 
 type ModifiedSelectProps = Modify<
   React.HTMLAttributes<HTMLSelectElement>,

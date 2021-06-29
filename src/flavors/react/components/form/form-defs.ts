@@ -11,3 +11,6 @@ export interface CommonFieldsProps {
   label?: string;
   errorMessage?: string;
 }
+
+
+export type Modify<T, R> = Omit<T, keyof R> & R;

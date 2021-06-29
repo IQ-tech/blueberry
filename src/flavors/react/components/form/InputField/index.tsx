@@ -6,10 +6,16 @@ import { CommonFieldsProps } from "../form-defs";
 import FieldBase from "../FieldBase";
 import IconFilledError from "../../icons/generated/filled/FilledError";
 import Conditional from "../../misc/Conditional";
+import { Modify } from "../form-defs";
 
-interface InputProps
-  extends React.HTMLAttributes<HTMLInputElement>,
-    CommonFieldsProps {
+type ModifiedInputProps = Modify<
+  React.HTMLAttributes<HTMLInputElement>,
+  {
+    onChange(value: string): void;
+  }
+>;
+
+interface InputProps extends ModifiedInputProps, CommonFieldsProps {
   /** React-text-mask mask */
   mask?: maskArray | ((value: string) => maskArray);
   /** Set the html `type` attribute */
