@@ -10,10 +10,15 @@ import Conditional from "../../misc/Conditional";
 interface InputProps
   extends React.HTMLAttributes<HTMLInputElement>,
     CommonFieldsProps {
+  /** React-text-mask mask */
   mask?: maskArray | ((value: string) => maskArray);
+  /** Set the html `type` attribute */
   htmlType?: string;
+  /** Icon to render on the right side */
   icon?: React.FC<any>;
   customClass?: string;
+  /** Icon to render on the left side */
+  LeftIcon?: React.FC<any>;
 }
 
 const InputField: React.FC<InputProps> = ({
@@ -32,6 +37,7 @@ const InputField: React.FC<InputProps> = ({
   icon,
   onChange,
   customClass,
+  LeftIcon,
   ...rest
 }) => {
   const RenderIcon = (() => {
@@ -51,6 +57,7 @@ const InputField: React.FC<InputProps> = ({
   const inputClassName = classNames("iq-input-field", {
     "iq-input-field--invalid": !!invalid,
     "iq-input-field--disabled": !!disabled,
+    "iq-input-field--left-icon": !!LeftIcon,
     [`iq-input-field--${customClass}`]: !!customClass,
   });
 
@@ -65,6 +72,14 @@ const InputField: React.FC<InputProps> = ({
         invalid={invalid}
       >
         <div className="iq-input-field__input-holder">
+          <Conditional
+            condition={!!LeftIcon}
+            renderIf={
+              <div className="iq-input-field__icon iq-input-field__icon--left">
+                <LeftIcon expand />
+              </div>
+            }
+          />
           <MaskedInput
             disabled={disabled}
             className="iq-input-field__input"
@@ -77,10 +92,10 @@ const InputField: React.FC<InputProps> = ({
             name={name}
             {...rest}
           />
-          <div className="iq-input-field__icon">
+          <div className="iq-input-field__icon iq-input-field__icon--right">
             <Conditional
               condition={shouldRenderIcon}
-              renderIf={<RenderIcon />}
+              renderIf={<RenderIcon expand />}
             />
           </div>
         </div>

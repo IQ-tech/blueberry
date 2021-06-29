@@ -1139,6 +1139,9 @@
   background-color:#5e52f9;
   color:#fff;
 }
+.iq-input-field--left-icon .iq-input-field__input{
+  padding-left:48px;
+}
 .iq-input-field--invalid .iq-input-field__input{
   border:1px solid #e33d3d;
 }
@@ -1169,6 +1172,12 @@
   top:50%;
   -webkit-transform:translateY(-50%);
           transform:translateY(-50%);
+}
+.iq-input-field__icon--left{
+  left:13px;
+}
+.iq-input-field__icon--right{
+  right:13px;
 }
 .iq-password-field__eye{
   cursor:pointer;
