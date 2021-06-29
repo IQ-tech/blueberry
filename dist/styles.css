@@ -1131,6 +1131,14 @@
 .iq-input-field__input:focus{
   outline-color:#5e52f9;
 }
+.iq-input-field__input::-moz-selection{
+  background-color:#5e52f9;
+  color:#fff;
+}
+.iq-input-field__input::selection{
+  background-color:#5e52f9;
+  color:#fff;
+}
 .iq-input-field--invalid .iq-input-field__input{
   border:1px solid #e33d3d;
 }
@@ -1186,6 +1194,9 @@
   -webkit-appearance:none;
      -moz-appearance:none;
           appearance:none;
+  background-color:transparent;
+  position:relative;
+  z-index:1;
 }
 .iq-select-field__input:focus{
   outline-color:#5e52f9;
@@ -1209,6 +1220,8 @@
 }
 .iq-select-field__select-holder{
   position:relative;
+  background-color:#fff;
+  border-radius:4px;
 }
 .iq-select-field__icon-holder{
   color:#444;
@@ -1218,6 +1231,7 @@
   top:50%;
   -webkit-transform:translateY(-50%);
           transform:translateY(-50%);
+  z-index:0;
 }
 @-webkit-keyframes shake-horizontal{
   0%,to{

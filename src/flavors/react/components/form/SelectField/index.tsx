@@ -83,7 +83,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
             })}
           </select>
           <div className="iq-select-field__icon-holder">
-            <OutlineAngleDown />
+            <OutlineAngleDown expand />
           </div>
         </div>
       </FieldBase>
