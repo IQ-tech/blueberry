@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import Input from "./index";
+import OutlineArrowLeft from "../../icons/generated/outline/OutlineArrowLeft";
 
 //@ts-ignore
 import "core/components/Form.styl";
@@ -54,4 +55,20 @@ InputInvalid.args = {
   placeholder: "Tomate",
   errorMessage: "Some error message",
   required: true,
+};
+
+const LeftIconTemplate = (args) => (
+  <div style={{ width: "60%", maxWidth: "350px" }}>
+    <Input LeftIcon={OutlineArrowLeft} {...args} />
+  </div>
+);
+
+export const LeftIcon = LeftIconTemplate.bind({});
+LeftIcon.args = {
+  disabled: false,
+  invalid: false,
+  optional: false,
+  required: true,
+  label: "Simple field",
+  placeholder: "Batata",
 };

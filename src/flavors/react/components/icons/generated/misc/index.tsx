@@ -2,3 +2,4 @@
 export {default as MiscIconHandApp} from "./MiscIconHandApp"
 export {default as MiscIconHandDocument} from "./MiscIconHandDocument"
 export {default as MiscIconHandsBackground} from "./MiscIconHandsBackground"
+export {default as MiscSearchLoader} from "./MiscSearchLoader"
