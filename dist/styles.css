@@ -1290,7 +1290,7 @@
     transform:translateX(-8px);
   }
 }
-@-webkit-keyframes rotatating{
+@-webkit-keyframes rotating{
   0%{
     -webkit-transform:rotate(0deg);
             transform:rotate(0deg);
@@ -1300,7 +1300,7 @@
             transform:rotate(1turn);
   }
 }
-@keyframes rotatating{
+@keyframes rotating{
   0%{
     -webkit-transform:rotate(0deg);
             transform:rotate(0deg);
