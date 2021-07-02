@@ -1,0 +1,130 @@
+@import '../variables.styl'
+
+$ballon-width = 228px;
+$ballon-width-half = calc($ballon-width / 2);
+$ballon-arrow-centered = calc(50% - 11px)
+
+.iq-tooltip
+  resetBoxSizing()
+  
+  &
+    position absolute
+    max-width $ballon-width
+    z-index 10
+    text-align left
+    opacity 1
+    visibility visible
+    transition 1s visibility .3s cubic-bezier(0.455, 0.030, 0.515, 0.955), 
+              opacity .3s cubic-bezier(0.455, 0.030, 0.515, 0.955)
+    
+  &-content
+    box-shadow 1px 3px 19px rgba(0, 0, 0, 0.25)
+    position relative
+    border-radius 8px
+    padding 16px
+
+  &-arrow
+    content ''
+    width 20px
+    height 20px
+    position absolute
+    border-radius 4px
+    transform rotate(135deg) skew(-10deg, -10deg)
+    transform-origin center
+
+  &-color-dark
+    .iq-tooltip-content
+      background-color blueberry-80
+      color white
+
+    .iq-tooltip-arrow
+      background-color blueberry-80
+
+  &-color-light
+    .iq-tooltip-content
+      background-color white
+      color gray-50
+
+    .iq-tooltip-arrow
+      background-color white
+
+  &-placement-top
+    padding-bottom 20px
+
+    .iq-tooltip-arrow
+      bottom -6px
+      left $ballon-arrow-centered
+
+  &-placement-topLeft
+    padding-bottom 20px
+
+    .iq-tooltip-arrow
+      bottom -6px
+      left 10px     
+  
+  &-placement-left
+    padding-right 20px
+
+    .iq-tooltip-arrow
+      right -8px
+      top $ballon-arrow-centered
+      transform rotate(45deg)
+
+  &-placement-right
+    padding-left 20px
+
+    .iq-tooltip-arrow
+      left -8px
+      top $ballon-arrow-centered
+      transform rotate(45deg)
+  
+  &-placement-bottom
+    padding-top 20px
+
+    .iq-tooltip-arrow
+      top -6px
+      left $ballon-arrow-centered     
+
+  &-placement-bottomLeft
+    padding-top 20px
+
+    .iq-tooltip-arrow
+      top -6px
+      left 10px
+        
+  &__title
+    margin 0
+    font-size 16px
+    line-height 24px
+    font-weight 600
+    font-family 'Baloo Chettan 2'
+
+    + .iq-tooltip__desc 
+      margin-top 8px
+  
+  &__desc
+    font-size 12px
+    line-height 20px
+    margin-top 0
+    margin-bottom 0
+    font-weight 400
+    font-family 'Open Sans'
+
+  &-hidden
+    visibility hidden
+    opacity 0
+    transition 1s visibility .3s cubic-bezier(0.455, 0.030, 0.515, 0.955), 
+              opacity .3s cubic-bezier(0.455, 0.030, 0.515, 0.955)
+  
+  // &-fadein
+  //   // animation fade-in 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+  //   animation fade-in .2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+
+@keyframes fade-in
+  0%
+    opacity 0
+    visibility hidden
+
+  100%
+    opacity 1
+    visibility visible
