@@ -20,24 +20,13 @@ export default {
 } as Meta;
 
 const Template = (args) => 
-<FlexGrid>
-  <FlexGrid.Row>&nbsp;</FlexGrid.Row>
-  <FlexGrid.Row>&nbsp;</FlexGrid.Row>
-  <FlexGrid.Row>&nbsp;</FlexGrid.Row>
-  <FlexGrid.Row>&nbsp;</FlexGrid.Row>
-  <FlexGrid.Row>&nbsp;</FlexGrid.Row>
-  <FlexGrid.Row>&nbsp;</FlexGrid.Row>
-  <FlexGrid.Row>&nbsp;</FlexGrid.Row>
-  <FlexGrid.Row>
-    <div style={{ display: 'flex', width: '100%', justifyContent: 'center'}}>
-      <Tooltip 
-        {...args} 
-        >
-        <OutlineQuestion />
-      </Tooltip>
-    </div>
-  </FlexGrid.Row>
-</FlexGrid>;
+<div style={{ display: 'flex', width: '100%', justifyContent: 'center', marginTop: '150px'}}>
+  <Tooltip 
+    {...args} 
+    >
+    <OutlineQuestion />
+  </Tooltip>
+</div>;
 
 export const Top = Template.bind({});
 Top.args = {

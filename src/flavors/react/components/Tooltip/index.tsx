@@ -42,7 +42,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   return (
     <TooltipRC 
       placement={placement}
-      trigger={['click']} 
+      trigger={trigger} 
       overlay={Balloon}
       prefixCls="iq-tooltip"
       overlayClassName={tooltipClasses}

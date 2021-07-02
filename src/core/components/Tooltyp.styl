@@ -1,7 +1,6 @@
 @import '../variables.styl'
 
 $ballon-width = 228px;
-$ballon-width-half = calc($ballon-width / 2);
 $ballon-arrow-centered = calc(50% - 11px)
 
 .iq-tooltip
@@ -115,16 +114,4 @@ $ballon-arrow-centered = calc(50% - 11px)
     opacity 0
     transition 1s visibility .3s cubic-bezier(0.455, 0.030, 0.515, 0.955), 
               opacity .3s cubic-bezier(0.455, 0.030, 0.515, 0.955)
-  
-  // &-fadein
-  //   // animation fade-in 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
-  //   animation fade-in .2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
-
-@keyframes fade-in
-  0%
-    opacity 0
-    visibility hidden
-
-  100%
-    opacity 1
-    visibility visible
+      
