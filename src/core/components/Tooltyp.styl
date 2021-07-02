@@ -31,7 +31,7 @@ $ballon-arrow-centered = calc(50% - 11px)
     transform rotate(135deg) skew(-10deg, -10deg)
     transform-origin center
 
-  &-color-dark
+  &--color-dark
     .iq-tooltip-content
       background-color blueberry-80
       color white
@@ -39,7 +39,7 @@ $ballon-arrow-centered = calc(50% - 11px)
     .iq-tooltip-arrow
       background-color blueberry-80
 
-  &-color-light
+  &--color-light
     .iq-tooltip-content
       background-color white
       color gray-50
@@ -47,21 +47,21 @@ $ballon-arrow-centered = calc(50% - 11px)
     .iq-tooltip-arrow
       background-color white
 
-  &-placement-top
+  &--placement-top
     padding-bottom 20px
 
     .iq-tooltip-arrow
       bottom -6px
       left $ballon-arrow-centered
 
-  &-placement-topLeft
+  &--placement-topLeft
     padding-bottom 20px
 
     .iq-tooltip-arrow
       bottom -6px
       left 10px     
   
-  &-placement-left
+  &--placement-left
     padding-right 20px
 
     .iq-tooltip-arrow
@@ -69,7 +69,7 @@ $ballon-arrow-centered = calc(50% - 11px)
       top $ballon-arrow-centered
       transform rotate(45deg)
 
-  &-placement-right
+  &--placement-right
     padding-left 20px
 
     .iq-tooltip-arrow
@@ -77,14 +77,14 @@ $ballon-arrow-centered = calc(50% - 11px)
       top $ballon-arrow-centered
       transform rotate(45deg)
   
-  &-placement-bottom
+  &--placement-bottom
     padding-top 20px
 
     .iq-tooltip-arrow
       top -6px
       left $ballon-arrow-centered     
 
-  &-placement-bottomLeft
+  &--placement-bottomLeft
     padding-top 20px
 
     .iq-tooltip-arrow
@@ -108,6 +108,37 @@ $ballon-arrow-centered = calc(50% - 11px)
     margin-bottom 0
     font-weight 400
     font-family 'Open Sans'
+
+  &__question
+    font-size 14px
+    line-height 22px
+    font-weight 700
+    border-radius 50%
+    width 24px
+    height 24px
+    font-family 'Open Sans'
+    cursor pointer
+    display flex
+    align-items center
+    justify-content center
+    color white
+    transition background-color .3s ease
+
+    &--dark
+      color white
+      background-color blueberry-60
+
+      &:hover,
+      &:focus
+        background-color blueberry-50
+    
+    &--light
+      color blueberry-60
+      background-color cyan-30
+
+      &:hover,
+      &:focus
+        background-color cyan-20
 
   &-hidden
     visibility hidden

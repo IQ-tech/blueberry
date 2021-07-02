@@ -5,25 +5,26 @@ import Conditional from "../misc/Conditional";
 
 interface TooltipProps extends React.HTMLAttributes<HTMLButtonElement> {
   color: "light" | "dark";
+  desc: string;
   placement: "top" | "topLeft" | "bottom" | "bottomLeft" | "left" | "right";
-  title: "";  
-  desc: "";
-  children: "";
-  trigger: ["hover"]
+  title: string;  
+  trigger: string[];
 }
 
 const Tooltip: React.FC<TooltipProps> = ({
   color = "dark",
+  desc = false,
   placement = "top",
   title = false,
-  desc = false,
-  children,
-  trigger,
-  ...props
+  trigger = ['hover'],
 }) => {
   const tooltipClasses = classNames({
-    [`iq-tooltip-color-${color}`]: !!color,
-    [`iq-tooltip-placement-${placement}`]: !!placement,
+    [`iq-tooltip--color-${color}`]: !!color,
+    [`iq-tooltip--placement-${placement}`]: !!placement,
+  })
+
+  const tooltipQuestionClasses = classNames('iq-tooltip__question', {
+    [`iq-tooltip__question--${color}`]: !!color
   })
 
   const Balloon = () => (
@@ -47,7 +48,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       prefixCls="iq-tooltip"
       overlayClassName={tooltipClasses}
     >
-      <span>{children}</span>
+      <span className={tooltipQuestionClasses}>?</span>
     </TooltipRC>
   );
 };

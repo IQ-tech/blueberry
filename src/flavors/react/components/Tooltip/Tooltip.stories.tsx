@@ -20,12 +20,10 @@ export default {
 } as Meta;
 
 const Template = (args) => 
-<div style={{ display: 'flex', width: '100%', justifyContent: 'center', marginTop: '150px'}}>
+<div style={{ display: 'flex', width: '100%', justifyContent: 'center', marginTop: '200px'}}>
   <Tooltip 
     {...args} 
-    >
-    <OutlineQuestion />
-  </Tooltip>
+  />
 </div>;
 
 export const Top = Template.bind({});
@@ -71,6 +69,7 @@ export const ColorLight = Template.bind({});
 ColorLight.args = {
   placement: "top",
   color:"light",
+  title: "Tooltip Top Light",
   desc: "Conteúdo lorem ipsum sit doloramet lorem ipsum sit dolor amet lorem ipsum sit dolor amet lore..."
 };
 
@@ -79,5 +78,13 @@ OnlyTitle.args = {
   title: "Only Title",
   placement: "top",
   color:"light",
+};
+
+export const ClickTooltip = Template.bind({});
+ClickTooltip.args = {
+  title: "Tooltip Click",
+  placement: "top",
+  trigger: ['click'],
+  desc: "Conteúdo lorem ipsum sit doloramet lorem ipsum sit dolor amet lorem ipsum sit dolor amet lore..."
 };
 
