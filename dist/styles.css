@@ -1116,7 +1116,7 @@
 }
 .iq-input-field__input{
   height:48px;
-  border:1px solid #d5d5d5;
+  border:1px solid #666;
   border-radius:4px;
   font-size:14px;
   padding:11px 16px;
@@ -1189,7 +1189,7 @@
 }
 .iq-select-field__input{
   height:48px;
-  border:1px solid #d5d5d5;
+  border:1px solid #666;
   border-radius:4px;
   font-size:14px;
   padding:11px 16px;
