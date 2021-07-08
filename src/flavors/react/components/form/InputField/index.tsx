@@ -57,7 +57,7 @@ const InputField: React.FC<InputProps> = ({
     "iq-input-field--invalid": !!invalid,
     "iq-input-field--disabled": !!disabled,
     "iq-input-field--left-icon": !!LeftIcon,
-    [`iq-input-field--${customClass}`]: !!customClass,
+    [customClass]: !!customClass,
   });
 
   return (

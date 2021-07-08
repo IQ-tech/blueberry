@@ -80,6 +80,9 @@
 			background-color blueberry-50
 			color gray-0
 
+		&::placeholder
+			color gray-40
+
 	&--left-icon
 		.iq-input-field__input
 			padding-left 48px
@@ -95,10 +98,10 @@
 		.iq-input-field__input
 			border 1px solid gray-30
 			background-color gray-10
-			color gray-30
+			color gray-40
 
 			::placeholder
-				color gray-30
+				color gray-40
 
 	&__icon
 		width 24px
@@ -115,6 +118,8 @@
 
 // password field
 .iq-password-field
+	.iq-input-field__input
+		color gray-40
 	&__eye
 		cursor pointer
 		color blueberry-60
@@ -144,7 +149,7 @@
 			outline-color blueberry-50
 
 		&:invalid
-			color red
+			color red-40
 
 	&--empty
 		.iq-select-field__input
@@ -161,7 +166,7 @@
 		.iq-select-field__input
 			border 1px solid gray-30
 			background-color gray-10
-			color gray-30
+			color gray-40
 
 	&__select-holder
 		position relative
