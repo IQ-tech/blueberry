@@ -3,7 +3,7 @@ import { CommonFieldsProps, Modify } from "../form-defs";
 import FieldBase from "../FieldBase";
 import classNames from "classnames";
 import OutlineAngleDown from "../../icons/generated/outline/OutlineAngleDown";
-
+import { TooltipProps } from "../../Tooltip";
 
 
 type ModifiedSelectProps = Modify<
@@ -17,6 +17,7 @@ interface SelectFieldProps extends ModifiedSelectProps, CommonFieldsProps {
   options?: { label: string; value: string | number }[];
   onChange(value: string): void;
   value?: string | number;
+  tooltipConfig?: TooltipProps;
 }
 
 const SelectField: React.FC<SelectFieldProps> = ({
@@ -31,6 +32,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
   value = "",
   disabled,
   onChange,
+  tooltipConfig,
   ...props
 }) => {
   const safeValue = value || "";
@@ -56,6 +58,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
         label={label}
         optional={optional}
         invalid={invalid}
+        tooltipConfig={tooltipConfig}
       >
         <div className="iq-select-field__select-holder">
           <select

@@ -34,6 +34,21 @@ BasicInput.args = {
   placeholder: "Batata",
 };
 
+export const InputWithTooltip = Template.bind({});
+InputWithTooltip.args = {
+  disabled: false,
+  invalid: false,
+  optional: false,
+  required: true,
+  label: "Simple field",
+  placeholder: "Batata",
+  tooltipConfig: {
+    desc: "This is my tooltip",
+    title: "Tooltip",
+    placement: "bottom",
+  },
+};
+
 export const InputOpcional = Template.bind({});
 InputOpcional.args = {
   optional: true,

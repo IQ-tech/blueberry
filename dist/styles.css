@@ -1087,12 +1087,21 @@
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
 }
+.iq-field-base__label-holder{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  margin-bottom:8px;
+}
 .iq-field-base__label{
   font-weight:600;
   font-size:14px;
-  margin-bottom:8px;
   line-height:22px;
   display:block;
+  margin-right:8px;
 }
 .iq-field-base__required{
   color:#a92525;

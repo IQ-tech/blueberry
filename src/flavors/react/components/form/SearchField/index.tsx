@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 
-import Conditional from "../../misc/Conditional";
 import InputField from "../InputField";
 import OutlineSearch from "../../icons/generated/outline/OutlineSearch";
 import MiscSearchLoader from "../../icons/generated/misc/MiscSearchLoader";

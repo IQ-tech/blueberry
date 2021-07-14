@@ -45,3 +45,20 @@ BasicSelectField.args = {
     { value: "B", label: "b" },
   ],
 };
+export const BasicSelectFieldTooltip = Template.bind({});
+BasicSelectFieldTooltip.args = {
+  disabled: false,
+  invalid: false,
+  optional: false,
+  required: true,
+  label: "Simple select field",
+  options: [
+    { value: "A", label: "a" },
+    { value: "B", label: "b" },
+  ],
+  tooltipConfig: {
+    desc: "This is my tooltip",
+    title: "Tooltip",
+    placement: "bottom",
+  },
+};

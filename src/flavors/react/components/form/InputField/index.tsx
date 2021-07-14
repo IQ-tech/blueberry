@@ -2,10 +2,10 @@ import React, { Fragment } from "react";
 import MaskedInput, { maskArray } from "react-text-mask";
 import classNames from "classnames";
 import { CommonFieldsProps } from "../form-defs";
+import  { TooltipProps } from "../../Tooltip";
 
 import FieldBase from "../FieldBase";
 import IconFilledError from "../../icons/generated/filled/FilledError";
-import Conditional from "../../misc/Conditional";
 import { ModifiedInputProps } from "../form-defs";
 
 interface InputProps extends ModifiedInputProps, CommonFieldsProps {
@@ -18,6 +18,7 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
   customClass?: string;
   /** Icon to render on the left side */
   LeftIcon?: React.FC<any>;
+  tooltipConfig?: TooltipProps;
 }
 
 const InputField: React.FC<InputProps> = ({
@@ -37,12 +38,15 @@ const InputField: React.FC<InputProps> = ({
   onChange,
   customClass,
   LeftIcon,
+  tooltipConfig,
   ...rest
 }) => {
   const RenderIcon = (() => {
-    if (!!invalid) return IconFilledError;
-    else if (!!icon) return icon;
-    else return Fragment;
+    if (!!invalid) return () => <IconFilledError expand />;
+    else if (!!icon) {
+      const Icon = icon;
+      return () => <Icon expand />;
+    } else return Fragment;
   })();
 
   const shouldRenderIcon = !!RenderIcon ? true : false;
@@ -57,7 +61,7 @@ const InputField: React.FC<InputProps> = ({
     "iq-input-field--invalid": !!invalid,
     "iq-input-field--disabled": !!disabled,
     "iq-input-field--left-icon": !!LeftIcon,
-    [customClass]: !!customClass,
+    [`iq-input-field--${customClass}`]: !!customClass,
   });
 
   return (
@@ -69,16 +73,15 @@ const InputField: React.FC<InputProps> = ({
         label={label}
         optional={optional}
         invalid={invalid}
+        tooltipConfig={tooltipConfig}
       >
         <div className="iq-input-field__input-holder">
-          <Conditional
-            condition={!!LeftIcon}
-            renderIf={
-              <div className="iq-input-field__icon iq-input-field__icon--left">
-                <LeftIcon expand />
-              </div>
-            }
-          />
+          {!!LeftIcon ? (
+            <div className="iq-input-field__icon iq-input-field__icon--left">
+              <LeftIcon expand />
+            </div>
+          ) : null}
+
           <MaskedInput
             disabled={disabled}
             className="iq-input-field__input"
@@ -92,10 +95,7 @@ const InputField: React.FC<InputProps> = ({
             {...rest}
           />
           <div className="iq-input-field__icon iq-input-field__icon--right">
-            <Conditional
-              condition={shouldRenderIcon}
-              renderIf={<RenderIcon expand />}
-            />
+            {!!shouldRenderIcon ? <RenderIcon /> : null}
           </div>
         </div>
       </FieldBase>

@@ -3,12 +3,12 @@ import TooltipRC from "rc-tooltip"
 import classNames from "classnames";
 import Conditional from "../misc/Conditional";
 
-interface TooltipProps extends React.HTMLAttributes<HTMLButtonElement> {
-  color: "light" | "dark";
+export interface TooltipProps extends React.HTMLAttributes<HTMLButtonElement> {
+  color?: "light" | "dark";
   desc: string;
-  placement: "top" | "topLeft" | "bottom" | "bottomLeft" | "left" | "right";
+  placement?: "top" | "topLeft" | "bottom" | "bottomLeft" | "left" | "right";
   title: string;  
-  trigger: string[];
+  trigger?: string[];
 }
 
 const Tooltip: React.FC<TooltipProps> = ({

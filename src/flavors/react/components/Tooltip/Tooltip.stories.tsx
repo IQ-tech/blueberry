@@ -1,11 +1,10 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import Tooltip from "./index";
-import OutlineQuestion from "../icons/generated/outline/OutlineQuestion";
-import FlexGrid from "../FlexGrid";
+
 
 //@ts-ignore
-import "core/components/Tooltyp.styl";
+import "core/components/Tooltip.styl";
 
 export default {
   title: "Components/Tooltip",
