@@ -108,7 +108,7 @@ const SimpleLayoutTemplate = () => (
         style={{
           alignSelf: "stretch",
           width: "200px",
-          backgroundColor: colors["gray-40"],
+          backgroundColor: colors["gray-50"],
           padding: "20px",
         }}
       >

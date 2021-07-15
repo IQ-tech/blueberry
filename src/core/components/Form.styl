@@ -34,12 +34,17 @@
 	font-family 'Open Sans'
 	margin-bottom 25px
 
+	&__label-holder
+		display flex
+		align-items center
+		margin-bottom 8px
+
 	&__label
 		font-weight 600
 		font-size 14px
-		margin-bottom 8px
 		line-height 22px
 		display block
+		margin-right 8px
 
 	&__required
 		color red-50
@@ -70,7 +75,7 @@
 		transition outline-color 0.3s ease
 		outline-color transparent
 		display block
-		color gray-50
+		color gray-60
 		width 100%
 
 		&:focus
@@ -79,6 +84,9 @@
 		&::selection
 			background-color blueberry-50
 			color gray-0
+
+		&::placeholder
+			color gray-40
 
 	&--left-icon
 		.iq-input-field__input
@@ -93,12 +101,12 @@
 
 	&--disabled
 		.iq-input-field__input
-			border 1px color gray-30
+			border 1px solid gray-30
 			background-color gray-10
-			color gray-30
+			color gray-40
 
 			::placeholder
-				color gray-30
+				color gray-40
 
 	&__icon
 		width 24px
@@ -115,6 +123,8 @@
 
 // password field
 .iq-password-field
+	.iq-input-field__input
+		color gray-40
 	&__eye
 		cursor pointer
 		color blueberry-60
@@ -133,7 +143,7 @@
 		transition outline-color 0.3s ease
 		outline-color transparent
 		display block
-		color gray-50
+		color gray-60
 		width 100%
 		appearance none
 		background-color transparent
@@ -144,7 +154,7 @@
 			outline-color blueberry-50
 
 		&:invalid
-			color red
+			color red-40
 
 	&--empty
 		.iq-select-field__input
@@ -159,9 +169,9 @@
 
 	&--disabled
 		.iq-select-field__input
-			border 1px color gray-30
+			border 1px solid gray-30
 			background-color gray-10
-			color gray-30
+			color gray-40
 
 	&__select-holder
 		position relative
@@ -169,7 +179,7 @@
 		border-radius 4px
 
 	&__icon-holder
-		color gray-50
+		color gray-60
 		position absolute
 		width 20px
 		position absolute

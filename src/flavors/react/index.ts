@@ -23,7 +23,7 @@ export { default as Dropdown } from "./components/Dropdown";
 export { default as Tooltip } from "./components/Tooltip";
 
 // Form components
-export { default as Input } from "./components/form/InputField";
+export { default as InputField } from "./components/form/InputField";
 export { default as PasswordField } from "./components/form/PasswordField";
 export { default as SelectField } from "./components/form/SelectField";
 export { default as SearchField } from "./components/form/SearchField";

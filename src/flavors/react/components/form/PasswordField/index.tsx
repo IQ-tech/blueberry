@@ -3,9 +3,11 @@ import OutlineHidePassword from "../../icons/generated/outline/OutlineHidePasswo
 import OutlineViewPassword from "../../icons/generated/outline/OutlineViewPassword";
 import InputField from "../InputField";
 import { CommonFieldsProps, ModifiedInputProps } from "../form-defs";
+import { TooltipProps } from "../../Tooltip";
 
 interface PasswordProps extends ModifiedInputProps, CommonFieldsProps {
   showEye?: boolean;
+  tooltipConfig?: TooltipProps;
 }
 
 const PasswordField: React.FC<PasswordProps> = ({

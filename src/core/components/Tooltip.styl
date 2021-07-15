@@ -5,7 +5,7 @@ $ballon-arrow-centered = calc(50% - 11px)
 
 .iq-tooltip
   resetBoxSizing()
-  
+
   &
     position absolute
     max-width $ballon-width
@@ -13,9 +13,9 @@ $ballon-arrow-centered = calc(50% - 11px)
     text-align left
     opacity 1
     visibility visible
-    transition 1s visibility .3s cubic-bezier(0.455, 0.030, 0.515, 0.955), 
+    transition 1s visibility .3s cubic-bezier(0.455, 0.030, 0.515, 0.955),
               opacity .3s cubic-bezier(0.455, 0.030, 0.515, 0.955)
-    
+
   &-content
     box-shadow 1px 3px 19px rgba(0, 0, 0, 0.25)
     position relative
@@ -42,7 +42,7 @@ $ballon-arrow-centered = calc(50% - 11px)
   &--color-light
     .iq-tooltip-content
       background-color white
-      color gray-50
+      color gray-60
 
     .iq-tooltip-arrow
       background-color white
@@ -59,8 +59,8 @@ $ballon-arrow-centered = calc(50% - 11px)
 
     .iq-tooltip-arrow
       bottom -6px
-      left 10px     
-  
+      left 10px
+
   &--placement-left
     padding-right 20px
 
@@ -76,13 +76,13 @@ $ballon-arrow-centered = calc(50% - 11px)
       left -8px
       top $ballon-arrow-centered
       transform rotate(45deg)
-  
+
   &--placement-bottom
     padding-top 20px
 
     .iq-tooltip-arrow
       top -6px
-      left $ballon-arrow-centered     
+      left $ballon-arrow-centered
 
   &--placement-bottomLeft
     padding-top 20px
@@ -90,7 +90,7 @@ $ballon-arrow-centered = calc(50% - 11px)
     .iq-tooltip-arrow
       top -6px
       left 10px
-        
+
   &__title
     margin 0
     font-size 16px
@@ -98,9 +98,9 @@ $ballon-arrow-centered = calc(50% - 11px)
     font-weight 600
     font-family 'Baloo Chettan 2'
 
-    + .iq-tooltip__desc 
+    + .iq-tooltip__desc
       margin-top 8px
-  
+
   &__desc
     font-size 12px
     line-height 20px
@@ -131,7 +131,7 @@ $ballon-arrow-centered = calc(50% - 11px)
       &:hover,
       &:focus
         background-color blueberry-50
-    
+
     &--light
       color blueberry-60
       background-color cyan-30
@@ -143,6 +143,5 @@ $ballon-arrow-centered = calc(50% - 11px)
   &-hidden
     visibility hidden
     opacity 0
-    transition 1s visibility .3s cubic-bezier(0.455, 0.030, 0.515, 0.955), 
+    transition 1s visibility .3s cubic-bezier(0.455, 0.030, 0.515, 0.955),
               opacity .3s cubic-bezier(0.455, 0.030, 0.515, 0.955)
-      

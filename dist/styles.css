@@ -1087,12 +1087,21 @@
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
 }
+.iq-field-base__label-holder{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  margin-bottom:8px;
+}
 .iq-field-base__label{
   font-weight:600;
   font-size:14px;
-  margin-bottom:8px;
   line-height:22px;
   display:block;
+  margin-right:8px;
 }
 .iq-field-base__required{
   color:#a92525;
@@ -1116,7 +1125,7 @@
 }
 .iq-input-field__input{
   height:48px;
-  border:1px solid #666;
+  border:1px solid #b5b5b5;
   border-radius:4px;
   font-size:14px;
   padding:11px 16px;
@@ -1139,6 +1148,18 @@
   background-color:#5e52f9;
   color:#fff;
 }
+.iq-input-field__input::-webkit-input-placeholder{
+  color:#b5b5b5;
+}
+.iq-input-field__input::-moz-placeholder{
+  color:#b5b5b5;
+}
+.iq-input-field__input::-ms-input-placeholder{
+  color:#b5b5b5;
+}
+.iq-input-field__input::placeholder{
+  color:#b5b5b5;
+}
 .iq-input-field--left-icon .iq-input-field__input{
   padding-left:48px;
 }
@@ -1149,21 +1170,21 @@
   outline-color:#e33d3d;
 }
 .iq-input-field--disabled .iq-input-field__input{
-  border:1px  #d5d5d5;
+  border:1px solid #d5d5d5;
   background-color:#f9f9f9;
-  color:#d5d5d5;
+  color:#b5b5b5;
 }
 .iq-input-field--disabled .iq-input-field__input ::-webkit-input-placeholder{
-  color:#d5d5d5;
+  color:#b5b5b5;
 }
 .iq-input-field--disabled .iq-input-field__input ::-moz-placeholder{
-  color:#d5d5d5;
+  color:#b5b5b5;
 }
 .iq-input-field--disabled .iq-input-field__input ::-ms-input-placeholder{
-  color:#d5d5d5;
+  color:#b5b5b5;
 }
 .iq-input-field--disabled .iq-input-field__input ::placeholder{
-  color:#d5d5d5;
+  color:#b5b5b5;
 }
 .iq-input-field__icon{
   width:24px;
@@ -1179,6 +1200,9 @@
 .iq-input-field__icon--right{
   right:13px;
 }
+.iq-password-field .iq-input-field__input{
+  color:#b5b5b5;
+}
 .iq-password-field__eye{
   cursor:pointer;
   color:#453ad3;
@@ -1189,7 +1213,7 @@
 }
 .iq-select-field__input{
   height:48px;
-  border:1px solid #666;
+  border:1px solid #b5b5b5;
   border-radius:4px;
   font-size:14px;
   padding:11px 16px;
@@ -1211,7 +1235,7 @@
   outline-color:#5e52f9;
 }
 .iq-select-field__input:invalid{
-  color:red;
+  color:#e33d3d;
 }
 .iq-select-field--empty .iq-select-field__input{
   color:#d5d5d5;
@@ -1223,9 +1247,9 @@
   outline-color:#e33d3d;
 }
 .iq-select-field--disabled .iq-select-field__input{
-  border:1px  #d5d5d5;
+  border:1px solid #d5d5d5;
   background-color:#f9f9f9;
-  color:#d5d5d5;
+  color:#b5b5b5;
 }
 .iq-select-field__select-holder{
   position:relative;

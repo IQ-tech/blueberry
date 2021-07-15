@@ -1,6 +1,7 @@
 import React from "react";
 import { maskArray } from "react-text-mask";
 import { CommonFieldsProps } from "../form-defs";
+import { TooltipProps } from "../../Tooltip";
 import { ModifiedInputProps } from "../form-defs";
 interface InputProps extends ModifiedInputProps, CommonFieldsProps {
     /** React-text-mask mask */
@@ -12,6 +13,7 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
     customClass?: string;
     /** Icon to render on the left side */
     LeftIcon?: React.FC<any>;
+    tooltipConfig?: TooltipProps;
 }
 declare const InputField: React.FC<InputProps>;
 export default InputField;
