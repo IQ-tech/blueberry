@@ -1120,6 +1120,12 @@
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
 }
+.iq-input-field .iq-field-base__error-message{
+  display:none;
+}
+.iq-input-field--invalid .iq-field-base__error-message{
+  display:block;
+}
 .iq-input-field__input-holder{
   position:relative;
 }
@@ -1199,6 +1205,12 @@
 }
 .iq-input-field__icon--right{
   right:13px;
+}
+.iq-input-field__invalid-icon{
+  display:none;
+}
+.iq-input-field--invalid .iq-input-field__invalid-icon{
+  display:block;
 }
 .iq-password-field .iq-input-field__input{
   color:#b5b5b5;

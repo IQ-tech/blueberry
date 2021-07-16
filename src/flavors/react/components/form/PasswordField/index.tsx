@@ -36,7 +36,7 @@ const PasswordField: React.FC<PasswordProps> = ({
     <InputField
       customClass="iq-password-field"
       htmlType={fieldType}
-      icon={Icon}
+      Icon={Icon}
       {...props}
     />
   );

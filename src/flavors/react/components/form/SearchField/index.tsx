@@ -32,7 +32,7 @@ const SearchField: React.FC<SearchFieldProps> = ({
       LeftIcon={OutlineSearch}
       onChange={onChange}
       placeholder={placeholder}
-      icon={Loader}
+      Icon={Loader}
     />
   );
 };

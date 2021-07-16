@@ -62,8 +62,16 @@
 .iq-input-field
 	resetBoxSizing()
 
+	.iq-field-base__error-message
+		display none
+
+	&--invalid
+		.iq-field-base__error-message
+			display block
+
 	&__input-holder
 		position relative
+
 
 	&__input
 		height 48px
@@ -120,6 +128,13 @@
 
 		&--right
 			right 13px
+
+	&__invalid-icon
+		display none
+
+	&--invalid
+		.iq-input-field__invalid-icon
+			display block
 
 // password field
 .iq-password-field

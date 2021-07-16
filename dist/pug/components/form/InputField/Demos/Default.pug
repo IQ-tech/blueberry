@@ -1,0 +1,9 @@
+include ../index.pug
+include ./Container.pug
+
+mixin Default()
+	+Container()
+		+InputField({label: "Default input"})(
+			name="first-name"
+			placeholder="Digite seu nome"
+		)
