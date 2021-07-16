@@ -1,0 +1,26 @@
+include ../icons/OutlineAngleDownMini.pug
+
+mixin Accordion({ jailsSlug } = {})
+	- const safeSlug = !!jailsSlug ? jailsSlug : 'iq-accordion'
+	.iq-accordion(
+		data-component=safeSlug
+	)
+		if block
+			block
+
+mixin AccordionItem({colorScheme, open, titleContent} = {})
+	- const safeColorScheme = !!colorScheme ? colorScheme : ''
+	- const safeOpen = !!open ? 'iq-accordion__item--open' : ''
+	li.iq-accordion__item(
+		class=safeColorScheme
+		class=safeOpen
+	)
+		button.iq-accordion__item-head
+			.iq-accordion__head-content !{titleContent}
+
+			.iq-accordion__arrow-holder
+				+OutlineAngleDownMini()
+		.iq-accordion__item-body
+			if block
+				block
+
