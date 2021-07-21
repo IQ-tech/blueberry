@@ -245,8 +245,8 @@
 			display inline
 
 	&__icon
-		flex-shrink: 0
-		flex-grow: 0
+		flex-shrink 0
+		flex-grow 0
 		width 24px
 		height 24px
 		background-color gray-0
@@ -281,10 +281,10 @@
 				top 1px
 				height 10px
 				width 6px
+
 	&--invalid
 		.iq-checkbox-field__icon
 			border-color red-40
-
 
 	&__input
 		position absolute
@@ -330,7 +330,90 @@
 
 .iq-checkbox-group
 	max-width 500px
+
 	&__container
 		padding-top 15px
 		display grid
-		grid-template-columns: 1fr 1fr 1fr
+		grid-template-columns 1fr 1fr 1fr
+
+.iq-radio-field
+	resetBoxSizing()
+	font-size 14px
+	font-family 'Open Sans'
+
+	&__container
+		display grid
+		grid-template-columns repeat(3, 1fr)
+		column-gap 30px
+		row-gap 16px
+
+	&--max-size
+		.iq-radio-field__container
+			max-width 500px
+
+	&__option
+		cursor pointer
+		position relative
+
+	&__option-holder
+		display flex
+		align-items center
+		cursor pointer
+		position relative
+		padding 8px
+
+	&--disabled
+		.iq-radio-field__option-holder
+			color gray-40
+			cursor not-allowed
+
+	&__icon
+		width 16px
+		height 16px
+		border 1px solid gray-40
+		display block
+		margin-right 13px
+		border-radius 50%
+		flex-shrink 0
+		flex-grow 0
+
+		&:after
+			content ''
+			display block
+			width 100%
+			height 100%
+			position absolute
+			top 0
+			left 0
+			border 1px solid gray-40
+			border-radius 8px
+			z-index -1
+
+	&--disabled
+		.iq-radio-field__icon, .iq-radio-field__icon:after
+			border-color gray-30
+
+	&--invalid
+		.iq-radio-field__icon:after
+			border-color red-40
+
+	&__input
+		position absolute
+		opacity 0
+		cursor pointer
+		height 0
+		width 0
+
+		&:checked ~ .iq-radio-field__icon
+			border 5px solid blueberry-60
+
+		&:checked ~ .iq-radio-field__icon:after
+			border-color blueberry-60
+
+	&--disabled
+		.iq-radio-field__input
+			&:checked ~ .iq-radio-field__icon
+				border-color gray-30
+
+			&:checked ~ .iq-radio-field__icon:after
+				border-color gray-30

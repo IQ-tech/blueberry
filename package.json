@@ -70,6 +70,7 @@
 	},
 	"dependencies": {
 		"jails-js": "^4.2.1",
+		"randomstring": "^1.2.1",
 		"rc-tooltip": "^5.1.1",
 		"react": "16.8.6",
 		"react-dom": "16.8.6",
