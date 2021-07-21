@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export interface CommonFieldsProps {
   name?: string;
@@ -14,7 +14,6 @@ export interface CommonFieldsProps {
   errorMessage?: string;
 }
 
-
 export type Modify<T, R> = Omit<T, keyof R> & R;
 
 export type ModifiedInputProps = Modify<
@@ -23,3 +22,10 @@ export type ModifiedInputProps = Modify<
     onChange(value: string): void;
   }
 >;
+
+export type InputGroupOption = {
+  value: string | number;
+  label: string | number;
+};
+
+export type InputGroupOptions = InputGroupOption[];

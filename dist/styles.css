@@ -1120,6 +1120,12 @@
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
 }
+.iq-input-field .iq-field-base__error-message{
+  display:none;
+}
+.iq-input-field--invalid .iq-field-base__error-message{
+  display:block;
+}
 .iq-input-field__input-holder{
   position:relative;
 }
@@ -1200,6 +1206,12 @@
 .iq-input-field__icon--right{
   right:13px;
 }
+.iq-input-field__invalid-icon{
+  display:none;
+}
+.iq-input-field--invalid .iq-input-field__invalid-icon{
+  display:block;
+}
 .iq-password-field .iq-input-field__input{
   color:#b5b5b5;
 }
@@ -1269,6 +1281,234 @@
 .iq-search-field__loader-holder{
   -webkit-animation:rotating 2s linear infinite;
           animation:rotating 2s linear infinite;
+}
+.iq-checkbox-field{
+  font-family:"Open Sans";
+  display:inline-block;
+  cursor:pointer;
+  list-style:none;
+  font-size:14px;
+  position:relative;
+  margin-right:32px;
+  margin-bottom:32px;
+}
+.iq-checkbox-field *,.iq-checkbox-field :after,.iq-checkbox-field :before{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+}
+@media (min-width:720px){
+  .iq-checkbox-field{
+    margin-right:24px;
+    margin-bottom:24px;
+  }
+}
+.iq-checkbox-field--disabled{
+  cursor:not-allowed;
+  color:#b5b5b5;
+}
+.iq-checkbox-field__holder{
+  cursor:pointer;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+.iq-checkbox-field--disabled .iq-checkbox-field__holder{
+  cursor:not-allowed;
+}
+.iq-checkbox-field__required-star{
+  color:#a92525;
+  display:none;
+}
+.iq-checkbox-field--required .iq-checkbox-field__required-star{
+  display:inline;
+}
+.iq-checkbox-field__icon{
+  -ms-flex-negative:0;
+      flex-shrink:0;
+  -webkit-box-flex:0;
+      -ms-flex-positive:0;
+          flex-grow:0;
+  width:24px;
+  height:24px;
+  background-color:#fff;
+  border:1px solid #b5b5b5;
+  border-radius:2px;
+  display:block;
+  margin-right:12px;
+  position:relative;
+  -webkit-transition:background-color .2s ease;
+  transition:background-color .2s ease;
+}
+@media (min-width:720px){
+  .iq-checkbox-field__icon{
+    width:16px;
+    height:16px;
+  }
+}
+.iq-checkbox-field__icon:after{
+  content:"";
+  display:block;
+  opacity:0;
+  left:8px;
+  top:4px;
+  position:absolute;
+  -webkit-transform:rotate(45deg);
+          transform:rotate(45deg);
+  width:6px;
+  height:12px;
+  border:solid #fff;
+  border-width:0 2px 2px 0;
+  border-radius:1px;
+  -webkit-transition:opacity .2s ease .2s;
+  transition:opacity .2s ease .2s;
+}
+@media (min-width:720px){
+  .iq-checkbox-field__icon:after{
+    left:3.7px;
+    top:1px;
+    height:10px;
+    width:6px;
+  }
+}
+.iq-checkbox-field--invalid .iq-checkbox-field__icon{
+  border-color:#e33d3d;
+}
+.iq-checkbox-field__input{
+  position:absolute;
+  opacity:0;
+  cursor:pointer;
+  height:0;
+  width:0;
+}
+.iq-checkbox-field__input:checked~.iq-checkbox-field__icon:after{
+  opacity:1;
+}
+.iq-checkbox-field__input:checked~.iq-checkbox-field__icon{
+  background-color:#453ad3;
+  border-color:#453ad3;
+}
+.iq-checkbox-field--disabled .iq-checkbox-field__icon{
+  background-color:#f9f9f9;
+  border-color:#d5d5d5;
+}
+.iq-checkbox-field--disabled .iq-checkbox-field__icon:after{
+  border-color:#d5d5d5;
+}
+.iq-checkbox-field--disabled .iq-checkbox-field__input:checked~.iq-checkbox-field__icon{
+  background-color:#f9f9f9;
+  border-color:#d5d5d5;
+}
+.iq-checkbox-field__invalid-holder{
+  margin-top:6px;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  font-size:12px;
+  color:#a92525;
+  display:none;
+}
+.iq-checkbox-field__invalid-icon-holder{
+  width:16px;
+  margin-right:6px;
+}
+.iq-checkbox-field--invalid .iq-checkbox-field__invalid-holder{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.iq-checkbox-group{
+  max-width:500px;
+}
+.iq-checkbox-group__container{
+  padding-top:15px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+}
+.iq-radio-field{
+  font-size:14px;
+  font-family:"Open Sans";
+}
+.iq-radio-field *,.iq-radio-field :after,.iq-radio-field :before{
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
+}
+.iq-radio-field__container{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  -webkit-column-gap:30px;
+     -moz-column-gap:30px;
+          column-gap:30px;
+  row-gap:16px;
+}
+.iq-radio-field--max-size .iq-radio-field__container{
+  max-width:500px;
+}
+.iq-radio-field__option,.iq-radio-field__option-holder{
+  cursor:pointer;
+  position:relative;
+}
+.iq-radio-field__option-holder{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  padding:8px;
+}
+.iq-radio-field--disabled .iq-radio-field__option-holder{
+  color:#b5b5b5;
+  cursor:not-allowed;
+}
+.iq-radio-field__icon{
+  width:16px;
+  height:16px;
+  border:1px solid #b5b5b5;
+  display:block;
+  margin-right:13px;
+  border-radius:50%;
+  -ms-flex-negative:0;
+      flex-shrink:0;
+  -webkit-box-flex:0;
+      -ms-flex-positive:0;
+          flex-grow:0;
+}
+.iq-radio-field__icon:after{
+  content:"";
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  border:1px solid #b5b5b5;
+  border-radius:8px;
+  z-index:-1;
+}
+.iq-radio-field--disabled .iq-radio-field__icon,.iq-radio-field--disabled .iq-radio-field__icon:after{
+  border-color:#d5d5d5;
+}
+.iq-radio-field--invalid .iq-radio-field__icon:after{
+  border-color:#e33d3d;
+}
+.iq-radio-field__input{
+  position:absolute;
+  opacity:0;
+  cursor:pointer;
+  height:0;
+  width:0;
+}
+.iq-radio-field__input:checked~.iq-radio-field__icon{
+  border:5px solid #453ad3;
+}
+.iq-radio-field__input:checked~.iq-radio-field__icon:after{
+  border-color:#453ad3;
+}
+.iq-radio-field--disabled .iq-radio-field__input:checked~.iq-radio-field__icon,.iq-radio-field--disabled .iq-radio-field__input:checked~.iq-radio-field__icon:after{
+  border-color:#d5d5d5;
 }
 @-webkit-keyframes shake-horizontal{
   0%,to{

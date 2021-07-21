@@ -16,3 +16,8 @@ export declare type Modify<T, R> = Omit<T, keyof R> & R;
 export declare type ModifiedInputProps = Modify<React.HTMLAttributes<HTMLInputElement>, {
     onChange(value: string): void;
 }>;
+export declare type InputGroupOption = {
+    value: string | number;
+    label: string | number;
+};
+export declare type InputGroupOptions = InputGroupOption[];

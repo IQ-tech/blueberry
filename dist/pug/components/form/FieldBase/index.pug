@@ -1,0 +1,31 @@
+mixin FieldBase({ rules, label, required, optional, name, invalid, errorMessage})
+	- const shouldShowErrorMessage = !!invalid && !!errorMessage
+	- const error = `errors.${name}`
+	- const preDefinedMessages = {}
+	- preDefinedMessages.required 	= 'Este campo é obrigatório'
+	- preDefinedMessages.email 		= 'Digite um email válido'
+	- preDefinedMessages.fullname 	= 'Digite seu nome completo'
+	- preDefinedMessages.cpf 			= 'Digite um cpf válido'
+	- preDefinedMessages.income 		= 'Digite uma renda mensal válida'
+	- preDefinedMessages.phone 		= 'Digite um celular válido'
+	- preDefinedMessages.incomeMin 	= 'Renda mínima não é válida'
+
+	.iq-field-base
+		.iq-field-base__label-holder
+			if label
+				label.iq-field-base__label(for = name) #{label}
+					if required
+						span.iq-field-base__required #{' *'}
+					else if optional
+						span.iq-field-base__optional  #{' (Opcional)'}
+		.iq-field-base__input-holder
+			if block
+				block
+
+		if errorMessage
+			.iq-field-base__error-message #{errorMessage}
+		else if !!rules
+			template
+				each rValue, rName in rules
+					.iq-field-base__error-message( v-if=`${error} == '${rName}'` ) #{preDefinedMessages[rName]}
+

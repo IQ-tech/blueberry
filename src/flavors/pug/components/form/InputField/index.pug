@@ -1,0 +1,38 @@
+include ../FieldBase/index.pug
+include ../../icons/FilledError.pug
+
+mixin InputField({type, rules = {}, optional, invalid, customClass, required, errorMessage, label})
+	- const { disabled, id, name, autocomplete } = attributes
+	- const baseClass = "iq-input-field"
+
+	- const jsonRules = JSON.stringify(rules).replace(/"/g, '\'')
+	- const safeLabel = !!label ? label : "Input Label"
+	- const safeAutocomplete = !!autocomplete ? autocomplete : 'off'
+	- const safeType = !!type ? type : "text"
+	- const invalidDefaultClass = "iq-input-field--invalid"
+	- const jailsIsInvalid = `errors.${name}?'${invalidDefaultClass}':''`
+	- const invalidClass = !!invalid ? invalidDefaultClass : ""
+	- const disabledClass = !!disabled ? "iq-input-field--disabled" : ""
+	div(
+		class=baseClass
+		class=invalidClass
+		class=disabledClass
+		class=customClass
+		v-class=jailsIsInvalid
+	)
+		+FieldBase({rules: rules, errorMessage: errorMessage, label: safeLabel, required: required, name: name, optional: optional})
+			.iq-input-field__input-holder
+				input(
+					type=safeType
+					class='iq-input-field__input'
+					autocomplete=safeAutocomplete
+					data-rules=jsonRules
+					data-static
+				)&attributes( attributes )
+				.iq-input-field__icon(
+					class='iq-input-field__icon--right'
+				)
+					.iq-input-field__invalid-icon
+						+FilledError()
+
+

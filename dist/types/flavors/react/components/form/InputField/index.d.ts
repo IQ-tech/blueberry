@@ -9,7 +9,7 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
     /** Set the html `type` attribute */
     htmlType?: string;
     /** Icon to render on the right side */
-    icon?: React.FC<any>;
+    Icon?: React.FC<any>;
     customClass?: string;
     /** Icon to render on the left side */
     LeftIcon?: React.FC<any>;

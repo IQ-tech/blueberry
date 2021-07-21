@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import MaskedInput, { maskArray } from "react-text-mask";
 import classNames from "classnames";
 import { CommonFieldsProps } from "../form-defs";
-import  { TooltipProps } from "../../Tooltip";
+import { TooltipProps } from "../../Tooltip";
 
 import FieldBase from "../FieldBase";
 import IconFilledError from "../../icons/generated/filled/FilledError";
@@ -14,7 +14,7 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
   /** Set the html `type` attribute */
   htmlType?: string;
   /** Icon to render on the right side */
-  icon?: React.FC<any>;
+  Icon?: React.FC<any>;
   customClass?: string;
   /** Icon to render on the left side */
   LeftIcon?: React.FC<any>;
@@ -34,22 +34,14 @@ const InputField: React.FC<InputProps> = ({
   optional,
   invalid,
   disabled,
-  icon,
+  Icon,
   onChange,
   customClass,
   LeftIcon,
   tooltipConfig,
   ...rest
 }) => {
-  const RenderIcon = (() => {
-    if (!!invalid) return () => <IconFilledError expand />;
-    else if (!!icon) {
-      const Icon = icon;
-      return () => <Icon expand />;
-    } else return Fragment;
-  })();
-
-  const shouldRenderIcon = !!RenderIcon ? true : false;
+  const shouldRenderRightIcon = !invalid && !!Icon;
 
   function onChangeHandler(e) {
     if (!!onChange) {
@@ -95,7 +87,10 @@ const InputField: React.FC<InputProps> = ({
             {...rest}
           />
           <div className="iq-input-field__icon iq-input-field__icon--right">
-            {!!shouldRenderIcon ? <RenderIcon /> : null}
+            <div className="iq-input-field__invalid-icon">
+              <IconFilledError expand />
+            </div>
+            {!!shouldRenderRightIcon ? <Icon expand /> : null}
           </div>
         </div>
       </FieldBase>

@@ -1,0 +1,9 @@
+include ../index.pug
+include ./Container.pug
+
+mixin Invalid()
+	+Container()
+		+InputField({invalid: true, label: "Invalid input", errorMessage: "Some error message"})(
+			name="first-name"
+			placeholder="Digite seu nome"
+		)

@@ -87,3 +87,20 @@ LeftIcon.args = {
   label: "Simple field",
   placeholder: "Batata",
 };
+
+const RightIconTemplate = (args) => (
+  <div style={{ width: "60%", maxWidth: "350px" }}>
+    <Input {...args} />
+  </div>
+);
+
+export const RightIcon = RightIconTemplate.bind({});
+RightIcon.args = {
+  disabled: false,
+  invalid: false,
+  optional: false,
+  required: true,
+  Icon: OutlineArrowLeft,
+  label: "Simple field",
+  placeholder: "Batata",
+};
