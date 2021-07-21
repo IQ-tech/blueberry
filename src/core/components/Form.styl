@@ -72,7 +72,6 @@
 	&__input-holder
 		position relative
 
-
 	&__input
 		height 48px
 		border 1px solid gray-40
@@ -140,6 +139,7 @@
 .iq-password-field
 	.iq-input-field__input
 		color gray-40
+
 	&__eye
 		cursor pointer
 		color blueberry-60
@@ -207,3 +207,130 @@
 .iq-search-field
 	&__loader-holder
 		animation rotating 2s linear infinite
+
+.iq-checkbox-field
+	resetBoxSizing()
+	font-family 'Open Sans'
+	display inline-block
+	cursor pointer
+	list-style none
+	font-size 14px
+	position relative
+	margin-right 32px
+	margin-bottom 32px
+
+	+aboveMedium()
+		margin-right 24px
+		margin-bottom 24px
+
+	&--disabled
+		cursor not-allowed
+		color gray-40
+
+	&__holder
+		cursor pointer
+		display flex
+		align-items center
+
+	&--disabled
+		.iq-checkbox-field__holder
+			cursor not-allowed
+
+	&__required-star
+		color red-50
+		display none
+
+	&--required
+		.iq-checkbox-field__required-star
+			display inline
+
+	&__icon
+		flex-shrink: 0
+		flex-grow: 0
+		width 24px
+		height 24px
+		background-color gray-0
+		border 1px solid gray-40
+		border-radius 2px
+		display block
+		margin-right 12px
+		position relative
+		transition background-color 0.2s ease
+
+		+aboveMedium()
+			width 16px
+			height 16px
+
+		&:after
+			content ''
+			display block
+			opacity 0
+			left 8px
+			top 4px
+			position absolute
+			transform rotate(45deg)
+			width 6px
+			height 12px
+			border solid white
+			border-width 0 2px 2px 0
+			border-radius 1px
+			transition opacity 0.2s ease 0.2s
+
+			+aboveMedium()
+				left 3.7px
+				top 1px
+				height 10px
+				width 6px
+	&--invalid
+		.iq-checkbox-field__icon
+			border-color red-40
+
+
+	&__input
+		position absolute
+		opacity 0
+		cursor pointer
+		height 0
+		width 0
+
+		&:checked ~ .iq-checkbox-field__icon:after
+			opacity 1
+
+		&:checked ~ .iq-checkbox-field__icon
+			background-color blueberry-60
+			border-color blueberry-60
+
+	&--disabled
+		.iq-checkbox-field__icon
+			background-color gray-10
+			border-color gray-30
+
+		.iq-checkbox-field__icon:after
+			border-color gray-30
+
+		.iq-checkbox-field__input
+			&:checked ~ .iq-checkbox-field__icon
+				background-color gray-10
+				border-color gray-30
+
+	&__invalid-holder
+		margin-top 6px
+		align-items center
+		font-size 12px
+		color red-50
+		display none
+
+	&__invalid-icon-holder
+		width 16px
+		margin-right 6px
+
+	&--invalid
+		.iq-checkbox-field__invalid-holder
+			display flex
+
+.iq-checkbox-group
+	max-width 500px
+	&__container
+		padding-top 15px
+		display grid
+		grid-template-columns: 1fr 1fr 1fr
