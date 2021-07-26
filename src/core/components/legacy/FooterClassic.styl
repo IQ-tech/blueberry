@@ -159,8 +159,11 @@
 		&:hover
 			text-decoration underline
 
-	&__social-icons
+	&__external-infos
 		flex 1
+
+	&__social-icons,
+	&__certificates
 		text-align center
 		display flex
 		flex-direction column
@@ -168,7 +171,8 @@
 		margin-bottom 60px
 
 		+aboveMedium()
-			margin-bottom 0
+			text-align left
+			align-items end
 
 	&__social-icons-title
 		font-size 14px
@@ -193,6 +197,28 @@
 			height 100%
 			width 100%
 
+	&__certificates
+		background-color gray-20
+		padding 24px 16px
+		margin-bottom 0
+
+		+aboveMedium()
+			background-color inherit
+			padding 0
+
+		&-title
+			font-size 14px
+
+			+aboveMedium()
+				font-size 18px
+		
+		&-wrap
+			margin-top 15px
+			width 100%
+			display flex
+			justify-content space-between
+			align-items center
+	
 	&__info
 		color #555
 		background-color #e6e6e6
