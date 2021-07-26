@@ -5,6 +5,7 @@ import footerLinks from "core/data/footer-links.json";
 import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";
 import InfoSection from "./subcomponents/InfoSection";
+import Certificates from "./subcomponents/Certificates";
 
 const FooterClassic: React.FC = () => {
   return (
@@ -32,7 +33,10 @@ const FooterClassic: React.FC = () => {
               <LinksGroup {...item} key={`links-group-${index}`} />
             ))}
           </div>
-          <SocialIcons />
+          <div className="footer-classic__external-infos">
+            <SocialIcons />
+            <Certificates />
+          </div>
         </div>
       </nav>
       <InfoSection />
