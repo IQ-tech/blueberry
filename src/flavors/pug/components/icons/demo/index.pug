@@ -10,12 +10,14 @@ include ../OutlinePlus.pug
 include ../OutlinePerfilCheck.pug
 include ../OutlinePerfil.pug
 include ../OutlinePayment.pug
+include ../OutlinePartnership.pug
 include ../OutlineNotificationTwo.pug
 include ../OutlineNotification.pug
 include ../OutlineMoneyIn.pug
 include ../OutlineMoney.pug
 include ../OutlineMenuLogout.pug
 include ../OutlineMenu.pug
+include ../OutlineLegalInformation.pug
 include ../OutlineHouse.pug
 include ../OutlineHidePassword.pug
 include ../OutlineHelp.pug
@@ -23,7 +25,10 @@ include ../OutlineGraphicbar.pug
 include ../OutlineGift.pug
 include ../OutlineExpandSidebar.pug
 include ../OutlineDocumentCheck.pug
+include ../OutlineDiscounts.pug
+include ../OutlineCreditCardPoints.pug
 include ../OutlineContractSidebar.pug
+include ../OutlineContactless.pug
 include ../OutlineClose.pug
 include ../OutlineCalendar.pug
 include ../OutlineBill.pug
@@ -31,6 +36,7 @@ include ../OutlineArrowLeftOne.pug
 include ../OutlineArrowLeft.pug
 include ../OutlineArrowDownOne.pug
 include ../OutlineArrowDown.pug
+include ../OutlineAnnuity.pug
 include ../OutlineAngleUpOne.pug
 include ../OutlineAngleUp.pug
 include ../OutlineAngleRightMini.pug
@@ -42,6 +48,7 @@ include ../OutlineAngleDown.pug
 include ../IconHandsBackground.pug
 include ../IconHandDocument.pug
 include ../IconHandApp.pug
+include ../IconBank.pug
 include ../FilledError.pug
 
 include ../../FlexGrid/index.pug
@@ -53,6 +60,9 @@ mixin IconsDemo()
 			+FlexGridRow()
 				+IconBox({filename: "FilledError.pug"})
 					+FilledError()
+
+				+IconBox({filename: "IconBank.pug"})
+					+IconBank()
 
 				+IconBox({filename: "IconHandApp.pug"})
 					+IconHandApp()
@@ -87,6 +97,9 @@ mixin IconsDemo()
 				+IconBox({filename: "OutlineAngleUpOne.pug"})
 					+OutlineAngleUpOne()
 
+				+IconBox({filename: "OutlineAnnuity.pug"})
+					+OutlineAnnuity()
+
 				+IconBox({filename: "OutlineArrowDown.pug"})
 					+OutlineArrowDown()
 
@@ -108,8 +121,17 @@ mixin IconsDemo()
 				+IconBox({filename: "OutlineClose.pug"})
 					+OutlineClose()
 
+				+IconBox({filename: "OutlineContactless.pug"})
+					+OutlineContactless()
+
 				+IconBox({filename: "OutlineContractSidebar.pug"})
 					+OutlineContractSidebar()
+
+				+IconBox({filename: "OutlineCreditCardPoints.pug"})
+					+OutlineCreditCardPoints()
+
+				+IconBox({filename: "OutlineDiscounts.pug"})
+					+OutlineDiscounts()
 
 				+IconBox({filename: "OutlineDocumentCheck.pug"})
 					+OutlineDocumentCheck()
@@ -132,6 +154,9 @@ mixin IconsDemo()
 				+IconBox({filename: "OutlineHouse.pug"})
 					+OutlineHouse()
 
+				+IconBox({filename: "OutlineLegalInformation.pug"})
+					+OutlineLegalInformation()
+
 				+IconBox({filename: "OutlineMenu.pug"})
 					+OutlineMenu()
 
@@ -149,6 +174,9 @@ mixin IconsDemo()
 
 				+IconBox({filename: "OutlineNotificationTwo.pug"})
 					+OutlineNotificationTwo()
+
+				+IconBox({filename: "OutlinePartnership.pug"})
+					+OutlinePartnership()
 
 				+IconBox({filename: "OutlinePayment.pug"})
 					+OutlinePayment()

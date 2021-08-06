@@ -3,7 +3,7 @@ import "core/components/Icon.styl"
 import "./style.styl";
 
 export default {
-	title: "Icons",
+	title: "Icons/Icons",
 };
 
 export const List = () => IconsDemo({});
