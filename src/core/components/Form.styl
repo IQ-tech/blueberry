@@ -65,7 +65,8 @@
 	.iq-field-base__error-message
 		display none
 
-	&--invalid
+	&--invalid,
+	&.error
 		.iq-field-base__error-message
 			display block
 
@@ -99,7 +100,8 @@
 		.iq-input-field__input
 			padding-left 48px
 
-	&--invalid
+	&--invalid,
+	&.error
 		.iq-input-field__input
 			border 1px solid red-40
 
@@ -131,7 +133,8 @@
 	&__invalid-icon
 		display none
 
-	&--invalid
+	&--invalid,
+	&.error
 		.iq-input-field__invalid-icon
 			display block
 
@@ -175,7 +178,8 @@
 		.iq-select-field__input
 			color gray-30
 
-	&--invalid
+	&--invalid,
+	&.error
 		.iq-select-field__input
 			border 1px solid red-40
 
@@ -282,7 +286,8 @@
 				height 10px
 				width 6px
 
-	&--invalid
+	&--invalid,
+	&.error
 		.iq-checkbox-field__icon
 			border-color red-40
 
@@ -324,7 +329,8 @@
 		width 16px
 		margin-right 6px
 
-	&--invalid
+	&--invalid,
+	&.error
 		.iq-checkbox-field__invalid-holder
 			display flex
 
@@ -393,7 +399,8 @@
 		.iq-radio-field__icon, .iq-radio-field__icon:after
 			border-color gray-30
 
-	&--invalid
+	&--invalid,
+	&.error
 		.iq-radio-field__icon:after
 			border-color red-40
 
