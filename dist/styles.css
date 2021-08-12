@@ -1123,7 +1123,7 @@
 .iq-input-field .iq-field-base__error-message{
   display:none;
 }
-.iq-input-field--invalid .iq-field-base__error-message{
+.iq-input-field--invalid .iq-field-base__error-message,.iq-input-field.error .iq-field-base__error-message{
   display:block;
 }
 .iq-input-field__input-holder{
@@ -1169,10 +1169,10 @@
 .iq-input-field--left-icon .iq-input-field__input{
   padding-left:48px;
 }
-.iq-input-field--invalid .iq-input-field__input{
+.iq-input-field--invalid .iq-input-field__input,.iq-input-field.error .iq-input-field__input{
   border:1px solid #e33d3d;
 }
-.iq-input-field--invalid .iq-input-field__input:focus{
+.iq-input-field--invalid .iq-input-field__input:focus,.iq-input-field.error .iq-input-field__input:focus{
   outline-color:#e33d3d;
 }
 .iq-input-field--disabled .iq-input-field__input{
@@ -1209,7 +1209,7 @@
 .iq-input-field__invalid-icon{
   display:none;
 }
-.iq-input-field--invalid .iq-input-field__invalid-icon{
+.iq-input-field--invalid .iq-input-field__invalid-icon,.iq-input-field.error .iq-input-field__invalid-icon{
   display:block;
 }
 .iq-password-field .iq-input-field__input{
@@ -1252,10 +1252,10 @@
 .iq-select-field--empty .iq-select-field__input{
   color:#d5d5d5;
 }
-.iq-select-field--invalid .iq-select-field__input{
+.iq-select-field--invalid .iq-select-field__input,.iq-select-field.error .iq-select-field__input{
   border:1px solid #e33d3d;
 }
-.iq-select-field--invalid .iq-select-field__input:focus{
+.iq-select-field--invalid .iq-select-field__input:focus,.iq-select-field.error .iq-select-field__input:focus{
   outline-color:#e33d3d;
 }
 .iq-select-field--disabled .iq-select-field__input{
@@ -1373,7 +1373,7 @@
     width:6px;
   }
 }
-.iq-checkbox-field--invalid .iq-checkbox-field__icon{
+.iq-checkbox-field--invalid .iq-checkbox-field__icon,.iq-checkbox-field.error .iq-checkbox-field__icon{
   border-color:#e33d3d;
 }
 .iq-checkbox-field__input{
@@ -1414,7 +1414,7 @@
   width:16px;
   margin-right:6px;
 }
-.iq-checkbox-field--invalid .iq-checkbox-field__invalid-holder{
+.iq-checkbox-field--invalid .iq-checkbox-field__invalid-holder,.iq-checkbox-field.error .iq-checkbox-field__invalid-holder{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
@@ -1491,7 +1491,7 @@
 .iq-radio-field--disabled .iq-radio-field__icon,.iq-radio-field--disabled .iq-radio-field__icon:after{
   border-color:#d5d5d5;
 }
-.iq-radio-field--invalid .iq-radio-field__icon:after{
+.iq-radio-field--invalid .iq-radio-field__icon:after,.iq-radio-field.error .iq-radio-field__icon:after{
   border-color:#e33d3d;
 }
 .iq-radio-field__input{

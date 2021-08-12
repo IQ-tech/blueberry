@@ -30,3 +30,4 @@ export { default as SearchField } from "./components/form/SearchField";
 export { default as CheckboxField } from "./components/form/Checkbox";
 export { default as CheckboxGroup } from "./components/form/CheckboxGroup";
 export { default as RadioField } from "./components/form/RadioField";
+export { default as FieldBase } from "./components/form/FieldBase";
