@@ -89,9 +89,12 @@ const EmailField: React.FC<EmailFieldProps> = ({
 
   function _handleClickOutside(e) {
     if (inputContainerRef.current.contains(e.target)) {
+      e.preventDefault();
       handleInputFocus();
       return;
     }
+
+    if (!isInputFocused) return;
 
     handleInputBlur();
     onBlur(e);
@@ -101,7 +104,7 @@ const EmailField: React.FC<EmailFieldProps> = ({
     window.addEventListener("click", _handleClickOutside);
 
     return () => window.removeEventListener("click", _handleClickOutside);
-  }, []);
+  }, [isInputFocused]);
 
   const inputClassName = classNames("iq-input-field", {
     "iq-input-field--invalid": !!invalid,
