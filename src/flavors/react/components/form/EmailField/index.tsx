@@ -42,6 +42,7 @@ const EmailField: React.FC<EmailFieldProps> = ({
   Icon,
   onChange,
   handleSetSuggestion,
+  onBlur,
   customClass,
   LeftIcon,
   tooltipConfig,
@@ -77,7 +78,11 @@ const EmailField: React.FC<EmailFieldProps> = ({
         invalid={invalid}
         tooltipConfig={tooltipConfig}
       >
-        <div className="iq-input-field__input-holder">
+        <div
+          className="iq-input-field__input-holder"
+          onBlur={onBlur}
+          tabIndex={-1}
+        >
           {!!LeftIcon ? (
             <div className="iq-input-field__icon iq-input-field__icon--left">
               <LeftIcon expand />
