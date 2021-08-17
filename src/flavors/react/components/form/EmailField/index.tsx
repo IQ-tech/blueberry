@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import classNames from "classnames";
 import { CommonFieldsProps } from "../form-defs";
 import { TooltipProps } from "../../Tooltip";
@@ -48,6 +48,13 @@ const EmailField: React.FC<EmailFieldProps> = ({
   tooltipConfig,
   ...rest
 }) => {
+  // Ref's
+  const inputContainerRef = useRef(null);
+  const inputRef = useRef(null);
+
+  // State
+  const [isInputFocused, setIsInputFocused] = useState(false);
+
   const shouldRenderRightIcon = !invalid && !!Icon;
 
   function onChangeHandler(e) {
@@ -59,6 +66,42 @@ const EmailField: React.FC<EmailFieldProps> = ({
   function handleChangeValue(value) {
     handleSetSuggestion(value);
   }
+
+  function handleInputFocus(e = null) {
+    if (e) e.preventDefault();
+
+    setIsInputFocused(true);
+    inputRef.current.focus();
+  }
+
+  function handleInputBlur() {
+    setIsInputFocused(false);
+    inputRef.current.blur();
+  }
+
+  function handleKeyDown(e) {
+    if (e.keyCode === 9) {
+      e.preventDefault();
+      handleInputBlur();
+      onBlur(e);
+    }
+  }
+
+  function _handleClickOutside(e) {
+    if (inputContainerRef.current.contains(e.target)) {
+      handleInputFocus();
+      return;
+    }
+
+    handleInputBlur();
+    onBlur(e);
+  }
+
+  useEffect(() => {
+    window.addEventListener("click", _handleClickOutside);
+
+    return () => window.removeEventListener("click", _handleClickOutside);
+  }, []);
 
   const inputClassName = classNames("iq-input-field", {
     "iq-input-field--invalid": !!invalid,
@@ -78,11 +121,7 @@ const EmailField: React.FC<EmailFieldProps> = ({
         invalid={invalid}
         tooltipConfig={tooltipConfig}
       >
-        <div
-          className="iq-input-field__input-holder"
-          onBlur={onBlur}
-          tabIndex={-1}
-        >
+        <div className="iq-input-field__input-holder" ref={inputContainerRef}>
           {!!LeftIcon ? (
             <div className="iq-input-field__icon iq-input-field__icon--left">
               <LeftIcon expand />
@@ -90,27 +129,34 @@ const EmailField: React.FC<EmailFieldProps> = ({
           ) : null}
 
           <input
+            ref={inputRef}
             disabled={disabled}
             className="iq-input-field__input"
             placeholder={placeholder}
             type={htmlType}
             onChange={onChangeHandler}
+            onFocus={handleInputFocus}
+            onBlur={(e) => e.preventDefault()}
+            onKeyDown={handleKeyDown}
             value={value}
             name={name}
             {...rest}
           />
           <ul className="iq-input-autosuggestion">
-            {autoSuggestionOptions.map((suggestion, index) => (
-              <li
-                key={index + suggestion.value}
-                className="iq-input-autosuggestion__option"
-                onClick={() =>
-                  handleChangeValue(`${suggestion.value}@${suggestion.domain}`)
-                }
-              >
-                <span>{`${suggestion.value}@${suggestion.domain}`}</span>
-              </li>
-            ))}
+            {isInputFocused &&
+              autoSuggestionOptions.map((suggestion, index) => (
+                <li
+                  key={index + suggestion.value}
+                  className="iq-input-autosuggestion__option"
+                  onClick={() =>
+                    handleChangeValue(
+                      `${suggestion.value}@${suggestion.domain}`
+                    )
+                  }
+                >
+                  <span>{`${suggestion.value}@${suggestion.domain}`}</span>
+                </li>
+              ))}
           </ul>
           <div className="iq-input-field__icon iq-input-field__icon--right">
             <div className="iq-input-field__invalid-icon">
