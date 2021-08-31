@@ -2,10 +2,6 @@ import React from "react";
 import { CommonFieldsProps } from "../form-defs";
 import { TooltipProps } from "../../Tooltip";
 import { ModifiedInputProps } from "../form-defs";
-interface AutoSuggetionOptionProps {
-    value: string;
-    domain: string;
-}
 interface EmailFieldProps extends ModifiedInputProps, CommonFieldsProps {
     /** Set the html `type` attribute */
     htmlType?: string;
@@ -16,7 +12,7 @@ interface EmailFieldProps extends ModifiedInputProps, CommonFieldsProps {
     LeftIcon?: React.FC<any>;
     tooltipConfig?: TooltipProps;
     /** Domain autosuggetion array */
-    autoSuggestionOptions: Array<AutoSuggetionOptionProps>;
+    autoSuggestionOptions: string[];
     /** Function to change payload value */
     handleSetSuggestion?: (value: string) => void;
 }
