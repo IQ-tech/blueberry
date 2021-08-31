@@ -3,10 +3,7 @@ import FieldBase from "../FieldBase";
 import classNames from "classnames";
 import randomString from "randomstring";
 
-import {
-  CommonFieldsProps,
-  InputGroupOptions,
-} from "../form-defs";
+import { CommonFieldsProps, InputGroupOptions } from "../form-defs";
 import { TooltipProps } from "../../Tooltip";
 
 interface RadioFieldProps extends CommonFieldsProps {
@@ -35,15 +32,13 @@ const RadioField: React.FC<RadioFieldProps> = ({
   columns,
   verticalGap,
   horizontalGap,
-  defaultSelected,
+  value,
+  onChange,
 }) => {
-  const [activeItem, setActiveItem] = useState<number | undefined>(
-    defaultSelected
-  );
   const componentClass = classNames("iq-radio-field", {
     ["iq-radio-field--max-size"]: !!maxSize,
     ["iq-radio-field--disabled"]: !!disabled,
-    ["iq-radio-field--invalid"]: !!invalid
+    ["iq-radio-field--invalid"]: !!invalid,
   });
   const safeName = name
     ? name
@@ -88,9 +83,10 @@ const RadioField: React.FC<RadioFieldProps> = ({
                     className="iq-radio-field__input"
                     id={id}
                     name={safeName}
+                    value={option?.value}
                     type="radio"
-                    checked={index === activeItem}
-                    onChange={() => setActiveItem(index)}
+                    checked={value === option.value}
+                    onChange={(e) => onChange(e?.target?.value)}
                     disabled={disabled}
                   />
                   <span className="iq-radio-field__icon" />
