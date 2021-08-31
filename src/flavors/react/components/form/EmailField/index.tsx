@@ -7,11 +7,6 @@ import FieldBase from "../FieldBase";
 import IconFilledError from "../../icons/generated/filled/FilledError";
 import { ModifiedInputProps } from "../form-defs";
 
-interface AutoSuggetionOptionProps {
-  value: string;
-  domain: string;
-}
-
 interface EmailFieldProps extends ModifiedInputProps, CommonFieldsProps {
   /** Set the html `type` attribute */
   htmlType?: string;
@@ -22,7 +17,7 @@ interface EmailFieldProps extends ModifiedInputProps, CommonFieldsProps {
   LeftIcon?: React.FC<any>;
   tooltipConfig?: TooltipProps;
   /** Domain autosuggetion array */
-  autoSuggestionOptions: Array<AutoSuggetionOptionProps>;
+  autoSuggestionOptions: string[];
   /** Function to change payload value */
   handleSetSuggestion?: (value: string) => void;
 }
@@ -149,15 +144,11 @@ const EmailField: React.FC<EmailFieldProps> = ({
             {isInputFocused &&
               autoSuggestionOptions.map((suggestion, index) => (
                 <li
-                  key={index + suggestion.value}
+                  key={index + suggestion}
                   className="iq-input-autosuggestion__option"
-                  onClick={() =>
-                    handleChangeValue(
-                      `${suggestion.value}@${suggestion.domain}`
-                    )
-                  }
+                  onClick={() => handleChangeValue(suggestion)}
                 >
-                  <span>{`${suggestion.value}@${suggestion.domain}`}</span>
+                  <span>{suggestion}</span>
                 </li>
               ))}
           </ul>
