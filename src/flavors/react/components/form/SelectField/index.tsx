@@ -64,6 +64,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
           <select
             className="iq-select-field__input"
             {...props}
+            name={name}
             value={safeValue}
             disabled={disabled}
             required={required}
