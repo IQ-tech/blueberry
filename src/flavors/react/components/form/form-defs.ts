@@ -19,7 +19,7 @@ export type Modify<T, R> = Omit<T, keyof R> & R;
 export type ModifiedInputProps = Modify<
   React.HTMLAttributes<HTMLInputElement>,
   {
-    onChange(value: string): void;
+    onChange(...args: any): any;
   }
 >;
 

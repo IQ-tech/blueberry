@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import classNames from "classnames";
-import { CommonFieldsProps } from "../form-defs";
+import { CommonFieldsProps,  ModifiedInputProps  } from "../form-defs";
 import { TooltipProps } from "../../Tooltip";
 
 import FieldBase from "../FieldBase";
 import IconFilledError from "../../icons/generated/filled/FilledError";
-import { ModifiedInputProps } from "../form-defs";
+
 
 interface EmailFieldProps extends ModifiedInputProps, CommonFieldsProps {
   /** Set the html `type` attribute */
