@@ -28,10 +28,10 @@ export default function useAutocompleteField({
 
   // Rules to show the dropdown
   const mandatoryChoiceShowrule =
-    isFieldFocused &&
-    (suggestionUse === "mandatory") === !currentValueIsAnOption;
+    isFieldFocused && suggestionUse === "mandatory" && !currentValueIsAnOption;
+
   const regularShowrule =
-    isFieldFocused && !!displayOptions.length && !currentValueIsAnOption;
+    isFieldFocused && displayOptions.length > 0 && !currentValueIsAnOption;
   const shouldShowSuggestions = mandatoryChoiceShowrule || regularShowrule;
 
   useEffect(updateInternalInputValue, [value]);
