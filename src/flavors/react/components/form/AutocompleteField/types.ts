@@ -8,8 +8,8 @@ export interface Option {
 
 export type ModifyOptionFunc = (
   currentInputValue: string | number,
-  options: Option
-) => Option | null;
+  options: Option[]
+) => Option[];
 
 export interface AutoCompleteProps
   extends CommonFieldsProps,

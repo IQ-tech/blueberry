@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { AutoCompleteProps } from "./types";
 import classNames from "classnames";
-import { applyCustomFilter, applyDefaultFilter } from "./helpers";
+import { applyDefaultFilter } from "./helpers";
 
 export default function useAutocompleteField({
   onFocus,
@@ -13,13 +13,13 @@ export default function useAutocompleteField({
   modifyOptions,
   invalid,
   disabled,
+  isLoading,
 }: AutoCompleteProps) {
   const inputClassName = classNames("iq-input-field", {
     "iq-input-field--invalid": !!invalid,
     "iq-input-field--disabled": !!disabled,
   });
   const inputElement = useRef(null);
-  const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
   const [isFieldFocused, setIsFieldFocused] = useState(false);
   const [currentValueIsAnOption, setCurrentValueIsAnOption] = useState(false);
   // display value
@@ -33,7 +33,8 @@ export default function useAutocompleteField({
 
   const regularShowrule =
     isFieldFocused && displayOptions.length > 0 && !currentValueIsAnOption;
-  const shouldShowSuggestions = mandatoryChoiceShowrule || regularShowrule;
+  const shouldShowSuggestions =
+    (mandatoryChoiceShowrule || regularShowrule) && !isLoading;
 
   useEffect(onChangeEvent, [fieldValue]);
   useEffect(filterOptionsHandler, [displayValue]);
@@ -63,7 +64,7 @@ export default function useAutocompleteField({
 
   function filterOptionsHandler() {
     const processedOptions = !!modifyOptions
-      ? applyCustomFilter(displayValue, options, modifyOptions)
+      ? modifyOptions(displayValue, options)
       : applyDefaultFilter(displayValue, options);
 
     setDisplayOptions(processedOptions);
@@ -117,12 +118,7 @@ export default function useAutocompleteField({
     setDisplayValue(formatted);
   }
 
-  function onKeydownHandler(e) {
-    console.log(e);
-  }
-
   return {
-    isSuggestionsOpen,
     onFocusHandler,
     onBlurHandler,
     displayValue,
@@ -132,6 +128,5 @@ export default function useAutocompleteField({
     inputClassName,
     displayOptions,
     inputElement,
-    onKeydownHandler,
   };
 }

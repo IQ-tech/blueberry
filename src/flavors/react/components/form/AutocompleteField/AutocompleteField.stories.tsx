@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import AutocompleteField from "./index";
 
@@ -18,23 +18,12 @@ export default {
 } as Meta;
 
 const Template = (args) => {
-  const [value, setValue] = useState("cenoura");
-
-  useEffect(() => {
-    setTimeout(() => {
-      setValue("lala");
-    }, 2000);
-  }, []);
-
   return (
     <div style={{ width: "60%", maxWidth: "350px" }}>
-      <AutocompleteField {...args} value={value} />
-      <AutocompleteField {...args} />
       <AutocompleteField {...args} />
     </div>
   );
 };
-
 
 export const OpenSuggestionsOnFocusInput = Template.bind({});
 OpenSuggestionsOnFocusInput.args = {
@@ -46,7 +35,6 @@ OpenSuggestionsOnFocusInput.args = {
   label: "Simple field",
   onChange: (e) => console.log(e),
   placeholder: "Type something",
-  /* openDropdownOnFocus: true, */
   options: [
     { value: "1", label: "Acre" },
     { value: "Alagoas", label: "Alagoas" },
@@ -80,7 +68,6 @@ OpenSuggestionsOnFocusInput.args = {
     value === "teste" && option.value === "potato" ? null : option, */
 };
 
-
 export const MandatoryChoiceInput = Template.bind({});
 MandatoryChoiceInput.args = {
   disabled: false,
@@ -99,5 +86,45 @@ MandatoryChoiceInput.args = {
     { value: "Pará", label: "Pará" },
     { value: "Paraíba", label: "Paraíba" },
     { value: "Paraná", label: "Paraná" },
-  ]
-}
+  ],
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+  invalid: false,
+  optional: false,
+  required: true,
+  suggestionUse: "mandatory",
+  label: "Mandatory option choice",
+  onChange: (e) => console.log(e),
+  placeholder: "Type something",
+  options: [
+    { value: "Maranhão", label: "Maranhão" },
+    { value: "Mato Grosso", label: "Mato Grosso" },
+    { value: "Mato Grosso do Sul", label: "Mato Grosso do Sul" },
+    { value: "Minas Gerais", label: "Minas Gerais" },
+    { value: "Pará", label: "Pará" },
+    { value: "Paraíba", label: "Paraíba" },
+    { value: "Paraná", label: "Paraná" },
+  ],
+};
+
+export const ModifiedOptions = Template.bind({});
+ModifiedOptions.args = {
+  disabled: false,
+  invalid: false,
+  optional: false,
+  required: true,
+  label: "Mandatory option choice",
+  onChange: (e) => console.log(e),
+  placeholder: "Put an @",
+  options: [
+    { value: "cebola", label: "Cebolas" },
+    { value: "batata", label: "Batata" },
+    { value: "limao", label: "Limao" },
+  ],
+  modifyOptions: (value, options) => {
+    return value.indexOf("@") > -1 ? options : [];
+  },
+};

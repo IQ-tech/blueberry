@@ -2,6 +2,7 @@ import React from "react";
 import { uniqueKey } from "../../../helpers/utils";
 import useAutocompleteField from "./hook";
 import FieldBase from "../FieldBase";
+import MiscSearchLoader from "../../icons/generated/misc/MiscSearchLoader";
 
 import { AutoCompleteProps } from "./types";
 
@@ -16,6 +17,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     optional,
     tooltipConfig,
     placeholder,
+    isLoading,
   } = props;
 
   const {
@@ -28,15 +30,10 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     inputClassName,
     displayOptions,
     inputElement,
-    onKeydownHandler,
   } = useAutocompleteField(props);
 
   return (
-    <div
-      className={inputClassName}
-      onBlur={onBlurHandler}
-      onKeyDown={onKeydownHandler}
-    >
+    <div className={inputClassName} onBlur={onBlurHandler}>
       <FieldBase
         required={required}
         errorMessage={errorMessage}
@@ -58,6 +55,11 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
             onChange={inputChangeHandler}
             name={name}
           />
+          {!!isLoading && (
+            <div className="iq-input-field__icon iq-input-field__icon--right">
+              <MiscSearchLoader expand />
+            </div>
+          )}
         </div>
         {shouldShowSuggestions && (
           <div
