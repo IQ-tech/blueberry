@@ -28,10 +28,15 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     inputClassName,
     displayOptions,
     inputElement,
+    onKeydownHandler,
   } = useAutocompleteField(props);
 
   return (
-    <div className={inputClassName} onBlur={onBlurHandler}>
+    <div
+      className={inputClassName}
+      onBlur={onBlurHandler}
+      onKeyDown={onKeydownHandler}
+    >
       <FieldBase
         required={required}
         errorMessage={errorMessage}

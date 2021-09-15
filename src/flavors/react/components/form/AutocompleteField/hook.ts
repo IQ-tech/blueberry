@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { AutoCompleteProps } from "./types";
 import classNames from "classnames";
-import { cleanString } from "../../../helpers/utils";
 import { applyCustomFilter, applyDefaultFilter } from "./helpers";
 
 export default function useAutocompleteField({
@@ -97,23 +96,29 @@ export default function useAutocompleteField({
   }
 
   function onChangeEvent() {
-    const conditionToRunOnChange =
-      (suggestionUse === "optional" ||
-        (suggestionUse === "mandatory" && currentValueIsAnOption)) &&
-      !!onChange;
+    if (isFieldFocused) {
+      const conditionToRunOnChange =
+        (suggestionUse === "optional" ||
+          (suggestionUse === "mandatory" && currentValueIsAnOption)) &&
+        !!onChange;
 
-    const valueToPass = currentValueIsAnOption
-      ? options.find((option) => option.label === fieldValue).value
-      : fieldValue;
+      const valueToPass = currentValueIsAnOption
+        ? options.find((option) => option.label === displayValue).value
+        : fieldValue;
 
-    if (!!conditionToRunOnChange) {
-      onChange(valueToPass);
+      if (!!conditionToRunOnChange) {
+        onChange(valueToPass);
+      }
     }
   }
 
   function onSelectOptionHandler(value) {
     const formatted = String(value);
     setDisplayValue(formatted);
+  }
+
+  function onKeydownHandler(e) {
+    console.log(e);
   }
 
   return {
@@ -127,5 +132,6 @@ export default function useAutocompleteField({
     inputClassName,
     displayOptions,
     inputElement,
+    onKeydownHandler,
   };
 }
