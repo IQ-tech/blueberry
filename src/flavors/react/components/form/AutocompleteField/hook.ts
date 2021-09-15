@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { AutoCompleteProps, Option, ModifyOptionFunc } from "./types";
+import { AutoCompleteProps } from "./types";
 import classNames from "classnames";
-import levenshtein from "fast-levenshtein";
 import { cleanString } from "../../../helpers/utils";
+import { applyCustomFilter, applyDefaultFilter } from "./helpers";
 
 export default function useAutocompleteField({
   onFocus,
   onBlur,
-  openDropdownOnFocus,
   value,
   onChange,
   suggestionUse = "optional",
@@ -22,37 +21,28 @@ export default function useAutocompleteField({
   });
   const inputElement = useRef(null);
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
+  const [isFieldFocused, setIsFieldFocused] = useState(false);
+  const [currentValueIsAnOption, setCurrentValueIsAnOption] = useState(false);
   const [inputValue, setInputValue] = useState<string | number>("");
   const [displayOptions, setDisplayOptions] = useState([]);
-  const shouldShowSuggestions = !!isSuggestionsOpen && !!displayOptions.length;
 
-  useEffect(() => {
+  // Rules to show the dropdown
+  const mandatoryChoiceShowrule =
+    isFieldFocused &&
+    (suggestionUse === "mandatory") === !currentValueIsAnOption;
+  const regularShowrule =
+    isFieldFocused && !!displayOptions.length && !currentValueIsAnOption;
+  const shouldShowSuggestions = mandatoryChoiceShowrule || regularShowrule;
+
+  useEffect(updateInternalInputValue, [value]);
+  useEffect(onChangeEvent, [inputValue]);
+  useEffect(filterOptionsHandler, [inputValue]);
+  useEffect(checkIfCurrentValueIsAnOption, [inputValue, options]);
+
+  // ---- Effects
+  function updateInternalInputValue() {
     const safeValue = value || "";
     setInputValue(safeValue);
-  }, [value]);
-
-  useEffect(() => {
-    if (suggestionUse === "optional" && !!onChange) {
-      onChange(inputValue);
-    }
-  }, [inputValue]);
-
-  useEffect(filterOptionsHandler, [inputValue]);
-
-  function onFocusHandler(e) {
-    console.log("cenoura");
-    if (!!onFocus) onFocus(e);
-    if (!!openDropdownOnFocus) {
-      setIsSuggestionsOpen(true);
-    }
-  }
-
-  function onBlurHandler(e) {
-    if (!!onBlur) onBlur(e);
-
-    if (isSuggestionsOpen) {
-      setIsSuggestionsOpen(false);
-    }
   }
 
   function filterOptionsHandler() {
@@ -66,9 +56,39 @@ export default function useAutocompleteField({
   function inputChangeHandler(e) {
     setInputValue(e?.target?.value);
   }
+  function checkIfCurrentValueIsAnOption() {
+    const isCurrentValueAnOption = options.some(
+      (option) =>
+        cleanString(String(option.value)) === cleanString(String(inputValue))
+    );
+    setCurrentValueIsAnOption(isCurrentValueAnOption);
+  }
+
+  // ---- Events
+  function onFocusHandler(e) {
+    if (!!onFocus) onFocus(e);
+    if (!isFieldFocused) setIsFieldFocused(true);
+  }
+
+  function onBlurHandler(e) {
+    if (!!onBlur) onBlur(e);
+    setIsFieldFocused(false);
+    const shouldDiscardValue =
+      suggestionUse === "mandatory" && !currentValueIsAnOption;
+
+    if (shouldDiscardValue) setInputValue("");
+  }
+
+  function onChangeEvent() {
+    /* console.log(inputValue) */
+    if (suggestionUse === "optional" && !!onChange) {
+      onChange(inputValue);
+    }
+  }
 
   function onSelectOptionHandler(value) {
-    setInputValue(value);
+    const formatted = String(value).toLowerCase();
+    setInputValue(formatted);
     setIsSuggestionsOpen(false);
   }
 
@@ -91,27 +111,4 @@ export default function useAutocompleteField({
     displayOptions,
     inputElement,
   };
-}
-
-function applyCustomFilter(
-  currentInputValue,
-  options: Option[],
-  modifierFunction: ModifyOptionFunc
-): Option[] {
-  return options
-    .map((option) => modifierFunction(currentInputValue, option))
-    .filter((option) => !!option);
-}
-
-function applyDefaultFilter(
-  currentInputValue: string | number,
-  options: Option[]
-): Option[] {
-  return options.filter((option) => {
-    const stringfiedOption = String(option.value);
-    const stringfiedValue = String(currentInputValue);
-    const cleanedOptionValue = cleanString(stringfiedOption);
-    const cleanedValue = cleanString(stringfiedValue);
-    return cleanedOptionValue.indexOf(cleanedValue) > -1;
-  });
 }

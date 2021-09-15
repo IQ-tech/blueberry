@@ -14,10 +14,14 @@ export type ModifyOptionFunc = (
 export interface AutoCompleteProps
   extends CommonFieldsProps,
     ModifiedInputProps {
+  /** Tells if the selection of a dropdown option is mandatory or optional */
   suggestionUse?: "mandatory" | "optional";
+  /** Options to be suggested */
   options?: Option[];
+  /** Config to tooltip */
   tooltipConfig?: TooltipProps;
-  openDropdownOnFocus?: boolean;
+  /** Set loading state */
   isLoading?: boolean;
+  /** function used to modify suggestion options */
   modifyOptions?: ModifyOptionFunc;
 }

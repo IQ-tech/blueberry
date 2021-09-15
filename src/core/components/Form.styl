@@ -146,18 +146,23 @@
 		top calc(100% + 4px)
 		z-index 1
 		border-radius 4px
-		padding 0
-		margin 0
-		list-style none
 		padding 8px 0
 		overflow-y scroll
+
+	&__dropdown-list
+		list-style none
+		padding 0
+		margin 0
+		width:100%;
+
 
 	&__dropdown-option
 		width 100%
 		cursor pointer
-		padding 8px 12px
+		padding 8px 15px
 		font-size 14px
 		transition background-color .2s ease
+		line-height 26px
 
 		&:hover
 			background-color blueberry-10

@@ -28,7 +28,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     onInputClickHandler,
     inputClassName,
     displayOptions,
-    inputElement
+    inputElement,
   } = useAutocompleteField(props);
 
   return (
@@ -57,20 +57,22 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
           />
         </div>
         {shouldShowSuggestions && (
-          <ul
+          <div
             className="iq-input-field__dropdown"
             onMouseDown={(e) => e.preventDefault()}
           >
-            {displayOptions.map((option) => (
-              <li
-                className="iq-input-field__dropdown-option"
-                key={uniqueKey("input-dropdown-option")}
-                onClick={() => onSelectOptionHandler(option?.value)}
-              >
-                {option?.label}
-              </li>
-            ))}
-          </ul>
+            <ul className="iq-input-field__dropdown-list">
+              {displayOptions.map((option) => (
+                <li
+                  className="iq-input-field__dropdown-option"
+                  key={uniqueKey("input-dropdown-option")}
+                  onClick={() => onSelectOptionHandler(option?.value)}
+                >
+                  {option?.label}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </FieldBase>
     </div>
