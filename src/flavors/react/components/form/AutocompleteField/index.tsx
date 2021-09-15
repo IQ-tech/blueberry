@@ -21,11 +21,10 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
   const {
     onFocusHandler,
     onBlurHandler,
-    inputValue,
+    displayValue,
     inputChangeHandler,
     shouldShowSuggestions,
     onSelectOptionHandler,
-    onInputClickHandler,
     inputClassName,
     displayOptions,
     inputElement,
@@ -50,8 +49,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
             disabled={disabled}
             placeholder={placeholder}
             onFocus={onFocusHandler}
-            onClick={onInputClickHandler}
-            value={inputValue}
+            value={displayValue}
             onChange={inputChangeHandler}
             name={name}
           />
@@ -66,7 +64,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
                 <li
                   className="iq-input-field__dropdown-option"
                   key={uniqueKey("input-dropdown-option")}
-                  onClick={() => onSelectOptionHandler(option?.value)}
+                  onClick={() => onSelectOptionHandler(option?.label)}
                 >
                   {option?.label}
                 </li>

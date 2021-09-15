@@ -10,7 +10,7 @@ export default function useAutocompleteField({
   value,
   onChange,
   suggestionUse = "optional",
-  options,
+  options = [],
   modifyOptions,
   invalid,
   disabled,
@@ -23,7 +23,9 @@ export default function useAutocompleteField({
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
   const [isFieldFocused, setIsFieldFocused] = useState(false);
   const [currentValueIsAnOption, setCurrentValueIsAnOption] = useState(false);
-  const [inputValue, setInputValue] = useState<string | number>("");
+  // display value
+  const [displayValue, setDisplayValue] = useState<string | number>("");
+  const [fieldValue, setFieldValue] = useState("");
   const [displayOptions, setDisplayOptions] = useState([]);
 
   // Rules to show the dropdown
@@ -34,32 +36,47 @@ export default function useAutocompleteField({
     isFieldFocused && displayOptions.length > 0 && !currentValueIsAnOption;
   const shouldShowSuggestions = mandatoryChoiceShowrule || regularShowrule;
 
-  useEffect(updateInternalInputValue, [value]);
-  useEffect(onChangeEvent, [inputValue]);
-  useEffect(filterOptionsHandler, [inputValue]);
-  useEffect(checkIfCurrentValueIsAnOption, [inputValue, options]);
+  useEffect(onChangeEvent, [fieldValue]);
+  useEffect(filterOptionsHandler, [displayValue]);
+  useEffect(updateFieldValue, [displayValue]);
+  useEffect(updateInternalInputLabel, [value]);
+  useEffect(checkIfCurrentValueIsAnOption, [displayValue, options]);
 
   // ---- Effects
-  function updateInternalInputValue() {
+  function updateInternalInputLabel() {
     const safeValue = value || "";
-    setInputValue(safeValue);
+    const optionValue = options.find((option) => option.value === value);
+    if (!!optionValue) {
+      setDisplayValue(optionValue.label);
+    } else {
+      setDisplayValue(safeValue);
+    }
+  }
+
+  function updateFieldValue() {
+    const option = options.find((option) => option.label === displayValue);
+    if (!!option) {
+      setFieldValue(String(option.value));
+    } else {
+      setFieldValue(String(displayValue));
+    }
   }
 
   function filterOptionsHandler() {
     const processedOptions = !!modifyOptions
-      ? applyCustomFilter(inputValue, options, modifyOptions)
-      : applyDefaultFilter(inputValue, options);
+      ? applyCustomFilter(displayValue, options, modifyOptions)
+      : applyDefaultFilter(displayValue, options);
 
     setDisplayOptions(processedOptions);
   }
 
   function inputChangeHandler(e) {
-    setInputValue(e?.target?.value);
+    setDisplayValue(e?.target?.value);
   }
+
   function checkIfCurrentValueIsAnOption() {
     const isCurrentValueAnOption = options.some(
-      (option) =>
-        cleanString(String(option.value)) === cleanString(String(inputValue))
+      (option) => option.label === displayValue
     );
     setCurrentValueIsAnOption(isCurrentValueAnOption);
   }
@@ -70,43 +87,43 @@ export default function useAutocompleteField({
     if (!isFieldFocused) setIsFieldFocused(true);
   }
 
-  function onBlurHandler(e) {
-    if (!!onBlur) onBlur(e);
+  function onBlurHandler() {
     setIsFieldFocused(false);
     const shouldDiscardValue =
       suggestionUse === "mandatory" && !currentValueIsAnOption;
-
-    if (shouldDiscardValue) setInputValue("");
+    if (shouldDiscardValue) setDisplayValue("");
+    const valueToDispatch = shouldDiscardValue ? "" : fieldValue;
+    if (!!onBlur) onBlur(valueToDispatch as any);
   }
 
   function onChangeEvent() {
-    /* console.log(inputValue) */
-    if (suggestionUse === "optional" && !!onChange) {
-      onChange(inputValue);
+    const conditionToRunOnChange =
+      (suggestionUse === "optional" ||
+        (suggestionUse === "mandatory" && currentValueIsAnOption)) &&
+      !!onChange;
+
+    const valueToPass = currentValueIsAnOption
+      ? options.find((option) => option.label === fieldValue).value
+      : fieldValue;
+
+    if (!!conditionToRunOnChange) {
+      onChange(valueToPass);
     }
   }
 
   function onSelectOptionHandler(value) {
-    const formatted = String(value).toLowerCase();
-    setInputValue(formatted);
-    setIsSuggestionsOpen(false);
-  }
-
-  function onInputClickHandler() {
-    if (!isSuggestionsOpen) {
-      setIsSuggestionsOpen(true);
-    }
+    const formatted = String(value);
+    setDisplayValue(formatted);
   }
 
   return {
     isSuggestionsOpen,
     onFocusHandler,
     onBlurHandler,
-    inputValue,
+    displayValue,
     inputChangeHandler,
     shouldShowSuggestions,
     onSelectOptionHandler,
-    onInputClickHandler,
     inputClassName,
     displayOptions,
     inputElement,

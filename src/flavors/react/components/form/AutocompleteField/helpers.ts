@@ -12,17 +12,17 @@ export function applyCustomFilter(
 }
 
 export function applyDefaultFilter(
-  currentInputValue: string | number,
+  currentDisplayValue: string | number,
   options: Option[]
 ): Option[] {
-  return options.filter((option) => {
-    const stringfiedOption = String(option.value);
-    const stringfiedValue = String(currentInputValue);
+  const newOptions = options.filter((option) => {
+    const stringfiedOption = String(option.label);
+    const stringfiedValue = String(currentDisplayValue);
     const cleanedOptionValue = cleanString(stringfiedOption);
     const cleanedValue = cleanString(stringfiedValue);
     return (
-      cleanedOptionValue.indexOf(cleanedValue) > -1 &&
-      cleanedOptionValue !== cleanedValue
+      cleanedOptionValue.indexOf(cleanedValue) > -1 
     );
   });
+  return newOptions;
 }

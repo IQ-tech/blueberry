@@ -42,12 +42,13 @@ OpenSuggestionsOnFocusInput.args = {
   invalid: false,
   optional: false,
   required: true,
+  /* value: "1", */
   label: "Simple field",
-  onBlur: (e) => console.log(e?.target?.value),
+  onChange: (e) => console.log(e),
   placeholder: "Type something",
   /* openDropdownOnFocus: true, */
   options: [
-    { value: "Acre", label: "Acre" },
+    { value: "1", label: "Acre" },
     { value: "Alagoas", label: "Alagoas" },
     { value: "Amapá", label: "Amapá" },
     { value: "Amazonas", label: "Amazonas" },
@@ -88,7 +89,7 @@ MandatoryChoiceInput.args = {
   required: true,
   suggestionUse: "mandatory",
   label: "Mandatory option choice",
-  onBlur: (e) => console.log(e),
+  onChange: (e) => console.log(e),
   placeholder: "Type something",
   options: [
     { value: "Maranhão", label: "Maranhão" },
