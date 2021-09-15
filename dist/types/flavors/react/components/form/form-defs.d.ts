@@ -11,10 +11,11 @@ export interface CommonFieldsProps {
     invalid?: boolean;
     label?: string;
     errorMessage?: string;
+    type?: string;
 }
 export declare type Modify<T, R> = Omit<T, keyof R> & R;
 export declare type ModifiedInputProps = Modify<React.HTMLAttributes<HTMLInputElement>, {
-    onChange(value: string): void;
+    onChange(...args: any): any;
 }>;
 export declare type InputGroupOption = {
     value: string | number;

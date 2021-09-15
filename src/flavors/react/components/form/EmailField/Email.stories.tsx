@@ -1,25 +1,10 @@
-import React, { useState, useEffect } from "react";
-import levenshtein from "fast-levenshtein";
+import React from "react"
 import { Meta } from "@storybook/react/types-6-0";
 import Input from "./index";
 import OutlineArrowLeft from "../../icons/generated/outline/OutlineArrowLeft";
 
 //@ts-ignore
 import "core/components/Form.styl";
-
-const autoSuggestedDomains = [
-  "gmail.com",
-  "hotmail.com",
-  "outlook.com",
-  "live.com",
-  "icloud.com",
-  "yahoo.com.br",
-  "yahoo.com",
-  "bol.com.br",
-  "uol.com.br",
-  "terra.com.br",
-  "aol.com",
-];
 
 export default {
   title: "Components/form/EmailField",
@@ -33,47 +18,10 @@ export default {
   },
 } as Meta;
 
-function handleEmailAutoSuggetion({ value, domainValue }) {
-  if (!domainValue || autoSuggestedDomains.includes(domainValue)) return [];
-
-  return autoSuggestedDomains.reduce((acc, domain) => {
-    const distanceString = levenshtein.get(domain, domainValue);
-    const isSimilar = distanceString <= 5 || domain.includes(domainValue);
-
-    if (isSimilar || domainValue === "") return acc.concat({ value, domain });
-
-    return acc;
-  }, []);
-}
-
-function _autoSuggestDomains(inputValue, setAutoSuggestionOptions) {
-  const [idValue, domainValue] = inputValue.split("@");
-
-  const filteredOptions = handleEmailAutoSuggetion({
-    value: idValue,
-    domainValue,
-  });
-
-  setAutoSuggestionOptions(filteredOptions);
-}
-
 const Template = (args) => {
-  const [inputValue, setInputValue] = useState("");
-  const [autoSuggestionOptions, setAutoSuggestionOptions] = useState([]);
-
-  useEffect(() => _autoSuggestDomains(inputValue, setAutoSuggestionOptions), [
-    inputValue,
-  ]);
-
   return (
     <div style={{ width: "60%", maxWidth: "350px" }}>
-      <Input
-        {...args}
-        value={inputValue}
-        onChange={(value) => setInputValue(value)}
-        handleSetSuggestion={(value) => setInputValue(value)}
-        autoSuggestionOptions={autoSuggestionOptions}
-      />
+      <Input {...args} />
     </div>
   );
 };
@@ -127,23 +75,9 @@ InputInvalid.args = {
 };
 
 const LeftIconTemplate = (args) => {
-  const [inputValue, setInputValue] = useState("");
-  const [autoSuggestionOptions, setAutoSuggestionOptions] = useState([]);
-
-  useEffect(() => _autoSuggestDomains(inputValue, setAutoSuggestionOptions), [
-    inputValue,
-  ]);
-
   return (
     <div style={{ width: "60%", maxWidth: "350px" }}>
-      <Input
-        LeftIcon={OutlineArrowLeft}
-        {...args}
-        value={inputValue}
-        onChange={(value) => setInputValue(value)}
-        handleSetSuggestion={(value) => setInputValue(value)}
-        autoSuggestionOptions={autoSuggestionOptions}
-      />
+      <Input LeftIcon={OutlineArrowLeft} {...args} />
     </div>
   );
 };
@@ -159,22 +93,9 @@ LeftIcon.args = {
 };
 
 const RightIconTemplate = (args) => {
-  const [inputValue, setInputValue] = useState("");
-  const [autoSuggestionOptions, setAutoSuggestionOptions] = useState([]);
-
-  useEffect(() => _autoSuggestDomains(inputValue, setAutoSuggestionOptions), [
-    inputValue,
-  ]);
-
   return (
     <div style={{ width: "60%", maxWidth: "350px" }}>
-      <Input
-        {...args}
-        value={inputValue}
-        onChange={(value) => setInputValue(value)}
-        handleSetSuggestion={(value) => setInputValue(value)}
-        autoSuggestionOptions={autoSuggestionOptions}
-      />
+      <Input {...args} />
     </div>
   );
 };

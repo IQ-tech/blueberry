@@ -12,6 +12,7 @@ export interface CommonFieldsProps {
   invalid?: boolean;
   label?: string;
   errorMessage?: string;
+  type?: string;
 }
 
 export type Modify<T, R> = Omit<T, keyof R> & R;
