@@ -15,6 +15,10 @@ include ../OutlineNotificationTwo.pug
 include ../OutlineNotification.pug
 include ../OutlineMoneyIn.pug
 include ../OutlineMoney.pug
+include ../OutlineMessageWarning.pug
+include ../OutlineMessageSuccess.pug
+include ../OutlineMessageInfo.pug
+include ../OutlineMessageDanger.pug
 include ../OutlineMenuLogout.pug
 include ../OutlineMenu.pug
 include ../OutlineLegalInformation.pug
@@ -50,6 +54,7 @@ include ../IconHandsBackground.pug
 include ../IconHandDocument.pug
 include ../IconHandApp.pug
 include ../IconBank.pug
+include ../FilledHelp.pug
 include ../FilledError.pug
 
 include ../../FlexGrid/index.pug
@@ -61,6 +66,9 @@ mixin IconsDemo()
 			+FlexGridRow()
 				+IconBox({filename: "FilledError.pug"})
 					+FilledError()
+
+				+IconBox({filename: "FilledHelp.pug"})
+					+FilledHelp()
 
 				+IconBox({filename: "IconBank.pug"})
 					+IconBank()
@@ -166,6 +174,18 @@ mixin IconsDemo()
 
 				+IconBox({filename: "OutlineMenuLogout.pug"})
 					+OutlineMenuLogout()
+
+				+IconBox({filename: "OutlineMessageDanger.pug"})
+					+OutlineMessageDanger()
+
+				+IconBox({filename: "OutlineMessageInfo.pug"})
+					+OutlineMessageInfo()
+
+				+IconBox({filename: "OutlineMessageSuccess.pug"})
+					+OutlineMessageSuccess()
+
+				+IconBox({filename: "OutlineMessageWarning.pug"})
+					+OutlineMessageWarning()
 
 				+IconBox({filename: "OutlineMoney.pug"})
 					+OutlineMoney()

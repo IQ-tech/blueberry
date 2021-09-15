@@ -1,0 +1,141 @@
+@import '../variables.styl'
+
+.iq-message
+
+	&--fixed
+		z-index 2
+		position fixed
+		bottom 0
+		width 100%
+		left 0
+		
+		+aboveMedium()
+			max-width 656px
+			bottom 30px
+			left calc(50% - (656px/2))
+
+	&--fixed.iq-message--appended
+		bottom -24px
+
+		+aboveMedium()
+			bottom 30px
+
+	&__hold
+		display flex
+		align-items center
+		justify-content space-between
+		padding 24px
+		border-radius 16px
+
+		.iq-message--danger &
+			background-color red-10
+			color red-100
+
+		.iq-message--info &
+			background-color cyan-20
+			color cyan-80
+
+		.iq-message--success &
+			background-color green-20
+			color green-100
+
+		.iq-message--warning &
+			background-color yellow-20
+			color yellow-100
+
+		.iq-message--fixed &
+			border-bottom-left-radius 0
+			border-bottom-right-radius 0
+
+			+aboveMedium()
+				border-bottom-left-radius 16px
+				border-bottom-right-radius 16px
+
+		.iq-message--appended &
+			padding-bottom 40px
+			border-bottom-left-radius 0
+			border-bottom-right-radius 0
+	
+	&__icon
+		margin-right 24px
+	
+	&__text
+		flex-grow 1
+		font-size 14px
+		line-height 22px
+		font-weight 600
+		font-family 'Open Sans'
+
+	&__close
+		margin-left 24px
+		display none
+		align-self flex-start
+
+		+aboveMedium()
+			align-self center
+
+		.iq-icon
+			fill gray-50
+			width 16px
+			height 16px
+			color gray-50
+		
+		.iq-message--fixed &
+			display block
+	
+	&__append
+		padding 24px
+		background-color gray-0
+		border-radius 16px
+		transform translateY(-24px)
+
+		&-title
+			font-size 16px
+			line-height 24px
+			color blueberry-50
+			font-weight 600
+			margin-bottom 12px
+			display flex
+			font-family 'Baloo Chettan 2'
+
+			.iq-icon
+				margin-right 17px
+		
+		&-content,
+		&-content p
+			margin-bottom 24px
+			font-size 14px
+			line-height 22px
+			color gray-60
+			font-family 'Open Sans'
+			font-weight 400
+		
+		&-content p
+			margin 0 0 10px
+			padding-left 40px
+		
+		&-content a
+			color blueberry-60
+			font-weight 600
+		
+		&-buttons
+			display flex
+			flex-direction column
+
+			+aboveMedium()
+				flex-direction row
+				align-items center
+				padding-left 40px
+
+			.iq-btn
+
+				+aboveMedium()
+					max-width 236px
+					width 100%
+			
+			.iq-btn + .iq-btn
+				margin-top 16px
+
+				+aboveMedium()
+					margin-top 0
+					margin-left 16px
