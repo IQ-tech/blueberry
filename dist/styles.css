@@ -1247,30 +1247,6 @@
 .iq-input-field__dropdown-option:hover{
   background-color:#e4e2ff;
 }
-.iq-input-autosuggestion{
-  position:absolute;
-  top:100%;
-  display:block;
-  width:100%;
-  max-height:222px;
-  background:#fff;
-  list-style:none;
-  padding:0;
-  margin:0;
-  cursor:pointer;
-  -webkit-box-shadow:0 8px 12px 0 rgba(0, 0, 0, .08);
-          box-shadow:0 8px 12px 0 rgba(0, 0, 0, .08);
-  overflow:auto;
-  z-index:21;
-}
-.iq-input-autosuggestion__option{
-  padding:8px 20px;
-  font-size:14px;
-  color:#000;
-}
-.iq-input-autosuggestion__option:hover{
-  background-color:#e6e6e6;
-}
 .iq-password-field .iq-input-field__input{
   color:#b5b5b5;
 }
