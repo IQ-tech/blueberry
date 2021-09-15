@@ -1,68 +1,38 @@
 import React from "react";
-import classNames from "classnames";
 import { uniqueKey } from "../../../helpers/utils";
-
 import useAutocompleteField from "./hook";
-import { CommonFieldsProps, ModifiedInputProps } from "../form-defs";
-import { TooltipProps } from "../../Tooltip";
 import FieldBase from "../FieldBase";
 
-interface Option {
-  value: string | number;
-  label: string | number;
-}
+import { AutoCompleteProps } from "./types";
 
-interface AutoCompleteProps extends CommonFieldsProps, ModifiedInputProps {
-  suggestionUse?: "mandatory" | "optional";
-  options?: Option[];
-  tooltipConfig?: TooltipProps;
-  openDropdownOnFocus?: boolean;
-  isLoading?: boolean;
-  filterOptions?(currentInputValue: string, options: Option[]): Option[];
-}
+const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
+  const {
+    invalid,
+    disabled,
+    required,
+    name,
+    errorMessage,
+    label,
+    optional,
+    tooltipConfig,
+    placeholder,
+  } = props;
 
-const AutoCompleteField: React.FC<AutoCompleteProps> = ({
-  suggestionUse = "optional",
-  options,
-  value = "",
-  openDropdownOnFocus,
-  invalid,
-  disabled,
-  required,
-  name,
-  errorMessage,
-  label,
-  optional,
-  tooltipConfig,
-  placeholder,
-
-  /** Events */
-  onChange,
-  onFocus,
-  onBlur,
-}) => {
-  const inputClassName = classNames("iq-input-field", {
-    "iq-input-field--invalid": !!invalid,
-    "iq-input-field--disabled": !!disabled,
-  });
   const {
     onFocusHandler,
     onBlurHandler,
     inputValue,
     inputChangeHandler,
     shouldShowSuggestions,
-  } = useAutocompleteField({
-    onFocus,
-    onBlur,
-    openDropdownOnFocus,
-    value,
-    onChange,
-    suggestionUse,
-    options,
-  });
+    onSelectOptionHandler,
+    onInputClickHandler,
+    inputClassName,
+    displayOptions,
+    inputElement
+  } = useAutocompleteField(props);
 
   return (
-    <div className={inputClassName}  onBlur={onBlurHandler}>
+    <div className={inputClassName} onBlur={onBlurHandler}>
       <FieldBase
         required={required}
         errorMessage={errorMessage}
@@ -75,23 +45,27 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = ({
         <div className="iq-input-field__input-holder">
           <input
             type="text"
+            ref={inputElement}
             className="iq-input-field__input"
             disabled={disabled}
             placeholder={placeholder}
             onFocus={onFocusHandler}
+            onClick={onInputClickHandler}
             value={inputValue}
             onChange={inputChangeHandler}
             name={name}
           />
         </div>
         {shouldShowSuggestions && (
-          <ul className="iq-input-field__dropdown">
-            {options.map((option, i) => (
+          <ul
+            className="iq-input-field__dropdown"
+            onMouseDown={(e) => e.preventDefault()}
+          >
+            {displayOptions.map((option) => (
               <li
                 className="iq-input-field__dropdown-option"
-                key={uniqueKey(`input-dropdown-option`)}
-                onMouseDown={(e) => e.preventDefault()}
-                onClick={() => console.log(option?.value)}
+                key={uniqueKey("input-dropdown-option")}
+                onClick={() => onSelectOptionHandler(option?.value)}
               >
                 {option?.label}
               </li>

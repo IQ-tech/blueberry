@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { AutoCompleteProps, Option, ModifyOptionFunc } from "./types";
+import classNames from "classnames";
+import levenshtein from "fast-levenshtein";
+import { cleanString } from "../../../helpers/utils";
 
 export default function useAutocompleteField({
   onFocus,
@@ -6,15 +10,25 @@ export default function useAutocompleteField({
   openDropdownOnFocus,
   value,
   onChange,
-  suggestionUse,
+  suggestionUse = "optional",
   options,
-}) {
+  modifyOptions,
+  invalid,
+  disabled,
+}: AutoCompleteProps) {
+  const inputClassName = classNames("iq-input-field", {
+    "iq-input-field--invalid": !!invalid,
+    "iq-input-field--disabled": !!disabled,
+  });
+  const inputElement = useRef(null);
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState(value);
-  const shouldShowSuggestions = !!isSuggestionsOpen && !!options;
+  const [inputValue, setInputValue] = useState<string | number>("");
+  const [displayOptions, setDisplayOptions] = useState([]);
+  const shouldShowSuggestions = !!isSuggestionsOpen && !!displayOptions.length;
 
   useEffect(() => {
-    setInputValue(value);
+    const safeValue = value || "";
+    setInputValue(safeValue);
   }, [value]);
 
   useEffect(() => {
@@ -23,28 +37,45 @@ export default function useAutocompleteField({
     }
   }, [inputValue]);
 
+  useEffect(filterOptionsHandler, [inputValue]);
+
   function onFocusHandler(e) {
-    if (!!onFocus) onFocus();
+    console.log("cenoura");
+    if (!!onFocus) onFocus(e);
     if (!!openDropdownOnFocus) {
       setIsSuggestionsOpen(true);
     }
   }
 
   function onBlurHandler(e) {
-    if (!!onBlur) onBlur();
+    if (!!onBlur) onBlur(e);
 
     if (isSuggestionsOpen) {
       setIsSuggestionsOpen(false);
     }
   }
 
-  function defaultFilterOptionsFunction() {
-    // run every time the current value change
-    // make filter option here
+  function filterOptionsHandler() {
+    const processedOptions = !!modifyOptions
+      ? applyCustomFilter(inputValue, options, modifyOptions)
+      : applyDefaultFilter(inputValue, options);
+
+    setDisplayOptions(processedOptions);
   }
 
   function inputChangeHandler(e) {
     setInputValue(e?.target?.value);
+  }
+
+  function onSelectOptionHandler(value) {
+    setInputValue(value);
+    setIsSuggestionsOpen(false);
+  }
+
+  function onInputClickHandler() {
+    if (!isSuggestionsOpen) {
+      setIsSuggestionsOpen(true);
+    }
   }
 
   return {
@@ -54,5 +85,33 @@ export default function useAutocompleteField({
     inputValue,
     inputChangeHandler,
     shouldShowSuggestions,
+    onSelectOptionHandler,
+    onInputClickHandler,
+    inputClassName,
+    displayOptions,
+    inputElement,
   };
+}
+
+function applyCustomFilter(
+  currentInputValue,
+  options: Option[],
+  modifierFunction: ModifyOptionFunc
+): Option[] {
+  return options
+    .map((option) => modifierFunction(currentInputValue, option))
+    .filter((option) => !!option);
+}
+
+function applyDefaultFilter(
+  currentInputValue: string | number,
+  options: Option[]
+): Option[] {
+  return options.filter((option) => {
+    const stringfiedOption = String(option.value);
+    const stringfiedValue = String(currentInputValue);
+    const cleanedOptionValue = cleanString(stringfiedOption);
+    const cleanedValue = cleanString(stringfiedValue);
+    return cleanedOptionValue.indexOf(cleanedValue) > -1;
+  });
 }
