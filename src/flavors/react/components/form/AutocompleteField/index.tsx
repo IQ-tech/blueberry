@@ -4,6 +4,7 @@ import useAutocompleteField from "./hook";
 import FieldBase from "../FieldBase";
 import MiscSearchLoader from "../../icons/generated/misc/MiscSearchLoader";
 import IconFilledError from "../../icons/generated/filled/FilledError";
+import OutlineSearchNotFound from "../../icons/generated/outline/OutlineSearchNotFound";
 
 import { AutoCompleteProps } from "./types";
 
@@ -20,6 +21,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     placeholder,
     isLoading,
     type = "text",
+    notFoundText = "Nenhum dado encontrado",
   } = props;
 
   const {
@@ -32,6 +34,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     inputClassName,
     displayOptions,
     inputElement,
+    shouldShowNotFoundIcon,
   } = useAutocompleteField(props);
 
   return (
@@ -71,6 +74,14 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
             className="iq-input-field__dropdown"
             onMouseDown={(e) => e.preventDefault()}
           >
+            {shouldShowNotFoundIcon ? (
+              <div className="iq-input-field__dropdown-not-found">
+                <div className="iq-input-field__dropdown-icon-holder">
+                  <OutlineSearchNotFound expand />
+                </div>
+                <p>{notFoundText}</p>
+              </div>
+            ) : null}
             <ul className="iq-input-field__dropdown-list">
               {displayOptions.map((option) => (
                 <li

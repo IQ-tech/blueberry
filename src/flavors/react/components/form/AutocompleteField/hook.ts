@@ -36,6 +36,9 @@ export default function useAutocompleteField({
   const shouldShowSuggestions =
     (mandatoryChoiceShowrule || regularShowrule) && !isLoading;
 
+  const shouldShowNotFoundIcon =
+    mandatoryChoiceShowrule && !displayOptions.length;
+
   useEffect(onChangeEvent, [fieldValue]);
   useEffect(filterOptionsHandler, [displayValue]);
   useEffect(updateFieldValue, [displayValue]);
@@ -128,5 +131,6 @@ export default function useAutocompleteField({
     inputClassName,
     displayOptions,
     inputElement,
+    shouldShowNotFoundIcon,
   };
 }

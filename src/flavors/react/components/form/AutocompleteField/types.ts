@@ -24,4 +24,6 @@ export interface AutoCompleteProps
   isLoading?: boolean;
   /** function used to modify suggestion options */
   modifyOptions?: ModifyOptionFunc;
+  /** Custom text when not find options */
+  notFoundText?: string;
 }
