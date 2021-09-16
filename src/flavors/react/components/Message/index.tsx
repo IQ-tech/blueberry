@@ -11,7 +11,6 @@ import FilledHelp from "../icons/generated/filled/FilledHelp"
 interface MessageProps {
   children?: string;
   isOpen: boolean;
-  onClickClose: any;
   position: string;
   text: string;
   type: string;
@@ -48,8 +47,6 @@ const Message = ({
   function handleClickClose (e) {
     e.preventDefault()
     if (messageOpen) {
-      console.log('messageOpen', messageOpen)
-      console.log('e', e)
       setMessageOpen(false)
     }
   }

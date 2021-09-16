@@ -1711,6 +1711,7 @@
   display:none;
   -ms-flex-item-align:start;
       align-self:flex-start;
+  cursor:pointer;
 }
 @media (min-width:720px){
   .iq-message__close{

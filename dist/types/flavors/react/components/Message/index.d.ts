@@ -1,7 +1,6 @@
 interface MessageProps {
     children?: string;
     isOpen: boolean;
-    onClickClose: any;
     position: string;
     text: string;
     type: string;
