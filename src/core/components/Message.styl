@@ -18,11 +18,21 @@
 			left calc(50% - (656px/2))
 			transform translateY(100%)
 
-	&--fixed.iq-message--appended
+	&--fixed&--appended
 		bottom -24px
 
 		+aboveMedium()
 			bottom 30px
+		
+		&:before
+			content ''
+			position fixed
+			top 0
+			left 0
+			width 100vw
+			height 100vh
+			background-color rgba(0, 0, 0, .7)		
+			z-index -1
 
 	&__hold
 		display flex
