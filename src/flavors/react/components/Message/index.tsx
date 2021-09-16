@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import classNames from "classnames"
 import Conditional from "../misc/Conditional";
 import OutlineMessageDanger from "../icons/generated/outline/OutlineMessageDanger"
@@ -8,21 +8,24 @@ import OutlineMessageWarning from "../icons/generated/outline/OutlineMessageWarn
 import OutlineClose from "../icons/generated/outline/OutlineClose"
 import FilledHelp from "../icons/generated/filled/FilledHelp"
 
-interface MessageChildProps {
+interface MessageProps {
   children?: string;
-  type: string;
-  text: string;
-  position: string;
+  isOpen: boolean;
   onClickClose: any;
+  position: string;
+  text: string;
+  type: string;
 }
 
 const Message = ({ 
   children, 
+  isOpen = false,
+  position,
+  text,
   type, 
-  text, 
-  position, 
-  onClickClose, 
-}) => {
+}: MessageProps) => {
+  const [messageOpen, setMessageOpen] = useState(isOpen)
+
   const componentClass = classNames("iq-message", {
     "iq-message--danger": type === 'danger',
     "iq-message--info": type === 'info',
@@ -30,6 +33,7 @@ const Message = ({
     "iq-message--warning": type === 'warning',
     "iq-message--fixed": position === 'fixed',
     "iq-message--appended": !!children,
+    "iq-message--opened": messageOpen,
   })
 
   const componentIcon = {
@@ -41,6 +45,15 @@ const Message = ({
 
   const IconMessage = componentIcon[`${type}`]
 
+  function handleClickClose (e) {
+    e.preventDefault()
+    if (messageOpen) {
+      console.log('messageOpen', messageOpen)
+      console.log('e', e)
+      setMessageOpen(false)
+    }
+  }
+
   return (
     <div className={componentClass}>
       <div className="iq-message__hold">
@@ -48,7 +61,7 @@ const Message = ({
         <div className="iq-message__text">{text}</div>
         <a 
           className="iq-message__close" 
-          onClick={onClickClose}
+          onClick={handleClickClose}
           >
             <OutlineClose />
         </a>

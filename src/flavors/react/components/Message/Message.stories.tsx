@@ -25,24 +25,28 @@ const Template = (args) => <Message {...args} />;
 export const MessageDanger = Template.bind({});
 MessageDanger.args = {
   type: "danger",
+	isOpen: true,
 	text: "O código que você digitou é inválido. Tente novamente."
 };
 
 export const MessageInfo = Template.bind({});
 MessageInfo.args = {
   type: "info",
+	isOpen: true,
 	text: "Foi enviado um e-mail para alterar sua senha."
 };
 
 export const MessageSuccess = Template.bind({});
 MessageSuccess.args = {
   type: "success",
+	isOpen: true,
 	text: "Sua senha foi alterada com sucesso."
 };	
 
 export const MessageWarning = Template.bind({});
 MessageWarning.args = {
   type: "warning",
+	isOpen: true,
 	text: "Os dados inseridos podem estar errados."
 };
 
@@ -51,12 +55,14 @@ MessageFixed.args = {
   type: "warning",
 	text: "Os dados inseridos podem estar errados.",
 	position: "fixed",
+	isOpen: true,
 };
 
 export const MessageAppend = Template.bind({});
 MessageAppend.args = {
   type: "danger",
 	text: "Os dados inseridos podem estar errados.",
+	isOpen: true,
   children: (
 		<Message.Child 
 			title="Ajuda iq" 
@@ -86,6 +92,7 @@ MessageAppendFixed.args = {
   type: "danger",
 	text: "Os dados inseridos podem estar errados.",
 	position: "fixed",
+	isOpen: true,
   children: (
 		<Message.Child 
 			title="ajuda iq" 

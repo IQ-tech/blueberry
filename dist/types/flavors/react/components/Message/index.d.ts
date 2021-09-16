@@ -1,18 +1,13 @@
-interface MessageChildProps {
+interface MessageProps {
     children?: string;
-    type: string;
-    text: string;
-    position: string;
+    isOpen: boolean;
     onClickClose: any;
+    position: string;
+    text: string;
+    type: string;
 }
 declare const Message: {
-    ({ children, type, text, position, onClickClose, }: {
-        children: any;
-        type: any;
-        text: any;
-        position: any;
-        onClickClose: any;
-    }): JSX.Element;
+    ({ children, isOpen, position, text, type, }: MessageProps): JSX.Element;
     Child: ({ title, content, buttons }: MessageChildProps) => JSX.Element;
 };
 interface MessageChildProps {

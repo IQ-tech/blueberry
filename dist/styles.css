@@ -1622,6 +1622,10 @@
   height:100%;
   display:block;
 }
+.iq-message{
+  display:none;
+  opacity:0;
+}
 .iq-message--fixed{
   z-index:2;
   position:fixed;
@@ -1634,6 +1638,8 @@
     max-width:656px;
     bottom:30px;
     left:calc(50% - 328px);
+    -webkit-transform:translateY(100%);
+            transform:translateY(100%);
   }
 }
 .iq-message--fixed.iq-message--appended{
@@ -1792,6 +1798,40 @@
   .iq-message__append-buttons .iq-btn+.iq-btn{
     margin-top:0;
     margin-left:16px;
+  }
+}
+.iq-message--opened{
+  display:block;
+  opacity:1;
+}
+.iq-message--opened.iq-message--fixed{
+  display:block;
+  opacity:1;
+  -webkit-animation:slide-top 1s cubic-bezier(.455, .03, .515, .955) both;
+          animation:slide-top 1s cubic-bezier(.455, .03, .515, .955) both;
+}
+@-webkit-keyframes slide-top{
+  0%{
+    -webkit-transform:translateY(100%);
+            transform:translateY(100%);
+    opacity:0;
+  }
+  to{
+    -webkit-transform:translateY(-24px);
+            transform:translateY(-24px);
+    opacity:1;
+  }
+}
+@keyframes slide-top{
+  0%{
+    -webkit-transform:translateY(100%);
+            transform:translateY(100%);
+    opacity:0;
+  }
+  to{
+    -webkit-transform:translateY(-24px);
+            transform:translateY(-24px);
+    opacity:1;
   }
 }
 .iq-tabs{

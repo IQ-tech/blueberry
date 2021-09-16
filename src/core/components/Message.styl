@@ -1,6 +1,9 @@
 @import '../variables.styl'
 
 .iq-message
+	&
+		display none
+		opacity 0
 
 	&--fixed
 		z-index 2
@@ -13,6 +16,7 @@
 			max-width 656px
 			bottom 30px
 			left calc(50% - (656px/2))
+			transform translateY(100%)
 
 	&--fixed.iq-message--appended
 		bottom -24px
@@ -70,6 +74,7 @@
 		margin-left 24px
 		display none
 		align-self flex-start
+		cursor pointer
 
 		+aboveMedium()
 			align-self center
@@ -139,3 +144,25 @@
 				+aboveMedium()
 					margin-top 0
 					margin-left 16px
+	
+	&--opened
+		display block
+		opacity 1
+
+		&.iq-message--fixed
+			display block
+			opacity 1
+			animation slide-top 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+
+
+@keyframes slide-top {
+  0% {
+		transform translateY(100%)
+		opacity 0
+  }
+
+  100% {
+		transform translateY(-24px)
+		opacity 1
+  }
+}
