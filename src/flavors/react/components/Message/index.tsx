@@ -54,19 +54,21 @@ const Message = ({
   return (
     <div className={componentClass}>
       <div className="iq-message__hold">
-        <div className="iq-message__icon"><IconMessage /></div>
-        <div className="iq-message__text">{text}</div>
-        <a 
-          className="iq-message__close" 
-          onClick={handleClickClose}
-          >
-            <OutlineClose />
-        </a>
+        <div className="iq-message__content">
+          <div className="iq-message__icon"><IconMessage /></div>
+          <div className="iq-message__text">{text}</div>
+          <a 
+            className="iq-message__close" 
+            onClick={handleClickClose}
+            >
+              <OutlineClose />
+          </a>
+        </div>
+        <Conditional
+          condition={!!children}
+          renderIf={children}
+        />
       </div>
-      <Conditional
-        condition={!!children}
-        renderIf={children}
-      />
     </div>
   )
 }
