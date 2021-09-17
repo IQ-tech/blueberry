@@ -21,6 +21,7 @@ export { default as Carrossel } from "./components/Carrossel";
 export { default as Accordion } from "./components/Accordion";
 export { default as Dropdown } from "./components/Dropdown";
 export { default as Tooltip } from "./components/Tooltip";
+export { default as Message } from "./components/Message";
 
 // Form components
 export { default as InputField } from "./components/form/InputField";
