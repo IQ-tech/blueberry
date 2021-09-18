@@ -1247,6 +1247,38 @@
 .iq-input-field__dropdown-option:hover{
   background-color:#e4e2ff;
 }
+.iq-input-field__dropdown-not-found{
+  width:100%;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  padding:15px;
+  text-align:center;
+}
+.iq-input-field__dropdown-not-found p{
+  padding:0;
+  margin:0;
+  font-size:14px;
+  line-height:22px;
+  color:#666;
+}
+.iq-input-field__dropdown-icon-holder{
+  width:48px;
+  height:48px;
+  -ms-flex-negative:0;
+      flex-shrink:0;
+  -webkit-box-flex:0;
+      -ms-flex-positive:0;
+          flex-grow:0;
+  color:#d5d5d5;
+}
 .iq-password-field .iq-input-field__input{
   color:#b5b5b5;
 }

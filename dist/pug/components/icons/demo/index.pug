@@ -2,6 +2,7 @@
 
 include ../SearchLoader.pug
 include ../OutlineViewPassword.pug
+include ../OutlineSearchNotFound.pug
 include ../OutlineSearch.pug
 include ../OutlineReceipt.pug
 include ../OutlineQuestion.pug
@@ -205,6 +206,9 @@ mixin IconsDemo()
 
 				+IconBox({filename: "OutlineSearch.pug"})
 					+OutlineSearch()
+
+				+IconBox({filename: "OutlineSearchNotFound.pug"})
+					+OutlineSearchNotFound()
 
 				+IconBox({filename: "OutlineViewPassword.pug"})
 					+OutlineViewPassword()

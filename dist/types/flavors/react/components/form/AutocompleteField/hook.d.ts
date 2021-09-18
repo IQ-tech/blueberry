@@ -10,4 +10,5 @@ export default function useAutocompleteField({ onFocus, onBlur, value, onChange,
     inputClassName: string;
     displayOptions: any[];
     inputElement: import("react").MutableRefObject<any>;
+    shouldShowNotFoundIcon: boolean;
 };

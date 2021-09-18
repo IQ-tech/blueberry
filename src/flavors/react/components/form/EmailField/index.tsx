@@ -9,11 +9,20 @@ interface EmailFieldProps extends AutoCompleteProps {
 
 const EmailField: React.FC<EmailFieldProps> = ({
   emailDomainsSuggestions,
+  onChange,
   ...props
 }) => {
+  function handleOnChange(value = "") {
+    if (!!onChange) onChange(value.toLowerCase());
+  }
   const { handleOptions } = useEmailField({ emailDomainsSuggestions });
   return (
-    <AutocompleteField {...props} type="email" modifyOptions={handleOptions} />
+    <AutocompleteField
+      {...props}
+      onChange={handleOnChange}
+      type="email"
+      modifyOptions={handleOptions}
+    />
   );
 };
 
