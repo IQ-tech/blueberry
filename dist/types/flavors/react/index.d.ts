@@ -12,6 +12,7 @@ export { default as Carrossel } from "./components/Carrossel";
 export { default as Accordion } from "./components/Accordion";
 export { default as Dropdown } from "./components/Dropdown";
 export { default as Tooltip } from "./components/Tooltip";
+export { default as Message } from "./components/Message";
 export { default as InputField } from "./components/form/InputField";
 export { default as AutocompleteField } from "./components/form/AutocompleteField";
 export { default as EmailField } from "./components/form/EmailField";
