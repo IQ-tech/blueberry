@@ -61,12 +61,12 @@
 // base input field
 .iq-input-field
 	resetBoxSizing()
+	position relative
 
 	.iq-field-base__error-message
 		display none
 
-	&--invalid,
-	&.error
+	&--invalid, &.error
 		.iq-field-base__error-message
 			display block
 
@@ -100,8 +100,7 @@
 		.iq-input-field__input
 			padding-left 48px
 
-	&--invalid,
-	&.error
+	&--invalid, &.error
 		.iq-input-field__input
 			border 1px solid red-40
 
@@ -133,34 +132,64 @@
 	&__invalid-icon
 		display none
 
-	&--invalid,
-	&.error
+	&--invalid, &.error
 		.iq-input-field__invalid-icon
 			display block
 
-// email field
-.iq-input-autosuggestion
-	position absolute
-	top 100%
-	display block
-	width 100%
-	max-height 222px
-	background #fff
-	list-style none
-	padding 0
-	margin 0
-	cursor pointer
-	box-shadow 0 8px 12px 0 rgba(0 0 0 .08)
-	overflow auto
-	z-index 21
+	&__dropdown
+		position absolute
+		width 100%
+		min-height 100px
+		max-height 250px
+		background-color gray-0
+		box-shadow 1px 3px 19px -6px rgba(0, 0, 0, 0.3)
+		top calc(100% + 4px)
+		z-index 1
+		border-radius 4px
+		padding 8px 0
+		overflow-y scroll
+		z-index 2
 
-	&__option
-		padding 8px 20px
+	&__dropdown-list
+		list-style none
+		padding 0
+		margin 0
+		width 100%
+
+	&__dropdown-option
+		width 100%
+		cursor pointer
+		padding 8px 15px
 		font-size 14px
-		color #000
+		transition background-color 0.2s ease
+		line-height 26px
 
 		&:hover
-			background-color: #e6e6e6;
+			background-color blueberry-10
+
+	&__dropdown-not-found
+		width 100%
+		display flex
+		flex-direction column
+		align-items center
+		padding 15px
+		text-align: center
+
+		p
+			padding 0
+			margin 0
+			font-size 14px
+			line-height 22px
+			color gray-50
+
+	&__dropdown-icon-holder
+		width 48px
+		height 48px
+		flex-shrink 0
+		flex-grow 0
+		color gray-30
+
+
 
 // password field
 .iq-password-field
@@ -202,8 +231,7 @@
 		.iq-select-field__input
 			color gray-30
 
-	&--invalid,
-	&.error
+	&--invalid, &.error
 		.iq-select-field__input
 			border 1px solid red-40
 
@@ -310,8 +338,7 @@
 				height 10px
 				width 6px
 
-	&--invalid,
-	&.error
+	&--invalid, &.error
 		.iq-checkbox-field__icon
 			border-color red-40
 
@@ -353,8 +380,7 @@
 		width 16px
 		margin-right 6px
 
-	&--invalid,
-	&.error
+	&--invalid, &.error
 		.iq-checkbox-field__invalid-holder
 			display flex
 
@@ -423,8 +449,7 @@
 		.iq-radio-field__icon, .iq-radio-field__icon:after
 			border-color gray-30
 
-	&--invalid,
-	&.error
+	&--invalid, &.error
 		.iq-radio-field__icon:after
 			border-color red-40
 

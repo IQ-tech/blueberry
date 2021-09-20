@@ -14,6 +14,7 @@ export { default as Dropdown } from "./components/Dropdown";
 export { default as Tooltip } from "./components/Tooltip";
 export { default as Message } from "./components/Message";
 export { default as InputField } from "./components/form/InputField";
+export { default as AutocompleteField } from "./components/form/AutocompleteField";
 export { default as EmailField } from "./components/form/EmailField";
 export { default as PasswordField } from "./components/form/PasswordField";
 export { default as SelectField } from "./components/form/SelectField";

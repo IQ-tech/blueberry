@@ -25,6 +25,7 @@ export { default as Message } from "./components/Message";
 
 // Form components
 export { default as InputField } from "./components/form/InputField";
+export { default as AutocompleteField } from "./components/form/AutocompleteField";
 export { default as EmailField } from "./components/form/EmailField";
 export { default as PasswordField } from "./components/form/PasswordField";
 export { default as SelectField } from "./components/form/SelectField";
