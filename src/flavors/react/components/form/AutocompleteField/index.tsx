@@ -54,6 +54,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
             ref={inputElement}
             className="iq-input-field__input"
             disabled={disabled}
+            autoComplete="off"
             placeholder={placeholder}
             onFocus={onFocusHandler}
             value={displayValue}

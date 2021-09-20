@@ -118,7 +118,7 @@ export default function useAutocompleteField({
 
   function onSelectOptionHandler(value) {
     const formatted = String(value);
-    console.log(value);
+
     setDisplayValue(formatted);
   }
 
