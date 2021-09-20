@@ -40,7 +40,7 @@ export default function useAutocompleteField({
     mandatoryChoiceShowrule && !displayOptions.length;
 
   useEffect(onChangeEvent, [fieldValue]);
-  useEffect(filterOptionsHandler, [displayValue, options]);
+  useEffect(filterOptionsHandler, [displayValue]);
   useEffect(updateFieldValue, [displayValue]);
   useEffect(updateInternalInputLabel, [value]);
   useEffect(checkIfCurrentValueIsAnOption, [displayValue, options]);
@@ -118,6 +118,7 @@ export default function useAutocompleteField({
 
   function onSelectOptionHandler(value) {
     const formatted = String(value);
+
     setDisplayValue(formatted);
   }
 
