@@ -40,7 +40,6 @@ export default function useAutocompleteField({
     mandatoryChoiceShowrule && !displayOptions.length;
 
   useEffect(onChangeEvent, [fieldValue]);
-  // fix filter problems
   useEffect(filterOptionsHandler, [displayValue, options]);
   useEffect(handleCustomFilter, [displayValue]);
 
