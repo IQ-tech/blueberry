@@ -40,7 +40,10 @@ export default function useAutocompleteField({
     mandatoryChoiceShowrule && !displayOptions.length;
 
   useEffect(onChangeEvent, [fieldValue]);
-  useEffect(filterOptionsHandler, [displayValue]);
+  // fix filter problems
+  useEffect(filterOptionsHandler, [displayValue, options]);
+  useEffect(handleCustomFilter, [displayValue]);
+
   useEffect(updateFieldValue, [displayValue]);
   useEffect(updateInternalInputLabel, [value]);
   useEffect(checkIfCurrentValueIsAnOption, [displayValue, options]);
@@ -66,11 +69,17 @@ export default function useAutocompleteField({
   }
 
   function filterOptionsHandler() {
-    const processedOptions = !!modifyOptions
-      ? modifyOptions(displayValue, options)
-      : applyDefaultFilter(displayValue, options);
+    if (!modifyOptions) {
+      const filtered = applyDefaultFilter(displayValue, options);
+      setDisplayOptions(filtered);
+    }
+  }
 
-    setDisplayOptions(processedOptions);
+  function handleCustomFilter() {
+    if (!!modifyOptions) {
+      const newOptions = modifyOptions(displayValue, options);
+      setDisplayOptions(newOptions);
+    }
   }
 
   function inputChangeHandler(e) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import AutocompleteField from "./index";
 
@@ -18,9 +18,16 @@ export default {
 } as Meta;
 
 const Template = (args) => {
+  const [state, setvalue] = useState('ss')
+  useEffect(() => {
+    setTimeout(() => {
+      setvalue('Várzea Paulista')
+    }, 2000)
+  }, [])
+
   return (
     <div style={{ width: "60%", maxWidth: "350px" }}>
-      <AutocompleteField {...args} />
+      <AutocompleteField {...args} value={state} />
     </div>
   );
 };
@@ -86,6 +93,7 @@ MandatoryChoiceInput.args = {
     { value: "Pará", label: "Pará" },
     { value: "Paraíba", label: "Paraíba" },
     { value: "Paraná", label: "Paraná" },
+    { value: "Várzea Paulista", label: "Várzea Paulista" },
   ],
 };
 
