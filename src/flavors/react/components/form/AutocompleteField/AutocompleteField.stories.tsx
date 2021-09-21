@@ -78,9 +78,9 @@ OpenSuggestionsOnFocusInput.args = {
 export const MandatoryChoiceInput = Template.bind({});
 MandatoryChoiceInput.args = {
   disabled: false,
-  invalid: false,
   optional: false,
   required: true,
+  errorMessage: "askdj",
   suggestionUse: "mandatory",
   label: "Mandatory option choice",
   onChange: (e) => console.log(e),
