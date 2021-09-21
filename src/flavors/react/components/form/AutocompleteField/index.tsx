@@ -17,6 +17,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     errorMessage,
     label,
     optional,
+    autoComplete = "chrome-off",
     tooltipConfig,
     placeholder,
     isLoading,
@@ -54,7 +55,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
             ref={inputElement}
             className="iq-input-field__input"
             disabled={disabled}
-            autoComplete="off"
+            autoComplete={autoComplete}
             placeholder={placeholder}
             onFocus={onFocusHandler}
             value={displayValue}
