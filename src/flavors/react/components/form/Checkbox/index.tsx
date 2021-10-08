@@ -47,10 +47,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
           {...props}
         />
         <span className="iq-checkbox-field__icon" />
-        <span className="iq-checkbox-field__label">
-          {label}
-          <span className="iq-checkbox-field__required-star">{" *"}</span>
-        </span>
+        <span
+          className="iq-checkbox-field__label"
+          dangerouslySetInnerHTML={{
+            __html: `${label}<span className="iq-checkbox-field__required-star">${" *"}</span>`,
+          }}
+        />
       </label>
       <div className="iq-checkbox-field__invalid-holder">
         <div className="iq-checkbox-field__invalid-icon-holder">
