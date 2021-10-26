@@ -1287,6 +1287,31 @@
   cursor:pointer;
   color:#453ad3;
 }
+.iq-token-field{
+  -webkit-box-pack:start;
+      -ms-flex-pack:start;
+          justify-content:flex-start;
+  margin:0 auto;
+}
+.iq-token-field,.iq-token-field__input-holder{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.iq-token-field__input-holder{
+  width:36px;
+  height:48px;
+}
+.iq-token-field__input-holder .iq-input-field__input{
+  height:unset;
+  padding:12px;
+  font-size:18px;
+  font-weight:700;
+  color:#1c1277;
+}
+.iq-token-field__input-holder:not(:last-of-type){
+  margin-right:14px;
+}
 .iq-select-field *,.iq-select-field :after,.iq-select-field :before{
   -webkit-box-sizing:border-box;
           box-sizing:border-box;
