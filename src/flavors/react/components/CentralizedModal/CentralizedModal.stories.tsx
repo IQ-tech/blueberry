@@ -36,4 +36,6 @@ CentralizedModalExample.args = {
   buttonText: "Cancelar",
   hasOverlay: true,
   hasCloseButton: true,
+  hasButtons: true,
+  children: null,
 };
