@@ -1,0 +1,132 @@
+@import '../variables.styl'
+
+.centralized-modal
+  font-family 'Open Sans'
+  height 100vh
+  left 0
+  position fixed
+  transition visibility .3s ease-in-out 
+  top 0
+  width 100%
+  visibility hidden
+
+  &.centralized-modal--active 
+    visibility visible
+
+    .centralized-modal__overlay
+      opacity 0.7
+
+    .centralized-modal__content
+      transform translateY(0)
+
+      +aboveMedium()
+        transform translateY(0) translateX(0)
+
+  .centralized-modal__overlay
+    background #1A1A1A
+    left 0
+    height 100%
+    opacity 0
+    position absolute
+    transition opacity .3s ease-in-out
+    top 0
+    width 100%
+
+  .centralized-modal__content
+    background-color white
+    border-radius 16px 16px 0px 0px
+    bottom 0
+    left 0
+    padding 24px
+    position absolute
+    transform translateY(100%)
+    transition transform .3s ease-in-out
+    width 100%
+    will-change transform
+    z-index 2
+
+    +aboveMedium()
+      border-radius 16px 0 0 16px
+      bottom 0
+      display flex
+      flex-flow column
+      justify-content space-between
+      height 100vh
+      left auto
+      padding 24px 32px 32px 32px
+      right 0
+      transform translateY(0) translateX(100%)
+      top 0
+      width 498px
+
+    .centralized-modal__button
+      display flex
+      justify-content flex-end
+
+      +aboveMedium()
+        margin-bottom 32px
+        padding-bottom 24px
+        position relative
+
+        &:after
+          background-color #B5B5B5
+          bottom 0
+          content ''
+          display block
+          height 1px
+          left -32px
+          position absolute
+          width calc(100% + 64px)
+
+      button
+        background-color transparent
+        border none
+        padding 4px
+
+        img
+          display block
+          width 16px
+
+    .centralized-modal__title
+      color black
+      font-size 16px
+      margin-top 16px
+      text-align center
+
+      +aboveMedium()
+        font-size 18px
+        text-align left
+
+    .centralized-modal__text
+      color #444444
+      font-size 14px
+      line-height 22px
+      margin-top 11px
+      text-align center
+
+      +aboveMedium()
+        margin-top 16px
+        text-align left
+
+    .centralized-modal__buttons
+      display flex
+      justify-content space-between
+      margin-top 24px
+
+      +aboveMedium()
+        position relative
+
+        &:after
+          background-color #B5B5B5
+          content ''
+          display block
+          height 1px
+          left -32px
+          position absolute
+          top -32px
+          width calc(100% + 64px)
+
+      .iq-btn
+        display flex
+        justify-content center
+        width 48%
