@@ -198,6 +198,27 @@
 		cursor pointer
 		color blueberry-60
 
+// Token Field
+.iq-token-field
+	display flex
+	justify-content: flex-start
+	margin 0 auto
+
+	&__input-holder
+		display flex
+		width 36px
+		height 48px
+
+		.iq-input-field__input
+			height unset
+			padding 12px
+			font-size 18px
+			font-weight 700
+			color blueberry-80
+
+		&:not(:last-of-type)
+			margin-right 14px
+
 // select field
 .iq-select-field
 	resetBoxSizing()
