@@ -1,6 +1,6 @@
 @import '../variables.styl'
 
-.centralized-modal
+.iq-centralized-modal
   font-family 'Open Sans'
   height 100vh
   left 0
@@ -10,28 +10,28 @@
   width 100%
   visibility hidden
 
-  &.centralized-modal--active 
+  &.iq-centralized-modal--active 
     visibility visible
 
-    .centralized-modal__overlay
+    .iq-centralized-modal__overlay
       opacity 0.7
 
-    .centralized-modal__content
+    .iq-centralized-modal__content
       transform translateY(0)
 
       +aboveMedium()
         transform translateY(0) translateX(0)
 
-  &.centralized-modal--buttons
-    .centralized-modal__content
+  &.iq-centralized-modal--buttons
+    .iq-centralized-modal__content
       display flex
       flex-flow column
       justify-content space-between
 
-      .centralized-modal__buttons
+      .iq-centralized-modal__buttons
         display flex
 
-  .centralized-modal__overlay
+  .iq-centralized-modal__overlay
     background #1A1A1A
     left 0
     height 100%
@@ -41,7 +41,7 @@
     top 0
     width 100%
 
-  .centralized-modal__content
+  .iq-centralized-modal__content
     background-color white
     border-radius 16px 16px 0px 0px
     bottom 0
@@ -64,7 +64,7 @@
       top 0
       width 498px
 
-    .centralized-modal__button
+    .iq-centralized-modal__button
       display flex
       justify-content flex-end
 
@@ -92,7 +92,7 @@
           display block
           width 16px
 
-    .centralized-modal__title
+    .iq-centralized-modal__title
       color black
       font-size 16px
       margin-top 16px
@@ -102,7 +102,7 @@
         font-size 18px
         text-align left
 
-    .centralized-modal__text
+    .iq-centralized-modal__text
       color #444444
       font-size 14px
       line-height 22px
@@ -113,7 +113,7 @@
         margin-top 16px
         text-align left
 
-    .centralized-modal__buttons
+    .iq-centralized-modal__buttons
       display none
       justify-content space-between
       margin-top 24px

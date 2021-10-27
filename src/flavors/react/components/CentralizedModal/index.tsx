@@ -35,35 +35,37 @@ const CentralizedModal: React.FC<CentralizedModalProps> = ({
   hasButtons = false,
   children: Content,
 }) => {
-  const classes = classnames("centralized-modal", {
-    "centralized-modal--active": isActive,
-    "centralized-modal--buttons": hasButtons,
+  const classes = classnames("iq-centralized-modal", {
+    "iq-centralized-modal--active": isActive,
+    "iq-centralized-modal--buttons": hasButtons,
   });
 
   return (
     <section className={classes}>
-      {hasOverlay && <div className="centralized-modal__overlay" />}
+      {hasOverlay && <div className="iq-centralized-modal__overlay" />}
 
-      <div className="centralized-modal__content">
+      <div className="iq-centralized-modal__content">
         {Content ? (
           <Content />
         ) : (
           <>
             <div>
               {hasCloseButton && (
-                <div className="centralized-modal__button">
+                <div className="iq-centralized-modal__button">
                   <button onClick={handleCloseModal}>
                     <OutlineClose />
                   </button>
                 </div>
               )}
 
-              {title && <h2 className="centralized-modal__title">{title}</h2>}
-              {text && <p className="centralized-modal__text">{text}</p>}
+              {title && (
+                <h2 className="iq-centralized-modal__title">{title}</h2>
+              )}
+              {text && <p className="iq-centralized-modal__text">{text}</p>}
             </div>
 
             {hasButtons && (
-              <div className="centralized-modal__buttons">
+              <div className="iq-centralized-modal__buttons">
                 <Button
                   type="secondary"
                   color="danger"
