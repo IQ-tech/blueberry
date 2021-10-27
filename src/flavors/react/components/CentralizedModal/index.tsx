@@ -66,6 +66,7 @@ const CentralizedModal: React.FC<CentralizedModalProps> = ({
 
             {hasButtons && (
               <div className="iq-centralized-modal__buttons">
+                {/* @ts-ignore */}
                 <Button
                   type="secondary"
                   color="danger"
@@ -73,6 +74,7 @@ const CentralizedModal: React.FC<CentralizedModalProps> = ({
                 >
                   {dangerButtonText}
                 </Button>
+                {/* @ts-ignore */}
                 <Button onClick={handleButton}>{buttonText}</Button>
               </div>
             )}
