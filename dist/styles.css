@@ -602,6 +602,181 @@
   top:3px;
   right:0;
 }
+.iq-centralized-modal{
+  font-family:"Open Sans";
+  height:100vh;
+  left:0;
+  position:fixed;
+  -webkit-transition:visibility .3s ease-in-out;
+  transition:visibility .3s ease-in-out;
+  top:0;
+  width:100%;
+  visibility:hidden;
+}
+.iq-centralized-modal.iq-centralized-modal--active{
+  visibility:visible;
+}
+.iq-centralized-modal.iq-centralized-modal--active .iq-centralized-modal__overlay{
+  opacity:.7;
+}
+.iq-centralized-modal.iq-centralized-modal--active .iq-centralized-modal__content{
+  -webkit-transform:translateY(0);
+          transform:translateY(0);
+}
+@media (min-width:720px){
+  .iq-centralized-modal.iq-centralized-modal--active .iq-centralized-modal__content{
+    -webkit-transform:translateY(0) translateX(0);
+            transform:translateY(0) translateX(0);
+  }
+}
+.iq-centralized-modal.iq-centralized-modal--buttons .iq-centralized-modal__content{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-flow:column;
+          flex-flow:column;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}
+.iq-centralized-modal.iq-centralized-modal--buttons .iq-centralized-modal__content .iq-centralized-modal__buttons{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+}
+.iq-centralized-modal .iq-centralized-modal__overlay{
+  background:#1a1a1a;
+  left:0;
+  height:100%;
+  opacity:0;
+  position:absolute;
+  -webkit-transition:opacity .3s ease-in-out;
+  transition:opacity .3s ease-in-out;
+  top:0;
+  width:100%;
+}
+.iq-centralized-modal .iq-centralized-modal__content{
+  background-color:#fff;
+  border-radius:16px 16px 0 0;
+  bottom:0;
+  left:0;
+  padding:24px;
+  position:absolute;
+  -webkit-transform:translateY(100%);
+          transform:translateY(100%);
+  -webkit-transition:-webkit-transform .3s ease-in-out;
+  transition:-webkit-transform .3s ease-in-out;
+  transition:transform .3s ease-in-out;
+  transition:transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+  will-change:transform;
+  z-index:2;
+}
+@media (min-width:720px){
+  .iq-centralized-modal .iq-centralized-modal__content{
+    border-radius:16px 0 0 16px;
+    bottom:0;
+    height:100vh;
+    left:auto;
+    padding:24px 32px 32px 32px;
+    right:0;
+    -webkit-transform:translateY(0) translateX(100%);
+            transform:translateY(0) translateX(100%);
+    top:0;
+    width:498px;
+  }
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:end;
+      -ms-flex-pack:end;
+          justify-content:flex-end;
+}
+@media (min-width:720px){
+  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button{
+    margin-bottom:32px;
+    padding-bottom:24px;
+    position:relative;
+  }
+  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button:after{
+    background-color:#b5b5b5;
+    bottom:0;
+    content:"";
+    display:block;
+    height:1px;
+    left:-32px;
+    position:absolute;
+    width:calc(100% + 64px);
+  }
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button button{
+  background-color:transparent;
+  border:none;
+  padding:4px;
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button button img{
+  display:block;
+  width:16px;
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__title{
+  color:#000;
+  font-size:16px;
+  margin-top:16px;
+  text-align:center;
+}
+@media (min-width:720px){
+  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__title{
+    font-size:18px;
+    text-align:left;
+  }
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__text{
+  color:#444;
+  font-size:14px;
+  line-height:22px;
+  margin-top:11px;
+  text-align:center;
+}
+@media (min-width:720px){
+  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__text{
+    margin-top:16px;
+    text-align:left;
+  }
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons{
+  display:none;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  margin-top:24px;
+}
+@media (min-width:720px){
+  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons{
+    position:relative;
+  }
+  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons:after{
+    background-color:#b5b5b5;
+    content:"";
+    display:block;
+    height:1px;
+    left:-32px;
+    position:absolute;
+    top:-32px;
+    width:calc(100% + 64px);
+  }
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons .iq-btn{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  width:48%;
+}
 .iq-dropdown{
   position:relative;
 }
