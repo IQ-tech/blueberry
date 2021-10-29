@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import classNames from "classnames";
+
 import FieldBase from "../FieldBase";
 import {
   CommonFieldsProps,
@@ -11,6 +13,7 @@ import Checkbox from "../Checkbox";
 interface CheckBoxGroupProps extends CommonFieldsProps {
   tooltipConfig?: TooltipProps;
   options: InputGroupOptions;
+  columns: Number;
   onChange?: (...args: any) => void;
 }
 
@@ -24,8 +27,13 @@ const CheckboxGroup: React.FC<CheckBoxGroupProps> = ({
   tooltipConfig,
   options = [],
   onChange,
+  columns = 3,
 }) => {
   const [selectedOptions, setSelectedOptions] = useState({});
+  const classes = classNames("iq-checkbox-group", {
+    "iq-checkbox-group--1-col": columns === 1,
+    "iq-checkbox-group--2-col": columns === 2,
+  });
 
   useEffect(() => {
     const returnResponse = Object.keys(selectedOptions)
@@ -47,7 +55,7 @@ const CheckboxGroup: React.FC<CheckBoxGroupProps> = ({
   }
 
   return (
-    <div className="iq-checkbox-group">
+    <div className={classes}>
       <FieldBase
         required={required}
         errorMessage={errorMessage}
