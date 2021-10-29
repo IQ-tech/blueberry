@@ -406,7 +406,15 @@
 .iq-checkbox-group
 	max-width 500px
 
-	&__container
+	&.iq-checkbox-group--1-col
+		.iq-checkbox-group__container
+			grid-template-columns 1fr
+
+	&.iq-checkbox-group--2-col
+		.iq-checkbox-group__container
+			grid-template-columns 1fr 1fr
+
+	.iq-checkbox-group__container
 		padding-top 15px
 		display grid
 		grid-template-columns 1fr 1fr 1fr
