@@ -30,6 +30,10 @@ const Checkbox: React.FC<CheckboxProps> = ({
     [`iq-checkbox-field--invalid`]: !!invalid && !!required && !isChecked,
   });
 
+  const formattedLabel = required
+    ? `${label} <span className="iq-checkbox-field__required-star">${"*"}</span>`
+    : `${label}`;
+
   function onChangeHandler(e) {
     if (!!onChange) onChange(e.target.checked);
   }
@@ -50,7 +54,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         <span
           className="iq-checkbox-field__label"
           dangerouslySetInnerHTML={{
-            __html: `${label}<span className="iq-checkbox-field__required-star">${" *"}</span>`,
+            __html: formattedLabel,
           }}
         />
       </label>
