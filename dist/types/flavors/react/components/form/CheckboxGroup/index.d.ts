@@ -4,6 +4,7 @@ import { TooltipProps } from "../../Tooltip";
 interface CheckBoxGroupProps extends CommonFieldsProps {
     tooltipConfig?: TooltipProps;
     options: InputGroupOptions;
+    columns: Number;
     onChange?: (...args: any) => void;
 }
 declare const CheckboxGroup: React.FC<CheckBoxGroupProps>;
