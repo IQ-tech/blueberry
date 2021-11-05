@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classnames from "classnames";
 
 import OutlineClose from "../icons/generated/outline/OutlineClose";
@@ -15,6 +15,7 @@ interface CentralizedModalProps
   isActive: boolean;
   hasOverlay: boolean;
   hasCloseButton: boolean;
+  useChildren: boolean;
   hasButtons: boolean;
   handleDangerButton?: (...args: any) => any;
   handleButton?: (...args: any) => any;
@@ -33,7 +34,8 @@ const CentralizedModal: React.FC<CentralizedModalProps> = ({
   hasOverlay = true,
   hasCloseButton = true,
   hasButtons = false,
-  children: Content,
+  useChildren = false,
+  children,
 }) => {
   const classes = classnames("iq-centralized-modal", {
     "iq-centralized-modal--active": isActive,
@@ -45,8 +47,17 @@ const CentralizedModal: React.FC<CentralizedModalProps> = ({
       {hasOverlay && <div className="iq-centralized-modal__overlay" />}
 
       <div className="iq-centralized-modal__content">
-        {Content ? (
-          <Content />
+        {useChildren ? (
+          <Fragment>
+            {hasCloseButton && (
+              <div className="iq-centralized-modal__button">
+                <button onClick={handleCloseModal}>
+                  <OutlineClose />
+                </button>
+              </div>
+            )}
+            {children}
+          </Fragment>
         ) : (
           <>
             <div>

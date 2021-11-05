@@ -8,6 +8,7 @@ interface CentralizedModalProps extends React.HtmlHTMLAttributes<HTMLDivElement>
     isActive: boolean;
     hasOverlay: boolean;
     hasCloseButton: boolean;
+    useChildren: boolean;
     hasButtons: boolean;
     handleDangerButton?: (...args: any) => any;
     handleButton?: (...args: any) => any;

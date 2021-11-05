@@ -670,6 +670,7 @@
   transition:-webkit-transform .3s ease-in-out;
   transition:transform .3s ease-in-out;
   transition:transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+  width:100%;
   will-change:transform;
   z-index:2;
 }
