@@ -75,13 +75,6 @@
           align-items:center;
   border-radius:8px;
 }
-.iq-accordion__item-head:hover{
-  background-color:#f5f2ff;
-}
-.iq-accordion__item-head:focus{
-  border:2px solid #453ad3;
-  outline:none;
-}
 .iq-accordion__item--color-s-purple-head .iq-accordion__item-head{
   background-color:#e4e2ff;
 }
