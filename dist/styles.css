@@ -1512,7 +1512,7 @@
   position:relative;
   z-index:1;
 }
-.iq-select-field__input[placeholder]{
+.iq-select-field__input__input[placeholder]{
   color:#b5b5b5;
 }
 .iq-select-field__input option{
