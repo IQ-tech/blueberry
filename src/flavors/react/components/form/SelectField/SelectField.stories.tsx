@@ -62,3 +62,37 @@ BasicSelectFieldTooltip.args = {
     placement: "bottom",
   },
 };
+
+const TemplatePlaceholder = (args) => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  return (
+    <div style={{ width: "60%", maxWidth: "350px" }}>
+      <SelectField
+        value={selectedOption}
+        onChange={(value) => {
+          setSelectedOption(value);
+        }}
+        {...args}
+      />
+    </div>
+  );
+};
+
+export const BasicSelectFieldPlaholder = TemplatePlaceholder.bind({});
+BasicSelectFieldPlaholder.args = {
+  disabled: false,
+  invalid: false,
+  optional: false,
+  required: true,
+  label: "Simple select field",
+  options: [
+    { value: "A", label: "a" },
+    { value: "B", label: "b" },
+  ],
+  tooltipConfig: {
+    desc: "This is my tooltip",
+    title: "Tooltip",
+    placement: "bottom",
+  },
+};
