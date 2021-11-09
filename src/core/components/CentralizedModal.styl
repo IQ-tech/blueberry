@@ -9,6 +9,7 @@
   top 0
   width 100%
   visibility hidden
+  z-index 150
 
   &.iq-centralized-modal--active 
     visibility visible
@@ -22,17 +23,8 @@
       +aboveMedium()
         transform translateY(0) translateX(0)
 
-  &.iq-centralized-modal--buttons
-    .iq-centralized-modal__content
-      display flex
-      flex-flow column
-      justify-content space-between
-
-      .iq-centralized-modal__buttons
-        display flex
-
   .iq-centralized-modal__overlay
-    background #1A1A1A
+    background gray-100
     left 0
     height 100%
     opacity 0
@@ -57,7 +49,6 @@
     +aboveMedium()
       border-radius 16px 0 0 16px
       bottom 0
-      height 100vh
       left auto
       padding 24px 32px 32px 32px
       right 0
@@ -71,68 +62,14 @@
 
       +aboveMedium()
         margin-bottom 32px
-        padding-bottom 24px
         position relative
-
-        &:after
-          background-color #B5B5B5
-          bottom 0
-          content ''
-          display block
-          height 1px
-          left -32px
-          position absolute
-          width calc(100% + 64px)
 
       button
         background-color transparent
         border none
+        cursor pointer
         padding 4px
 
         img
           display block
           width 16px
-
-    .iq-centralized-modal__title
-      color black
-      font-size 16px
-      margin-top 16px
-      text-align center
-
-      +aboveMedium()
-        font-size 18px
-        text-align left
-
-    .iq-centralized-modal__text
-      color #444444
-      font-size 14px
-      line-height 22px
-      margin-top 11px
-      text-align center
-
-      +aboveMedium()
-        margin-top 16px
-        text-align left
-
-    .iq-centralized-modal__buttons
-      display none
-      justify-content space-between
-      margin-top 24px
-
-      +aboveMedium()
-        position relative
-
-        &:after
-          background-color #B5B5B5
-          content ''
-          display block
-          height 1px
-          left -32px
-          position absolute
-          top -32px
-          width calc(100% + 64px)
-
-      .iq-btn
-        display flex
-        justify-content center
-        width 48%
