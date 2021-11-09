@@ -605,6 +605,7 @@
   top:0;
   width:100%;
   visibility:hidden;
+  z-index:150;
 }
 .iq-centralized-modal.iq-centralized-modal--active{
   visibility:visible;
@@ -621,23 +622,6 @@
     -webkit-transform:translateY(0) translateX(0);
             transform:translateY(0) translateX(0);
   }
-}
-.iq-centralized-modal.iq-centralized-modal--buttons .iq-centralized-modal__content{
-  display:-webkit-box;
-  display:-ms-flexbox;
-  display:flex;
-  -webkit-box-orient:vertical;
-  -webkit-box-direction:normal;
-      -ms-flex-flow:column;
-          flex-flow:column;
-  -webkit-box-pack:justify;
-      -ms-flex-pack:justify;
-          justify-content:space-between;
-}
-.iq-centralized-modal.iq-centralized-modal--buttons .iq-centralized-modal__content .iq-centralized-modal__buttons{
-  display:-webkit-box;
-  display:-ms-flexbox;
-  display:flex;
 }
 .iq-centralized-modal .iq-centralized-modal__overlay{
   background:#1a1a1a;
@@ -671,7 +655,6 @@
   .iq-centralized-modal .iq-centralized-modal__content{
     border-radius:16px 0 0 16px;
     bottom:0;
-    height:100vh;
     left:auto;
     padding:24px 32px 32px 32px;
     right:0;
@@ -692,10 +675,39 @@
 @media (min-width:720px){
   .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button{
     margin-bottom:32px;
-    padding-bottom:24px;
     position:relative;
   }
-  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button:after{
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button button{
+  background-color:transparent;
+  border:none;
+  cursor:pointer;
+  padding:4px;
+}
+.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button button img{
+  display:block;
+  width:16px;
+}
+.iq-confirmation-modal .iq-confirmation-modal__content{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-flow:column;
+          flex-flow:column;
+  height:100%;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}
+@media (min-width:720px){
+  .iq-confirmation-modal .iq-confirmation-modal__content .iq-confirmation-modal__button{
+    padding-bottom:24px;
+  }
+}
+@media (min-width:720px){
+  .iq-confirmation-modal .iq-confirmation-modal__content .iq-confirmation-modal__button:after{
     background-color:#b5b5b5;
     bottom:0;
     content:"";
@@ -706,63 +718,63 @@
     width:calc(100% + 64px);
   }
 }
-.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button button{
-  background-color:transparent;
-  border:none;
-  padding:4px;
+@media (min-width:720px){
+  .iq-confirmation-modal .iq-confirmation-modal__content-top{
+    margin-bottom:24px;
+  }
 }
-.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__button button img{
-  display:block;
-  width:16px;
-}
-.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__title{
+.iq-confirmation-modal .iq-confirmation-modal__content-top .iq-confirmation-modal__title{
   color:#000;
   font-size:16px;
+  margin-bottom:0;
   margin-top:16px;
   text-align:center;
 }
 @media (min-width:720px){
-  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__title{
+  .iq-confirmation-modal .iq-confirmation-modal__content-top .iq-confirmation-modal__title{
     font-size:18px;
     text-align:left;
   }
 }
-.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__text{
+.iq-confirmation-modal .iq-confirmation-modal__content-top .iq-confirmation-modal__text{
   color:#444;
   font-size:14px;
   line-height:22px;
+  margin-bottom:0;
   margin-top:11px;
   text-align:center;
 }
 @media (min-width:720px){
-  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__text{
+  .iq-confirmation-modal .iq-confirmation-modal__content-top .iq-confirmation-modal__text{
     margin-top:16px;
     text-align:left;
   }
 }
-.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons{
-  display:none;
+.iq-confirmation-modal .iq-confirmation-modal__bottom{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
   -webkit-box-pack:justify;
       -ms-flex-pack:justify;
           justify-content:space-between;
   margin-top:24px;
 }
 @media (min-width:720px){
-  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons{
+  .iq-confirmation-modal .iq-confirmation-modal__bottom{
     position:relative;
   }
-  .iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons:after{
+  .iq-confirmation-modal .iq-confirmation-modal__bottom:before{
     background-color:#b5b5b5;
     content:"";
     display:block;
     height:1px;
     left:-32px;
     position:absolute;
-    top:-32px;
+    top:-24px;
     width:calc(100% + 64px);
   }
 }
-.iq-centralized-modal .iq-centralized-modal__content .iq-centralized-modal__buttons .iq-btn{
+.iq-confirmation-modal .iq-confirmation-modal__bottom .iq-btn{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;

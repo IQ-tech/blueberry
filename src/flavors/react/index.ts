@@ -23,6 +23,7 @@ export { default as Dropdown } from "./components/Dropdown";
 export { default as Tooltip } from "./components/Tooltip";
 export { default as Message } from "./components/Message";
 export { default as CentralizedModal } from "./components/CentralizedModal";
+export { default as ConfirmationModal } from "./components/ConfirmationModal";
 
 // Form components
 export { default as InputField } from "./components/form/InputField";
