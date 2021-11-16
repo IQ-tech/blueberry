@@ -4,7 +4,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import ColorsPallete from ".";
 
 export default {
-  title: "Components/ColorsPallete",
+  title: "Colors/Pallete",
   component: ColorsPallete,
   parameters: {
     docs: {
@@ -21,4 +21,4 @@ const Template = () => {
   return <ColorsPallete />;
 };
 
-export const ConfirmationModalExample = Template.bind({});
+export const ColorsList = Template.bind({});

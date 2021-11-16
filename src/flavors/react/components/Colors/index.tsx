@@ -5,15 +5,19 @@ import colors from "../../../../core/tokens/colors.json";
 const ConfirmationModal: React.FC = () => {
   return (
     <section>
-      <h1 style={{ fontFamily: "Baloo Chettan 2" }}>Paleta de cores</h1>
+      <h1
+        style={{ textAlign: "center", fontSize: "28px", marginBottom: "60px" }}
+      >
+        Variáveis de cor disponíveis no Blueberry DS:
+      </h1>
 
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
-
+          justifyContent: "space-between",
           margin: "20px auto",
-          maxWidth: "1600px",
+          maxWidth: "1300px",
         }}
       >
         {Object.keys(colors).map((colorName) => {
