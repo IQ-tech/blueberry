@@ -1,0 +1,43 @@
+.color-pallete 
+  font-family: 'Open Sans'
+
+  .color-pallete__title
+    font-size: 28px
+    margin-bottom: 20px
+    text-align: center
+
+  .color-pallete__tip
+    font-size: 18px
+    font-weight normal
+    margin-bottom 60px
+    text-align center
+
+  .color-pallete__list
+    display flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin 20px auto
+    max-width: 1300px
+
+  .color-pallete__list-item
+    align-items: center
+    backface-visibility: hidden
+    cursor: pointer
+    display: flex
+    margin: 15px 0
+    transition: transform .2s ease
+    width 28%
+
+    &:hover
+      transform: scale(1.05) translateZ(0)
+
+    .color-block
+      border 1px solid #7c7575
+      height: 30px
+      width: 50px
+
+    .texts
+      margin-left: 20px
+
+      > p
+        margin 0
