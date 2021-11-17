@@ -2,6 +2,7 @@ import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 
 import ColorsPallete from ".";
+import "./style.styl";
 
 export default {
   title: "Colors/Pallete",
