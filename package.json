@@ -11,8 +11,8 @@
 		"build:lib": "gulp build-lib && yarn generate:types",
 		"dev:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react --no-manager-cache",
 		"dev:pug": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/pug --no-manager-cache",
-		"build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/brand/blueberry-design-system/storybook",
-		"build-storybook:pug": "node_modules/@storybook/html/bin/build.js -c .storybook/pug -o build/brand/blueberry-design-system/storybook/static-version",
+		"build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/",
+		"build-storybook:pug": "node_modules/@storybook/html/bin/build.js -c .storybook/pug -o build/static-version",
 		"build-storybook": "yarn build-storybook:react && yarn build-storybook:pug"
 	},
 	"repository": {
