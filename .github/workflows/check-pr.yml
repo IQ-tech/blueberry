@@ -2,12 +2,12 @@ name: Check PR validity
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   check-pr:
-    runs-on: ubuntu-latest 
-    steps: 
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
@@ -21,5 +21,8 @@ jobs:
         uses: EndBug/version-check@v1
 
       - name: Log when changed
-        if: steps.check.outputs.changed == 'true'
-        run: 'echo "Version change found in commit ${{ steps.check.outputs.commit }}! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
+        if: steps.check.outputs.changed != 'true'
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Package.json has not been correctly upgraded')
