@@ -1,0 +1,15 @@
+name: Check PR validity
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  steps: 
+    - name: Check if version has been updated
+      id: check
+      uses: EndBug/version-check@v1
+
+    - name: Log when changed
+      if: steps.check.outputs.changed == 'true'
+      run: 'echo "Version change found in commit ${{ steps.check.outputs.commit }}! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
