@@ -24,6 +24,7 @@ const Template = (args) => (
     <Accordion.Item titleChild="title three">test 3</Accordion.Item>
     <Accordion.Item titleChild="title four">test 4</Accordion.Item>
     <Accordion.Item titleChild="title four">test 5</Accordion.Item>
+    <Accordion.Item titleChild="title four">test 6</Accordion.Item>
   </Accordion>
 );
 
