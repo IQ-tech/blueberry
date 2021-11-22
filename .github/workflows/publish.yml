@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   publish:
+    if: github.event.pull_request.merged == true
     name: Publish
     runs-on: ubuntu-latest
     steps:
