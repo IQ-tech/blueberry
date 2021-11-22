@@ -1,9 +1,0 @@
-include ../Button/index.pug
-include ../Button/ButtonIcon.pug
-
-
-mixin IconButton(args)
-	+Button(args)&attributes( attributes )
-		+ButtonIcon()
-			if block
-				block

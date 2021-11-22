@@ -1,9 +1,13 @@
 {
 	"name": "iq-blueberry",
-	"version": "0.0.2",
+	"version": "0.0.1",
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
 	"types": "dist/types/main.d.ts",
+	"files": [
+    "/dist",
+    "/src"
+  ],
 	"scripts": {
 		"register-icons": "gulp register-icons",
 		"only-bundle": "webpack -c config/webpack.prod.js",

@@ -1,9 +1,0 @@
-include ../index.pug
-include ./Container.pug
-
-mixin Optional()
-	+Container()
-		+InputField({label: "Optional input", optional: true})(
-			name="first-name"
-			placeholder="Digite seu nome"
-		)
