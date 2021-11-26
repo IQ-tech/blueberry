@@ -2,6 +2,7 @@ import React from "react";
 
 import "./style.styl";
 
+//Gerando section items
 const SectionIcons = ({ Icons }) => {
   const iconsNames = Object.keys({ ...Icons });
 
