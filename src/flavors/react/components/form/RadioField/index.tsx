@@ -72,7 +72,7 @@ const RadioField: React.FC<RadioFieldProps> = ({
       >
         <div style={containerStyle} className="iq-radio-field__container">
           {options.map((option, index) => {
-            const id = `iq-radio-${option.value}-${index}`;
+            const id = `iq-radio-option-${name}-${index}`;
             return (
               <div
                 className="iq-radio-field__option"
