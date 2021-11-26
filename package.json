@@ -1,13 +1,13 @@
 {
 	"name": "iq-blueberry",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
 	"types": "dist/types/main.d.ts",
 	"files": [
-    "/dist",
-    "/src"
-  ],
+		"/dist",
+		"/src"
+	],
 	"scripts": {
 		"register-icons": "gulp register-icons",
 		"only-bundle": "webpack -c config/webpack.prod.js",
@@ -20,15 +20,15 @@
 		"build-storybook": "yarn build-storybook:react && yarn build-storybook:pug"
 	},
 	"repository": {
-    "type": "git",
-    "url": "git+https://github.com/IQ-tech/blueberry.git"
-  },
+		"type": "git",
+		"url": "git+https://github.com/IQ-tech/blueberry.git"
+	},
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/RedVentures/iq-design-system/issues"
+		"url": "https://github.com/IQ-tech/blueberry/issues"
 	},
-	"homepage": "https://github.com/RedVentures/iq-design-system#readme",
+	"homepage": "https://github.com/IQ-tech/blueberry#readme",
 	"devDependencies": {
 		"@babel/cli": "^7.12.1",
 		"@babel/core": "^7.12.3",
