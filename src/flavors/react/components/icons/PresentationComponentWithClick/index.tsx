@@ -39,16 +39,6 @@ const SectionIcons = ({ Icons }) => {
   );
 };
 
-const InfoDescriptionPage = ({ tag, classNameTag, info }) => {
-  return React.createElement(
-    tag,
-    {
-      class: classNameTag,
-    },
-    info
-  );
-};
-
 const PresentationComponentWithClick = ({
   infoDocumentation,
   sectionsIcons,
@@ -57,16 +47,27 @@ const PresentationComponentWithClick = ({
     <>
       <section className="howto-section__container">
         <h1 className="howto-section__title">{infoDocumentation.titlePage}</h1>
-        {infoDocumentation.description.map((paragraph, index) => {
-          return (
-            <InfoDescriptionPage
-              key={index}
-              tag={paragraph.tag}
-              classNameTag={paragraph.classNameTag}
-              info={paragraph.information}
-            />
-          );
-        })}
+        <p className="howto-section__paragraph">
+          É uma pergunta que talvez não venha frequentemente, por que
+          normalmente os ícones são utilizados no componente buttons. Mas há uma
+          forma de utilizar os ícones dentro de qualquer elemento, seja uma
+          âncora, texto simples ou mesmo um container.
+        </p>
+        <p className="howto-section__paragraph">
+          Bom, sabendo do seu motivo, vamos a parte interessante, como utilizar?
+          Para isso basta usar o importe dele, da seguinte maneira:
+        </p>
+        <code className="howto-section__code-text">
+          import [NomeDoIcone] from "iq-blueberry/dist/reactIcons/[NomeDoIcone]"
+        </code>
+        <p className="howto-section__paragraph">
+          Para usar dentro do React JS, basta utiliza-lo como se fosse um
+          componente, seguindo o exemplo abaixo:{" "}
+        </p>
+        <code className="howto-section__code-text">{"<[NomeDoIcone] />"}</code>
+        <p className="howto-section__paragraph">
+          💡 Clique em cima do ícone desejado para copiar o import.
+        </p>
       </section>
       {sectionsIcons.map((section, index) => {
         return (
