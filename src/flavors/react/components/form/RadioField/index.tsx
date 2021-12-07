@@ -47,7 +47,7 @@ const RadioField: React.FC<RadioFieldProps> = ({
   const containerStyle = (() => {
     const defaultStyle: React.CSSProperties = {};
     if (columns) {
-      defaultStyle.gridTemplateRows = `repeat(${columns}, 1fr)`;
+      defaultStyle.gridTemplateColumns = `repeat(${columns}, 1fr)`;
     }
     if (verticalGap) {
       defaultStyle.rowGap = verticalGap;
