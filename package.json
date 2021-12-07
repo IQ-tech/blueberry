@@ -5,9 +5,9 @@
 	"main": "dist/main.js",
 	"types": "dist/types/main.d.ts",
 	"files": [
-    "/dist",
-    "/src"
-  ],
+		"/dist",
+		"/src"
+	],
 	"scripts": {
 		"register-icons": "gulp register-icons",
 		"only-bundle": "webpack -c config/webpack.prod.js",
@@ -20,9 +20,9 @@
 		"build-storybook": "yarn build-storybook:react && yarn build-storybook:pug"
 	},
 	"repository": {
-    "type": "git",
-    "url": "git+https://github.com/IQ-tech/blueberry.git"
-  },
+		"type": "git",
+		"url": "git+https://github.com/IQ-tech/blueberry.git"
+	},
 	"author": "",
 	"license": "ISC",
 	"bugs": {
