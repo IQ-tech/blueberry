@@ -1,0 +1,27 @@
+.breakpoints-page {
+  &__title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+
+    &-item__info {
+      border-radius: 2px;
+      background-color: rgb(198, 198, 198);
+    }
+
+    &-item__info:hover {
+      background-color: rgb(172, 172, 172);
+    }
+  }
+}
