@@ -1,8 +1,8 @@
-export default {
-	breakpointData: [
+const breakpointData = {
+	data: [
 		{
-			name: `aboveXSmall()`,
-			screen: `0px a 599px`,
+			name: `aboveXSmall() 🤳`,
+			screen: ` 0px a 599px`,
 			point: `xsmall(0px)`,
 			code: `+aboveXSmall() {
 
@@ -10,8 +10,8 @@ export default {
 			slug: `xsmall`,
 		},
 		{
-			name: `aboveSmall()`,
-			screen: `600px a 719px`,
+			name: `aboveSmall() 📱`,
+			screen: ` 600px a 719px`,
 			point: `small(600px)`,
 			code: `+aboveSmall() {
 
@@ -19,8 +19,8 @@ export default {
 			slug: `small`,
 		},
 		{
-			name: `aboveMedium()`,
-			screen: `720px a 1023px`,
+			name: `aboveMedium() 💻`,
+			screen: ` 720px a 1023px`,
 			point: `medium(720px)`,
 			code: `+aboveMedium() {
 
@@ -28,8 +28,8 @@ export default {
 			slug: `medium`,
 		},
 		{
-			name: `aboveLarge()`,
-			screen: `1024px a 1919px`,
+			name: `aboveLarge() 🖥️`,
+			screen: ` 1024px a 1919px`,
 			point: `large(1024px)`,
 			code: `+aboveLarge() {
 
@@ -37,13 +37,24 @@ export default {
 			slug: `large`,
 		},
 		{
-			name: `aboveXLarge()`,
-			screen: `1920px - o céu é o limite`,
+			name: `aboveXLarge() 🖥️🖥️`,
+			screen: ` 1920px - o céu é o limite`,
 			point: `xlarge(1920px)`,
 			code: `+aboveXLarge() {
 
       }`,
 			slug: `xlarge`,
 		},
+		// {
+		// 	name: `betweenAB(bpA, bpB)`,
+		// 	screen: `finidos por você. `,
+		// 	point: `xlarge(1920px)`,
+		// 	code: `+aboveXLarge() {
+
+		//   }`,
+		// 	slug: `xlarge`,
+		// },
 	],
 };
+
+export default breakpointData;
