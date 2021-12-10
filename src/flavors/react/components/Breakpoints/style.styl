@@ -1,0 +1,49 @@
+@import '~core/variables';
+
+.breakpoints-page {
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &__title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 10%;
+    text-align: center;
+
+    +aboveLarge() {
+      padding: 0 20%;
+    }
+  }
+
+  &__list {
+    column-gap: 120px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 20%);
+    justify-content: center;
+    margin-top: 30px;
+    padding: 0 auto;
+    row-gap: 50px;
+
+    &-item {
+      h3 {
+        font-size: 24px;
+      }
+
+      .button {
+        cursor: pointer;
+        background-color: #F9F9F9;
+        border: 1px solid black;
+        border-radius: 4px;
+        font-size: 16px;
+        padding: 4px;
+      }
+    }
+  }
+}
