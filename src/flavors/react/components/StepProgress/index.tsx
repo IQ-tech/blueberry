@@ -1,21 +1,21 @@
 import React from 'react';
 
-interface ProgressStepProps {
+interface StepProgressProps {
   /** Set the step list */
-  stepList: Array<string>;
+  stepsList: Array<string>;
   /** Define the current step */
   currentStep?: number;
 }
 
-const ProgressStep: React.FC<ProgressStepProps> = ({stepList, currentStep}) => {
+const StepProgress: React.FC<StepProgressProps> = ({stepsList, currentStep}) => {
   currentStep = currentStep === 0 ? 1 : currentStep;
 
   return (
-    <ul className='iq-progress-step'>
-      {stepList.map((step, index) => {
+    <ul className='iq-step-progress'>
+      {stepsList.map((step, index) => {
         const modifier = (currentStep - 1) >= index ? 'enable' : 'disable';
         return (
-          <li key={`step-${index}`} className={`iq-progress-step__item--${modifier}`}>
+          <li key={`step-${index}`} className={`iq-step-progress__item--${modifier}`}>
             {step}
           </li>
         );
@@ -24,4 +24,4 @@ const ProgressStep: React.FC<ProgressStepProps> = ({stepList, currentStep}) => {
   );
 };
 
-export default ProgressStep;
+export default StepProgress;
