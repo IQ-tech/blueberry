@@ -24,6 +24,7 @@ export { default as Tooltip } from "./components/Tooltip";
 export { default as Message } from "./components/Message";
 export { default as CentralizedModal } from "./components/CentralizedModal";
 export { default as ConfirmationModal } from "./components/ConfirmationModal";
+export { default as StepProgress } from "./components/StepProgress";
 
 // Form components
 export { default as InputField } from "./components/form/InputField";
