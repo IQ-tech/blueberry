@@ -1,0 +1,31 @@
+@import '../variables.styl';
+
+.iq-progress-step {
+	componentDeepReset();
+	list-style: none;
+	font-family: 'Open Sans';
+	font-size: 12px;
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	gap: 8px;
+
+	&__item {
+		&--enable {
+			width: 100%;
+			display: flex;
+			padding-bottom: 8px;
+			border-bottom: 6px solid blueberry-40;
+			color: blueberry-70;
+		}
+
+		&--disable {
+			width: 100%;
+			display: flex;
+			padding-bottom: 8px;
+			border-bottom: 6px solid blueberry-10;
+			color: blueberry-20;
+		}
+	}
+
+}
