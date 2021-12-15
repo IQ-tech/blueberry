@@ -1,0 +1,45 @@
+@import '../variables.styl';
+
+.iq-progress-bar
+	@keyframes slide {
+		from {
+			background-position-x 10px
+		}
+		to {
+			background-position-x 113px
+		}
+	}
+
+	componentDeepReset();
+	background blueberry-10
+	height 24px
+	overflow hidden
+	position relative
+
+	&--completed
+		animation: slide 4s linear infinite;
+		background repeating-linear-gradient(
+			113deg,
+			blueberry-80,
+			blueberry-80 6px,
+			blueberry-70 6px,
+			blueberry-70 16px
+		)
+		border-radius 0 50px 50px 0
+		height 100%
+		top 0
+		left -113px
+		transition width 0.5s ease
+		position absolute
+
+		span
+			color white
+			font-family 'Baloo Chettan 2'
+			font-size 12px
+			font-weight 600
+			line-height 24px
+			position absolute
+			right 16px
+			top 0
+			z-index 9
+

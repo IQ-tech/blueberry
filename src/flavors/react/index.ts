@@ -25,6 +25,7 @@ export { default as Message } from "./components/Message";
 export { default as CentralizedModal } from "./components/CentralizedModal";
 export { default as ConfirmationModal } from "./components/ConfirmationModal";
 export { default as StepProgress } from "./components/StepProgress";
+export { default as ProgressBar } from "./components/ProgressBar";
 
 // Form components
 export { default as InputField } from "./components/form/InputField";
