@@ -24,5 +24,5 @@ const Template = (args) => (
 
 export const Progress = Template.bind({});
 Progress.args = {
-  percentage: '25%',
+  percentage: 25,
 }
