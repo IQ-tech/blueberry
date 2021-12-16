@@ -7,10 +7,10 @@ interface LinkProps {
   url: string;
 }
 
-const Link: React.FC<LinkProps> = ({ text, url }) => {
+const Link: React.FC<LinkProps> = ({ url,  children, ...props }) => {
   return (
-    <a href={url} className='iq-link' target="_blank" rel="noopener">
-      {text}
+    <a href={url} className='iq-link' {...props}>
+      {children}
     </a>
   );
 };
