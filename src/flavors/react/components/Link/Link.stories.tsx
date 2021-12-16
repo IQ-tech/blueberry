@@ -24,6 +24,6 @@ const Template = (args) => (
 
 export const LinkComponent = Template.bind({});
 LinkComponent.args = {
-  text: "Link",
-  url: "https://www.redventures.com/"
+  url: "https://www.redventures.com/",
+  children: "Link"
 }

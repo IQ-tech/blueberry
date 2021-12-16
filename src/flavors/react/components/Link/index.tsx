@@ -1,9 +1,7 @@
 import React from 'react';
 
 interface LinkProps {
-  /** Define the link text */
-  text: string;
-  /** Define where the link will redirect */
+  /** Define where the link will redirect to*/
   url: string;
 }
 
