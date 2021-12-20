@@ -19,6 +19,8 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
   /** Icon to render on the left side */
   LeftIcon?: React.FC<any>;
   tooltipConfig?: TooltipProps;
+  /** Define if it should render a numeric keyboard in mobile devices */
+  useNumericKeyboard?: boolean;
 }
 
 const InputField: React.FC<InputProps> = ({
@@ -39,6 +41,7 @@ const InputField: React.FC<InputProps> = ({
   customClass,
   LeftIcon,
   tooltipConfig,
+  useNumericKeyboard = false,
   ...rest
 }) => {
   const shouldRenderRightIcon = !invalid && !!Icon;
@@ -84,6 +87,8 @@ const InputField: React.FC<InputProps> = ({
             autoComplete={autoComplete}
             value={value}
             name={name}
+            inputMode={useNumericKeyboard ? "numeric" : undefined}
+            pattern={useNumericKeyboard ? "[0-9]*" : undefined}
             {...rest}
           />
           <div className="iq-input-field__icon iq-input-field__icon--right">

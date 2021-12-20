@@ -30,8 +30,21 @@ BasicInput.args = {
   invalid: false,
   optional: false,
   required: true,
+  useNumericKeyboard: false,
+  label: "Simple field",
+  placeholder: "Batata"
+};
+
+export const InputWithNumericKeyboard = Template.bind({});
+InputWithNumericKeyboard.args = {
+  disabled: false,
+  invalid: false,
+  optional: false,
+  required: true,
+  useNumericKeyboard: true,
   label: "Simple field",
   placeholder: "Batata",
+  mask: [ /\d/, /\d/, /\d/, ".", /\d/, /\d/, /\d/, ".", /\d/, /\d/, /\d/, "-", /\d/, /\d/]
 };
 
 export const InputWithTooltip = Template.bind({});
@@ -40,6 +53,7 @@ InputWithTooltip.args = {
   invalid: false,
   optional: false,
   required: true,
+  useNumericKeyboard: false,
   label: "Simple field",
   placeholder: "Batata",
   tooltipConfig: {
@@ -52,6 +66,7 @@ InputWithTooltip.args = {
 export const InputOpcional = Template.bind({});
 InputOpcional.args = {
   optional: true,
+  useNumericKeyboard: false,
   label: "Input opcional",
   placeholder: "Cenoura",
 };
@@ -70,6 +85,7 @@ InputInvalid.args = {
   placeholder: "Tomate",
   errorMessage: "Some error message",
   required: true,
+  useNumericKeyboard: false,
 };
 
 const LeftIconTemplate = (args) => (
@@ -84,8 +100,9 @@ LeftIcon.args = {
   invalid: false,
   optional: false,
   required: true,
+  useNumericKeyboard: false,
   label: "Simple field",
-  placeholder: "Batata",
+  placeholder: "Batata"
 };
 
 const RightIconTemplate = (args) => (
@@ -100,6 +117,7 @@ RightIcon.args = {
   invalid: false,
   optional: false,
   required: true,
+  useNumericKeyboard: false,
   Icon: OutlineArrowLeft,
   label: "Simple field",
   placeholder: "Batata",
