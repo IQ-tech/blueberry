@@ -10,7 +10,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "Component for titles and other body texts",
+        component: "Component used for show feedback messages",
       },
     },
   },
