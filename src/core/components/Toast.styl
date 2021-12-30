@@ -1,0 +1,88 @@
+@import '../variables.styl';
+
+.iq-toast {
+  componentDeepReset();
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 16px 20px 16px 25px;
+  position: fixed;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  width: 100%;
+  will-change: transform;
+
+  +aboveMedium() {
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 656px;
+  }
+
+  &.iq-toast--visible {
+    transform: translateY(0);
+
+    +aboveMedium() {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+
+  &.iq-toast--success {
+    background-color: green-20;
+
+    .iq-toast__content-message {
+      color: green-100;
+    }
+  }
+
+  &.iq-toast--info {
+    background-color: cyan-20;
+
+    .iq-toast__content-message {
+      color: cyan-80;
+    }
+  }
+
+  &.iq-toast--error {
+    background-color: red-10;
+
+    .iq-toast__content-message {
+      color: red-100;
+    }
+  }
+
+  &.iq-toast--warning {
+    background-color: yellow-20;
+
+    .iq-toast__content-message {
+      color: yellow-100;
+    }
+  }
+
+  .iq-toast__content {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 16px;
+
+    .iq-toast__content-message {
+      font-weight: 600;
+    }
+
+    .iq-toast__content-button {
+      background-color: transparent;
+      border: none;
+
+      .iq-icon {
+        width: 16px;
+
+        svg {
+          color: gray-50;
+        }
+      }
+    }
+  }
+}
