@@ -1,6 +1,6 @@
 # Iq Blueberry Design System
 
-The Iq Design System (Blueberry) came to bring a series of benefits and to solve a series of common problems in the Iq development workflow.
+The Iq Design System (Blueberry) came to bring a series of benefits and to solve common problems in the Iq development workflow.
 
 ### The main benefits are:
 
@@ -27,13 +27,13 @@ The Iq Design System (Blueberry) came to bring a series of benefits and to solve
 
 ## What is a framework agnostic design system?
 
-It's an organized collection of reusable components, rules, and standards that can help build applications in a convenient way - keeping the brand's visual identity. Since it is a framework-agnostic design system, this library of components and standards is independent of any framework, meaning that teams can use the components no matter what framework is used. This DS is developed in Storybook.
+It's an organized collection of reusable components, rules, and standards that help building applications in a convenient way - keeping the brand's visual identity. Since it's framework-agnostic, this library is independent of any framework, meaning that teams can use the components no matter what framework is used. This DS is developed in [Storybook](https://storybook.js.org/).
 
 ---
 
 ## Design Tokens
 
-## They are Design System's values (or variables) created to name and reuse important information. Example: `blueberry-60`is a design token, it stores the color `#453AD3`.
+They are Design System's values (or variables) created to name and reuse important information. Example: `blueberry-60`is a design token that stores the color `#453AD3`.
 
 ## Installation
 
@@ -58,17 +58,17 @@ The port `localhost:6006` is automatically opened.
 1. Go to `src/flavors/react/components` and create a folder inside it for your component
 2. Create the following files:
    - `YourComponent.stories.tsx`: to index your component's page in Storybook
-   - `index.tsx`: your component
+   - `index.tsx`: your component's structure
    - `style.styl`: if style is needed
 
 ---
 
 ## Main Technology Stack
 
-- TypeScript
-- React
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Stylus](https://stylus-lang.com/)
 - Pug (will be deprecated soon)
-- Stylus
 - Yarn
 - Babel
 - Gatsby
