@@ -25,17 +25,29 @@ The Iq Design System (Blueberry) came to bring a series of benefits and to solve
 
 ---
 
-## What is a framework agnostic design system?
+## Understanding blueberry
+
+### What is a framework agnostic design system?
 
 It's an organized collection of reusable components, rules, and standards that help building applications in a convenient way - keeping the brand's visual identity. Since it's framework-agnostic, this library is independent of any framework, meaning that teams can use the components no matter what framework is used. This DS is developed in [Storybook](https://storybook.js.org/).
 
----
-
-## Design Tokens
+### Design Tokens
 
 They are Design System's values (or variables) created to name and reuse important information. Example: `blueberry-60`is a design token that stores the color `#453AD3`.
 
-## Installation
+### Developing new components
+
+1. Go to `src/flavors/react/components` and create a folder inside it for your component
+2. Create the following files:
+   - `YourComponent.stories.tsx`: to index your component's page in Storybook
+   - `index.tsx`: your component's structure
+   - `style.styl`: if style is needed
+
+---
+
+## Running the project
+
+### Installation
 
 Install all dependencies:
 
@@ -51,19 +63,22 @@ yarn dev:react
 
 The port `localhost:6006` is automatically opened.
 
+### Scripts
+
+_Builds_
+
+- `yarn build-storybook:react`
+- `yarn build-storybook`
+- `yarn build:lib`
+
+_Others_
+
+- `yarn register-icons` (to add a new icon)
+- `yarn only-bundle`
+
 ---
 
-## Developing new components
-
-1. Go to `src/flavors/react/components` and create a folder inside it for your component
-2. Create the following files:
-   - `YourComponent.stories.tsx`: to index your component's page in Storybook
-   - `index.tsx`: your component's structure
-   - `style.styl`: if style is needed
-
----
-
-## Main Technology Stack
+### Main Tech Stack
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -73,10 +88,10 @@ The port `localhost:6006` is automatically opened.
 - Babel
 - Gatsby
 
-## Build tasks
+### Environment
 
-For icons: `yarn register-icons`
+- Prod: `https://iq-tech.github.io/blueberry/`
 
-## Slack channel
+### Slack channel
 
 #iq-design-system
