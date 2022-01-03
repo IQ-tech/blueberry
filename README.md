@@ -27,15 +27,13 @@ The Iq Design System (Blueberry) came to bring a series of benefits and to solve
 
 ## What is a framework agnostic design system?
 
-describe framework agnostic design systems
+It's an organized collection of reusable components, rules, and standards that can help build applications in a convenient way - keeping the brand's visual identity. Since it is a framework-agnostic design system, this library of components and standards is independent of any framework, meaning that teams can use the components no matter what framework is used. This DS is developed in Storybook.
 
 ---
 
 ## Design Tokens
 
-describe design tokens
-
----
+## They are Design System's values (or variables) created to name and reuse important information. Example: `blueberry-60`is a design token, it stores the color `#453AD3`.
 
 ## Installation
 
@@ -57,14 +55,28 @@ The port `localhost:6006` is automatically opened.
 
 ## Developing new components
 
-describe component development workflow
+1. Go to `src/flavors/react/components` and create a folder inside it for your component
+2. Create the following files:
+   - `YourComponent.stories.tsx`: to index your component's page in Storybook
+   - `index.tsx`: your component
+   - `style.styl`: if style is needed
 
 ---
 
-## Technologies used
+## Main Technology Stack
 
-list used technologies
+- TypeScript
+- React
+- Pug (will be deprecated soon)
+- Stylus
+- Yarn
+- Babel
+- Gatsby
 
 ## Build tasks
 
-Summarize build tasks, paths and gulp
+For icons: `yarn register-icons`
+
+## Slack channel
+
+#iq-design-system
