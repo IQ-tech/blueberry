@@ -41,7 +41,7 @@ They are Design System's values (or variables) created to name and reuse importa
 2. Create the following files:
    - `YourComponent.stories.tsx`: to index your component's page in Storybook
    - `index.tsx`: your component's structure
-   - `style.styl`: if style is needed
+3. On `src/core/components`create a style file for your component, such as `YourComponent.styl`
 
 ---
 
