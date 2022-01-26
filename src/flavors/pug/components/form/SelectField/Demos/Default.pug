@@ -1,0 +1,11 @@
+include ../index.pug
+include ./Container.pug
+
+mixin Default()
+	- const items = [{value: 'teste', label: 'teste'}]
+
+	+Container()
+		+SelectField({label: "Default select", items: items})(
+			name="gender"
+			placeholder="Placeholder teste"
+		)
