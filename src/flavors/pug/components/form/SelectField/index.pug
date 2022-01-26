@@ -13,7 +13,7 @@ mixin SelectField({type, rules = {}, optional, items = [], invalid, customClass,
 	- const jailsIsInvalid = `errors.${name}?'${invalidDefaultClass}':''`
 	- const invalidClass = !!invalid ? invalidDefaultClass : ""
 	- const disabledClass = !!disabled ? "iq-select-field--disabled" : ""
-	- const emptyClass = !safeValue ? "iq-select-field--empty" : ""
+	- const emptyClass = "iq-select-field--empty"
 
 	div(
 		class=baseClass
@@ -22,19 +22,23 @@ mixin SelectField({type, rules = {}, optional, items = [], invalid, customClass,
 		class=emptyClass
 		class=customClass
 		v-class=jailsIsInvalid
+		id="iq-select-wrapper"
 	)
 		+FieldBase({rules: rules, errorMessage: errorMessage, label: safeLabel, required: required, name: name, optional: optional})
 			.iq-select-field__select-holder
 				select(
 					class='iq-select-field__input'
+					id="iq-select-field"
 					value=safeValue
 					disabled=disabled
 					data-rules=jsonRules
 					data-static
+					onchange="onSelectChange(this)"
 				)&attributes( attributes )
 					option(
-						disabled=true
-						value=safePlaceholder
+						disabled
+						selected
+						value=""
 					) #{safePlaceholder}
 					each item in items
 						option(
