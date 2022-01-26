@@ -33,6 +33,7 @@ mixin SelectField({type, rules = {}, optional, items = [], invalid, customClass,
 				)&attributes( attributes )
 					option(
 						disabled
+						selected
 						value=""
 					) #{safePlaceholder}
 					each item in items
