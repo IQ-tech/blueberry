@@ -2,24 +2,21 @@ include ../FieldBase/index.pug
 include ../../icons/OutlineAngleDownMini.pug
 
 mixin SelectField({type, rules = {}, optional, items = [], invalid, customClass, required, errorMessage, label})
-	- const { name, placeholder, value, disabled } = attributes
+	- const { name, placeholder, value, defaultvalue = "", disabled } = attributes
 	- const baseClass = "iq-select-field"
 
 	- const jsonRules = JSON.stringify(rules).replace(/"/g, '\'')
 	- const safeLabel = !!label ? label : "Select Label"
 	- const safePlaceholder = !!placeholder ? placeholder : "Select placeholder"
-	- const safeValue = !!value ? value : ""
 	- const invalidDefaultClass = "iq-select-field--invalid"
 	- const jailsIsInvalid = `errors.${name}?'${invalidDefaultClass}':''`
 	- const invalidClass = !!invalid ? invalidDefaultClass : ""
 	- const disabledClass = !!disabled ? "iq-select-field--disabled" : ""
-	- const emptyClass = "iq-select-field--empty"
 
 	div(
 		class=baseClass
 		class=invalidClass
 		class=disabledClass
-		class=emptyClass
 		class=customClass
 		v-class=jailsIsInvalid
 		id="iq-select-wrapper"
@@ -29,15 +26,13 @@ mixin SelectField({type, rules = {}, optional, items = [], invalid, customClass,
 				select(
 					class='iq-select-field__input'
 					id="iq-select-field"
-					value=safeValue
 					disabled=disabled
+					defaultvalue=defaultvalue
 					data-rules=jsonRules
 					data-static
-					onchange="onSelectChange(this)"
 				)&attributes( attributes )
 					option(
 						disabled
-						selected
 						value=""
 					) #{safePlaceholder}
 					each item in items
