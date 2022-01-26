@@ -1,0 +1,48 @@
+include ../FieldBase/index.pug
+include ../../icons/OutlineAngleDownMini.pug
+
+mixin SelectField({type, rules = {}, optional, items = [], invalid, customClass, required, errorMessage, label})
+	- const { name, placeholder, value, disabled } = attributes
+	- const baseClass = "iq-select-field"
+
+	- const jsonRules = JSON.stringify(rules).replace(/"/g, '\'')
+	- const safeLabel = !!label ? label : "Select Label"
+	- const safePlaceholder = !!placeholder ? placeholder : "Select placeholder"
+	- const safeValue = !!value ? value : ""
+	- const invalidDefaultClass = "iq-select-field--invalid"
+	- const jailsIsInvalid = `errors.${name}?'${invalidDefaultClass}':''`
+	- const invalidClass = !!invalid ? invalidDefaultClass : ""
+	- const disabledClass = !!disabled ? "iq-select-field--disabled" : ""
+	- const emptyClass = !safeValue ? "iq-select-field--empty" : ""
+
+	div(
+		class=baseClass
+		class=invalidClass
+		class=disabledClass
+		class=emptyClass
+		class=customClass
+		v-class=jailsIsInvalid
+	)
+		+FieldBase({rules: rules, errorMessage: errorMessage, label: safeLabel, required: required, name: name, optional: optional})
+			.iq-select-field__select-holder
+				select(
+					class='iq-select-field__input'
+					value=safeValue
+					disabled=disabled
+					data-rules=jsonRules
+					data-static
+				)&attributes( attributes )
+					option(
+						disabled=true
+						value=safePlaceholder
+					) #{safePlaceholder}
+					each item in items
+						option(
+							class="iq-select-field__option"
+							value=item.value
+						) #{item.label}
+				.iq-select-field__icon-holder
+					+OutlineAngleDownMini()
+
+
+
