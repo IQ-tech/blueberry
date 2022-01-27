@@ -7,7 +7,7 @@ import OutlineArrowLeft from "../../icons/generated/outline/OutlineArrowLeft";
 import "core/components/Form.styl";
 
 export default {
-  title: "Components/form/Input",
+  title: "Components/form/InputField",
   component: Input,
   parameters: {
     docs: {

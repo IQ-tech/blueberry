@@ -1,13 +1,13 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
-import Checkbox from "./index";
+import CheckboxField from "./index";
 
 //@ts-ignore
 import "core/components/Form.styl";
 
 export default {
-  title: "Components/form/Checkbox",
-  component: Checkbox,
+  title: "Components/form/CheckboxField",
+  component: CheckboxField,
   parameters: {
     docs: {
       description: {
@@ -17,7 +17,7 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => <Checkbox {...args} />;
+const Template = (args) => <CheckboxField {...args} />;
 
 export const DefaultCheckbox = Template.bind({});
 

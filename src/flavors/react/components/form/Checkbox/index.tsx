@@ -12,7 +12,7 @@ interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const CheckboxField: React.FC<CheckboxProps> = ({
   label = "Checkbox",
   id,
   isChecked,
@@ -68,4 +68,4 @@ const Checkbox: React.FC<CheckboxProps> = ({
   );
 };
 
-export default Checkbox;
+export default CheckboxField;

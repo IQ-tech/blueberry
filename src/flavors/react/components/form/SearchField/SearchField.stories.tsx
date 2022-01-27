@@ -7,7 +7,7 @@ import OutlineArrowLeft from "../../icons/generated/outline/OutlineArrowLeft";
 import "core/components/Form.styl";
 
 export default {
-  title: "Components/form/Search",
+  title: "Components/form/SearchField",
   component: SearchField,
   parameters: {
     docs: {
