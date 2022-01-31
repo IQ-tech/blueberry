@@ -509,3 +509,82 @@
 
 			&:checked ~ .iq-radio-field__icon:after
 				border-color gray-30
+
+// textarea field
+.iq-textarea-field
+	resetBoxSizing()
+	position relative
+
+	.iq-field-base__error-message
+		display none
+
+	&--invalid, &.error
+		.iq-field-base__error-message
+			display block
+
+	&__input-holder
+		position relative
+
+	&__input
+		border 1px solid gray-40
+		border-radius 4px
+		font-size 14px
+		padding 11px 16px
+		line-height 26px
+		transition outline-color 0.3s ease
+		outline-color transparent
+		display block
+		color gray-60
+		width 100%
+
+		&:focus
+			outline-color blueberry-50
+
+		&::selection
+			background-color blueberry-50
+			color gray-0
+
+		&::placeholder
+			color gray-40
+
+		&--no-resize
+			resize none
+
+	&--invalid, &.error
+		.iq-textarea-field__input
+			border 1px solid red-40
+
+			&:focus
+				outline-color red-40
+
+	&--disabled
+		.iq-textarea-field__input
+			border 1px solid gray-30
+			background-color gray-10
+			color gray-40
+
+			&::placeholder
+				color gray-40
+	&--left-icon
+		.iq-textarea-field__input
+			padding-left 48px
+
+	&__icon
+		width 24px
+		position absolute
+		right 13px
+		top 50%
+		transform translateY(-50%)
+
+		&--left
+			left 13px
+
+		&--right
+			right 13px
+
+	&__invalid-icon
+		display none
+
+	&--invalid, &.error
+		.iq-textarea-field__invalid-icon
+			display block

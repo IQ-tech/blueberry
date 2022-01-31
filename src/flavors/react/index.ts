@@ -41,3 +41,4 @@ export { default as CheckboxField } from "./components/form/Checkbox";
 export { default as CheckboxGroup } from "./components/form/CheckboxGroup";
 export { default as RadioField } from "./components/form/RadioField";
 export { default as FieldBase } from "./components/form/FieldBase";
+export { default as TextareaField } from "./components/form/TextareaField";
