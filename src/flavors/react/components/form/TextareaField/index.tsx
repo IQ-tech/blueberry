@@ -9,6 +9,8 @@ interface TextAreaProps extends CommonFieldsProps, ModifiedInputProps {
   tooltipConfig?: TooltipProps;
   /** Define the number of rows */
   rows?: number;
+  /** Define the number of cols */
+  cols?: number;
   /** Define a custom class for the field */
   customClass?: string;
   /** Define if the field is resizable */
@@ -36,6 +38,7 @@ const TextareaField: React.FC<TextAreaProps> = ({
   customClass,
   tooltipConfig,
   rows,
+  cols,
   resize,
   spellcheck,
   minLength,
@@ -74,6 +77,7 @@ const TextareaField: React.FC<TextAreaProps> = ({
           spellCheck={spellcheck}
           value={value}
           rows={rows ?? 3}
+          cols={cols ?? 50}
           disabled={disabled}
           minLength={minLength}
           maxLength={maxLength}
