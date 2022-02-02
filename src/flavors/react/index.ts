@@ -17,7 +17,6 @@ export { default as Tags } from "./components/Tags";
 export { default as Tabs } from "./components/Tabs";
 export { default as Card } from "./components/Card";
 export { default as Button } from "./components/Button";
-export { default as Carrossel } from "./components/Carrossel";
 export { default as Accordion } from "./components/Accordion";
 export { default as Dropdown } from "./components/Dropdown";
 export { default as Tooltip } from "./components/Tooltip";
