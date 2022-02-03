@@ -1,7 +1,9 @@
 /** Lib entry point */
 
 // Styles entry-file (will generate a .css file)
-import "./core/main.styl";
+
+// TODO - resolve styles on rollup
+/* import "./core/main.styl"; */
 
 // Design tokens
 export { default as colors } from "./core/tokens/colors.json";
