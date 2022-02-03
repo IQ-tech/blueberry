@@ -1,11 +1,31 @@
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
 import json from "@rollup/plugin-json";
+import alias from "@rollup/plugin-alias";
+import packageConfig from "./package.json";
+import {resolve} from "path"
 
-const packageConfig = require("./package.json");
+
+const projectRootDir = resolve(__dirname);
+
 const outputMain = packageConfig.main;
-const typesFiles = packageConfig.types
+const typesFiles = packageConfig.types;
 const input = "src/main.ts";
+
+const createAlias = (alias, path) => ({
+	find: alias,
+	replacement: resolve(projectRootDir, path)
+})
+
+const aliasConfig = alias({
+	entries: [
+		createAlias("src", "src"),
+		createAlias("core", "src/core"),
+		createAlias("fonts", "src/fonts"),
+		createAlias("icons", "src/icons"),
+		createAlias("flavors", "src/flavors"),
+	],
+});
 
 export default [
 	{
@@ -16,7 +36,7 @@ export default [
 				format: "cjs",
 				sourcemap: true,
 				esModule: true,
-				freeze: false
+				freeze: false,
 			},
 			{
 				dir: "es",
@@ -24,7 +44,7 @@ export default [
 				preserveModules: true,
 				sourcemap: true,
 				esModule: true,
-				freeze: false
+				freeze: false,
 			},
 		],
 		plugins: [
@@ -34,6 +54,7 @@ export default [
 				jsxFragment: "React.Fragment",
 			}),
 			json(),
+			aliasConfig,
 		],
 	},
 	{
@@ -41,9 +62,10 @@ export default [
 		output: [
 			{
 				file: typesFiles,
-				format: "es"
-			}
+				format: "es",
+			},
 		],
-		plugins: [dts(), json()]
-	}
+		plugins: [dts(), json(), aliasConfig],
+		external: [...Object.keys(packageConfig.peerDependencies)],
+	},
 ];
