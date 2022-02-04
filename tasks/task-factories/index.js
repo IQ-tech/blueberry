@@ -18,6 +18,7 @@ exports.moveFromToTaskFactory = function moveFromToTaskFactory(from, to) {
 exports.cleanFolderTaskFactory = function (folderToCleanWildCard) {
 	const cleanningFolder = (cb) => {
 		rimraf(folderToCleanWildCard, () => {
+			console.log(folderToCleanWildCard)
 			cb();
 		});
 	};

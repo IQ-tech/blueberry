@@ -1,20 +1,13 @@
 const { series } = require("gulp");
-
 const moveCoreFilesToDistTask = require("./process-files/move-files-to-dist");
-const bundleLibTask = require("./process-files/bundle-lib");
-
 const { cleanFolderTaskFactory } = require("./task-factories");
-
-const cleanDistTask = cleanFolderTaskFactory("dist/*");
-
+const cleanGeneratedFoldersTask = cleanFolderTaskFactory("{types,dist,es}");
 const generateDistReactIcons = require("./process-files/icons/react-icons/generate-dist-icons");
 
-// Do all tasks imported above in the correct order
-const buildLibTask = series(
-	cleanDistTask,
-	bundleLibTask,
+const createDistTask = series(
+	cleanGeneratedFoldersTask,
 	moveCoreFilesToDistTask,
-	generateDistReactIcons
+	/* generateDistReactIcons */
 );
 
-module.exports = buildLibTask;
+module.exports = createDistTask;
