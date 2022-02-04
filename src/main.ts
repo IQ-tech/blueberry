@@ -3,7 +3,7 @@
 // Styles entry-file (will generate a .css file)
 
 // TODO - resolve styles on rollup
-/* import "./core/main.styl"; */
+import "./core/main.styl";
 
 // Design tokens
 export { default as colors } from "./core/tokens/colors.json";
