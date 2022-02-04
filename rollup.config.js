@@ -4,6 +4,7 @@ import json from "@rollup/plugin-json";
 import alias from "@rollup/plugin-alias";
 import postcss from "rollup-plugin-postcss";
 import postcssUrl from "postcss-url";
+import autoprefixer from 'autoprefixer'
 import packageConfig from "./package.json";
 import { resolve, join } from "path";
 import { readFileSync } from "fs";
@@ -62,6 +63,7 @@ export default [
 				extract: true,
 				extract: "styles.css",
 				plugins: [
+					autoprefixer(),
 					postcssUrl({
 						url: (asset) => {
 							const oldPath = asset.relativePath;
