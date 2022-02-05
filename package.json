@@ -4,7 +4,10 @@
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
 	"module": "es/main.js",
-	"sideEffects": false,
+	"sideEffects": [
+		"*.styl",
+		"*.css"
+	],
 	"types": "types/main.d.ts",
 	"files": [
 		"/dist",
