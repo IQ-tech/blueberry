@@ -16,7 +16,7 @@ const input = "src/main.ts";
 
 /**
  * With this rollup config we get three outputs to this package, an es bundle that
- * bring tree shaking to the lib, a cjs bundle and a type definitions file
+ * bring tree shaking to the lib, a cjs bundle and the library type definitions
  */
 
 const createAlias = (alias, path) => ({
