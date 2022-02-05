@@ -14,18 +14,13 @@
 	],
 	"scripts": {
 		"register-icons": "gulp register-icons",
-		"bundle-rollup": "rollup -c",
-		"only-bundle": "webpack -c config/webpack.prod.js",
-		"build:libs": "gulp create-dist && yarn bundle-rollup",
-
+		"only-bundle": "rollup -c",
+		"build:lib": "gulp create-dist && yarn only-bundle",
 		"dev:react": "node_modules/@storybook/react/bin/index.js -p 6006 -c .storybook/react --no-manager-cache",
 		"dev:pug": "node_modules/@storybook/html/bin/index.js -p 6008 -c .storybook/pug --no-manager-cache",
 		"build-storybook:react": "node_modules/@storybook/react/bin/build.js -c .storybook/react -o build/",
 		"build-storybook:pug": "node_modules/@storybook/html/bin/build.js -c .storybook/pug -o build/static-version",
-		"build-storybook": "yarn build-storybook:react && yarn build-storybook:pug",
-
-		"build:lib": "gulp build-lib && yarn generate:types",
-		"generate:types": "tsc --emitDeclarationOnly"
+		"build-storybook": "yarn build-storybook:react && yarn build-storybook:pug"
 	},
 	"repository": {
 		"type": "git",
