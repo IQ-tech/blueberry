@@ -7,7 +7,7 @@ const generateDistReactIcons = require("./process-files/icons/react-icons/genera
 const createDistTask = series(
 	cleanGeneratedFoldersTask,
 	moveCoreFilesToDistTask,
-	/* generateDistReactIcons */
+	generateDistReactIcons
 );
 
 module.exports = createDistTask;

@@ -1,4 +1,4 @@
-const { src, dest, series } = require("gulp");
+const { src, dest } = require("gulp");
 const svgo = require("gulp-svgo");
 const through = require("through2");
 const path = require("path");

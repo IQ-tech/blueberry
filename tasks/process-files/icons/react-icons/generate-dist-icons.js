@@ -1,11 +1,14 @@
-const webpackConfig = require("../../../../config/webpack.prod");
-const fs = require("fs");
-const webpack = require("webpack");
-const path = require("path");
 const { series } = require("gulp");
+const { rollup } = require("rollup");
+const json = require("@rollup/plugin-json");
+const esbuild = require("rollup-plugin-esbuild").default;
+const fs = require("fs");
+const packageConfig = require("../../../../package.json")
+
+
 const iconsFilesFolderPath = "./src/flavors/react/components/icons/generated";
 
-function bundleIndividualIconsTask(cb) {
+async function bundleIndividualIconsTask(cb) {
 	const generatedIconCollections = fs.readdirSync(iconsFilesFolderPath) || [];
 	const onlyCollectionFolders = generatedIconCollections.filter(
 		(item) => !item.includes(".")
@@ -28,36 +31,27 @@ function bundleIndividualIconsTask(cb) {
 		return [...acc, ...fullPathFiles];
 	}, []);
 
-	const webpackEntryPoints = filesToBeTranspiled.reduce((acc, nextPath) => {
-		const filename = path.parse(nextPath).name;
-
-		return {
-			...acc,
-			[filename]: nextPath,
-		};
-	}, {});
-
-	const newWebpackConfig = {
-		...webpackConfig,
-		entry: { ...webpackEntryPoints },
-		output: {
-			path: path.resolve(__dirname, "../../../../dist/reactIcons"),
-			libraryTarget: "umd",
-			globalObject: "this",
-			filename: "[name].js",
-		},
-	};
-
-	const compiler = webpack(newWebpackConfig);
-
-	compiler.run((err) => {
-		if (err) {
-			throw new Error(
-				"`generateDistIconsTask` task failed, React icons transpiling didn't work  "
-			);
-		}
-		cb();
+	const bundle = await rollup({
+		input: filesToBeTranspiled,
+		external: [...Object.keys(packageConfig.peerDependencies)],
+		plugins: [
+			esbuild({
+				jsx: "transform", // default, or 'preserve'
+				jsxFactory: "React.createElement",
+				jsxFragment: "React.Fragment",
+			}),
+			json(),
+		],
 	});
+
+	await bundle.write({
+		dir: "dist/reactIcons",
+		format: "es",
+	});
+
+	await bundle.close();
+
+	cb();
 }
 
 function generateRootModuleTask(cb) {
