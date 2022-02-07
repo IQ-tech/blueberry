@@ -2,9 +2,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,macos,windows,react,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,windows,react,visualstudiocode
 
-### storybook ###
+
+# generated folders
 build
 dist
+es
+types
 
 
 ### macOS ###
