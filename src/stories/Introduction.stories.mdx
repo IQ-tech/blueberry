@@ -2,6 +2,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
 import Code from "./assets/code-brackets.svg";
 import Colors from "./assets/colors.svg";
 import Comments from "./assets/comments.svg";
+import Cover from "./assets/cover.svg";
 import Direction from "./assets/direction.svg";
 import Flow from "./assets/flow.svg";
 import Plugin from "./assets/plugin.svg";
@@ -9,7 +10,7 @@ import Repo from "./assets/repo.svg";
 import StackAlt from "./assets/stackalt.svg";
 import IconHandApp from "flavors/pug/components/icons/IconHandApp.pug";
 
-<Meta title="Example/Introduction" />
+<Meta title="Introduction" />
 
 <style>{`
   .subheading {
@@ -115,102 +116,58 @@ import IconHandApp from "flavors/pug/components/icons/IconHandApp.pug";
   
 `}</style>
 
-# Welcome to Storybook
+<img src={Cover} alt="Cover" />
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+The Blueberry design system came to bring a series of benefits and to solve common problems in the development workflow.
 
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `src/storybook-examples` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+Blueberry is a Design System built with React.
 
-<div class="subheading">Configure</div>
+### The main benefits are:
+-----------
+ * Keep visual consistency between components, pages and projects
+ * Create easily maintainable components
+ * Develop a common language between Design and Front-end teams
+ * Single source of truth to style code
+ * Faster development of pages and features (keeping quality and isolation of code)
+ * Using css as base, the consumer applications can use almost any technology or framework such as React and css-in-js libraries
 
-<div class="link-list">
-	<a
-		class="link-item"
-		href="https://storybook.js.org/docs/react/api/presets"
-		target="_blank"
-	>
-		<img src={Plugin} alt="plugin" />
-		<span>
-			<strong>Presets for popular tools</strong>
-			Easy setup for TypeScript, SCSS and more.
-		</span>
-	</a>
-	<a
-		class="link-item"
-		href="https://storybook.js.org/docs/react/configure/webpack"
-		target="_blank"
-	>
-		<img src={StackAlt} alt="Build" />
-		<span>
-			<strong>Build configuration</strong>
-			How to customize webpack and Babel
-		</span>
-	</a>
-	<a
-		class="link-item"
-		href="https://storybook.js.org/docs/react/configure/styling-and-css"
-		target="_blank"
-	>
-		<img src={Colors} alt="colors" />
-		<span>
-			<strong>Styling</strong>
-			How to load and configure CSS libraries
-		</span>
-	</a>
-	<a
-		class="link-item"
-		href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-		target="_blank"
-	>
-		<img src={Flow} alt="flow" />
-		<span>
-			<strong>Data</strong>
-			Providers and mocking for data libraries
-		</span>
-	</a>
-</div>
+### Get started
+-----------
+* <b>Explore UI components:</b> Click on any of the component in the sidebar to see how they look, and how to configure them. Each component pages contains documentation of its properties, as well as code examples for how to use it.
+* <b>Try them out:</b>
 
-<div class="subheading">Learn</div>
+  * Experiment with different properties, by clicking Canvas at the top of each component page and pressing "a" to show Addons.
+  * Change the properties under Controls in the bottom panel.
 
-<div class="link-list">
-	<a class="link-item" href="https://storybook.js.org/docs" target="_blank">
-		<img src={Repo} alt="repo" />
-		<span>
-			<strong>Storybook documentation</strong>
-			Configure, customize, and extend
-		</span>
-	</a>
-	<a class="link-item" href="https://www.learnstorybook.com" target="_blank">
-		<img src={Direction} alt="direction" />
-		<span>
-			<strong>In-depth guides</strong>
-			Best practices from leading teams
-		</span>
-	</a>
-	<a
-		class="link-item"
-		href="https://github.com/storybookjs/storybook"
-		target="_blank"
-	>
-		<img src={Code} alt="code" />
-		<span>
-			<strong>GitHub project</strong>
-			View the source and add issues
-		</span>
-	</a>
-	<a class="link-item" href="https://discord.gg/UUt2PJb" target="_blank">
-		<img src={Comments} alt="comments" />
-		<span>
-			<strong>Discord chat</strong>
-			Chat with maintainers and the community
-		</span>
-	</a>
-</div>
+* <b>Use them:</b> Once you've found the right component for your use case, click the Docs tab to see the code implementation.
 
-<div class="tip-wrapper">
-	<span class="tip">Tip</span>Edit the Markdown in{" "}
-	<code>src/storybook-examples/welcome.mdx</code>
-</div>
+### Installation
+-----------
+```yarn add iq-blueberry```
+
+```npm install iq-blueberry```
+
+### Use 
+-----------
+```console
+  import { Button } from "iq-blueberry"
+```
+
+```console
+const example = () => (
+  <div>
+    <Button>
+      Submit
+    </Button>
+  </div>
+)
+```
+### Main Tech Stack 
+-----------
+
+* [React](https://pt-br.reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Stylus](https://stylus-lang.com/)
+* [Yarn](https://yarnpkg.com/)
+* [Babel](https://babeljs.io/)
+* [Gatsby](https://www.gatsbyjs.com/)
