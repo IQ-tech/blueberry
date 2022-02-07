@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import FieldBase from "../FieldBase";
 import classNames from "classnames";
-import randomString from "randomstring";
 
 import { CommonFieldsProps, InputGroupOptions } from "../form-defs";
 import { TooltipProps } from "../../Tooltip";
@@ -17,6 +16,10 @@ interface RadioFieldProps extends CommonFieldsProps {
   horizontalGap?: number | string;
   defaultSelected?: number;
 }
+
+const getSafeName = (name: string): string => {
+  return name ? name : `iq-radio-field-${Math.random()}`;
+};
 
 const RadioField: React.FC<RadioFieldProps> = ({
   required,
@@ -40,9 +43,7 @@ const RadioField: React.FC<RadioFieldProps> = ({
     ["iq-radio-field--disabled"]: !!disabled,
     ["iq-radio-field--invalid"]: !!invalid,
   });
-  const safeName = name
-    ? name
-    : `iq-radio-field-${randomString.generate({ length: 7 })}`;
+  const [safeName] = useState(getSafeName(name));
 
   const containerStyle = (() => {
     const defaultStyle: React.CSSProperties = {};

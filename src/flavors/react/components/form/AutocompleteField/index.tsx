@@ -1,5 +1,4 @@
 import React from "react";
-import { uniqueKey } from "../../../helpers/utils";
 import useAutocompleteField from "./hook";
 import FieldBase from "../FieldBase";
 import MiscSearchLoader from "../../icons/generated/misc/MiscSearchLoader";
@@ -85,10 +84,10 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
               </div>
             ) : null}
             <ul className="iq-input-field__dropdown-list">
-              {displayOptions.map((option) => (
+              {displayOptions.map((option, index) => (
                 <li
                   className="iq-input-field__dropdown-option"
-                  key={uniqueKey("input-dropdown-option")}
+                  key={`input-dropdown-option-${option?.value}-${index}`}
                   onClick={() => onSelectOptionHandler(option?.label)}
                 >
                   {option?.label}
