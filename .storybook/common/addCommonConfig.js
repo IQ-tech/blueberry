@@ -1,5 +1,3 @@
-const rupture = require("rupture");
-const postStylus = require("poststylus");
 const path = require("path");
 
 
@@ -17,7 +15,6 @@ module.exports = (config) => {
 			{
 				loader: "stylus-loader",
 				options: {
-					use: [postStylus(["rucksack-css", "autoprefixer"]), rupture()],
 					preferPathResolver: "webpack",
 				},
 			},
