@@ -9,7 +9,7 @@ const socialLinksArray = Object.keys(socialLinks).map(
 
 const SocialIcons = () => (
   <div className="footer-classic__social-icons">
-    <h2 className="footer-classic__social-icons-title">Siga a gente</h2>
+    <p className="footer-classic__social-icons-title">Siga a gente</p>
     <div className="footer-classic__social-icons-box">
       {socialLinksArray.map(({ href, title, svg }, index) => (
         <a

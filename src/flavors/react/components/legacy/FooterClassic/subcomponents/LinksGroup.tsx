@@ -25,14 +25,16 @@ const LinksGroup = ({ category = "", links = [] }) => {
             className="footer-classic__links-group-item"
             key={`links-list-${category}-${index}`}
           >
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener"
-              className="footer-classic__links-group-link"
-            >
-              {title}
-            </a>
+            <h3>
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener"
+                className="footer-classic__links-group-link"
+              >
+                {title}
+              </a>
+            </h3>
           </li>
         ))}
       </ul>
