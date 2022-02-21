@@ -30,7 +30,7 @@ const Item: React.FC<AccordionItemProps> = ({
   return (
     <li className={componentClass}>
       <button className="iq-accordion__item-head" onClick={headClickHandler}>
-        <div className="iq-accordion__head-content">{titleChild}</div>
+        <h3 className="iq-accordion__head-content">{titleChild}</h3>
         <div className="iq-accordion__arrow-holder">
           <OutlineAngleDownMini />
         </div>
