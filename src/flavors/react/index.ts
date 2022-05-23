@@ -27,6 +27,7 @@ export { default as StepProgress } from "./components/StepProgress";
 export { default as ProgressBar } from "./components/ProgressBar";
 export { default as Link } from "./components/Link";
 export { default as Toast } from "./components/Toast";
+export { default as Header } from "./components/Header";
 
 // Form components
 export { default as InputField } from "./components/form/InputField";
