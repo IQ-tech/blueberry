@@ -10,7 +10,7 @@ const HamburgerButton = ({ isOpen, onToggleMenu }) => {
     <button
       className={componentClass}
       onClick={onToggleMenu}
-      title={buttonTitle}
+      aria-label={buttonTitle}
     >
       <div className="header-classic__hamburger-line header-classic__hamburger-line--one" />
       <div className="header-classic__hamburger-line header-classic__hamburger-line--two" />

@@ -6,6 +6,7 @@ const IqLogo = ({ isLogged }) => {
   return (
     <a
       href={redirectLink}
+      aria-label="IQ Home"
       className="header-classic__logo-link"
       data-clicked="iq-header-logo"
     >

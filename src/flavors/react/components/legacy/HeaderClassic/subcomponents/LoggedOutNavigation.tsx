@@ -7,6 +7,7 @@ const LoggedOutNavigationLink = ({
   label,
   href,
   isActive,
+  ariaLabel,
   subLinks = [],
   openSubmenu,
 }) => {
@@ -28,6 +29,7 @@ const LoggedOutNavigationLink = ({
       <a
         className={linkClass}
         href={href}
+        aria-label={ariaLabel}
         onClick={onClickItem}
         target="_blank"
         rel="noopener"
@@ -38,13 +40,14 @@ const LoggedOutNavigationLink = ({
         condition={hasSubmenu}
         renderIf={
           <ul className="header-classic__submenu" data-subtext={label}>
-            {subLinks.map(({ label, href }, index) => (
+            {subLinks.map(({ label, href, ariaLabel }, index) => (
               <li
                 className="header-classic__subitem"
                 key={`header-submenu-item-${index}`}
               >
                 <a
                   href={href}
+                  aria-label={ariaLabel}
                   className="header-classic__sublink"
                   target="_blank"
                   rel="noopener"
