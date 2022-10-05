@@ -10,7 +10,7 @@ import Certificates from "./subcomponents/Certificates";
 const FooterClassic: React.FC = () => {
   return (
     <footer className="footer-classic">
-      <nav className="footer-classic__navigation">
+      <nav className="footer-classic__navigation" aria-label="Navegação rodapé">
         <div className="footer-classic__container footer-classic__container--navigation">
           <div className="footer-classic__logo">
             <div className="footer-classic__iq">
