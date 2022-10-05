@@ -16,7 +16,7 @@ const AutoCompleteField: React.FC<AutoCompleteProps> = (props) => {
     errorMessage,
     label,
     optional,
-    autoComplete = "chrome-off",
+    autoComplete = "off",
     tooltipConfig,
     placeholder,
     isLoading,
