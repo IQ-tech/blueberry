@@ -42,7 +42,7 @@ const Toast: React.FC<ToastProps> = ({
         <button
           className="iq-toast__content-button"
           onClick={close}
-          title="Fechar alerta"
+          aria-label="Fechar alerta"
         >
           <OutlineClose />
         </button>
