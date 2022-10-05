@@ -31,7 +31,7 @@ const Toast: React.FC<ToastProps> = ({
   });
 
   return (
-    <div className={classes}>
+    <div className={classes} role="alert">
       <div className="iq-toast__icon">
         <Icon />
       </div>
