@@ -39,7 +39,11 @@ const Toast: React.FC<ToastProps> = ({
         <Text as="p" variant="body-small" className="iq-toast__content-message">
           {text}
         </Text>
-        <button className="iq-toast__content-button" onClick={close}>
+        <button
+          className="iq-toast__content-button"
+          onClick={close}
+          title="Fechar alerta"
+        >
           <OutlineClose />
         </button>
       </div>
