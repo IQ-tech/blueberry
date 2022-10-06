@@ -4,41 +4,50 @@ import { loggedMenuItemsIcons } from "./icons";
 export const loggedoutNavigationLinks: NavigationLink[] = [
   {
     label: "Gerencie suas contas",
+    ariaLabel: "Gerencie suas contas",
     href: "/",
     isActive: true,
   },
   {
     label: "Cartões de crédito",
+    ariaLabel: "Cartões de crédito",
     href: "/cartoes/",
   },
   {
     label: "Blog",
+    ariaLabel: "Submenu blog",
     href: "/conteudo/",
     subLinks: [
       {
         label: "Newsletter",
+        ariaLabel: "Assinar Newsletter",
         href: "https://www.iq.com.br/newsletter",
       },
       {
         label: "Contas",
+        ariaLabel: "Blog Contas",
         href: "https://www.iq.com.br/conteudo",
       },
       {
         label: "Finanças pessoais",
+        ariaLabel: "Blog finanças pessoais",
         href: "https://www.iq.com.br/financas-pessoais",
       },
       {
         label: "Cartões de crédito",
+        ariaLabel: "Blog cartões de crédito",
         href: "https://www.iq.com.br/cartoes/conteudo",
       },
     ],
   },
   {
     label: "Quem somos",
+    ariaLabel: "Quem somos",
     href: "/quem-somos/",
   },
   {
     label: "FAQ",
+    ariaLabel: "FAQ",
     href: "/faq/",
   },
 ];
