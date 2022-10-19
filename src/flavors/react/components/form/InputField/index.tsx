@@ -1,5 +1,4 @@
 import React from "react";
-import MaskedInput, { maskArray } from "react-text-mask";
 import classNames from "classnames";
 import { CommonFieldsProps } from "../form-defs";
 import { TooltipProps } from "../../Tooltip";
@@ -9,8 +8,6 @@ import IconFilledError from "../../icons/generated/filled/FilledError";
 import { ModifiedInputProps } from "../form-defs";
 
 interface InputProps extends ModifiedInputProps, CommonFieldsProps {
-  /** React-text-mask mask */
-  mask?: maskArray | ((value: string) => maskArray);
   /** Set the html `type` attribute */
   htmlType?: string;
   /** Icon to render on the right side */
@@ -21,10 +18,10 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
   tooltipConfig?: TooltipProps;
   /** Define if it should render a numeric keyboard in mobile devices */
   useNumericKeyboard?: boolean;
+  inputRef?: React.MutableRefObject<any>
 }
 
 const InputField: React.FC<InputProps> = ({
-  mask,
   htmlType = "text",
   placeholder = "",
   autoComplete = "off",
@@ -42,6 +39,7 @@ const InputField: React.FC<InputProps> = ({
   LeftIcon,
   tooltipConfig,
   useNumericKeyboard = false,
+  inputRef,
   ...rest
 }) => {
   const shouldRenderRightIcon = !invalid && !!Icon;
@@ -77,18 +75,18 @@ const InputField: React.FC<InputProps> = ({
             </div>
           ) : null}
 
-          <MaskedInput
+          <input
             disabled={disabled}
             className="iq-input-field__input"
             placeholder={placeholder}
             type={htmlType}
             onChange={onChangeHandler}
-            mask={mask ? mask : false}
             autoComplete={autoComplete}
             value={value}
             name={name}
             inputMode={useNumericKeyboard ? "numeric" : undefined}
             pattern={useNumericKeyboard ? "[0-9]*" : undefined}
+            ref={inputRef}
             {...rest}
           />
           <div className="iq-input-field__icon iq-input-field__icon--right">
