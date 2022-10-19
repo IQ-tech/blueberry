@@ -9,6 +9,7 @@ interface RadioFieldProps extends CommonFieldsProps {
   tooltipConfig?: TooltipProps;
   options: InputGroupOptions;
   onChange?: (...args: any) => void;
+  onBlur?: (...args: any) => void;
   alignment: "vertical" | "horizontal";
   maxSize?: boolean;
   columns?: number | string;
@@ -37,6 +38,7 @@ const RadioField: React.FC<RadioFieldProps> = ({
   horizontalGap,
   value,
   onChange,
+  onBlur,
 }) => {
   const componentClass = classNames("iq-radio-field", {
     ["iq-radio-field--max-size"]: !!maxSize,
@@ -59,6 +61,12 @@ const RadioField: React.FC<RadioFieldProps> = ({
     }
     return defaultStyle;
   })();
+
+  function handleBlur(e: React.FocusEvent<HTMLInputElement>) {
+    if (!!onBlur) {
+      onBlur(e?.target?.value);
+    }
+  }
 
   return (
     <div className={componentClass}>
@@ -88,6 +96,7 @@ const RadioField: React.FC<RadioFieldProps> = ({
                     type="radio"
                     checked={value === option.value}
                     onChange={(e) => onChange(e?.target?.value)}
+                    onBlur={handleBlur}
                     disabled={disabled}
                   />
                   <span className="iq-radio-field__icon" />
