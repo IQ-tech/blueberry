@@ -31,7 +31,7 @@ const Toast: React.FC<ToastProps> = ({
   });
 
   return (
-    <div className={classes}>
+    <div className={classes} role="alert">
       <div className="iq-toast__icon">
         <Icon />
       </div>
@@ -39,7 +39,11 @@ const Toast: React.FC<ToastProps> = ({
         <Text as="p" variant="body-small" className="iq-toast__content-message">
           {text}
         </Text>
-        <button className="iq-toast__content-button" onClick={close}>
+        <button
+          className="iq-toast__content-button"
+          onClick={close}
+          aria-label="Fechar alerta"
+        >
           <OutlineClose />
         </button>
       </div>

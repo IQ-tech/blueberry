@@ -44,7 +44,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
 
   return (
     <header className={headerClass}>
-      <nav className="header-classic__navbar">
+      <nav className="header-classic__navbar" aria-label="Navegação cabeçalho">
         <div className="header-classic__container">
           <div className="header-classic__panel-left">
             <IqLogo isLogged={isLogged} />

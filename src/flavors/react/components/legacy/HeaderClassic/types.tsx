@@ -33,6 +33,7 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
 
 export interface NavigationLink {
   label: string;
+  ariaLabel: string;
   href: string;
   onClick?: (args: any) => any;
   subLinks?: NavigationLink[];
