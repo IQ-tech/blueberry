@@ -18,11 +18,13 @@ export default {
   },
 } as Meta;
 
-const Template = (args) => (
-  <div style={{ width: "60%", maxWidth: "350px" }}>
-    <Input {...args} />
-  </div>
-);
+const Template = (args) => {
+  return (
+    <div style={{ width: "60%", maxWidth: "350px" }}>
+      <Input {...args} />
+    </div>
+  );
+};
 
 export const BasicInput = Template.bind({});
 BasicInput.args = {
@@ -32,7 +34,7 @@ BasicInput.args = {
   required: true,
   useNumericKeyboard: false,
   label: "Simple field",
-  placeholder: "Batata"
+  placeholder: "Batata",
 };
 
 export const InputWithNumericKeyboard = Template.bind({});
@@ -44,7 +46,22 @@ InputWithNumericKeyboard.args = {
   useNumericKeyboard: true,
   label: "Simple field",
   placeholder: "Batata",
-  mask: [ /\d/, /\d/, /\d/, ".", /\d/, /\d/, /\d/, ".", /\d/, /\d/, /\d/, "-", /\d/, /\d/]
+  mask: [
+    /\d/,
+    /\d/,
+    /\d/,
+    ".",
+    /\d/,
+    /\d/,
+    /\d/,
+    ".",
+    /\d/,
+    /\d/,
+    /\d/,
+    "-",
+    /\d/,
+    /\d/,
+  ],
 };
 
 export const InputWithTooltip = Template.bind({});
@@ -102,7 +119,7 @@ LeftIcon.args = {
   required: true,
   useNumericKeyboard: false,
   label: "Simple field",
-  placeholder: "Batata"
+  placeholder: "Batata",
 };
 
 const RightIconTemplate = (args) => (
