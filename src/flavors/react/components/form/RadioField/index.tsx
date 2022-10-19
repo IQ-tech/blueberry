@@ -62,6 +62,12 @@ const RadioField: React.FC<RadioFieldProps> = ({
     return defaultStyle;
   })();
 
+  function handleBlur(e: React.FocusEvent<HTMLInputElement>) {
+    if (!!onBlur) {
+      onBlur(e?.target?.value);
+    }
+  }
+
   return (
     <div className={componentClass}>
       <FieldBase
@@ -90,7 +96,7 @@ const RadioField: React.FC<RadioFieldProps> = ({
                     type="radio"
                     checked={value === option.value}
                     onChange={(e) => onChange(e?.target?.value)}
-                    onBlur={(e) => onBlur(e?.target?.value)}
+                    onBlur={handleBlur}
                     disabled={disabled}
                   />
                   <span className="iq-radio-field__icon" />
