@@ -18,6 +18,7 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
   tooltipConfig?: TooltipProps;
   /** Define if it should render a numeric keyboard in mobile devices */
   useNumericKeyboard?: boolean;
+  inputRef?: React.MutableRefObject<any>
 }
 
 const InputField: React.FC<InputProps> = ({
@@ -38,6 +39,7 @@ const InputField: React.FC<InputProps> = ({
   LeftIcon,
   tooltipConfig,
   useNumericKeyboard = false,
+  inputRef,
   ...rest
 }) => {
   const shouldRenderRightIcon = !invalid && !!Icon;
@@ -84,6 +86,7 @@ const InputField: React.FC<InputProps> = ({
             name={name}
             inputMode={useNumericKeyboard ? "numeric" : undefined}
             pattern={useNumericKeyboard ? "[0-9]*" : undefined}
+            ref={inputRef}
             {...rest}
           />
           <div className="iq-input-field__icon iq-input-field__icon--right">
