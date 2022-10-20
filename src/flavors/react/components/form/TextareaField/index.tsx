@@ -21,6 +21,8 @@ interface TextAreaProps extends CommonFieldsProps, ModifiedInputProps {
   minLength?: number;
   /**  Define the maximum length */
   maxLength?: number;
+  /** Ref to the input element */
+  inputRef?: React.MutableRefObject<any>;
 }
 
 const TextareaField: React.FC<TextAreaProps> = ({
@@ -43,6 +45,7 @@ const TextareaField: React.FC<TextAreaProps> = ({
   spellcheck,
   minLength,
   maxLength,
+  inputRef,
 }) => {
   function onChangeHandler(e) {
     if (!!onChange) onChange(e?.target?.value);
@@ -81,6 +84,7 @@ const TextareaField: React.FC<TextAreaProps> = ({
           disabled={disabled}
           minLength={minLength}
           maxLength={maxLength}
+          ref={inputRef}
         />
       </FieldBase>
     </div>
