@@ -44,11 +44,18 @@ const ConfirmationModal: React.FC<ConfirmationModal> = ({
 
         <div className="iq-confirmation-modal__bottom">
           {/* @ts-ignore */}
-          <Button type="secondary" color="danger" onClick={handleDangerButton}>
+          <Button
+            type="secondary"
+            color="danger"
+            aria-label={dangerButtonText}
+            onClick={handleDangerButton}
+          >
             {dangerButtonText}
           </Button>
           {/* @ts-ignore */}
-          <Button onClick={handleButton}>{buttonText}</Button>
+          <Button aria-label={buttonText} onClick={handleButton}>
+            {buttonText}
+          </Button>
         </div>
       </div>
     </CentralizedModal>

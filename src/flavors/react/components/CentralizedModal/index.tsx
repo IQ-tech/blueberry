@@ -33,7 +33,7 @@ const CentralizedModal: React.FC<CentralizedModalProps> = ({
       <div className="iq-centralized-modal__content">
         {hasCloseButton && (
           <div className="iq-centralized-modal__button">
-            <button onClick={handleCloseModal}>
+            <button onClick={handleCloseModal} aria-label="Fechar modal">
               <OutlineClose />
             </button>
           </div>
