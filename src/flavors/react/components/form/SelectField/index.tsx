@@ -5,7 +5,6 @@ import classNames from "classnames";
 import OutlineAngleDown from "../../icons/generated/outline/OutlineAngleDown";
 import { TooltipProps } from "../../Tooltip";
 
-
 type ModifiedSelectProps = Modify<
   React.HTMLAttributes<HTMLSelectElement>,
   {
@@ -18,11 +17,13 @@ interface SelectFieldProps extends ModifiedSelectProps, CommonFieldsProps {
   onChange(value: string): void;
   value?: string | number;
   tooltipConfig?: TooltipProps;
+  ariaLabel: string;
 }
 
 const SelectField: React.FC<SelectFieldProps> = ({
   optional,
   label,
+  ariaLabel,
   placeholder,
   required,
   errorMessage,
@@ -65,6 +66,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
             className="iq-select-field__input"
             {...props}
             name={name}
+            aria-label={ariaLabel ? ariaLabel : label}
             value={safeValue}
             disabled={disabled}
             required={required}
