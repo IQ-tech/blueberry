@@ -3,12 +3,6 @@ import { loggedMenuItemsIcons } from "./icons";
 
 export const loggedoutNavigationLinks: NavigationLink[] = [
   {
-    label: "Gerencie suas contas",
-    ariaLabel: "Gerencie suas contas",
-    href: "/",
-    isActive: true,
-  },
-  {
     label: "Cartões de crédito",
     ariaLabel: "Cartões de crédito",
     href: "/cartoes/",

@@ -7,11 +7,6 @@ export const loggedoutNavigationLinks: NavigationLink[] = [
     href: "/cartoes/",
   },
   {
-    label: "Gerencie suas contas",
-    href: "/",
-    isActive: true,
-  },
-  {
     label: "Quem somos",
     href: "/quem-somos/",
   },
