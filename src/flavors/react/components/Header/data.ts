@@ -32,11 +32,6 @@ export const loggedoutNavigationLinks: NavigationLink[] = [
       },
     ],
   },
-
-  {
-    label: "FAQ",
-    href: "/faq/",
-  },
 ];
 
 export const loggedMenuLinks: LoggedNavigationLink[] = [
@@ -72,7 +67,6 @@ export const loggedMenuLinks: LoggedNavigationLink[] = [
     path: "/app/gerenciar/notificacoes/",
     rawIcon: loggedMenuItemsIcons.bell,
   },
-  { label: "Ajuda", path: "/faq/", rawIcon: loggedMenuItemsIcons.floater },
   {
     label: "Sair da conta",
     path: "/app/sair/",
