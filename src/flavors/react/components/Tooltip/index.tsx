@@ -10,6 +10,7 @@ export interface TooltipProps extends React.HTMLAttributes<HTMLButtonElement> {
   title: string;  
   trigger?: string[];
   tooltipContainer?: string;
+  customButton?: React.ReactNode;
 }
 
 const Tooltip: React.FC<TooltipProps> = ({
@@ -19,6 +20,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   title = false,
   trigger = ['hover'],
   tooltipContainer = 'body',
+  customButton
 }) => {
   const tooltipClasses = classNames({
     [`iq-tooltip--color-${color}`]: !!color,
@@ -51,7 +53,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       overlayClassName={tooltipClasses}
       getTooltipContainer={() => document.querySelector(tooltipContainer)}
     >
-      <span className={tooltipQuestionClasses}>?</span>
+      {customButton ? customButton as any : <span className={tooltipQuestionClasses}>?</span>}
     </TooltipRC>
   );
 };
