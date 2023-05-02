@@ -4,7 +4,7 @@ import { loggedMenuItemsIcons } from "./icons";
 export const loggedoutNavigationLinks: NavigationLink[] = [
   {
     label: "Cartões de crédito",
-    href: "/cartoes/",
+    href: "/cartao-de-credito/",
   },
   {
     label: "Quem somos",
