@@ -1,6 +1,6 @@
 {
 	"name": "iq-blueberry",
-	"version": "0.0.50",
+	"version": "0.0.51",
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
 	"module": "es/main.js",
@@ -75,7 +75,7 @@
 	"dependencies": {
 		"fast-levenshtein": "^3.0.0",
 		"jails-js": "^4.2.1",
-		"rc-tooltip": "^5.1.1",
+		"rc-tooltip": "5.1.1",
 		"react": "16.8.6",
 		"react-dom": "16.8.6"
 	},
