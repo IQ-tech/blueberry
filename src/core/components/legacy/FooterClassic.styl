@@ -32,16 +32,17 @@
 			+aboveMedium()
 				flex-direction row
 				justify-content space-between
-				padding-bottom 15px
+				padding-bottom 40px
 
 	&__logo
 		padding 0 20px
 		display flex
 		justify-content space-between
 		align-items center
+		flex-direction column
+		align-items baseline
 
 		+aboveMedium()
-			display block
 			flex 0.5
 
 	&__iq
@@ -71,6 +72,11 @@
 
 		img
 			height 16px
+
+	&__ac
+		margin-top 24px
+		+aboveMedium()
+			margin-top 0
 
 	&__pages-menu
 		margin 25px 0
