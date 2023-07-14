@@ -108,7 +108,7 @@ export default function useAutocompleteField({
   }
 
   function onChangeEvent() {
-    if (isFieldFocused) {
+    /* if (isFieldFocused) { */
       const conditionToRunOnChange =
         (suggestionUse === "optional" ||
           (suggestionUse === "mandatory" && currentValueIsAnOption)) &&
@@ -121,7 +121,7 @@ export default function useAutocompleteField({
       if (!!conditionToRunOnChange) {
         onChange(valueToPass);
       }
-    }
+    /* } */
   }
 
   function onSelectOptionHandler(value) {
