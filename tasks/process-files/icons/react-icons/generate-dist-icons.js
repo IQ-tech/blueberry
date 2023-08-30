@@ -3,8 +3,7 @@ const { rollup } = require("rollup");
 const json = require("@rollup/plugin-json");
 const esbuild = require("rollup-plugin-esbuild").default;
 const fs = require("fs");
-const packageConfig = require("../../../../package.json")
-
+const packageConfig = require("../../../../package.json");
 
 const iconsFilesFolderPath = "./src/flavors/react/components/icons/generated";
 
@@ -33,7 +32,7 @@ async function bundleIndividualIconsTask(cb) {
 
 	const bundle = await rollup({
 		input: filesToBeTranspiled,
-		external: [...Object.keys(packageConfig.peerDependencies)],
+		external: ["react", "react-dom"],
 		plugins: [
 			esbuild({
 				jsx: "transform", // default, or 'preserve'

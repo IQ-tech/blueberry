@@ -48,7 +48,7 @@ const commonOutputConfig = {
 	freeze: false,
 };
 
-const external = [...Object.keys(packageConfig.peerDependencies)];
+const external = ["react", "react-dom"];
 
 const cjsBundle = {
 	input,
@@ -92,7 +92,12 @@ const esBundle = {
 			...commonOutputConfig,
 		},
 	],
-	plugins: [postcss({ inject: false }), json(), esbuildPluginConfig, ...commonPlugins],
+	plugins: [
+		postcss({ inject: false }),
+		json(),
+		esbuildPluginConfig,
+		...commonPlugins,
+	],
 	external,
 };
 
