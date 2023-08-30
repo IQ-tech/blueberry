@@ -1,6 +1,6 @@
 {
 	"name": "iq-blueberry",
-	"version": "0.0.53",
+	"version": "0.0.54",
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
 	"module": "es/main.js",
@@ -70,17 +70,13 @@
 		"stylus-loader": "3.0.2",
 		"through2": "^4.0.2",
 		"tsc": "^1.20150623.0",
-		"typescript": "^4.1.3"
+		"typescript": "^4.1.3",
+		"react": "16.8.6",
+		"react-dom": "16.8.6",
+		"jails-js": "^4.2.1"
 	},
 	"dependencies": {
 		"fast-levenshtein": "^3.0.0",
-		"jails-js": "^4.2.1",
-		"rc-tooltip": "5.1.1",
-		"react": "16.8.6",
-		"react-dom": "16.8.6"
-	},
-	"peerDependencies": {
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6"
+		"rc-tooltip": "5.1.1"
 	}
 }
