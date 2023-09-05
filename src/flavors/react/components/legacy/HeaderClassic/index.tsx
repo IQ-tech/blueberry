@@ -19,6 +19,8 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   useLoggedOutAbsoluteLinks = true,
   customClass,
   variant,
+  loginLink,
+  registerLink,
 }) => {
   const {
     isMobileMenuOpen,
@@ -71,6 +73,8 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                     isSubmenuOpen={isSubmenuOpen}
                     useAbsoluteLinks={useLoggedOutAbsoluteLinks}
                     variant={variant}
+                    loginLink={loginLink}
+                    registerLink={registerLink}
                   />
                 }
               />

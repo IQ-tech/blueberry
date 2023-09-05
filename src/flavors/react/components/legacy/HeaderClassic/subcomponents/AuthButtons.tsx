@@ -6,33 +6,56 @@ import { Variant } from '../types'
 
 interface IAuthButtonProps {
   variant?: Variant
+  loginLink?: string
+  registerLink?: string
 }
 
-const AuthButtons: React.FC<IAuthButtonProps> = ({ variant = 'iq' }) => {
-  return (
-    <div className="header-classic__auth-buttons">
-      <Conditional
-        condition={variant === 'iq'}
-        renderIf={<DefaultAuthButtons />}
-        renderElse={<NewcoAuthButtons />}
-      />
-    </div>
-  )
-}
-
-const DefaultAuthButtons: React.FC = () => {
+const AuthButtons: React.FC<IAuthButtonProps> = ({
+  variant = 'iq',
+  loginLink,
+  registerLink,
+}) => {
   function redirectToPath(url: string): void {
     if (typeof window !== undefined) {
       window.location.href = url
     }
   }
+
   function onLogin() {
-    redirectToPath(getAbsoluteLink('/app/entrar/'))
+    const link = loginLink || '/app/entrar/'
+    redirectToPath(getAbsoluteLink(link))
   }
 
   function onRegister() {
-    redirectToPath(getAbsoluteLink('/app/cadastro/'))
+    const link = registerLink || '/app/cadastro/'
+
+    redirectToPath(getAbsoluteLink(link))
   }
+
+  return (
+    <div className="header-classic__auth-buttons">
+      <Conditional
+        condition={variant === 'iq'}
+        renderIf={
+          <DefaultAuthButtons onRegister={onRegister} onLogin={onLogin} />
+        }
+        renderElse={
+          <NewcoAuthButtons onRegister={onRegister} onLogin={onLogin} />
+        }
+      />
+    </div>
+  )
+}
+
+interface IAuthVariants {
+  onRegister: () => void
+  onLogin: () => void
+}
+
+const DefaultAuthButtons: React.FC<IAuthVariants> = ({
+  onLogin,
+  onRegister,
+}) => {
   return (
     <>
       <button
@@ -73,7 +96,7 @@ const DefaultAuthButtons: React.FC = () => {
   )
 }
 
-const NewcoAuthButtons: React.FC = () => {
+const NewcoAuthButtons: React.FC<IAuthVariants> = ({ onLogin, onRegister }) => {
   return (
     <div className="header-classic__newco-auth">
       <div className="header-classic__newco-auth__button">
@@ -85,6 +108,7 @@ const NewcoAuthButtons: React.FC = () => {
           expand="xy"
           color="inverted"
           justify="center"
+          onClick={onRegister}
         >
           Começar
         </Button>
@@ -98,6 +122,7 @@ const NewcoAuthButtons: React.FC = () => {
           expand="xy"
           color="inverted"
           justify="center"
+          onClick={onLogin}
         >
           Login
         </Button>

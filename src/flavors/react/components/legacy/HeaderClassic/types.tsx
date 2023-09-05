@@ -25,11 +25,13 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   ) => LoggedNavigationLink[]
   /** Alternative link to register page */
   registerLink?: string
+  /** Alternative link to login */
+  loginLink?: string
   /** White background on logged navigation */
   whiteVersion?: boolean
   /** Custom class */
   customClass?: string
-  /** HEader variant */
+  /** Header variant */
   variant?: Variant
 }
 

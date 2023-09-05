@@ -77,6 +77,8 @@ const LoggedOutNavigation = ({
   isSubmenuOpen,
   useAbsoluteLinks,
   variant,
+  loginLink,
+  registerLink,
 }) => {
   const isNewcoVariant = variant === 'newco'
 
@@ -108,7 +110,13 @@ const LoggedOutNavigation = ({
       </ul>
       <Conditional
         condition={showAuthButtons}
-        renderIf={<AuthButtons variant={variant} />}
+        renderIf={
+          <AuthButtons
+            variant={variant}
+            registerLink={registerLink}
+            loginLink={loginLink}
+          />
+        }
       />
     </div>
   )
