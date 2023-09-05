@@ -1,23 +1,24 @@
-import * as React from "react";
-import classNames from "classnames";
-import Conditional from "../../misc/Conditional";
+import * as React from 'react'
+import classNames from 'classnames'
+import Conditional from '../../misc/Conditional'
 
-import { HeaderClassicProps } from "./types";
-import IqLogo from "./subcomponents/IqLogo";
-import HamburgerButton from "./subcomponents/HamburgerButton";
-import LoggedOutNavigation from "./subcomponents/LoggedOutNavigation";
-import LoggedInNavigation from "./subcomponents/LoggedInNavigation";
-import useClassicHeader from "./hook";
+import { HeaderClassicProps } from './types'
+import IqLogo from './subcomponents/IqLogo'
+import HamburgerButton from './subcomponents/HamburgerButton'
+import LoggedOutNavigation from './subcomponents/LoggedOutNavigation'
+import LoggedInNavigation from './subcomponents/LoggedInNavigation'
+import useClassicHeader from './hook'
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
   isLogged = false,
   mapLoggedOutMenuItems,
   showAuthButtons = true,
-  username = "username",
+  username = 'username',
   whiteVersion,
   mapLoggedInMenuItems,
   useLoggedOutAbsoluteLinks = true,
   customClass,
+  variant,
 }) => {
   const {
     isMobileMenuOpen,
@@ -29,18 +30,19 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     isSubmenuOpen,
     formattedUsername,
   } = useClassicHeader({
+    variant,
     mapLoggedOutMenuItems,
     username,
     mapLoggedInMenuItems,
-  });
+  })
 
-  const headerClass = classNames("header-classic", {
-    "header-classic--logged": isLogged,
-    "header-classic--menu-mobile-open": isMobileMenuOpen,
-    "header-classic--submenu-open": isSubmenuOpen,
-    "header-classic--white-version": isLogged && whiteVersion,
+  const headerClass = classNames('header-classic', {
+    'header-classic--logged': isLogged,
+    'header-classic--menu-mobile-open': isMobileMenuOpen,
+    'header-classic--submenu-open': isSubmenuOpen,
+    'header-classic--white-version': isLogged && whiteVersion,
     [customClass]: !!customClass,
-  });
+  })
 
   return (
     <header className={headerClass}>
@@ -68,6 +70,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                     closeSubmenu={closeSubmenu}
                     isSubmenuOpen={isSubmenuOpen}
                     useAbsoluteLinks={useLoggedOutAbsoluteLinks}
+                    variant={variant}
                   />
                 }
               />
@@ -80,7 +83,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default HeaderClassic;
+export default HeaderClassic

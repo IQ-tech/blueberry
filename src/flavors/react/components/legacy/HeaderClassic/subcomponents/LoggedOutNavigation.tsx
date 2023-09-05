@@ -1,7 +1,7 @@
-import React from "react";
-import classNames from "classnames";
-import AuthButtons from "./AuthButttons";
-import Conditional from "../../../misc/Conditional";
+import React from 'react'
+import classNames from 'classnames'
+import AuthButtons from './AuthButtons'
+import Conditional from '../../../misc/Conditional'
 
 const LoggedOutNavigationLink = ({
   label,
@@ -11,16 +11,16 @@ const LoggedOutNavigationLink = ({
   subLinks = [],
   openSubmenu,
 }) => {
-  const hasSubmenu = !!subLinks.length;
+  const hasSubmenu = !!subLinks.length
 
-  const linkClass = classNames("header-classic__logged-out-navigation-link", {
-    "header-classic__logged-out-navigation-link--active": !!isActive,
-    "header-classic__logged-out-navigation-link--submenu": hasSubmenu,
-  });
+  const linkClass = classNames('header-classic__logged-out-navigation-link', {
+    'header-classic__logged-out-navigation-link--active': !!isActive,
+    'header-classic__logged-out-navigation-link--submenu': hasSubmenu,
+  })
 
   function onClickItem(e) {
     if (hasSubmenu) {
-      openSubmenu(e);
+      openSubmenu(e)
     }
   }
 
@@ -60,8 +60,8 @@ const LoggedOutNavigationLink = ({
         }
       />
     </li>
-  );
-};
+  )
+}
 
 const LoggedOutNavigation = ({
   links,
@@ -70,6 +70,7 @@ const LoggedOutNavigation = ({
   closeSubmenu,
   isSubmenuOpen,
   useAbsoluteLinks,
+  variant,
 }) => {
   return (
     <div className="header-classic__logged-out-navigation">
@@ -92,9 +93,12 @@ const LoggedOutNavigation = ({
           />
         ))}
       </ul>
-      <Conditional condition={showAuthButtons} renderIf={<AuthButtons />} />
+      <Conditional
+        condition={showAuthButtons}
+        renderIf={<AuthButtons variant={variant} />}
+      />
     </div>
-  );
-};
+  )
+}
 
-export default LoggedOutNavigation;
+export default LoggedOutNavigation

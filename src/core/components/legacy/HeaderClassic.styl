@@ -260,6 +260,28 @@ $header-desk-height = 70px
 			width auto
 			transform translateY(0)
 
+	&__newco-auth
+		display flex
+		flex-direction column
+		width 100%
+		gap 24px
+		padding 57px 0
+
+
+		+aboveMedium()
+			padding 0
+			flex-direction row
+			transform translateY(0)
+
+		&__button
+			width 100%
+			padding 0 24px
+
+			+aboveMedium()
+				padding 0
+				width 140px
+				height 48px
+
 	&--submenu-open &__auth-buttons
 		z-index -1
 
