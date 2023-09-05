@@ -178,6 +178,11 @@ $header-desk-height = 70px
 		margin 0 auto
 		margin-top 100px
 
+		&__newco
+			max-width 100%
+			padding 0 24px
+			width 100%
+
 		+aboveMedium()
 			flex-direction row
 			margin-top 0
@@ -188,9 +193,17 @@ $header-desk-height = 70px
 	&__logged-out-navigation-item
 		position relative
 
+
 		+aboveMedium()
 			&:not(:first-of-type)
 				margin-left 10px
+
+
+		&--newco
+			&:not(:last-of-type)
+				border-bottom 1px solid blueberry-20
+				+aboveMedium()
+					border-bottom none
 
 	&__logged-out-navigation-link
 		color $color-white
@@ -205,6 +218,12 @@ $header-desk-height = 70px
 		&:hover
 			color #099faa
 			text-decoration none
+
+		&--newco
+			padding-left 0
+
+			+aboveMedium()
+				padding-left 20px
 
 		&--active
 			color $color-blue-light
@@ -259,6 +278,28 @@ $header-desk-height = 70px
 			position static
 			width auto
 			transform translateY(0)
+
+	&__newco-auth
+		display flex
+		flex-direction column
+		width 100%
+		gap 24px
+		padding 57px 0
+
+
+		+aboveMedium()
+			padding 0
+			flex-direction row
+			transform translateY(0)
+
+		&__button
+			width 100%
+			padding 0 24px
+			height 48px
+
+			+aboveMedium()
+				padding 0
+				width 140px
 
 	&--submenu-open &__auth-buttons
 		z-index -1

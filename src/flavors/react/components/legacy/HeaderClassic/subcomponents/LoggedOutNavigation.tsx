@@ -1,7 +1,7 @@
-import React from "react";
-import classNames from "classnames";
-import AuthButtons from "./AuthButttons";
-import Conditional from "../../../misc/Conditional";
+import React from 'react'
+import classNames from 'classnames'
+import AuthButtons from './AuthButtons'
+import Conditional from '../../../misc/Conditional'
 
 const LoggedOutNavigationLink = ({
   label,
@@ -10,22 +10,28 @@ const LoggedOutNavigationLink = ({
   ariaLabel,
   subLinks = [],
   openSubmenu,
+  variant = 'iq',
 }) => {
-  const hasSubmenu = !!subLinks.length;
+  const hasSubmenu = !!subLinks.length
+  const isNewco = variant === 'newco'
+  const linkClass = classNames('header-classic__logged-out-navigation-link', {
+    'header-classic__logged-out-navigation-link--active': !!isActive,
+    'header-classic__logged-out-navigation-link--submenu': hasSubmenu,
+    'header-classic__logged-out-navigation-link--newco': isNewco,
+  })
 
-  const linkClass = classNames("header-classic__logged-out-navigation-link", {
-    "header-classic__logged-out-navigation-link--active": !!isActive,
-    "header-classic__logged-out-navigation-link--submenu": hasSubmenu,
-  });
+  const itemClass = classNames('header-classic__logged-out-navigation-item', {
+    'header-classic__logged-out-navigation-item--newco': isNewco,
+  })
 
   function onClickItem(e) {
     if (hasSubmenu) {
-      openSubmenu(e);
+      openSubmenu(e)
     }
   }
 
   return (
-    <li className="header-classic__logged-out-navigation-item">
+    <li className={itemClass}>
       <a
         className={linkClass}
         href={href}
@@ -60,8 +66,8 @@ const LoggedOutNavigationLink = ({
         }
       />
     </li>
-  );
-};
+  )
+}
 
 const LoggedOutNavigation = ({
   links,
@@ -70,7 +76,16 @@ const LoggedOutNavigation = ({
   closeSubmenu,
   isSubmenuOpen,
   useAbsoluteLinks,
+  variant,
+  loginLink,
+  registerLink,
 }) => {
+  const isNewcoVariant = variant === 'newco'
+
+  const listClass = classNames('header-classic__logged-out-navigation-list', {
+    'header-classic__logged-out-navigation-list__newco': isNewcoVariant,
+  })
+
   return (
     <div className="header-classic__logged-out-navigation">
       <button
@@ -80,7 +95,7 @@ const LoggedOutNavigation = ({
       >
         Voltar
       </button>
-      <ul className="header-classic__logged-out-navigation-list">
+      <ul className={listClass}>
         {links.map((link, index) => (
           <LoggedOutNavigationLink
             {...link}
@@ -89,12 +104,22 @@ const LoggedOutNavigation = ({
             isSubmenuOpen={isSubmenuOpen}
             useAbsoluteLinks={useAbsoluteLinks}
             key={`desk-navigation-link-${index}`}
+            variant={variant}
           />
         ))}
       </ul>
-      <Conditional condition={showAuthButtons} renderIf={<AuthButtons />} />
+      <Conditional
+        condition={showAuthButtons}
+        renderIf={
+          <AuthButtons
+            variant={variant}
+            registerLink={registerLink}
+            loginLink={loginLink}
+          />
+        }
+      />
     </div>
-  );
-};
+  )
+}
 
-export default LoggedOutNavigation;
+export default LoggedOutNavigation

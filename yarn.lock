@@ -7463,7 +7463,7 @@ jails-js@^4.2.1:
     morphdom "^2.6.1"
     sodajs "^0.4.10"
 
-"jails.packages@github:jails-org/packages":
+jails.packages@jails-org/packages.git:
   version "1.10.3"
   resolved "https://codeload.github.com/jails-org/packages/tar.gz/ecbeaa1ec5d610177c50d857dec2e732823a7976"
 
