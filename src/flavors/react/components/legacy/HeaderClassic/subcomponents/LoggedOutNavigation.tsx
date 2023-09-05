@@ -10,12 +10,18 @@ const LoggedOutNavigationLink = ({
   ariaLabel,
   subLinks = [],
   openSubmenu,
+  variant = 'iq',
 }) => {
   const hasSubmenu = !!subLinks.length
-
+  const isNewco = variant === 'newco'
   const linkClass = classNames('header-classic__logged-out-navigation-link', {
     'header-classic__logged-out-navigation-link--active': !!isActive,
     'header-classic__logged-out-navigation-link--submenu': hasSubmenu,
+    'header-classic__logged-out-navigation-link--newco': isNewco,
+  })
+
+  const itemClass = classNames('header-classic__logged-out-navigation-item', {
+    'header-classic__logged-out-navigation-item--newco': isNewco,
   })
 
   function onClickItem(e) {
@@ -25,7 +31,7 @@ const LoggedOutNavigationLink = ({
   }
 
   return (
-    <li className="header-classic__logged-out-navigation-item">
+    <li className={itemClass}>
       <a
         className={linkClass}
         href={href}
@@ -72,6 +78,12 @@ const LoggedOutNavigation = ({
   useAbsoluteLinks,
   variant,
 }) => {
+  const isNewcoVariant = variant === 'newco'
+
+  const listClass = classNames('header-classic__logged-out-navigation-list', {
+    'header-classic__logged-out-navigation-list__newco': isNewcoVariant,
+  })
+
   return (
     <div className="header-classic__logged-out-navigation">
       <button
@@ -81,7 +93,7 @@ const LoggedOutNavigation = ({
       >
         Voltar
       </button>
-      <ul className="header-classic__logged-out-navigation-list">
+      <ul className={listClass}>
         {links.map((link, index) => (
           <LoggedOutNavigationLink
             {...link}
@@ -90,6 +102,7 @@ const LoggedOutNavigation = ({
             isSubmenuOpen={isSubmenuOpen}
             useAbsoluteLinks={useAbsoluteLinks}
             key={`desk-navigation-link-${index}`}
+            variant={variant}
           />
         ))}
       </ul>
