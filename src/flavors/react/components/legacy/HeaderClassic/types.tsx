@@ -11,6 +11,8 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   showNotifications?: boolean
   /** Notifications number to show on the icon bell */
   notificationsNumber?: number
+  /**  Callback to run on notification icon click */
+  onNotificationClick?: () => void
   /** Username to be displayed if isLogged */
   username?: string
   /** Callback to run on open the mobile version of the menu */

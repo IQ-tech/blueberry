@@ -1,9 +1,9 @@
-import * as React from "react";
-import FirstLetterIcon from "./FirstLetterIcon";
-import classNames from "classnames";
-import Conditional from "../../../misc/Conditional";
-import AddBillsButton from "./AddBillsButton";
-import { getAbsoluteLink } from "../helpers";
+import * as React from 'react'
+import FirstLetterIcon from './FirstLetterIcon'
+import classNames from 'classnames'
+import Conditional from '../../../misc/Conditional'
+import AddBillsButton from './AddBillsButton'
+import { getAbsoluteLink } from '../helpers'
 
 const LoggedInMenuHeader = ({ username }) => {
   return (
@@ -12,7 +12,7 @@ const LoggedInMenuHeader = ({ username }) => {
       <div className="header-classic__logged-in-menu-header-text">
         <p className="header-classic__logged-in-menu-header-name">{username}</p>
         <a
-          href={getAbsoluteLink("/app/perfil/")}
+          href={getAbsoluteLink('/app/perfil/')}
           className="header-classic__logged-in-menu-header-profile"
           data-clicked="logged-header-menu-profile-link"
         >
@@ -20,14 +20,14 @@ const LoggedInMenuHeader = ({ username }) => {
         </a>
       </div>
     </header>
-  );
-};
+  )
+}
 
-const LoggedInNavigation = ({ username, loggedMenuLinks }) => {
+const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
   const getItemClass = (separator) =>
-    classNames("header-classic__logged-links-item", {
-      "header-classic__logged-links-item--separator": !!separator,
-    });
+    classNames('header-classic__logged-links-item', {
+      'header-classic__logged-links-item--separator': !!separator,
+    })
 
   return (
     <div className="header-classic__logged-in-navigation">
@@ -83,7 +83,7 @@ const LoggedInNavigation = ({ username, loggedMenuLinks }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoggedInNavigation;
+export default LoggedInNavigation

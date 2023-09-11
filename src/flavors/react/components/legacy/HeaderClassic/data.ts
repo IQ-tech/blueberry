@@ -129,42 +129,42 @@ const newcoPublicLinks: NavigationLink[] = [
 ]
 
 const newcoPrivateLinks: LoggedNavigationLink[] = [
-  { label: 'Home', path: '/home/', separator: true },
+  { label: 'Home', path: '/home/' },
   {
     label: 'Meus objetivos',
     path: '/meus-objetivos/',
+    separator: true,
   },
   {
     label: 'Ofertas para mim',
     path: '/ofertas/',
-    separator: true,
   },
   {
     label: 'Meus pedidos',
     path: '/meus-pedidos/',
+    separator: true,
   },
   {
     label: 'Minha conta',
     path: '/minha-conta/',
-    separator: true,
   },
   {
     label: 'Alterar senha',
     path: '/alterar-senha/',
+    separator: true,
   },
   {
     label: 'Notificações',
     path: '/notificacoes/',
-    separator: true,
   },
   {
     label: 'Central de ajuda',
     path: '/ajuda/',
+    separator: true,
   },
   {
     label: 'Sair da conta',
-    path: '/app/sair/',
-    separator: true,
+    path: '/sair/',
   },
 ]
 

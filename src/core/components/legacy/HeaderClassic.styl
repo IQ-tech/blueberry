@@ -68,6 +68,23 @@ $header-desk-height = 70px
 		flex 1
 		display flex
 		justify-content flex-end
+		align-items center
+		gap 15px
+
+		&__notification
+			justify-content center
+			align-items center
+			display flex
+
+			&__icon
+				display flex
+				align-items center
+				svg
+					width 27px
+					height 30px
+					color black
+					+aboveMedium()
+						color #7874e6
 
 		+aboveMedium()
 			justify-content space-between
@@ -150,10 +167,8 @@ $header-desk-height = 70px
 		height 100vh
 		top 0
 		display flex
-		flex-direction column
 
 		+aboveMedium()
-			position static
 			height auto
 			height $header-desk-height
 			flex 0 0 200px

@@ -17,7 +17,6 @@ export default {
     },
   },
 } as Meta
-
 const Template = (args) => <HeaderClassic {...args} />
 
 export const Default = Template.bind({})
