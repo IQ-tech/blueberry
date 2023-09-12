@@ -55,6 +55,8 @@ $header-desk-height = 70px
 			width 24px
 			background none
 			border none
+			cursor pointer
+			-webkit-tap-highlight-color transparent
 
 			+aboveMedium()
 				display none
@@ -88,12 +90,19 @@ $header-desk-height = 70px
 		display flex
 		justify-content flex-end
 		align-items center
-		gap 15px
+		gap 25px
 
 		&__notification
 			justify-content center
 			align-items center
 			display flex
+			outline none
+
+			button
+				background none
+				border none
+				cursor pointer
+				-webkit-tap-highlight-color transparent
 
 			&__icon
 				display flex
