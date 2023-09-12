@@ -16,27 +16,28 @@ const Notifications: React.FC<INotificationProp> = ({
   }
 
   return (
-    <div
-      className="header-classic__panel-right__notification"
-      onClick={handleOnClick}
-    >
+    <div className="header-classic__panel-right__notification">
       <Conditional
         condition={count > 0}
         renderIf={
-          <div
-            className="header-classic__panel-right__notification__icon"
-            dangerouslySetInnerHTML={{
-              __html: loggedMenuItemsIcons.hasNotification,
-            }}
-          />
+          <button onClick={handleOnClick} aria-label="Notificações nào lidas">
+            <span
+              className="header-classic__panel-right__notification__icon"
+              dangerouslySetInnerHTML={{
+                __html: loggedMenuItemsIcons.hasNotification,
+              }}
+            />
+          </button>
         }
         renderElse={
-          <div
-            className="header-classic__panel-right__notification__icon"
-            dangerouslySetInnerHTML={{
-              __html: loggedMenuItemsIcons.notification,
-            }}
-          />
+          <button onClick={handleOnClick} aria-label="Nenhuma notificação">
+            <span
+              className="header-classic__panel-right__notification__icon"
+              dangerouslySetInnerHTML={{
+                __html: loggedMenuItemsIcons.notification,
+              }}
+            />
+          </button>
         }
       />
     </div>

@@ -9,7 +9,11 @@ const GoBack: React.FC<IGobBackProps> = ({ onGoBackClick }) => {
     if (!!onGoBackClick) onGoBackClick()
   }
   return (
-    <button className="header-classic__panel-left__back" onClick={handleClick}>
+    <button
+      className="header-classic__panel-left__back"
+      onClick={handleClick}
+      aria-label="Voltar para página anterior"
+    >
       <span
         className="header-classic__panel-left__back__icon"
         dangerouslySetInnerHTML={{
