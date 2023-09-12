@@ -133,7 +133,6 @@ const newcoPrivateLinks: LoggedNavigationLink[] = [
   {
     label: 'Meus objetivos',
     path: '/meus-objetivos/',
-    separator: true,
   },
   {
     label: 'Ofertas para mim',
@@ -142,7 +141,6 @@ const newcoPrivateLinks: LoggedNavigationLink[] = [
   {
     label: 'Meus pedidos',
     path: '/meus-pedidos/',
-    separator: true,
   },
   {
     label: 'Minha conta',
@@ -151,7 +149,6 @@ const newcoPrivateLinks: LoggedNavigationLink[] = [
   {
     label: 'Alterar senha',
     path: '/alterar-senha/',
-    separator: true,
   },
   {
     label: 'Notificações',
@@ -160,7 +157,6 @@ const newcoPrivateLinks: LoggedNavigationLink[] = [
   {
     label: 'Central de ajuda',
     path: '/ajuda/',
-    separator: true,
   },
   {
     label: 'Sair da conta',
