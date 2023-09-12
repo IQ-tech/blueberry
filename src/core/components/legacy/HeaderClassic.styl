@@ -46,6 +46,25 @@ $header-desk-height = 70px
 		padding-left 15px
 		padding-right 15px
 
+	&__panel-left
+		display flex
+		flex-direction row
+		gap 15px
+
+		&__back
+			width 24px
+			background none
+			border none
+
+			+aboveMedium()
+				display none
+
+			&__icon
+				color #fff
+
+	&--white-version &__panel-left__back__icon
+		color #1c1277
+
 	&__logo
 		height 100%
 		width 100%

@@ -7,13 +7,16 @@ import IqLogo from './subcomponents/IqLogo'
 import HamburgerButton from './subcomponents/HamburgerButton'
 import LoggedOutNavigation from './subcomponents/LoggedOutNavigation'
 import LoggedInNavigation from './subcomponents/LoggedInNavigation'
-import { Notifications } from './subcomponents/Notifications'
+import Notifications from './subcomponents/Notifications'
+import GoBack from './subcomponents/GoBack'
 import useClassicHeader from './hook'
 
 const HeaderClassic: React.FC<HeaderClassicProps> = ({
   isLogged = false,
   mapLoggedOutMenuItems,
   showAuthButtons = true,
+  showGoBack = false,
+  onGoBackClick,
   showNotifications,
   notificationsNumber,
   onNotificationClick,
@@ -55,6 +58,11 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
       <nav className="header-classic__navbar" aria-label="Navegação cabeçalho">
         <div className="header-classic__container">
           <div className="header-classic__panel-left">
+            <Conditional
+              condition={isLogged && showGoBack}
+              renderIf={<GoBack onGoBackClick={onGoBackClick} />}
+            />
+
             <IqLogo isLogged={isLogged} />
           </div>
 

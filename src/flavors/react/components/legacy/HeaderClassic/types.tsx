@@ -5,6 +5,10 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   useLoggedOutAbsoluteLinks?: boolean
   /** Dislpays user name and a menu that redirects iq logged pages if true */
   isLogged?: boolean
+  /** Displays goBack button before logo */
+  showGoBack?: boolean
+  /** Callback to run on goBack click */
+  onGoBackClick?: () => void
   /** Displays sign in and sign up buttons if not isLogged */
   showAuthButtons?: boolean
   /** Displays notifications bell */

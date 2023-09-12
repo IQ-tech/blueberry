@@ -7,7 +7,7 @@ interface INotificationProp {
   count?: number
   onNotificationClick?: () => void
 }
-export const Notifications: React.FC<INotificationProp> = ({
+const Notifications: React.FC<INotificationProp> = ({
   count,
   onNotificationClick,
 }) => {
@@ -42,3 +42,5 @@ export const Notifications: React.FC<INotificationProp> = ({
     </div>
   )
 }
+
+export default Notifications

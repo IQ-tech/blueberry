@@ -6,6 +6,10 @@ import 'core/fonts.styl'
 import 'core/components/legacy/HeaderClassic.styl'
 import 'core/main.styl'
 
+function goBack() {
+  alert('ola')
+}
+
 export default {
   title: 'Components/Legacy/HeaderClassic',
   component: HeaderClassic,
@@ -17,6 +21,8 @@ export default {
     },
   },
 } as Meta
-const Template = (args) => <HeaderClassic {...args} />
+const Template = (args) => (
+  <HeaderClassic {...args} showGoBack={true} onGoBackClick={goBack} />
+)
 
 export const Default = Template.bind({})
