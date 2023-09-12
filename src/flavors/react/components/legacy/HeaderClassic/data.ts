@@ -128,6 +128,42 @@ const newcoPublicLinks: NavigationLink[] = [
   },
 ]
 
+const newcoPrivateLinks: LoggedNavigationLink[] = [
+  { label: 'Home', path: '/home/' },
+  {
+    label: 'Meus objetivos',
+    path: '/meus-objetivos/',
+  },
+  {
+    label: 'Ofertas para mim',
+    path: '/ofertas/',
+  },
+  {
+    label: 'Meus pedidos',
+    path: '/meus-pedidos/',
+  },
+  {
+    label: 'Minha conta',
+    path: '/minha-conta/',
+  },
+  {
+    label: 'Alterar senha',
+    path: '/alterar-senha/',
+  },
+  {
+    label: 'Notificações',
+    path: '/notificacoes/',
+  },
+  {
+    label: 'Central de ajuda',
+    path: '/ajuda/',
+  },
+  {
+    label: 'Sair da conta',
+    path: '/sair/',
+  },
+]
+
 export const navigationMap = {
   iq: {
     public: defaultPublicLinks,
@@ -135,6 +171,6 @@ export const navigationMap = {
   },
   newco: {
     public: newcoPublicLinks,
-    private: defaultPrivateLinks,
+    private: newcoPrivateLinks,
   },
 }

@@ -46,6 +46,27 @@ $header-desk-height = 70px
 		padding-left 15px
 		padding-right 15px
 
+	&__panel-left
+		display flex
+		flex-direction row
+		gap 15px
+
+		&__back
+			width 24px
+			background none
+			border none
+			cursor pointer
+			-webkit-tap-highlight-color transparent
+
+			+aboveMedium()
+				display none
+
+			&__icon
+				color #fff
+
+	&--white-version &__panel-left__back__icon
+		color #1c1277
+
 	&__logo
 		height 100%
 		width 100%
@@ -68,9 +89,38 @@ $header-desk-height = 70px
 		flex 1
 		display flex
 		justify-content flex-end
+		align-items center
+		gap 25px
+
+		&__notification
+			justify-content center
+			align-items center
+			display flex
+			outline none
+
+			button
+				background none
+				border none
+				cursor pointer
+				-webkit-tap-highlight-color transparent
+
+			&__icon
+				display flex
+				align-items center
+				svg
+					width 27px
+					height 30px
+					color #fff
 
 		+aboveMedium()
 			justify-content space-between
+
+	&--white-version &__panel-right__notification__icon
+		svg
+			color #000
+
+			+aboveMedium()
+				color #7874e6
 
 	&--logged &__panel-right
 		+aboveMedium()
@@ -150,10 +200,8 @@ $header-desk-height = 70px
 		height 100vh
 		top 0
 		display flex
-		flex-direction column
 
 		+aboveMedium()
-			position static
 			height auto
 			height $header-desk-height
 			flex 0 0 200px
@@ -510,7 +558,7 @@ $header-desk-height = 70px
 		font-size 14px
 
 	&--white-version &__logged-in-desk-name
-		color black
+		color #000
 
 	&__logged-in-desk-name
 		margin 0 10px
@@ -519,6 +567,9 @@ $header-desk-height = 70px
 		display block
 		height 5px
 		width 10px
+
+	&--white-version &__logged-in-arrow-down
+		color black
 
 	&__logged-in-menu-header
 		padding 24px

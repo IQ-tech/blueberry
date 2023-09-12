@@ -1,18 +1,18 @@
-import * as React from "react";
-import FirstLetterIcon from "./FirstLetterIcon";
-import classNames from "classnames";
-import Conditional from "../../../misc/Conditional";
-import AddBillsButton from "./AddBillsButton";
-import { getAbsoluteLink } from "../helpers";
+import * as React from 'react'
+import FirstLetterIcon from './FirstLetterIcon'
+import classNames from 'classnames'
+import Conditional from '../../../misc/Conditional'
+import AddBillsButton from './AddBillsButton'
+import { getAbsoluteLink } from '../helpers'
 
-const LoggedInMenuHeader = ({ username }) => {
+const LoggedInMenuHeader = ({ username, profileLink }) => {
   return (
     <header className="header-classic__logged-in-menu-header">
       <FirstLetterIcon word={username} />
       <div className="header-classic__logged-in-menu-header-text">
         <p className="header-classic__logged-in-menu-header-name">{username}</p>
         <a
-          href={getAbsoluteLink("/app/perfil/")}
+          href={getAbsoluteLink(profileLink)}
           className="header-classic__logged-in-menu-header-profile"
           data-clicked="logged-header-menu-profile-link"
         >
@@ -20,14 +20,17 @@ const LoggedInMenuHeader = ({ username }) => {
         </a>
       </div>
     </header>
-  );
-};
+  )
+}
 
-const LoggedInNavigation = ({ username, loggedMenuLinks }) => {
+const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
   const getItemClass = (separator) =>
-    classNames("header-classic__logged-links-item", {
-      "header-classic__logged-links-item--separator": !!separator,
-    });
+    classNames('header-classic__logged-links-item', {
+      'header-classic__logged-links-item--separator': !!separator,
+    })
+
+  const isNewco = variant === 'newco'
+  const profileLink = isNewco ? '/perfil/' : '/app/perfil/'
 
   return (
     <div className="header-classic__logged-in-navigation">
@@ -48,11 +51,16 @@ const LoggedInNavigation = ({ username, loggedMenuLinks }) => {
         </svg>
       </div>
       <div className="header-classic__logged-menu">
-        <LoggedInMenuHeader username={username} />
+        <LoggedInMenuHeader username={username} profileLink={profileLink} />
         <div className="header-classic__logged-menu-actions">
-          <div className="header-classic__add-new-bill">
-            <AddBillsButton />
-          </div>
+          <Conditional
+            condition={!isNewco}
+            renderIf={
+              <div className="header-classic__add-new-bill">
+                <AddBillsButton />
+              </div>
+            }
+          />
           <ul className="header-classic__logged-links-list">
             {loggedMenuLinks.map(
               ({ label, separator, rawIcon, path }, index) => (
@@ -80,10 +88,11 @@ const LoggedInNavigation = ({ username, loggedMenuLinks }) => {
               )
             )}
           </ul>
+          CVo
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoggedInNavigation;
+export default LoggedInNavigation
