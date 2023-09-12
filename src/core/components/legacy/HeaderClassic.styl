@@ -82,12 +82,17 @@ $header-desk-height = 70px
 				svg
 					width 27px
 					height 30px
-					color black
-					+aboveMedium()
-						color #7874e6
+					color #fff
 
 		+aboveMedium()
 			justify-content space-between
+
+	&--white-version &__panel-right__notification__icon
+		svg
+			color #000
+
+			+aboveMedium()
+				color #7874e6
 
 	&--logged &__panel-right
 		+aboveMedium()
@@ -534,6 +539,9 @@ $header-desk-height = 70px
 		display block
 		height 5px
 		width 10px
+
+	&--white-version &__logged-in-arrow-down
+		color black
 
 	&__logged-in-menu-header
 		padding 24px
