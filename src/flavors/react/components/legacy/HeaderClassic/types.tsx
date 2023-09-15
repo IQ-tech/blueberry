@@ -5,6 +5,8 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   useLoggedOutAbsoluteLinks?: boolean
   /** Dislpays user name and a menu that redirects iq logged pages if true */
   isLogged?: boolean
+  /** Custom Logo redirect links */
+  customLogoLinks?: CustomLogoLinks
   /** Displays goBack button before logo */
   showGoBack?: boolean
   /** Callback to run on goBack click */
@@ -58,3 +60,7 @@ export interface LoggedNavigationLink {
 }
 
 export type Variant = 'newco' | 'iq'
+export interface CustomLogoLinks {
+  loggedIn: string
+  loggedOut: string
+}

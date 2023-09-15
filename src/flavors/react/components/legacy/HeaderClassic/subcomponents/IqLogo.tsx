@@ -1,7 +1,14 @@
-import React from "react";
+import React from 'react'
+import { CustomLogoLinks } from '../types'
 
-const IqLogo = ({ isLogged }) => {
-  const redirectLink = isLogged ? "/app/home" : "/";
+interface ILogoProps {
+  isLogged: boolean
+  customLinks?: CustomLogoLinks
+}
+const IqLogo: React.FC<ILogoProps> = ({ isLogged, customLinks }) => {
+  const loggedRedirect = customLinks?.loggedIn || '/app/home'
+  const redirect = customLinks.loggedOut || '/'
+  const redirectLink = isLogged ? loggedRedirect : redirect
 
   return (
     <a
@@ -22,7 +29,7 @@ const IqLogo = ({ isLogged }) => {
         ></path>
       </svg>
     </a>
-  );
-};
+  )
+}
 
-export default IqLogo;
+export default IqLogo

@@ -15,6 +15,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   isLogged = false,
   mapLoggedOutMenuItems,
   showAuthButtons = true,
+  customLogoLinks,
   showGoBack = false,
   onGoBackClick,
   showNotifications,
@@ -63,7 +64,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
               renderIf={<GoBack onGoBackClick={onGoBackClick} />}
             />
 
-            <IqLogo isLogged={isLogged} />
+            <IqLogo isLogged={isLogged} customLinks={customLogoLinks} />
           </div>
 
           <div className="header-classic__panel-right">

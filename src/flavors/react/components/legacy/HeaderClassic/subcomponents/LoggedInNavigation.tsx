@@ -88,7 +88,6 @@ const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
               )
             )}
           </ul>
-          CVo
         </div>
       </div>
     </div>
