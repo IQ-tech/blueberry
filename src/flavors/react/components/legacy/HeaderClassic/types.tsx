@@ -31,6 +31,8 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   mapLoggedInMenuItems?: (
     links: LoggedNavigationLink[]
   ) => LoggedNavigationLink[]
+  /** Custom loggedIn menu items */
+  customLoggedInMenuItems?: LoggedNavigationLink[]
   /** Alternative link to register page */
   registerLink?: string
   /** Alternative link to login */
@@ -54,9 +56,11 @@ export interface NavigationLink {
 
 export interface LoggedNavigationLink {
   label: string
-  path: string
+  path?: string
   separator?: boolean
   rawIcon?: string
+  onClick?: () => void
+  isActive?: boolean
 }
 
 export type Variant = 'newco' | 'iq'

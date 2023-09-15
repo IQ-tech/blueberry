@@ -7,7 +7,7 @@ interface ILogoProps {
 }
 const IqLogo: React.FC<ILogoProps> = ({ isLogged, customLinks }) => {
   const loggedRedirect = customLinks?.loggedIn || '/app/home'
-  const redirect = customLinks.loggedOut || '/'
+  const redirect = customLinks?.loggedOut || '/'
   const redirectLink = isLogged ? loggedRedirect : redirect
 
   return (

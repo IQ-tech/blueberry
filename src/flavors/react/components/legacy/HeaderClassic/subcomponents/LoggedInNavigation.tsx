@@ -63,15 +63,19 @@ const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
           />
           <ul className="header-classic__logged-links-list">
             {loggedMenuLinks.map(
-              ({ label, separator, rawIcon, path }, index) => (
+              (
+                { label, separator, rawIcon, path, onClick, isActive },
+                index
+              ) => (
                 <li
                   className={getItemClass(separator)}
                   key={`logged-in-menu-item-${index}`}
                 >
-                  <a
-                    href={getAbsoluteLink(path)}
-                    className="header-classic__logged-links-link"
-                    data-clicked={`header-logged-menu-item-${label}`}
+                  <ItemLink
+                    path={path}
+                    onClick={onClick}
+                    label={label}
+                    isActive={isActive}
                   >
                     <Conditional
                       condition={!!rawIcon}
@@ -83,7 +87,7 @@ const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
                       }
                     />
                     {label}
-                  </a>
+                  </ItemLink>
                 </li>
               )
             )}
@@ -91,6 +95,37 @@ const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
         </div>
       </div>
     </div>
+  )
+}
+
+const ItemLink = ({ path, label, onClick, children, isActive }) => {
+  const linkClass = classNames('header-classic__logged-links-link', {
+    'header-classic__logged-links-link--button': !path,
+    'header-classic__logged-links-link--active': isActive,
+  })
+  return (
+    <Conditional
+      condition={!!path}
+      renderIf={
+        <a
+          href={getAbsoluteLink(path)}
+          className={linkClass}
+          data-clicked={`header-logged-menu-item-${label}`}
+          onClick={onClick}
+        >
+          {children}
+        </a>
+      }
+      renderElse={
+        <button
+          className={linkClass}
+          data-clicked={`header-logged-menu-item-${label}`}
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      }
+    />
   )
 }
 

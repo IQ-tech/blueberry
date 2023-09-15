@@ -23,6 +23,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   onNotificationClick,
   username = 'username',
   whiteVersion,
+  customLoggedInMenuItems,
   mapLoggedInMenuItems,
   useLoggedOutAbsoluteLinks = true,
   customClass,
@@ -44,6 +45,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     mapLoggedOutMenuItems,
     username,
     mapLoggedInMenuItems,
+    customLoggedInMenuItems,
   })
 
   const headerClass = classNames('header-classic', {

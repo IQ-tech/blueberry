@@ -655,6 +655,8 @@ $header-desk-height = 70px
 
 	&__logged-links-list
 		width 100%
+		+aboveMedium()
+			margin-bottom 20px
 
 	&__logged-links-item
 		&--separator
@@ -670,6 +672,34 @@ $header-desk-height = 70px
 		position relative
 		font-weight 400
 		z-index 1
+
+		&--active
+			color blueberry-50
+
+		&--button
+			display flex
+			justify-content flex-start
+			align-items center
+			width 100%
+			border none
+			cursor pointer
+			padding 29px 24px
+			font-size 16px
+			background-color transparent
+
+			svg
+				width 24px
+				height 24px
+
+			div:before
+				content : "";
+				position: absolute;
+				left    : 10;
+				bottom  : 0;
+				height  : 1px;
+				width   : 80%;
+				border-bottom:1px solid gray-30;
+
 
 		&:before
 			content ''

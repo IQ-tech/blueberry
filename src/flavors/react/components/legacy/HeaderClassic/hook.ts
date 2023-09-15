@@ -17,6 +17,7 @@ function useClassicHeader({
   variant = 'iq',
   mapLoggedInMenuItems,
   mapLoggedOutMenuItems,
+  customLoggedInMenuItems,
   username,
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -42,9 +43,12 @@ function useClassicHeader({
     ? mapLoggedOutMenuItems(navigationMap[variant]?.public)
     : navigationMap[variant]?.public
 
+  const loggedInMenu =
+    customLoggedInMenuItems || navigationMap[variant]?.private
+
   const privateLinks = mapLoggedInMenuItems
-    ? mapLoggedInMenuItems(navigationMap[variant]?.private)
-    : navigationMap[variant]?.private
+    ? mapLoggedInMenuItems(loggedInMenu)
+    : loggedInMenu
 
   return {
     unloggedMenuItems: [],
