@@ -67,4 +67,6 @@ export type Variant = 'newco' | 'iq'
 export interface CustomLogoLinks {
   loggedIn: string
   loggedOut: string
+  loggedInFunction?: () => void
+  loggedOutFunction?: () => void
 }

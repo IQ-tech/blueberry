@@ -17,6 +17,25 @@ export default {
     },
   },
 } as Meta
-const Template = (args) => <HeaderClassic {...args} />
+
+function loggedOutTest() {
+  alert('OUT')
+}
+
+function loggedInTest() {
+  alert('IN')
+}
+
+const Template = (args) => (
+  <HeaderClassic
+    {...args}
+    customLogoLinks={{
+      loggedOut: '/teste',
+      loggedIn: '/teste2',
+      loggedOutFunction: loggedOutTest,
+      loggedInFunction: loggedInTest,
+    }}
+  />
+)
 
 export const Default = Template.bind({})
