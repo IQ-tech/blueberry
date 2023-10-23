@@ -41,6 +41,8 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   whiteVersion?: boolean
   /** Custom class */
   customClass?: string
+  /** Custom function to run on profile link click */
+  profileLinkFunction?: () => void
   /** Header variant */
   variant?: Variant
 }
@@ -67,4 +69,6 @@ export type Variant = 'newco' | 'iq'
 export interface CustomLogoLinks {
   loggedIn: string
   loggedOut: string
+  loggedInFunction?: () => void
+  loggedOutFunction?: () => void
 }
