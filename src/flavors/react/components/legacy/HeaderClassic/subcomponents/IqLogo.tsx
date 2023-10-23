@@ -27,8 +27,8 @@ const IqLogo: React.FC<ILogoProps> = ({ isLogged, customLinks }) => {
     <Conditional
       condition={
         isLogged
-          ? !customLinks.loggedInFunction
-          : !customLinks.loggedOutFunction
+          ? !customLinks?.loggedInFunction
+          : !customLinks?.loggedOutFunction
       }
       renderIf={
         <a

@@ -30,17 +30,6 @@ function profileClick() {
   alert('profile click')
 }
 
-const Template = (args) => (
-  <HeaderClassic
-    {...args}
-    customLogoLinks={{
-      loggedOut: '/teste',
-      loggedIn: '/teste2',
-      loggedOutFunction: loggedOutTest,
-      loggedInFunction: loggedInTest,
-    }}
-    profileLinkFunction={profileClick}
-  />
-)
+const Template = (args) => <HeaderClassic {...args} />
 
 export const Default = Template.bind({})
