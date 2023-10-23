@@ -30,6 +30,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   variant,
   loginLink,
   registerLink,
+  profileLinkFunction,
 }) => {
   const {
     isMobileMenuOpen,
@@ -87,6 +88,7 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                     username={formattedUsername}
                     loggedMenuLinks={loggedNavigationLinks}
                     variant={variant}
+                    profileLinkFunction={profileLinkFunction}
                   />
                 }
                 renderElse={

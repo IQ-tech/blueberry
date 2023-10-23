@@ -26,6 +26,10 @@ function loggedInTest() {
   alert('IN')
 }
 
+function profileClick() {
+  alert('profile click')
+}
+
 const Template = (args) => (
   <HeaderClassic
     {...args}
@@ -35,6 +39,7 @@ const Template = (args) => (
       loggedOutFunction: loggedOutTest,
       loggedInFunction: loggedInTest,
     }}
+    profileLinkFunction={profileClick}
   />
 )
 

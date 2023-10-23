@@ -41,6 +41,8 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   whiteVersion?: boolean
   /** Custom class */
   customClass?: string
+  /** Custom function to run on profile link click */
+  profileLinkFunction?: () => void
   /** Header variant */
   variant?: Variant
 }

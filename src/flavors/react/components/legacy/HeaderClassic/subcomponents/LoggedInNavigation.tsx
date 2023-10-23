@@ -5,25 +5,44 @@ import Conditional from '../../../misc/Conditional'
 import AddBillsButton from './AddBillsButton'
 import { getAbsoluteLink } from '../helpers'
 
-const LoggedInMenuHeader = ({ username, profileLink }) => {
+const LoggedInMenuHeader = ({ username, profileLink, profileLinkFunction }) => {
   return (
     <header className="header-classic__logged-in-menu-header">
       <FirstLetterIcon word={username} />
       <div className="header-classic__logged-in-menu-header-text">
         <p className="header-classic__logged-in-menu-header-name">{username}</p>
-        <a
-          href={getAbsoluteLink(profileLink)}
-          className="header-classic__logged-in-menu-header-profile"
-          data-clicked="logged-header-menu-profile-link"
-        >
-          Editar perfil
-        </a>
+        <Conditional
+          condition={!!profileLinkFunction}
+          renderIf={
+            <button
+              onClick={profileLinkFunction}
+              className="header-classic__logged-in-menu-header-profile header-classic__logged-in-menu-header-profile--button"
+              data-clicked="logged-header-menu-profile-link"
+            >
+              Editar perfil
+            </button>
+          }
+          renderElse={
+            <a
+              href={getAbsoluteLink(profileLink)}
+              className="header-classic__logged-in-menu-header-profile"
+              data-clicked="logged-header-menu-profile-link"
+            >
+              Editar perfil
+            </a>
+          }
+        />
       </div>
     </header>
   )
 }
 
-const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
+const LoggedInNavigation = ({
+  username,
+  loggedMenuLinks,
+  variant,
+  profileLinkFunction,
+}) => {
   const getItemClass = (separator) =>
     classNames('header-classic__logged-links-item', {
       'header-classic__logged-links-item--separator': !!separator,
@@ -51,7 +70,11 @@ const LoggedInNavigation = ({ username, loggedMenuLinks, variant }) => {
         </svg>
       </div>
       <div className="header-classic__logged-menu">
-        <LoggedInMenuHeader username={username} profileLink={profileLink} />
+        <LoggedInMenuHeader
+          username={username}
+          profileLink={profileLink}
+          profileLinkFunction={profileLinkFunction}
+        />
         <div className="header-classic__logged-menu-actions">
           <Conditional
             condition={!isNewco}
