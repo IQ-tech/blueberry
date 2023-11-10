@@ -18,18 +18,6 @@ export default {
   },
 } as Meta
 
-function loggedOutTest() {
-  alert('OUT')
-}
-
-function loggedInTest() {
-  alert('IN')
-}
-
-function profileClick() {
-  alert('profile click')
-}
-
 const Template = (args) => <HeaderClassic {...args} />
 
 export const Default = Template.bind({})

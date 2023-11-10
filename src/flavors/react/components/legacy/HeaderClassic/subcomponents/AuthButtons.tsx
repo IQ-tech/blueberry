@@ -17,19 +17,18 @@ const AuthButtons: React.FC<IAuthButtonProps> = ({
 }) => {
   function redirectToPath(url: string): void {
     if (typeof window !== undefined) {
-      window.location.href = url
+      window.open(url, '_blank')
     }
   }
 
   function onLogin() {
     const link = loginLink || '/app/entrar/'
-    redirectToPath(getAbsoluteLink(link))
+    redirectToPath(link)
   }
 
   function onRegister() {
     const link = registerLink || '/app/cadastro/'
-
-    redirectToPath(getAbsoluteLink(link))
+    redirectToPath(link)
   }
 
   return (
