@@ -27,7 +27,6 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
   mapLoggedInMenuItems,
   useLoggedOutAbsoluteLinks = true,
   customClass,
-  variant,
   loginLink,
   registerLink,
   profileLinkFunction,
@@ -42,7 +41,6 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
     isSubmenuOpen,
     formattedUsername,
   } = useClassicHeader({
-    variant,
     mapLoggedOutMenuItems,
     username,
     mapLoggedInMenuItems,
@@ -87,7 +85,6 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                   <LoggedInNavigation
                     username={formattedUsername}
                     loggedMenuLinks={loggedNavigationLinks}
-                    variant={variant}
                     profileLinkFunction={profileLinkFunction}
                   />
                 }
@@ -99,7 +96,6 @@ const HeaderClassic: React.FC<HeaderClassicProps> = ({
                     closeSubmenu={closeSubmenu}
                     isSubmenuOpen={isSubmenuOpen}
                     useAbsoluteLinks={useLoggedOutAbsoluteLinks}
-                    variant={variant}
                     loginLink={loginLink}
                     registerLink={registerLink}
                   />

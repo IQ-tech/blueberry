@@ -46,11 +46,10 @@ function useClassicHeader({
   }
 
   const publicLinks = mapLoggedOutMenuItems
-    ? mapLoggedOutMenuItems(navigationMap[variant]?.public)
-    : navigationMap[variant]?.public
+    ? mapLoggedOutMenuItems(navigationMap?.publicLinks)
+    : navigationMap?.publicLinks
 
-  const loggedInMenu =
-    customLoggedInMenuItems || navigationMap[variant]?.private
+  const loggedInMenu = customLoggedInMenuItems || navigationMap?.privateLinks
 
   const privateLinks = mapLoggedInMenuItems
     ? mapLoggedInMenuItems(loggedInMenu)
