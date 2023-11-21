@@ -1,58 +1,53 @@
-import React from "react";
-import { getAbsoluteLink } from "../helpers";
+import React from 'react'
+import Button from '../../Button'
 
-const AuthButtons = () => {
+const AuthButtons: React.FC = () => {
   function redirectToPath(url: string): void {
     if (typeof window !== undefined) {
-      window.location.href = url;
+      window.open(url, '_blank')
     }
   }
+
   function onLogin() {
-    redirectToPath(getAbsoluteLink("/app/entrar/"));
+    redirectToPath('https://app.iq.com.br/login')
   }
 
   function onRegister() {
-    redirectToPath(getAbsoluteLink("/app/cadastro/"));
+    redirectToPath('https://app.iq.com.br/login')
   }
 
   return (
     <div className="header-iq__auth-buttons">
-      <button
-        data-clicked="btn-register-header"
-        className="header-iq__auth-button header-iq__auth-button--sign-in"
-        onClick={onLogin}
-      >
-        <svg
-          viewBox="0 0 17 19"
-          id="ia-profile"
-          xmlns="http://www.w3.org/2000/svg"
-          className="header-iq__auth-button-icon"
+      <div className="header-iq__auth-buttons__button">
+        <Button
+          size="medium"
+          type="primary"
+          loading={false}
+          disabled={false}
+          expand="xy"
+          color="inverted"
+          justify="center"
+          onClick={onRegister}
         >
-          <g
-            fill="none"
-            fillRule="evenodd"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            transform="translate(1 1)"
-          >
-            <path
-              strokeLinecap="round"
-              d="M15 16.875V15a3.75 3.75 0 00-3.75-3.75h-7.5A3.75 3.75 0 000 15v1.875"
-            />
-            <circle cx="7.5" cy="3.75" r="3.75" strokeLinecap="square" />
-          </g>
-        </svg>
-        Entrar
-      </button>
-      <button
-        data-clicked="btn-login-header"
-        className="header-iq__auth-button header-iq__auth-button--sign-up"
-        onClick={onRegister}
-      >
-        Começar agora
-      </button>
+          Cadastrar
+        </Button>
+      </div>
+      <div className="header-iq__auth-buttons__button">
+        <Button
+          size="medium"
+          type="secondary"
+          loading={false}
+          disabled={false}
+          expand="xy"
+          color="inverted"
+          justify="center"
+          onClick={onLogin}
+        >
+          Login
+        </Button>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default AuthButtons;
+export default AuthButtons
