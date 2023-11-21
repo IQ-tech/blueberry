@@ -12,21 +12,10 @@ const LoggedOutNavigationLink = ({
   openSubmenu,
 }) => {
   const hasSubmenu = !!subLinks.length
-  const linkClass = classNames(
-    [
-      'header-classic__logged-out-navigation-link',
-      'header-classic__logged-out-navigation-link--newco',
-    ],
-    {
-      'header-classic__logged-out-navigation-link--active': !!isActive,
-      'header-classic__logged-out-navigation-link--submenu': hasSubmenu,
-    }
-  )
-
-  const itemClass = classNames([
-    'header-classic__logged-out-navigation-item',
-    'header-classic__logged-out-navigation-item--newco',
-  ])
+  const linkClass = classNames('header-classic__logged-out-navigation-link', {
+    'header-classic__logged-out-navigation-link--active': !!isActive,
+    'header-classic__logged-out-navigation-link--submenu': hasSubmenu,
+  })
 
   function onClickItem(e) {
     if (hasSubmenu) {
@@ -35,7 +24,7 @@ const LoggedOutNavigationLink = ({
   }
 
   return (
-    <li className={itemClass}>
+    <li className="header-classic__logged-out-navigation-item">
       <a
         className={linkClass}
         href={href}
@@ -92,7 +81,7 @@ const LoggedOutNavigation = ({
       >
         Voltar
       </button>
-      <ul className="header-classic__logged-out-navigation-list header-classic__logged-out-navigation-list__newco">
+      <ul className="header-classic__logged-out-navigation-list">
         {links.map((link, index) => (
           <LoggedOutNavigationLink
             {...link}

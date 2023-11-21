@@ -43,8 +43,8 @@ const DefaultAuthButtons: React.FC<IAuthVariants> = ({
   onRegister,
 }) => {
   return (
-    <div className="header-classic__newco-auth">
-      <div className="header-classic__newco-auth__button">
+    <div className="header-classic__auth-buttons">
+      <div className="header-classic__auth-buttons__button">
         <Button
           size="medium"
           type="primary"
@@ -58,7 +58,7 @@ const DefaultAuthButtons: React.FC<IAuthVariants> = ({
           Cadastrar
         </Button>
       </div>
-      <div className="header-classic__newco-auth__button">
+      <div className="header-classic__auth-buttons__button">
         <Button
           size="medium"
           type="secondary"
