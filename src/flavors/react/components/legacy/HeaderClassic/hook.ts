@@ -31,6 +31,12 @@ function useClassicHeader({
   }
 
   function openSubmenu(e) {
+    const browserWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth
+
+    if (browserWidth > 720) return
     e.preventDefault()
     setIsMobileSubmenuOpen(true)
   }

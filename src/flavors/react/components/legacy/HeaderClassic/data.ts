@@ -102,7 +102,7 @@ const newcoPublicLinks: NavigationLink[] = [
   {
     label: 'Blog',
     ariaLabel: 'Submenu blog',
-    href: '/conteudo/',
+    href: 'https://www.iq.com.br/conteudo',
     subLinks: [
       {
         label: 'Newsletter',
