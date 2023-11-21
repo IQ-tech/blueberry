@@ -28,22 +28,6 @@ const AuthButtons: React.FC<IAuthButtonProps> = ({
 
   return (
     <div className="header-classic__auth-buttons">
-      <DefaultAuthButtons onRegister={onRegister} onLogin={onLogin} />
-    </div>
-  )
-}
-
-interface IAuthVariants {
-  onRegister: () => void
-  onLogin: () => void
-}
-
-const DefaultAuthButtons: React.FC<IAuthVariants> = ({
-  onLogin,
-  onRegister,
-}) => {
-  return (
-    <div className="header-classic__auth-buttons">
       <div className="header-classic__auth-buttons__button">
         <Button
           size="medium"
