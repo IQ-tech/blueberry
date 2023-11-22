@@ -43,8 +43,6 @@ export interface HeaderClassicProps extends React.HTMLAttributes<HTMLElement> {
   customClass?: string
   /** Custom function to run on profile link click */
   profileLinkFunction?: () => void
-  /** Header variant */
-  variant?: Variant
 }
 
 export interface NavigationLink {
@@ -65,7 +63,6 @@ export interface LoggedNavigationLink {
   isActive?: boolean
 }
 
-export type Variant = 'newco' | 'iq'
 export interface CustomLogoLinks {
   loggedIn: string
   loggedOut: string

@@ -2,7 +2,6 @@ import * as React from 'react'
 import FirstLetterIcon from './FirstLetterIcon'
 import classNames from 'classnames'
 import Conditional from '../../../misc/Conditional'
-import AddBillsButton from './AddBillsButton'
 import { getAbsoluteLink } from '../helpers'
 
 const LoggedInMenuHeader = ({ username, profileLink, profileLinkFunction }) => {
@@ -40,7 +39,6 @@ const LoggedInMenuHeader = ({ username, profileLink, profileLinkFunction }) => {
 const LoggedInNavigation = ({
   username,
   loggedMenuLinks,
-  variant,
   profileLinkFunction,
 }) => {
   const getItemClass = (separator) =>
@@ -48,8 +46,7 @@ const LoggedInNavigation = ({
       'header-classic__logged-links-item--separator': !!separator,
     })
 
-  const isNewco = variant === 'newco'
-  const profileLink = isNewco ? '/perfil/' : '/app/perfil/'
+  const profileLink = '/perfil/'
 
   return (
     <div className="header-classic__logged-in-navigation">
@@ -76,14 +73,6 @@ const LoggedInNavigation = ({
           profileLinkFunction={profileLinkFunction}
         />
         <div className="header-classic__logged-menu-actions">
-          <Conditional
-            condition={!isNewco}
-            renderIf={
-              <div className="header-classic__add-new-bill">
-                <AddBillsButton />
-              </div>
-            }
-          />
           <ul className="header-classic__logged-links-list">
             {loggedMenuLinks.map(
               (

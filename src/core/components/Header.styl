@@ -259,17 +259,28 @@ $header-desk-height = 70px
 	&__auth-buttons
 		display flex
 		flex-direction column
-		position absolute
-		bottom 0
+		width 100%
+		gap 24px
+		padding 57px 0
 		transform translateY(100%)
 		transition transform 0.2s ease-out 0.3s
-		width 100%
+
 
 		+aboveMedium()
-			flex-direction row
-			position static
 			width auto
+			padding 0
+			justify-content flex-end
+			flex-direction row
 			transform translateY(0)
+
+		&__button
+			width 100%
+			padding 0 24px
+			height 48px
+
+			+aboveMedium()
+				padding 0
+				width 140px
 
 	&--submenu-open &__auth-buttons
 		z-index -1

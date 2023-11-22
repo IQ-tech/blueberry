@@ -14,6 +14,18 @@ $header-desk-height = 70px
 	ul
 		list-style none
 
+	button, a
+		-webkit-tap-highlight-color transparent !important
+		-webkit-touch-callout none !important
+		-webkit-user-select none !important
+		-khtml-user-select none !important
+		-moz-user-select none !important
+		-ms-user-select none !important
+		user-select none !important
+
+		&:focus
+			outline none !important
+
 	position absolute
 	top 0
 	left 0
@@ -228,16 +240,12 @@ $header-desk-height = 70px
 	&__logged-out-navigation-list
 		display flex
 		flex-direction column
-		max-width 250px
 		margin 0 auto
-		margin-top 100px
-
-		&__newco
-			max-width 100%
-			padding 0 24px
-			width 100%
+		padding 40px 24px
+		width 100%
 
 		+aboveMedium()
+			padding 0 24px
 			flex-direction row
 			margin-top 0
 			margin 0
@@ -247,23 +255,21 @@ $header-desk-height = 70px
 	&__logged-out-navigation-item
 		position relative
 
-
 		+aboveMedium()
 			&:not(:first-of-type)
 				margin-left 10px
 
-
-		&--newco
-			&:not(:last-of-type)
-				border-bottom 1px solid blueberry-20
-				+aboveMedium()
-					border-bottom none
+		&:not(:last-of-type)
+			border-bottom 1px solid blueberry-20
+			+aboveMedium()
+				border-bottom none
 
 	&__logged-out-navigation-link
 		color $color-white
 		text-decoration none
 		display block
 		padding 20px
+		padding-left 0
 		font-weight 400
 		border-radius 20px
 		font-size 18px
@@ -273,11 +279,8 @@ $header-desk-height = 70px
 			color #099faa
 			text-decoration none
 
-		&--newco
-			padding-left 0
-
-			+aboveMedium()
-				padding-left 20px
+		+aboveMedium()
+			padding-left 20px
 
 		&--active
 			color $color-blue-light
@@ -319,21 +322,8 @@ $header-desk-height = 70px
 					transform rotate(45deg)
 
 	&__auth-buttons
-		display flex
-		flex-direction column
-		position absolute
-		bottom 0
 		transform translateY(100%)
 		transition transform 0.2s ease-out 0.3s
-		width 100%
-
-		+aboveMedium()
-			flex-direction row
-			position static
-			width auto
-			transform translateY(0)
-
-	&__newco-auth
 		display flex
 		flex-direction column
 		width 100%
@@ -342,7 +332,9 @@ $header-desk-height = 70px
 
 
 		+aboveMedium()
+			width auto
 			padding 0
+			justify-content flex-end
 			flex-direction row
 			transform translateY(0)
 
