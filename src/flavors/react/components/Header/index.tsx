@@ -1,23 +1,25 @@
-import * as React from "react";
-import classNames from "classnames";
-import Conditional from "../misc/Conditional";
+import * as React from 'react'
+import classNames from 'classnames'
+import Conditional from '../misc/Conditional'
 
-import { HeaderProps } from "./types";
-import IqLogo from "./subcomponents/IqLogo";
-import HamburgerButton from "./subcomponents/HamburgerButton";
-import LoggedOutNavigation from "./subcomponents/LoggedOutNavigation";
-import LoggedInNavigation from "./subcomponents/LoggedInNavigation";
-import useClassicHeader from "./hook";
+import { HeaderProps } from './types'
+import IqLogo from './subcomponents/IqLogo'
+import HamburgerButton from './subcomponents/HamburgerButton'
+import LoggedOutNavigation from './subcomponents/LoggedOutNavigation'
+import LoggedInNavigation from './subcomponents/LoggedInNavigation'
+import useClassicHeader from './hook'
 
 const Header: React.FC<HeaderProps> = ({
   isLogged = false,
   mapLoggedOutMenuItems,
   showAuthButtons = true,
-  username = "username",
+  username = 'username',
   whiteVersion,
   mapLoggedInMenuItems,
   useLoggedOutAbsoluteLinks = true,
   customClass,
+  registerLink,
+  loginLink,
 }) => {
   const {
     isMobileMenuOpen,
@@ -32,15 +34,15 @@ const Header: React.FC<HeaderProps> = ({
     mapLoggedOutMenuItems,
     username,
     mapLoggedInMenuItems,
-  });
+  })
 
-  const headerClass = classNames("header-iq", {
-    "header-iq--logged": isLogged,
-    "header-iq--menu-mobile-open": isMobileMenuOpen,
-    "header-iq--submenu-open": isSubmenuOpen,
-    "header-iq--white-version": isLogged && whiteVersion,
+  const headerClass = classNames('header-iq', {
+    'header-iq--logged': isLogged,
+    'header-iq--menu-mobile-open': isMobileMenuOpen,
+    'header-iq--submenu-open': isSubmenuOpen,
+    'header-iq--white-version': isLogged && whiteVersion,
     [customClass]: !!customClass,
-  });
+  })
 
   return (
     <header className={headerClass}>
@@ -63,6 +65,8 @@ const Header: React.FC<HeaderProps> = ({
                 renderElse={
                   <LoggedOutNavigation
                     showAuthButtons={showAuthButtons}
+                    registerLink={registerLink}
+                    loginLink={loginLink}
                     links={loggedoutNavigationLinks}
                     openSubmenu={openSubmenu}
                     closeSubmenu={closeSubmenu}
@@ -80,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

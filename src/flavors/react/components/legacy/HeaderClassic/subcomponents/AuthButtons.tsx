@@ -17,12 +17,12 @@ const AuthButtons: React.FC<IAuthButtonProps> = ({
   }
 
   function onLogin() {
-    const link = loginLink || 'https://app.iq.com.br/login'
+    const link = loginLink || 'https://app.iq.com.br'
     redirectToPath(link)
   }
 
   function onRegister() {
-    const link = registerLink || 'https://app.iq.com.br/login'
+    const link = registerLink || 'https://app.iq.com.br'
     redirectToPath(link)
   }
 

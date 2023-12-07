@@ -1,7 +1,14 @@
 import React from 'react'
 import Button from '../../Button'
 
-const AuthButtons: React.FC = () => {
+interface IAuthButtonsProps {
+  loginLink?: string
+  registerLink?: string
+}
+const AuthButtons: React.FC<IAuthButtonsProps> = ({
+  loginLink,
+  registerLink,
+}) => {
   function redirectToPath(url: string): void {
     if (typeof window !== undefined) {
       window.open(url, '_blank')
@@ -9,11 +16,13 @@ const AuthButtons: React.FC = () => {
   }
 
   function onLogin() {
-    redirectToPath('https://app.iq.com.br/login')
+    const link = loginLink || 'https://app.iq.com.br'
+    redirectToPath(link)
   }
 
   function onRegister() {
-    redirectToPath('https://app.iq.com.br/login')
+    const link = registerLink || 'https://app.iq.com.br'
+    redirectToPath(link)
   }
 
   return (
