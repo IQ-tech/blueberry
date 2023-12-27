@@ -1,12 +1,16 @@
-import React from "react";
-import useTokenInput from "./hook";
+import React from 'react'
+import classNames from 'classnames'
+
+import useTokenInput from './hook'
 
 interface TokenFieldProps {
-  size?: number;
-  timer?: number;
-  onCompleteToken?: () => void;
-  onChange?: () => void;
-  onChangeTimer?: () => void;
+  size?: number
+  timer?: number
+  onCompleteToken?: (value: string) => void
+  onChange?: (value: string) => void
+  onChangeTimer?: () => void
+  invalid?: boolean
+  disabled?: boolean
 }
 
 const TokenField = ({
@@ -15,6 +19,8 @@ const TokenField = ({
   onChange,
   timer,
   onChangeTimer,
+  invalid,
+  disabled,
 }: TokenFieldProps) => {
   const {
     tokenMap,
@@ -28,15 +34,20 @@ const TokenField = ({
     onChange,
     timer,
     onChangeTimer,
-  });
+  })
+
+  const holderClass = classNames('iq-token-field__input-holder', {
+    'iq-input-field--invalid': invalid,
+  })
 
   return (
     <div className="iq-token-field" ref={rootElementRef}>
       {[...Object.values(tokenMap)].map((_, i) => (
-        <div className="iq-token-field__input-holder" key={`token-digit-${i}`}>
+        <div className={holderClass} key={`token-digit-${i}`}>
           <input
             type="text"
             value={tokenMap[i]}
+            disabled={disabled}
             className="iq-input-field__input"
             onChange={(e) => onChangeNumber(e)}
             onKeyUp={(e) => onKeyUpHandler(e, i)}
@@ -46,7 +57,7 @@ const TokenField = ({
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default TokenField;
+export default TokenField
