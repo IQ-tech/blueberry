@@ -20,6 +20,8 @@ interface InputProps extends ModifiedInputProps, CommonFieldsProps {
   useNumericKeyboard?: boolean;
   /** Ref to the input element */
   inputRef?: React.MutableRefObject<any>;
+  /** Hide error alert icon */
+  hideErrorIcon?: boolean
 }
 
 const InputField: React.FC<InputProps> = ({
@@ -41,9 +43,10 @@ const InputField: React.FC<InputProps> = ({
   tooltipConfig,
   useNumericKeyboard = false,
   inputRef,
+  hideErrorIcon,
   ...rest
 }) => {
-  const shouldRenderRightIcon = !invalid && !!Icon;
+  const shouldRenderRightIcon = hideErrorIcon || (!invalid && !!Icon)
 
   function onChangeHandler(e) {
     if (!!onChange) {
@@ -92,10 +95,14 @@ const InputField: React.FC<InputProps> = ({
             {...rest}
           />
           <div className="iq-input-field__icon iq-input-field__icon--right">
-            <div className="iq-input-field__invalid-icon">
-              <IconFilledError expand />
-            </div>
-            {!!shouldRenderRightIcon ? <Icon expand /> : null}
+
+            {hideErrorIcon ? null :
+              (<div className="iq-input-field__invalid-icon">
+                <IconFilledError expand />
+              </div>)
+            }
+
+            {shouldRenderRightIcon ? <Icon expand /> : null}
           </div>
         </div>
       </FieldBase>
