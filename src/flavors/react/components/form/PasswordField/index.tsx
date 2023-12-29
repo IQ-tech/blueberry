@@ -8,10 +8,12 @@ import { TooltipProps } from "../../Tooltip";
 interface PasswordProps extends ModifiedInputProps, CommonFieldsProps {
   showEye?: boolean;
   tooltipConfig?: TooltipProps;
+  hideErrorIcon?: boolean
 }
 
 const PasswordField: React.FC<PasswordProps> = ({
   showEye = true,
+  hideErrorIcon,
   ...props
 }) => {
   const [isShowingPassword, setIsShowingPassword] = useState(false);
@@ -37,6 +39,7 @@ const PasswordField: React.FC<PasswordProps> = ({
       customClass="iq-password-field"
       htmlType={fieldType}
       Icon={Icon}
+      hideErrorIcon={hideErrorIcon}
       {...props}
     />
   );
