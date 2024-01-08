@@ -1,9 +1,9 @@
-import React from 'react'
-import Button from '../../Button'
+import React from "react";
+import Button from "../../Button";
 
 interface IAuthButtonsProps {
-  loginLink?: string
-  registerLink?: string
+  loginLink?: string;
+  registerLink?: string;
 }
 const AuthButtons: React.FC<IAuthButtonsProps> = ({
   loginLink,
@@ -11,18 +11,19 @@ const AuthButtons: React.FC<IAuthButtonsProps> = ({
 }) => {
   function redirectToPath(url: string): void {
     if (typeof window !== undefined) {
-      window.open(url, '_blank')
+      const parameters = window.location.search;
+      window.open(url + parameters, "_blank");
     }
   }
 
   function onLogin() {
-    const link = loginLink || 'https://app.iq.com.br'
-    redirectToPath(link)
+    const link = loginLink || "https://app.iq.com.br";
+    redirectToPath(link);
   }
 
   function onRegister() {
-    const link = registerLink || 'https://app.iq.com.br'
-    redirectToPath(link)
+    const link = registerLink || "https://app.iq.com.br";
+    redirectToPath(link);
   }
 
   return (
@@ -56,7 +57,7 @@ const AuthButtons: React.FC<IAuthButtonsProps> = ({
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AuthButtons
+export default AuthButtons;
