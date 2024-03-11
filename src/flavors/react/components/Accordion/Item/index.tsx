@@ -1,18 +1,20 @@
-import * as React from "react";
-import classNames from "classnames";
-import OutlineAngleDownMini from "../../icons/generated/outline/OutlineAngleDownMini";
-import { AccordionItemProps } from "../types";
-import useAccordionItem from "./logic";
+import * as React from 'react'
+import classNames from 'classnames'
+import OutlineAngleDownMini from '../../icons/generated/outline/OutlineAngleDownMini'
+import { AccordionItemProps } from '../types'
+import useAccordionItem from './logic'
 
 const Item: React.FC<AccordionItemProps> = ({
   accIndex,
   open,
   children,
-  titleChild = "Accodion item",
+  titleChild = 'Accodion item',
   openedItems = [],
   onOpenItem,
   onCloseItem,
   colorScheme,
+  openCallback,
+  closeCallback,
 }) => {
   const { isItemOpened, headClickHandler } = useAccordionItem({
     accIndex,
@@ -20,12 +22,14 @@ const Item: React.FC<AccordionItemProps> = ({
     onOpenItem,
     onCloseItem,
     open,
-  });
+    openCallback,
+    closeCallback,
+  })
 
-  const componentClass = classNames("iq-accordion__item", {
-    "iq-accordion__item--open": isItemOpened,
+  const componentClass = classNames('iq-accordion__item', {
+    'iq-accordion__item--open': isItemOpened,
     [`iq-accordion__item--color-s-${colorScheme}`]: !!colorScheme,
-  });
+  })
 
   return (
     <li className={componentClass}>
@@ -37,7 +41,7 @@ const Item: React.FC<AccordionItemProps> = ({
       </button>
       <div className="iq-accordion__item-body">{children}</div>
     </li>
-  );
-};
+  )
+}
 
-export default Item;
+export default Item
