@@ -11,6 +11,7 @@ interface TokenFieldProps {
   onChangeTimer?: () => void
   invalid?: boolean
   disabled?: boolean
+  type?: 'number' | 'password' | 'text'
 }
 
 const TokenField = ({
@@ -21,6 +22,7 @@ const TokenField = ({
   onChangeTimer,
   invalid,
   disabled,
+  type,
 }: TokenFieldProps) => {
   const {
     tokenMap,
@@ -45,7 +47,7 @@ const TokenField = ({
       {[...Object.values(tokenMap)].map((_, i) => (
         <div className={holderClass} key={`token-digit-${i}`}>
           <input
-            type="text"
+            type={type || 'number'}
             value={tokenMap[i]}
             disabled={disabled}
             className="iq-input-field__input"

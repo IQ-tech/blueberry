@@ -1,12 +1,12 @@
-import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import TokenField from "./index";
+import React from 'react'
+import { Meta } from '@storybook/react/types-6-0'
+import TokenField from './index'
 
 //@ts-ignore
-import "core/components/Form.styl";
+import 'core/components/Form.styl'
 
 export default {
-  title: "Components/form/TokenInput",
+  title: 'Components/form/TokenInput',
   component: TokenField,
   parameters: {
     docs: {
@@ -15,22 +15,22 @@ export default {
       },
     },
   },
-} as Meta;
+} as Meta
 
 const Template = (args) => {
   return (
-    <div style={{ width: "60%", maxWidth: "350px" }}>
+    <div style={{ width: '100%' }}>
       <TokenField {...args} />
     </div>
-  );
-};
+  )
+}
 
-export const BasicTokenInput = Template.bind({});
+export const BasicTokenInput = Template.bind({})
 BasicTokenInput.args = {
   disabled: false,
   invalid: false,
   optional: false,
   required: true,
-  label: "Simple field",
-  placeholder: "Batata",
-};
+  label: 'Simple field',
+  placeholder: 'Batata',
+}
