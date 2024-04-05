@@ -78,15 +78,19 @@ export default function useTokenInput({
   function onKeyUpHandler(e, i) {
     const hasBackspacePressed = e.which === 8 || e.key === 'Backspace'
     if (hasBackspacePressed) {
-      setTokenMap({ ...tokenMap, [i]: '' })
       const previousItem = rootElementRef.current.querySelector(
         `[data-token-i='${i - 1}']`
       )
-      if (!!previousItem) previousItem.focus()
+      const currentItem = rootElementRef.current.querySelector(
+        `[data-token-i='${i}']`
+      )
+
+      setTokenMap({ ...tokenMap, [i]: '' })
+      if (!!previousItem && !currentItem.value) previousItem.focus()
     }
   }
 
-  function onChangeNumber(e) {
+  function onChangeNumber(e, i) {
     e.preventDefault()
     let value = e?.target?.value
     const isNumberValid = inputtedValueIsValid(value)
@@ -102,7 +106,14 @@ export default function useTokenInput({
         value = value[value.length - 1]
       }
 
-      if (firstEmptyIndex < 0) return
+      if (firstEmptyIndex < 0 ) {
+
+        if (!!value) {
+          setTokenMap({ ...tokenMap, [i]: value })
+        }
+
+        return
+      }
 
       setTokenMap({ ...tokenMap, [firstEmptyIndex]: value })
       if (!isEmpty) _goToNextInput(firstEmptyIndex)
