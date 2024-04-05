@@ -51,7 +51,7 @@ const TokenField = ({
             value={tokenMap[i]}
             disabled={disabled}
             className="iq-input-field__input"
-            onChange={(e) => onChangeNumber(e)}
+            onChange={(e) => onChangeNumber(e, i)}
             onKeyUp={(e) => onKeyUpHandler(e, i)}
             onPaste={(e) => onPasteNumber(e)}
             data-token-i={i}
