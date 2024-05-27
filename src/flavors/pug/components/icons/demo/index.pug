@@ -3,6 +3,7 @@
 include ../SearchLoader.pug
 include ../OutlineViewPassword.pug
 include ../OutlineSettings.pug
+include ../OutlineSearchRemove.pug
 include ../OutlineSearchNotFound.pug
 include ../OutlineSearch.pug
 include ../OutlineReceipt.pug
@@ -13,6 +14,7 @@ include ../OutlinePerfilCheck.pug
 include ../OutlinePerfil.pug
 include ../OutlinePayment.pug
 include ../OutlinePartnership.pug
+include ../OutlinePadlock.pug
 include ../OutlineNotificationTwo.pug
 include ../OutlineNotification.pug
 include ../OutlineMoneyIn.pug
@@ -36,6 +38,7 @@ include ../OutlineDelete.pug
 include ../OutlineCreditCardPoints.pug
 include ../OutlineContractSidebar.pug
 include ../OutlineContactless.pug
+include ../OutlineCloseLight.pug
 include ../OutlineClose.pug
 include ../OutlineCellPhone.pug
 include ../OutlineCardDeclined.pug
@@ -54,6 +57,7 @@ include ../OutlineAngleLeftMini.pug
 include ../OutlineAngleLeft.pug
 include ../OutlineAngleDownMini.pug
 include ../OutlineAngleDown.pug
+include ../IqIcon.pug
 include ../IconHandsBackground.pug
 include ../IconHandDocument.pug
 include ../IconHandApp.pug
@@ -85,6 +89,9 @@ mixin IconsDemo()
 
 				+IconBox({filename: "IconHandsBackground.pug"})
 					+IconHandsBackground()
+
+				+IconBox({filename: "IqIcon.pug"})
+					+IqIcon()
 
 				+IconBox({filename: "OutlineAngleDown.pug"})
 					+OutlineAngleDown()
@@ -139,6 +146,9 @@ mixin IconsDemo()
 
 				+IconBox({filename: "OutlineClose.pug"})
 					+OutlineClose()
+
+				+IconBox({filename: "OutlineCloseLight.pug"})
+					+OutlineCloseLight()
 
 				+IconBox({filename: "OutlineContactless.pug"})
 					+OutlineContactless()
@@ -209,6 +219,9 @@ mixin IconsDemo()
 				+IconBox({filename: "OutlineNotificationTwo.pug"})
 					+OutlineNotificationTwo()
 
+				+IconBox({filename: "OutlinePadlock.pug"})
+					+OutlinePadlock()
+
 				+IconBox({filename: "OutlinePartnership.pug"})
 					+OutlinePartnership()
 
@@ -238,6 +251,9 @@ mixin IconsDemo()
 
 				+IconBox({filename: "OutlineSearchNotFound.pug"})
 					+OutlineSearchNotFound()
+
+				+IconBox({filename: "OutlineSearchRemove.pug"})
+					+OutlineSearchRemove()
 
 				+IconBox({filename: "OutlineSettings.pug"})
 					+OutlineSettings()
