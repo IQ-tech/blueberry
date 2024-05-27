@@ -1,0 +1,491 @@
+@import '../variables.styl'
+
+// Logged-in and logged-out versions implemented
+$main-blue = #352ca4
+$color-blue-light = #0de3f2
+$color-blue-dark = #1c1277
+$color-white = #FFF
+$header-mobile-height = 73px
+$header-desk-height = 81px
+
+.header-cp
+  componentDeepReset()
+
+  ul
+    list-style none
+
+  button, a
+    -webkit-tap-highlight-color transparent !important
+    -webkit-touch-callout none !important
+    -webkit-user-select none !important
+    -khtml-user-select none !important
+    -moz-user-select none !important
+    -ms-user-select none !important
+    user-select none !important
+
+    &:focus
+      outline none !important
+
+  position absolute
+  top 0
+  left 0
+  right 0
+  color $color-white
+  font-family 'Source Sans Pro', sans-serif
+  font-size 14px
+  font-weight 400
+  border-bottom 1px solid #e2e4e9
+
+  &__navbar
+    background-color #FFF
+    display flex
+    align-items center
+
+  &__container
+    display flex
+    justify-content space-between
+    align-items center
+    width 100%
+    padding 16px 24px
+    margin 0 auto
+
+    +aboveSmall()
+      max-width 540px
+
+    +aboveMedium()
+      max-width 720px
+
+    +aboveLarge()
+      max-width 960px
+
+    +aboveXLarge()
+      max-width 1360px
+
+  &__panel-left
+    display flex
+
+  &__logo
+    height 36px
+    width 145px
+
+  &__logo-link
+    &--button
+      cursor pointer
+
+  &__panel-right
+    flex 1
+    display flex
+    justify-content flex-end
+    align-items center
+    gap 25px
+
+    &__notification
+      justify-content center
+      align-items center
+      display flex
+      outline none
+
+      button
+        background none
+        border none
+        cursor pointer
+        -webkit-tap-highlight-color transparent
+
+      &__icon
+        display flex
+        align-items center
+        svg
+          width 27px
+          height 30px
+          color #fff
+
+    +aboveMedium()
+      justify-content space-between
+
+  &--logged &__panel-right
+    +aboveMedium()
+      justify-content flex-end
+
+  &__hamburger
+    display flex
+    background-color transparent
+    outline none
+    border none
+    height 17px
+    width 20px
+    flex-direction column
+    justify-content space-between
+    cursor pointer
+
+    +aboveMedium()
+      display none
+
+  &__hamburger-line
+    background-color #0048DB
+    height 2px
+    width 24px
+
+    &--one
+      transition transform 0.75s cubic-bezier(1, -0.4, 0, 1.41)
+      will-change transform
+
+    &--two, &--three
+      transition 0.9s cubic-bezier(0.38, 0.52, 0.11, 1.2)
+      will-change transform, width
+
+  &--white-version &__hamburger-line
+    background-color #000
+
+  .header-cp__hamburger--close
+    .header-cp__hamburger-line--one
+      transform translateX(270px)
+
+    .header-cp__hamburger-line--two
+      transform rotate(45deg)
+
+    .header-cp__hamburger-line--three
+      transform rotate(-45deg) translate(6px, -6px)
+
+  &--menu-mobile-open&--logged &__hamburger-line
+    background-color #000
+
+  // Menu holder - holds logged in or logged out menus
+  &__menu-holder
+    width 100%
+    height 'calc(100vh - %s)' % $header-mobile-height
+    position fixed
+    background-color #FFF
+    top $header-mobile-height
+    left 0
+    transform translateX(-100vw)
+    transition transform 0.3s ease-in
+
+    +aboveMedium()
+      width auto
+      height auto
+      position static
+      transform translateX(0)
+      flex 1
+
+  &--white-version &__menu-holder
+    background-color $color-white
+
+  &--menu-mobile-open &__menu-holder
+    transform translateX(0)
+
+  &--submenu-open &__menu-holder
+    z-index 2
+
+  &--logged .header-cp__menu-holder
+    height 100vh
+    top 0
+    display flex
+
+    +aboveMedium()
+      height auto
+      height $header-desk-height
+      flex 0 0 200px
+
+  &__logged-out-navigation
+    display flex
+    flex-direction column
+    height 100%
+    width 100%
+    justify-content space-between
+
+    +aboveMedium()
+      flex-direction row
+      justify-content flex-end
+      align-items center
+
+  &__logged-out-navigation-list
+    display flex
+    flex-direction column
+    margin 0 auto
+    padding 24px
+    width 100%
+
+    +aboveMedium()
+      padding 0 24px
+      flex-direction row
+      margin-top 0
+      margin 0
+      width fit-content
+      max-width none
+      align-items center
+      gap 16px
+
+    +aboveLarge()
+      padding 0 48px
+      gap 48px
+
+    &-icon
+      position absolute
+      right 0
+      bottom 12px
+      pointer-events none
+      color #0048DB
+      transition all .3s ease
+
+      &--active
+        color #0048DB
+        transform rotate(180deg)
+
+      +aboveMedium()
+        display none
+
+    &-item
+      display list-item
+      position relative
+      width 100%
+
+      +aboveMedium()
+        width fit-content
+
+      &--first
+        +aboveMedium()
+          display none
+
+        +aboveLarge()
+          display list-item
+
+      & + &
+        margin-top 16px
+        padding-top 16px
+        border-top 1px solid #e2e4e9
+
+        +aboveMedium()
+          margin-top: 0
+          padding-top: 0
+          border-top: none
+
+  &__auth-buttons
+    display flex
+    flex-direction column
+    gap 16px
+    width 100%
+    margin-bottom 45px
+
+    +aboveMedium()
+      width auto
+      margin-bottom 0
+
+    &__button
+      width 100%
+      padding 0 24px
+      height 48px
+
+      +aboveMedium()
+        padding 0
+        width 140px
+
+  &__logged-in-navigation
+    flex 1
+
+    +aboveMedium()
+      flex auto
+      width 100%
+      margin-left auto
+
+  &__logged-in-desk-name-holder
+    display none
+
+    +aboveMedium()
+      display block
+      height 100%
+      cursor pointer
+      display flex
+      align-items center
+
+  &__letter-circle
+    background #7874e6
+    min-width 38px
+    width 38px
+    height 38px
+    border-radius 50%
+    color $color-white
+    justify-content center
+    align-items center
+    font-size 14px
+    display flex
+    font-weight 400
+
+  &__logged-in-desk-name
+    color $color-white
+    font-weight 900
+    font-size 14px
+
+  &--white-version &__logged-in-desk-name
+    color #000
+
+  &__logged-in-desk-name
+    margin 0 10px
+
+  &__logged-in-arrow-down
+    display block
+    height 5px
+    width 10px
+
+  &--white-version &__logged-in-arrow-down
+    color black
+
+  &__logged-in-menu-header
+    padding 24px
+    display flex
+    align-items center
+    font-size 14px
+    font-weight 900
+
+  &__logged-links-icon-holder
+    svg
+      width 20px
+      height 20px
+      color #666
+      margin-right 18px
+
+  &__logged-in-menu-header-profile
+    color #483fb1
+    text-decoration underline
+    font-size 14px
+
+    &--button
+      background none
+      cursor pointer
+      border none
+
+  &__logged-in-menu-header-name
+    color #000
+    font-size 18px
+
+    +aboveMedium()
+      font-size 14px
+
+  &__logged-in-menu-header-text
+    padding 0 10px
+
+  &__logged-menu
+    background-color #E8E6FF
+    height 100%
+    display flex
+    flex-direction column
+
+    +aboveMedium()
+      position absolute
+      top 0
+      right 0
+      width 300px
+      min-height 500px
+      transform translateY(-200%)
+      transition transform 0.2s cubic-bezier(0.79, 0.02, 0.17, 0.99)
+      box-shadow 0 5px 33px 0 rgba(0, 0, 0, 6%)
+
+  &--logged &__menu-holder
+    +aboveMedium()
+      &:hover
+        .header-cp__logged-menu
+          transform translateY(0)
+
+  &__add-new-bill
+    padding 24px 24px 11px 24px
+
+  &__add-new-bill-button
+    display block
+    padding 24px
+    background-color $main-blue
+    font-weight 600
+    padding 12px 20px
+    border-radius 4px
+    color $color-white
+    text-decoration none
+    font-size 14px
+    transition background-color 0.2s ease-in
+    display flex
+    align-items center
+
+    &:hover
+      background-color $color-blue-dark
+
+    svg
+      color #bfb8ff
+      height 15px
+      width 15px
+
+    .bills
+      margin-right 12px
+
+    .arrow
+      margin-left auto
+
+  &__logged-links-list
+    width 100%
+    +aboveMedium()
+      margin-bottom 20px
+
+  &__logged-links-item
+    &--separator
+      margin 5px 0
+      border-top 1px solid #d7d7d7
+      border-bottom 1px solid #d7d7d7
+
+  &__logged-links-link
+    display flex
+    color #000
+    text-decoration none
+    padding 13px 24px
+    position relative
+    font-weight 400
+    z-index 1
+
+    &--active
+      color blue-50
+
+    &--button
+      display flex
+      justify-content flex-start
+      align-items center
+      width 100%
+      border none
+      cursor pointer
+      padding 29px 24px
+      font-size 16px
+      background-color transparent
+
+      svg
+        width 24px
+        height 24px
+
+      div:before
+        content : "";
+        position: absolute;
+        left    : 10;
+        bottom  : 0;
+        height  : 1px;
+        width   : 80%;
+        border-bottom:1px solid #d5d5d5;
+
+
+    &:before
+      content ''
+      background #e6e6e6
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      z-index -1
+      transform scale(1, 0)
+      transition-property transform, opacity, visibility
+      transition-duration 0.2s
+      transition-timing-function cubic-bezier(0.79, 0.02, 0.17, 0.99)
+      transition-delay 0s
+
+    &:hover
+      text-decoration none
+
+      &:before
+        transform scaleY(1)
+
+  &__logged-menu-actions
+    background-color $color-white
+    flex 1
+    border-radius 16px 16px 0 0

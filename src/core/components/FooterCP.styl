@@ -1,0 +1,138 @@
+@import '../variables.styl'
+
+.footer-cp
+  componentDeepReset()
+  font-family 'Source Sans Pro', sans-serif
+  background-color #FFF
+  color #FFF
+  padding 48px 0
+  border-top 1px solid #E1E4E9
+
+  +aboveMedium()
+    padding 64px 0
+
+  &__title
+    font-family 'Lexend Deca', sans-serif
+    font-size 16px
+    font-weight 700
+    line-height 1.5
+    color #16181D
+
+  &__text,
+  &__link
+    font-family 'Source Sans Pro', sans-serif
+    font-size 16px
+    font-weight 400
+    line-height 1.5
+    color #454A54
+
+  &__link
+    text-decoration none
+    transition text-decoration 0.3s ease
+
+    &:hover
+      text-decoration underline
+
+  &__container
+    margin 0 auto
+    width 100%
+    padding 0 24px
+
+    +aboveSmall()
+      max-width 540px
+
+    +aboveMedium()
+      max-width 720px
+
+    +aboveLarge()
+      max-width 960px
+
+    +aboveXLarge()
+      max-width 1360px
+
+  &__navigation
+    display flex
+    flex-direction column
+    gap 32px
+    margin 40px 0
+
+    +aboveMedium()
+      flex-direction row
+      justify-content space-between
+      gap none
+
+  &__pages-menu
+    margin 40px 0
+    display flex
+    flex-direction column
+
+    +aboveMedium()
+      margin 0
+      flex-direction row
+      flex 2.5
+
+      & > div
+        width 25%
+
+  &__links
+    &-group,
+    &-list
+      display flex
+      flex-direction column
+      gap 16px
+
+    &-list
+      list-style none
+
+    &-box
+      display flex
+      gap 24px
+
+    &-icon
+      color #0048DB
+      max-width 30px
+
+      svg
+        height 100%
+        width 100%
+
+  &__infos
+    display flex
+    flex-direction column-reverse
+    gap 32px
+    margin-top 40px
+    padding 40px 0
+    border-top 1px solid #C4C9D4
+
+    +aboveMedium()
+      flex-direction row
+      justify-content space-between
+      align-items center
+      margin-top 0
+      gap 0
+
+  &__info
+    display flex
+    flex-direction column
+    text-align left
+
+    +aboveMedium()
+      text-align right
+
+  &__copy-right
+    padding-top 40px
+    border-top 1px solid #C4C9D4
+    text-align center
+
+  &__certificates
+    &-wrap
+      display flex
+      align-items center
+      justify-content space-between
+      gap 16px
+      padding 0
+
+      +aboveMedium()
+        background-color inherit
+        gap 32px
+        margin 0
