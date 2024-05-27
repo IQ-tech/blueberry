@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0'
 import HeaderCP from '.'
 
 import 'core/fonts.styl'
-import 'core/components/legacy/HeaderCP.styl'
+import 'core/components/HeaderCP.styl'
 import 'core/main.styl'
 import { NavigationLink } from './types'
 
