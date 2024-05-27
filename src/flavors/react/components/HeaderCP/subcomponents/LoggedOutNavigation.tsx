@@ -1,12 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { Button } from "iq-blueberry";
-import Arrow from "iq-blueberry/dist/reactIcons/OutlineAngleRightMini"
+import Button from "../../Button";
+import Arrow from "../../icons/generated/outline/OutlineAngleRightMini"
 
 const LoggedOutNavigation = ({ links,  loginLink }) => {
   function onLogin() {
-    const link = loginLink || "https://app.iq.com.br";
+    const link = loginLink || "https://app.consumidorpositivo.com.br";
 
     if (typeof window !== undefined) {
       const parameters = window.location.search;
