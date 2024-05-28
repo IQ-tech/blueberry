@@ -3,7 +3,6 @@ import React from "react";
 // @ts-ignore
 import socialLinks from "../social-media";
 
-import useClassicFooter from "../hooks/index";
 import { ElementEventPayload } from '../types';
 
 const socialLinksArray = Object.keys(socialLinks).map(
@@ -11,8 +10,6 @@ const socialLinksArray = Object.keys(socialLinks).map(
 );
 
 const SocialIcons = () => {
-  const { trackLink } = useClassicFooter();
-
   function handleClick(type: string) {
     const payload: ElementEventPayload = {
       elementType: "link",
@@ -20,7 +17,6 @@ const SocialIcons = () => {
       position: "Siga a gente",
       text: type,
     };
-    trackLink(payload);
   };
 
   return (
