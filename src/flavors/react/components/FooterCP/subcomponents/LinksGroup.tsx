@@ -1,7 +1,5 @@
 import React from "react";
 
-import Condition from "@mkt/ui/components/common/Condition"
-
 import useClassicFooter from "../hooks/index";
 import { ElementEventPayload } from '../types';
 
@@ -39,7 +37,7 @@ const LinksGroup = ({ category = "", links = [] }: LinksGroupsProps) => {
         {links.map(({ title, link, target }, index) => (
           <li key={`links-list-${category}-${index}`}>
             <h3>
-              <Condition condition={!!link}>
+              {!!link && 
                 <a
                   href={link}
                   target={target}
@@ -49,11 +47,11 @@ const LinksGroup = ({ category = "", links = [] }: LinksGroupsProps) => {
                 >
                   {title}
                 </a>
-              </Condition>
+              }
 
-              <Condition condition={!link}>
+              {!link &&
                 <p className="footer-cp__text">{title}</p>
-              </Condition>
+              }
             </h3>
           </li>
         ))}

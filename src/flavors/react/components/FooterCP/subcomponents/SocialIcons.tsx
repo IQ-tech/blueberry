@@ -1,7 +1,7 @@
 import React from "react";
 
 // @ts-ignore
-import socialLinks from "@mkt/cp/src/blueberry/core/data/social-media";
+import socialLinks from "../social-media";
 
 import useClassicFooter from "../hooks/index";
 import { ElementEventPayload } from '../types';

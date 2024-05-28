@@ -1,7 +1,7 @@
 import * as React from "react";
 // @ts-ignore
-import footerLinks from "@mkt/cp/src/blueberry/core/data/footer-links.json";
-import publicInfo from "@mkt/cp/src/blueberry/core/data/public-info.json";
+import footerLinks from "./footer-links.json";
+import publicInfo from "./public-info.json";
 
 import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";

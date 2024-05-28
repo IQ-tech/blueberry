@@ -1,6 +1,6 @@
 import * as React from 'react'
 import classNames from 'classnames'
-import Conditional from '../../misc/Conditional'
+import Conditional from '../misc/Conditional'
 
 import { HeaderClassicProps } from './types'
 import CpLogo from './subcomponents/CpLogo'
