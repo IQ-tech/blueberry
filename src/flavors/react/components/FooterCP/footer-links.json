@@ -1,0 +1,73 @@
+[
+	{
+		"category": "Quem Somos",
+		"links": [
+			{
+				"title": "Sobre o Consumidor Positivo",
+				"link": "/quem-somos",
+        "target": "_self"
+			},
+			{
+				"title": "Termos e Políticas",
+				"link": "/termos-e-politica",
+        "target": "_self"
+			},
+			{
+				"title": "Blog",
+				"link": "https://acordocerto.com.br/blog",
+        "target": "_blank"
+			},
+			{
+				"title": "Evite fraudes",
+				"link": "/evite-fraudes",
+        "target": "_self"
+			}
+		]
+	},
+	{
+		"category": "Nossas soluções",
+		"links": [
+			{
+				"title": "Cartões de Crédito",
+				"link": "/cartao-de-credito",
+        "target": "_self"
+			},
+			{
+				"title": "Score",
+				"link": "https://app.consumidorpositivo.com.br",
+        "target": "_blank"
+			},
+			{
+				"title": "Acordo Certo",
+				"link": "https://www.acordocerto.com.br/",
+        "target": "_blank"
+			},
+			{
+				"title": "Cadastro Positivo",
+				"link": "/cadastro-positivo",
+        "target": "_self"
+			}
+		]
+	},
+	{
+		"category": "Contato",
+		"links": [
+			{
+				"title": "Fale Conosco",
+				"link": "/fale-conosco",
+        "target": "_self"
+			},
+			{
+				"title": "Central de Ajuda",
+				"link": "https://ajuda.consumidorpositivo.com.br/hc/pt-br",
+        "target": "_blank"
+			},
+			{
+				"title": "3003 - 0201 (das 8h às 20h)"
+			},
+			{
+				"title": "0800 727 0201 (Cadastro Positivo)"
+			}
+		]
+	}
+]
