@@ -1,7 +1,7 @@
 import * as React from 'react'
 import FirstLetterIcon from './FirstLetterIcon'
 import classNames from 'classnames'
-import Conditional from '../../../misc/Conditional'
+import Conditional from '../../misc/Conditional'
 import { getAbsoluteLink } from '../helpers'
 
 const LoggedInMenuHeader = ({ username, profileLink, profileLinkFunction }) => {

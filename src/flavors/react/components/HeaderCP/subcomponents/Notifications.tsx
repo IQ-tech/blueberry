@@ -1,5 +1,5 @@
 import React from 'react'
-import Conditional from '../../../misc/Conditional'
+import Conditional from '../../misc/Conditional'
 
 import { loggedMenuItemsIcons } from '../icons'
 
