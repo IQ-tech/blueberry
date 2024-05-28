@@ -1,6 +1,5 @@
 import React from "react";
 
-import useClassicFooter from "../hooks/index";
 import { ElementEventPayload } from '../types';
 
 type linkType = {
@@ -15,7 +14,6 @@ interface LinksGroupsProps {
 }
 
 const LinksGroup = ({ category = "", links = [] }: LinksGroupsProps) => {
-  const { trackLink } = useClassicFooter();
 
   function handleClick(e: React.MouseEvent<HTMLAnchorElement> | undefined) {
     const linkElement = e?.target as HTMLAnchorElement;
@@ -25,7 +23,6 @@ const LinksGroup = ({ category = "", links = [] }: LinksGroupsProps) => {
       position: category,
       text: linkElement.text,
     };
-    trackLink(payload);
   };
 
   return (
