@@ -1,6 +1,6 @@
 import React from 'react'
 import { CustomLogoLinks } from '../types'
-import Conditional from '../../../misc/Conditional'
+import Conditional from '../../misc/Conditional'
 
 interface ILogoProps {
   isLogged: boolean
