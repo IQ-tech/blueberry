@@ -7,7 +7,7 @@ import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";
 import Certificates from "./subcomponents/Certificates";
 
-const FooterCP: React.FC = () => {
+const FooterCP: React.FC = ({ handleClick } : any) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -45,10 +45,11 @@ const FooterCP: React.FC = () => {
                 key={`links-group-${index}`}
                 category={category}
                 links={links}
+                handleClick={handleClick}
               />
             ))}
 
-            <SocialIcons />
+            <SocialIcons handleClick={handleClick} />
           </div>
         </nav>
 

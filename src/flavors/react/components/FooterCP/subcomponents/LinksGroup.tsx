@@ -11,11 +11,12 @@ type linkType = {
 interface LinksGroupsProps {
   category?: string;
   links?: linkType[];
+  handleClick?: (param: any) => void
 }
 
-const LinksGroup = ({ category = "", links = [] }: LinksGroupsProps) => {
+const LinksGroup = ({ category = "", links = [], handleClick }: LinksGroupsProps) => {
 
-  function handleClick(e: React.MouseEvent<HTMLAnchorElement> | undefined) {
+  function onClick(e: React.MouseEvent<HTMLAnchorElement> | undefined) {
     const linkElement = e?.target as HTMLAnchorElement;
     const payload: ElementEventPayload = {
       elementType: "link",
@@ -23,6 +24,10 @@ const LinksGroup = ({ category = "", links = [] }: LinksGroupsProps) => {
       position: category,
       text: linkElement.text,
     };
+
+    if (handleClick) {
+      handleClick(payload)
+    }
   };
 
   return (
@@ -40,7 +45,7 @@ const LinksGroup = ({ category = "", links = [] }: LinksGroupsProps) => {
                   target={target}
                   rel="noopener"
                   className="footer-cp__link"
-                  onClick={handleClick}
+                  onClick={onClick}
                 >
                   {title}
                 </a>
