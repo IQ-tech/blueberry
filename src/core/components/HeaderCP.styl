@@ -8,8 +8,22 @@ $color-white = #FFF
 $header-mobile-height = 73px
 $header-desk-height = 81px
 
+@keyframes spin
+  100%
+    transform rotate(360deg)
+
 .header-cp
   componentDeepReset()
+
+  position absolute
+  top 0
+  left 0
+  right 0
+  color $color-white
+  font-family 'Source Sans Pro', sans-serif
+  font-size 14px
+  font-weight 400
+  border-bottom 1px solid #e2e4e9
 
   ul
     list-style none
@@ -26,15 +40,12 @@ $header-desk-height = 81px
     &:focus
       outline none !important
 
-  position absolute
-  top 0
-  left 0
-  right 0
-  color $color-white
-  font-family 'Source Sans Pro', sans-serif
-  font-size 14px
-  font-weight 400
-  border-bottom 1px solid #e2e4e9
+  :before
+    -webkit-box-sizing border-box
+    box-sizing border-box
+    margin 0
+    padding 0
+    text-decoration none
 
   &__navbar
     background-color #FFF
@@ -55,8 +66,8 @@ $header-desk-height = 81px
     +aboveMedium()
       max-width 720px
 
-    +aboveLarge()
-      max-width 960px
+    @media (min-width: 991px)
+        max-width 960px
 
     +aboveXLarge()
       max-width 1360px
@@ -437,7 +448,7 @@ $header-desk-height = 81px
     z-index 1
 
     &--active
-      color blue-50
+      color #1737A4
 
     &--button
       display flex
@@ -489,3 +500,185 @@ $header-desk-height = 81px
     background-color $color-white
     flex 1
     border-radius 16px 16px 0 0
+
+  .iq-btn
+    componentDeepReset()
+    font-family 'Source Sans Pro', sans-serif
+    font-weight 400
+    font-size 16px
+    line-height 1.5
+    box-sizing border-box
+    outline none
+    cursor pointer
+    border none
+    border-radius 32px
+    text-align center
+    padding 10px
+    height 48px
+    display flex
+    align-items center
+    background-color #04D98C
+    transition background-color 0.15s ease-in, border-color 0.15s ease-in, color 0.15s ease-in // padronizar depois as animações
+
+    &__text
+      order 2
+
+    // Color definitions by type and scheme
+    // Primary default
+    &
+      background-color #0048DB
+      border 1px solid #0048DB
+      color white
+
+      &:hover:not(&--type-text)
+        background-color #1737A4
+        border-color #1737A4
+        color white
+
+      &:active
+        background-color #18256C
+        border-color #18256C
+        color white
+
+    // primary disabled
+    &--disabled
+      &, &:hover, &:active
+        background-color #E2E4E9
+        border-color #E2E4E9
+        color #454A54
+        cursor not-allowed
+
+    // Secondary button
+    &--type-secondary
+      background-color transparent
+      border-color #0048DB
+      padding 12px 24px
+      color #0048DB
+
+      &:hover
+        background-color #1737A4
+        border-color #1737A4
+        color white
+
+      &:active
+        background-color transparent
+        border-color #18256C
+        color #18256C
+
+    // Secondary disabled
+    &--type-secondary&--disabled
+      &, &:hover, &:active
+        border-color #454A54
+        color #454A54
+        background-color transparent
+
+    // Type text default
+    &--type-text
+      font-family 'Source Sans Pro', sans-serif
+      font-weight 400
+      line-height 1.5
+      background-color transparent
+      border-color transparent
+      color #16181D
+      transition: all .2s ease-in-out
+
+      +aboveMedium()
+        position relative
+
+      &:before
+        display: block
+        content: attr(title)
+        font-weight: 600
+        height: 0
+        overflow: hidden
+        visibility: hidden
+
+      .iq-btn__text
+        +aboveMedium()
+          position absolute
+
+        &:hover
+          background-color none
+          border-color none
+          background-color transparent
+          border-color transparent
+          color #16181D
+          font-weight 600
+
+        &:active
+          background-color: transparent
+          border-color transparent
+          color #0048DB
+          font-weight 600
+
+    &--active
+      background-color: transparent
+      border-color transparent
+      color #0048DB
+      font-weight 600
+
+    // loading
+    &--loading, &--type-secondary&--loading, &--type-text&--loading
+      position relative
+      background-color #0048DB
+      cursor default
+      border-color #0048DB
+
+      .iq-btn__loading-overlay
+        position absolute
+        width 100%
+        height 100%
+        top 0
+        left 0
+        border-radius 32px
+        background-color #0048DB
+        display flex
+        align-items center
+        justify-content center
+
+      .iq-btn__loading-spinner
+        animation spin 1s infinite linear
+        width 22px
+        height 22px
+        border-radius 50%
+        background-image linear-gradient(to bottom, blue-30 40%, #0048DB)
+        position relative
+        z-index 0
+
+        &:before, &:after
+          content ''
+          display block
+
+        &:before
+          z-index 1
+          height 50%
+          width 100%
+          border-radius 30px 30px 0 0
+          position absolute
+          top 0
+          background-image linear-gradient(to right, transparent 40%, gray-0)
+
+        &:after
+          width 15px
+          height 15px
+          position absolute
+          top 50%
+          left 50%
+          border-radius 50%
+          transform translate(-50%, -50%)
+          background-color #0048DB
+          z-index 2
+
+    // Button expansion variations
+    &--expand-x, &--expand-xy
+      width 100%
+
+    &--expand-y, &--expand-xy
+      height 100%
+
+    &--only-icon
+      border-radius 100%
+      width 48px
+      height 48px
+      padding 0
+      justify-content center

@@ -9,14 +9,18 @@ const socialLinksArray = Object.keys(socialLinks).map(
   (key) => ({ type: key, ...socialLinks[key] })
 );
 
-const SocialIcons = () => {
-  function handleClick(type: string) {
+const SocialIcons = ({ handleClick } : { handleClick?: (param: any) => void}) => {
+  function onClick(type: string) {
     const payload: ElementEventPayload = {
       elementType: "link",
       location: "footer",
       position: "Siga a gente",
       text: type,
     };
+
+    if (handleClick) {
+      handleClick(payload)
+    }
   };
 
   return (
@@ -32,7 +36,7 @@ const SocialIcons = () => {
             title={title}
             href={href}
             data-type={type}
-            onClick={() => handleClick(type)}
+            onClick={() => onClick(type)}
             dangerouslySetInnerHTML={{ __html: svg }}
           />
         ))}
