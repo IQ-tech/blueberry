@@ -9,7 +9,7 @@ import LoggedOutNavigation from './subcomponents/LoggedOutNavigation'
 import LoggedInNavigation from './subcomponents/LoggedInNavigation'
 import Notifications from './subcomponents/Notifications'
 import GoBack from './subcomponents/GoBack'
-import useClassicHeader from './hook'
+import useHeaderCP from './hook'
 
 const HeaderCP: React.FC<HeaderClassicProps> = ({
   isLogged = false,
@@ -35,7 +35,7 @@ const HeaderCP: React.FC<HeaderClassicProps> = ({
     loggedNavigationLinks,
     isSubmenuOpen,
     formattedUsername,
-  } = useClassicHeader({
+  } = useHeaderCP({
     mapLoggedOutMenuItems,
     username,
     mapLoggedInMenuItems,

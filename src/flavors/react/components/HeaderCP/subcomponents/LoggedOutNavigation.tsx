@@ -27,7 +27,10 @@ const LoggedOutNavigation = ({ links,  loginLink }) => {
         {links.map(({ label, href, isActive }, index) => (
           <li
             key={`logged-out-navigation-list-item-${index}`}
-            className="header-cp__logged-out-navigation-list-item"
+            className={classNames(
+              "header-cp__logged-out-navigation-list-item", {
+              "header-cp__logged-out-navigation-list-item--active": !!isActive,
+          })}
           >
             <div
               className={classNames(
@@ -40,7 +43,6 @@ const LoggedOutNavigation = ({ links,  loginLink }) => {
             <Button
               type="text"
               expand="x"
-              active={!!isActive}
               onClick={() => onClickItem(href)}
               title={label}
               key={`desk-navigation-link-${index}`}

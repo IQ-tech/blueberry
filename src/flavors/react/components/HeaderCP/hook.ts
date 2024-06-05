@@ -13,7 +13,7 @@ function getFirstTwoNames(fullName): string {
   return firstTwoNames.join(' ')
 }
 
-function useClassicHeader({
+function useHeaderCP({
   mapLoggedInMenuItems,
   mapLoggedOutMenuItems,
   customLoggedInMenuItems,
@@ -67,4 +67,4 @@ function useClassicHeader({
   }
 }
 
-export default useClassicHeader
+export default useHeaderCP
