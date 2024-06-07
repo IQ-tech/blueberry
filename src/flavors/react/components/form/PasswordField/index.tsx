@@ -9,11 +9,15 @@ interface PasswordProps extends ModifiedInputProps, CommonFieldsProps {
   showEye?: boolean
   tooltipConfig?: TooltipProps
   hideErrorIcon?: boolean
-  inputRef?: React.MutableRefObject<any>
+  inputRef?: React.MutableRefObject<any>,
+  checkCapsLock?: boolean,
+  capsLockMessage?: string,
 }
 
 const PasswordField: React.FC<PasswordProps> = ({
   showEye = true,
+  checkCapsLock=false,
+  capsLockMessage,
   hideErrorIcon,
   inputRef,
   ...props
@@ -41,6 +45,8 @@ const PasswordField: React.FC<PasswordProps> = ({
       Icon={Icon}
       hideErrorIcon={hideErrorIcon}
       inputRef={inputRef}
+      checkCapsLock={checkCapsLock}
+      capsLockMessage={capsLockMessage}
       {...props}
     />
   )
