@@ -46,7 +46,7 @@ const InputField: React.FC<InputProps> = ({
   useNumericKeyboard = false,
   inputRef,
   hideErrorIcon,
-  capsLockMessage,
+  capsLockMessage="O botão Caps Lock está ativo.",
   checkCapsLock = false,
   ...rest
 }) => {
@@ -55,9 +55,11 @@ const InputField: React.FC<InputProps> = ({
   const [isCapsLockOn, setCapsLockState] = useState(false);
 
   const  handleKeyPress = useCallback((event: KeyboardEvent<HTMLInputElement>)=>{
-    const capsLockState: boolean = event.getModifierState('CapsLock');
-    setCapsLockState(capsLockState);
-  },[setCapsLockState]);
+    if(checkCapsLock){
+      const capsLockState: boolean = event.getModifierState('CapsLock');
+      setCapsLockState(capsLockState);
+    }
+  },[setCapsLockState, checkCapsLock]);
 
   function onChangeHandler(e) {
     if (!!onChange) {
@@ -66,7 +68,7 @@ const InputField: React.FC<InputProps> = ({
   }
 
   const inputClassName = classNames("iq-input-field", {
-    "iq-input-field--invalid": !!invalid,
+    "iq-input-field--invalid": !!invalid || isCapsLockOn,
     "iq-input-field--disabled": !!disabled,
     "iq-input-field--left-icon": !!LeftIcon,
     [`iq-input-field--${customClass}`]: !!customClass,
@@ -83,8 +85,6 @@ const InputField: React.FC<InputProps> = ({
         optional={optional}
         invalid={invalid}
         tooltipConfig={tooltipConfig}
-        isCapsLockOn={isCapsLockOn && checkCapsLock}
-        capsLockMessage={capsLockMessage}
       >
         <div className="iq-input-field__input-holder">
           {!!LeftIcon ? (
@@ -92,7 +92,6 @@ const InputField: React.FC<InputProps> = ({
               <LeftIcon expand />
             </div>
           ) : null}
-
           <input
             disabled={disabled}
             className="iq-input-field__input"
@@ -105,9 +104,10 @@ const InputField: React.FC<InputProps> = ({
             inputMode={useNumericKeyboard ? "numeric" : undefined}
             pattern={useNumericKeyboard ? "[0-9]*" : undefined}
             ref={inputRef}
-            onKeyDown={handleKeyPress}
+            onKeyUp={handleKeyPress}
             {...rest}
           />
+          {(isCapsLockOn && checkCapsLock) && <p className="iq-input-field__caps-lock-activated">{capsLockMessage || "o botão Caps Lock está ativo."}</p>}
           <div className="iq-input-field__icon iq-input-field__icon--right">
 
             {hideErrorIcon ? null :

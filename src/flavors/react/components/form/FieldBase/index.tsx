@@ -10,8 +10,6 @@ interface FieldBaseProps {
   label?: string;
   optional?: boolean;
   tooltipConfig?: TooltipProps;
-  capsLockMessage?: string;
-  isCapsLockOn?: boolean
 }
 
 const FieldBase: React.FC<FieldBaseProps> = ({
@@ -23,8 +21,6 @@ const FieldBase: React.FC<FieldBaseProps> = ({
   errorMessage,
   optional,
   tooltipConfig,
-  capsLockMessage,
-  isCapsLockOn=false,
 }) => {
 
   return (
@@ -48,12 +44,6 @@ const FieldBase: React.FC<FieldBaseProps> = ({
         condition={!!invalid && !!errorMessage}
         renderIf={
           <p className="iq-field-base__error-message">{errorMessage}</p>
-        }
-      />
-      <Conditional
-        condition={isCapsLockOn}
-        renderIf={
-          <p className="iq-field-base__error-message">{capsLockMessage || "o botão Caps Lock está ativo."}</p>
         }
       />
     </div>
