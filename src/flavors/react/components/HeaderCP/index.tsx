@@ -11,6 +11,8 @@ import Notifications from './subcomponents/Notifications'
 import GoBack from './subcomponents/GoBack'
 import useHeaderCP from './hook'
 
+import "core/components/HeaderCP.styl";
+
 const HeaderCP: React.FC<HeaderClassicProps> = ({
   isLogged = false,
   mapLoggedOutMenuItems,
