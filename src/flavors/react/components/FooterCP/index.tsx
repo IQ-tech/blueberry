@@ -7,6 +7,8 @@ import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";
 import Certificates from "./subcomponents/Certificates";
 
+import "core/components/FooterCP.styl";
+
 const FooterCP: React.FC = ({ handleClick } : any) => {
   const currentYear = new Date().getFullYear();
 
