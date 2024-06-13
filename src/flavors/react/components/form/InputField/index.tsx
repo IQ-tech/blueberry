@@ -50,6 +50,7 @@ const InputField: React.FC<InputProps> = ({
   checkCapsLock = false,
   ...rest
 }) => {
+  const capsLockDefaultMessage = "O botão Caps Lock está ativo."
   const shouldRenderRightIcon = hideErrorIcon || (!invalid && !!Icon)
 
   const [isCapsLockOn, setCapsLockState] = useState(false);
@@ -107,7 +108,6 @@ const InputField: React.FC<InputProps> = ({
             onKeyUp={handleKeyPress}
             {...rest}
           />
-          {(isCapsLockOn && checkCapsLock) && <p className="iq-input-field__caps-lock-activated">{capsLockMessage || "o botão Caps Lock está ativo."}</p>}
           <div className="iq-input-field__icon iq-input-field__icon--right">
 
             {hideErrorIcon ? null :
@@ -119,6 +119,7 @@ const InputField: React.FC<InputProps> = ({
             {shouldRenderRightIcon ? <Icon expand /> : null}
           </div>
         </div>
+        {(isCapsLockOn && checkCapsLock) && <p className="iq-input-field__caps-lock-activated">{capsLockMessage || capsLockDefaultMessage}</p>}
       </FieldBase>
     </div>
   );
