@@ -115,6 +115,32 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			color gray-60
 			cursor not-allowed
 
+	// Social button
+	&--type-social
+		align-items center
+		background-color transparent
+		border-radius 48px
+		border 1px solid blue-00
+		color blue-00
+		display flex
+		font-size 20px
+		font-weight 600
+		justify-content center
+		line-height 26px
+		width 100%
+		cursor pointer
+		outline none
+		transition background-color .2s ease-in-out
+
+		.iq-btn__icon-slot
+			margin-right 8px
+			width 24px
+			height 24px
+
+		&:hover, &:focus
+			background-color gray-20
+			transition background-color .2s ease-in-out
+
 	// Secondary button
 	&--type-secondary
 		background-color transparent
@@ -179,7 +205,7 @@ $horizontal-borders = 'calc(%s * 2)' % $border-size
 			color blueberry-50
 
 		&:active
-			background-color: transparent;
+			background-color transparent
 			color blueberry-70
 			border-color blueberry-70
 
