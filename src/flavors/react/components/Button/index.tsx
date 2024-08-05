@@ -6,7 +6,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** Defines the button vertical size */
   size: 'large' | 'medium' | 'small'
   /** Button main style */
-  type: 'primary' | 'secondary' | 'text'
+  type: 'primary' | 'secondary' | 'text' | 'social'
   /** Button color scheme */
   color: 'default' | 'inverted' | 'danger'
   /** Disabled style and blocks onClick events */
