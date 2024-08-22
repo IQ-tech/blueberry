@@ -1,6 +1,6 @@
 {
 	"name": "iq-blueberry",
-	"version": "0.0.84",
+	"version": "0.0.85",
 	"description": "iq design system/ui library",
 	"main": "dist/main.js",
 	"module": "es/main.js",

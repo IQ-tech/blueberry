@@ -34,9 +34,9 @@ const Button: React.FC<ButtonProps> = ({
   type = 'primary',
   iconRight = false,
   children = 'Button component',
-  disabled = false,
   Icon = '',
   loading = false,
+  disabled = false,
   color = 'default',
   expand,
   onClick,
@@ -68,6 +68,7 @@ const Button: React.FC<ButtonProps> = ({
       className={buttonClasses}
       type={htmlType}
       onClick={handleClick}
+      disabled={loading ? true : disabled}
       {...props}
     >
       <Conditional
