@@ -6,6 +6,7 @@ import publicInfo from "./public-info.json";
 import LinksGroup from "./subcomponents/LinksGroup";
 import SocialIcons from "./subcomponents/SocialIcons";
 import Certificates from "./subcomponents/Certificates";
+import AppStores from "./subcomponents/AppStores";
 
 import "core/components/FooterCP.styl";
 
@@ -50,6 +51,8 @@ const FooterCP: React.FC = ({ handleClick } : any) => {
                 handleClick={handleClick}
               />
             ))}
+
+            <AppStores />
 
             <SocialIcons handleClick={handleClick} />
           </div>
