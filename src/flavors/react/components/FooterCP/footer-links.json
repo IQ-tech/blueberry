@@ -33,6 +33,11 @@
         "target": "_self"
 			},
 			{
+				"title": "Empréstimo",
+				"link": "/emprestimo",
+        "target": "_self"
+			},
+			{
 				"title": "Score",
 				"link": "https://app.consumidorpositivo.com.br",
         "target": "_blank"
