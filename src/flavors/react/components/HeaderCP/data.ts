@@ -19,7 +19,7 @@ const publicLinks: NavigationLink[] = [
   {
     label: 'Blog',
     ariaLabel: 'blog',
-    href: 'https://blog.acordocerto.com.br/',
+    href: 'https://www.consumidorpositivo.com.br/blog/',
   },
 ]
 
